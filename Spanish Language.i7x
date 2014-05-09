@@ -48,16 +48,20 @@ To say Un (O - object):
 
 Include (-
 language Spanish
+[ver 9/pro.5 p94]
 
 <indefinite-article> ::=
-	/b/ un |				[singular, masculine]
-	/c/ una |				[singular, feminine]
-	/e/ unas        [plural, masculine (by default)]
+	/b/ un    |			[singular, masculine]
+	/c/ una   |			[singular, feminine]
+	/e/ unos  |     [plural, masculine (by default)]
+	/f/ unas        [plural, feminine]
 
 <definite-article> ::=
-	/b/ el |				[singular, masculine]
-	/c/ la |				[singular, feminine]
-	/e/ los					[plural, masculine (by default)]
+	/b/ el  |				[singular, masculine]
+	/c/ la  |				[singular, feminine]
+	/e/ los |		  	[plural, masculine (by default)]
+	/f/ las					[plural, femenine]
+
 
 <np-relative-phrase-implicit> ::=
 	/a/ vestido por |     [replacing "worn" in English]
