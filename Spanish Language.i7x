@@ -1964,10 +1964,10 @@ Section SL4/0 - Spanish Saying, basados en la rutinas de impresión de InformATE
 [ Documentacion de esta seccion: DocumentATE: Descripciones y Parsing: Descripcion de objetos y lugares ]
 
 [Articulos ]
-To say el (something - object):	(- print (the) {something}; -).
+[To say el (something - object):	(- print (the) {something}; -).
 To say El (something - object):	(- print (The) {something}; -).
 To say un (something - object):	(- print (un) {something}; -).
-To say Un (something - object):	(- print (_Un) {something}; -).
+To say Un (something - object):	(- print (_Un) {something}; -).] [se usan similares en Chapter 2.1.1 - Articles]
 
 To say del (something - object): (- print (del) {something}; -).
 To say al (something - object):	(- print (al) {something}; -).
