@@ -1464,7 +1464,6 @@ Understand the command "skip" as something new.
 Understand the command "hop" as something new.
 Understand the command "dig" as something new.
 Understand the command "score" as something new.
-[Understand the command "full score" as something new. deprecated]
 Understand the command "quit" as something new.
 Understand the command "q" as something new.
 Understand the command "save" as something new.
@@ -1856,7 +1855,6 @@ Understand "cava en [something] con [something preferably held]" as digging.]
 Part 4.2.2.2 - Grammar for Actions which happen out of world
 
 Understand "score" or "puntos" or "puntuacion" as requesting the score.
-[Understand "full score" or "fullscore" as requesting the full score.]
 Understand "quit" or "q" or "terminar" or "fin" or "acabar" or "abandonar" as quitting the game.
 Understand "save" or "guardar" or "salvar" as saving the game.
 Understand "restart" or "reiniciar" as restarting the game.
