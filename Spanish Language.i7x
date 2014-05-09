@@ -62,12 +62,14 @@ language Spanish
 	/e/ los |		  	[plural, masculine (by default)]
 	/f/ las					[plural, femenine]
 
-
+[6/noun.15 p29]
 <np-relative-phrase-implicit> ::=
 	/a/ vestido por |     [replacing "worn" in English]
 	/b/ llevado por |     ["carried"]
+	/c/ llevado inicialmente por | ["initial carried"]
 	/d/ aquí              ["here"]
 
+[19/play.10 p148]
 <implicit-player-relationship> ::=
 	/a/ vestido |
 	/b/ llevado
