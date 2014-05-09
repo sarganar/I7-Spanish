@@ -1,0 +1,5 @@
+infsp7 para 6L02
+======
+
+Inform 7 Spanish Libs
+Edición 6L02 (MAYO 2014)
