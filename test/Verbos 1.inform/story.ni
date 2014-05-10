@@ -1,25 +1,26 @@
 "History Lab" by sarganar (in spanish)
 
 Include Text Capture by Eric Eve
-
+[buscar extensiones en http://www.emshort.com/pl/payloads/]
 
 Lab is a room. 
 
 In Spanish saltar is a verb.
 In Spanish gritar is a verb.
 
-When play begins:
-	now the story viewpoint is third person plural; 
+When play begins:	
+	now the story viewpoint is second person singular; 
 	now the story tense is future tense;
+	say "[test1]";
 	say "[Tu] [saltas] en el sitio[plm]. Al cabo de un rato[tu] [gritas] al cielo.".
 
 [	say "[the verb amar with first letter upper case]";
 	say "[the story viewpoint].";
 	say "[story tense]".]
 
-standard report waiting rule response (A) is "[Tu] [saltas] en el sitio[plm]. Al cabo de un rato[tu] [gritas] al cielo.". 
+standard report waiting rule response (A) is "[Tu] [saltas] en el sitio. Al cabo de un rato[tu] [gritas] al cielo.[plm]". 
 	
-Test verb (internal) with saltar.
+[Test verb (internal) with saltar.]
 
 [first person singular 
 second person singular 
@@ -82,4 +83,8 @@ To say Tu:
 			say "Ellos";
 		otherwise:
 			say "Ellas".
-			
+
+To say test1:
+	let b be text;
+	now b is "hola, esto es una prueba.sientate allí. ok? adiós.";
+	say "[b]" in sentence case.
