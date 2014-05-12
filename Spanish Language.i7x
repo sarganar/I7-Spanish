@@ -72,7 +72,14 @@ language Spanish
 [19/play.10 p148]
 <implicit-player-relationship> ::=
 	/a/ vestido |
-	/b/ llevado
+	/b/ llevado |
+	/c/ llevado inicialmente por ["initial carried" deprecated for the future]
+
+[19/play.4] [todo: lo siguiente parece no funcionar]
+<notable-player-variables>  ::=
+  /a/ jugador |       [player]
+  /b/ puntuación |    [score]
+  /c/ hora            [time of day]
 
 -) in the Preform grammar.
 
@@ -263,7 +270,7 @@ Array LanguageNumbers table
 
 Part 2.2 - Nouns
 
-Chapter 2.2.2 - Pronouns and possessives for the player
+Chapter 2.2.2 - Pronouns and possessives for the player 
 
 [The adaptive text viewpoint is the viewpoint of the player when we are
 writing response texts which need to work in any tense, person or number.
@@ -304,46 +311,80 @@ Spanish: [tu], [ti], [tuyo], [le tien], [ton]
 
 and their capitalised forms, which start with "T" not "t".]
 
+[en general Poca gente menciona los sujetos explícitamente en segunda persona.Al-K]
+
+Include Text Capture by Eric Eve.
+
+to say plm:[primera letra en mayúscula]
+	stop capturing text;
+	say "[captured text]" in sentence case.
 
 To say tu:
-	now the prior named object is the player;
-	if the story viewpoint is first person singular:
-		say "yo";
-	if the story viewpoint is second person singular:
-		say "tu";
+	now the prior named object is the player;[ object's identity is a value stored in "prior named object"]
 	if the story viewpoint is third person singular:
 		if the player is male:
-			say "él";
+			say " él";
 		otherwise:
-			say "ella";
-	if the story viewpoint is first person plural:
-		say "nosotros";
-	if the story viewpoint is second person plural:
-		say "vosotros";
+			say " ella";
 	if the story viewpoint is third person plural:
 		if the player is male:
-			say "ellos";
+			say " ellos";
 		otherwise:
-			say "ellas".
-
-
-[And now the capitalised forms, which are identical otherwise.]
+			say " ellas".
+			
 
 To say Tu:
-	now the prior named object is the player;
+	now the prior named object is the player;[ object's identity is a value stored in "prior named object"]
 	if the story viewpoint is first person singular:
-		say "Yo";
+		start capturing text;
 	if the story viewpoint is second person singular:
-		say "";
+		start capturing text;
 	if the story viewpoint is third person singular:
 		if the player is male:
-			say "El";
+			say "Él";
 		otherwise:
 			say "Ella";
 	if the story viewpoint is first person plural:
-		say "Nosotros";
+		start capturing text;
 	if the story viewpoint is second person plural:
-		say "Vosotros";
+		start capturing text;	
+	if the story viewpoint is third person plural:
+		if the player is male:
+			say "Ellos";
+		otherwise:
+			say "Ellas".
+
+
+
+To say él:
+	now the prior named object is the player;[ object's identity is a value stored in "prior named object"]
+	if the story viewpoint is third person singular:
+		if the player is male:
+			say " él";
+		otherwise:
+			say " ella";
+	if the story viewpoint is third person plural:
+		if the player is male:
+			say " ellos";
+		otherwise:
+			say " ellas".
+			
+
+To say Él:
+	now the prior named object is the player;[ object's identity is a value stored in "prior named object"]
+	if the story viewpoint is first person singular:
+		start capturing text;
+	if the story viewpoint is second person singular:
+		start capturing text;
+	if the story viewpoint is third person singular:
+		if the player is male:
+			say "Él";
+		otherwise:
+			say "Ella";
+	if the story viewpoint is first person plural:
+		start capturing text;
+	if the story viewpoint is second person plural:
+		start capturing text;	
 	if the story viewpoint is third person plural:
 		if the player is male:
 			say "Ellos";
@@ -820,11 +861,14 @@ and then typing the command:
 This produces text which can be pasted in here before being translated. I'm
 only going to translate two, just for example's sake.]
 
+[Verbos sin significados, solo para el texto adaptativo]
+In Spanish llevar is a verb.
+
 Section 1 - Standard actions concerning the actor's possessions
 
 [ Taking inventory ]
-    print empty inventory rule response (A) is "No llevas nada.".
-    print standard inventory rule response (A) is "Llevas:[line break]".
+    print empty inventory rule response (A) is "No [llevas] nada.".
+    print standard inventory rule response (A) is "[Tu] [llevas][plm]:[line break]".
     report other people taking inventory rule response (A) is "[The actor] consulta su inventario.".
 
 
@@ -1140,7 +1184,7 @@ carry out requested actions rule response (A) is "[The noun] no puede hace eso."
     list writer internal rule response (S) is ", [if the noun is a person]encima[otherwise]sobre[end if] del cual".
     list writer internal rule response (T) is " (in [if the noun is a person]whom[otherwise]which[end if] ".
     list writer internal rule response (U) is ", dentro ".
-    list writer internal rule response (V) is "hay".
+    list writer internal rule response (V) is "ves".
     list writer internal rule response (W) is "es nada".
     list writer internal rule response (X) is "Nada".
     list writer internal rule response (Y) is "nada".
