@@ -1083,6 +1083,44 @@ Section 8 - Standard actions which happen out of world
 	verify the story file rule response (A) is "Fichero de juego verificado e intacto.".
 	verify the story file rule response (B) is "El fichero de juego no parece intacto, puede estar corrompido (a menos que estés jugando con un intérprete muy primitivo que no sea capaz de realizar la comprobación).".
 
+[ Switching the story transcript off ]
+switch the story transcript off rule response (A) is "La transcripción ya estaba desactivada.".
+switch the story transcript off rule response (B) is "[line break]Fin de la transcripción.".
+switch the story transcript off rule response (C) is "Intento fallido de finalización de transcripción.".
+
+[ Requesting the story file version ]
+[ ]
+
+[ Requesting the score ]
+announce the score rule response (A) is "[if the story has ended]En este relato, tu puntuación ha sido[otherwise]Hasta el momento tu puntuación es[end if] [score] de un total de [maximum score], en [turn count] turno[s]". [¿Juego o historia? A veces es juego, otras veces historia (como la (c) abajo). No entiendo. Me decanto por 'relato']
+announce the score rule response (B) is ", logrando el rango de ".
+announce the score rule response (C) is "No hay puntuación en esta historia.". [Este juego no tiene conteo de puntuación.]
+announce the score rule response (D) is "[bracket]Tu puntuación ha aumentado en [number understood in words] punto[s].[close bracket]".
+announce the score rule response (E) is "[bracket]Tu puntuación ha disminuido en [number understood in words] punto[s].[close bracket]".
+
+[ Preferring abbreviated room descriptions ]
+standard report preferring abbreviated room descriptions rule response (A) is " está ahora en su modo 'superbreve', que siempre da descripciones cortas de los lugares (incluso si nunca habías estado antes).".
+
+[ Preferring unabbreviated room descriptions ]
+standard report preferring unabbreviated room descriptions rule response (A) is " está ahora en su modo 'largo', que siempre da descripciones largas de los lugares (incluso si ya habías estado antes).".
+
+[ Preferring sometimes abbreviated room descriptions ]
+standard report preferring sometimes abbreviated room descriptions rule response (A) is " está ahora en su modo normal 'breve', que da sólo descripciones largas de los lugares la primera vez que son visitados, y descripciones cortas en otro caso.".
+
+[ Switching score notification on ]
+[standard report switching score notification on rule response (A) is "Score notification on.".]
+standard report switching score notification on rule response (A) is "Notificación de puntuación activada.".
+
+[ Switching score notification off ]
+[standard report switching score notification off rule response (A) is "Score notification off.".]
+standard report switching score notification off rule response (A) is "Notificación de puntuación desactivada.".
+
+[ Requesting the pronoun meanings ]
+announce the pronoun meanings rule response (A) is "En este momento, ".
+announce the pronoun meanings rule response (B) is "es ".
+announce the pronoun meanings rule response (C) is "no está definido".
+announce the pronoun meanings rule response (D) is "esta historia no conoce ningún pronombre.".
+
 
 Part 3.2 - The Final Question
 
