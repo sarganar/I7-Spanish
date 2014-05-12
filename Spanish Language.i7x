@@ -85,11 +85,9 @@ language Spanish
 		/b/ libro ... |							
 		/c/ parte ... |							
 		/d/ capítulo/capitulo ... |						
-		/c/ sección/seccion ...							
+		/e/ sección/seccion ...							
 
 -) in the Preform grammar.
-
-Section 7 - Articles
 
 Include (-
 Constant LanguageAnimateGender   = male;
@@ -140,7 +138,7 @@ language Spanish
 	doce
 
 <ordinal-number-in-words> ::=
-	cero |			[existe esta palabra en español?]
+	cero |			[¿Existe esta palabra en español?]
 	primero |
 	segundo |
 	tercero |
@@ -739,13 +737,13 @@ language Spanish
 	a5-		no <es-ar-future>
 	
 <es-ar-present> ::=
-	5+o | 5+as | 5+a | 5+amos | 5+ais | 5+an
+	5+o | 5+as | 5+a | 5+amos | 5+áis | 5+an
 	
 <es-ar-past> ::=
 	5+é | 5+aste | 5+ó | 5+amos | 5+asteis | 5+aron	
 
-<es-ar-present> ::=
-	5+aré | 5+rás | 5+ará | 5+aremos | 5+areis | 5+rán
+<es-ar-future> ::=
+	5+aré | 5+arás | 5+ará | 5+aremos | 5+aréis | 5+arán
 
 
 -) in the Preform grammar.
