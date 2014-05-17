@@ -1,4 +1,4 @@
-Version 1/140509 of Spanish Language by Sebastian Arg begins here.
+Version 1/140517 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
@@ -1222,11 +1222,23 @@ carry out requested actions rule response (A) is "[The noun] no puede hace eso."
     list writer internal rule response (S) is ", [if the noun is a person]encima[otherwise]sobre[end if] del cual".
     list writer internal rule response (T) is " (in [if the noun is a person]whom[otherwise]which[end if] ".
     list writer internal rule response (U) is ", dentro ".
-    list writer internal rule response (V) is "ves".
+    list writer internal rule response (V) is "[es-ves]".
     list writer internal rule response (W) is "es nada".
     list writer internal rule response (X) is "Nada".
     list writer internal rule response (Y) is "nada".
 
+To say es-ves:
+	if the noun is a person:[la clase 'person' abarca man, women and animal]
+		say "[regarding list writer internals][eres]";
+	otherwise:
+		say "ves".
+    
+[[regarding list writer internals]: (usado en list writer internal rule response (V) )
+	*llama internamente a RegardingLWI() (ListWriter.i6t), que actualiza prior_named_list / prior_named_list_gender / prior_named_noun, utilizados luego por la sustitución [verbo] .
+]
+
+
+    
 
 [Chapter 7 - Action processing internal rule]
     action processing internal rule response (A) is "[bracket]Esa orden se aplica fuera del juego, por lo que solo tiene sentido para el parser, no para [the noun].[close bracket]".
