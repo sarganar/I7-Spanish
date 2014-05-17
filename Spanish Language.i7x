@@ -1223,7 +1223,7 @@ carry out requested actions rule response (A) is "[The noun] no puede hace eso."
     list writer internal rule response (T) is " (in [if the noun is a person]whom[otherwise]which[end if] ".
     list writer internal rule response (U) is ", dentro ".
     list writer internal rule response (V) is "[es-ves]".
-    list writer internal rule response (W) is "es nada".
+    list writer internal rule response (W) is "es nada".[todo:si se refiere a personas deberia decir 'es nadie']
     list writer internal rule response (X) is "Nada".
     list writer internal rule response (Y) is "nada".
 
@@ -1236,7 +1236,6 @@ To say es-ves:
 [[regarding list writer internals]: (usado en list writer internal rule response (V) )
 	*llama internamente a RegardingLWI() (ListWriter.i6t), que actualiza prior_named_list / prior_named_list_gender / prior_named_noun, utilizados luego por la sustitución [verbo] .
 ]
-
 
     
 
@@ -1405,199 +1404,91 @@ Part 4.2 - Understand grammar
 Part 4.2.1 - Replacing English verbs
 
 [ Propósito: Para no incluir el bloque de gramaticas (y verbos) ingleses en el fuente (optimiza memoria)]
-[               Si deseas mantener alguno, solo comenta la linea correspondiente]
-
-Understand the command "i" as something new.
-Understand the command "inv" as something new.
-Understand the command "x" as something new.
-Understand the command "set" as something new.
-Understand the command "l" as something new.
-Understand the command "describe" as something new.
 
 
-
-Understand the command "take" as something new.
-Understand the command "carry" as something new.
-Understand the command "hold" as something new.
-Understand the command "get" as something new.
-Understand the command "pick" as something new.
-Understand the command "stand" as something new.
-Understand the command "remove" as something new.
-Understand the command "shed" as something new.
-Understand the command "doff" as something new.
-Understand the command "disrobe" as something new.
-Understand the command "don" as something new.
-Understand the command "wear" as something new.
-Understand the command "put" as something new.
-Understand the command "drop" as something new.
-Understand the command "throw" as something new.
-Understand the command "discard" as something new.
-Understand the command "give" as something new.
-Understand the command "pay" as something new.
-Understand the command "offer" as something new.
-Understand the command "feed" as something new.
-Understand the command "present" as something new.
-Understand the command "display" as something new.
-Understand the command "show" as something new.
-Understand the command "go" as something new.
-Understand the command "walk" as something new.
-Understand the command "leave" as something new.
-Understand the command "run" as something new.
-Understand the command "inventory" as something new.
-Understand the command "look" as something new.
-Understand the command "consult" as something new.
-Understand the command "open" as something new.
-Understand the command "unwrap" as something new.
-Understand the command "uncover" as something new.
-Understand the command "shut" as something new.
-Understand the command "cover" as something new.
-Understand the command "close" as something new.
-Understand the command "cross" as something new.
-Understand the command "enter" as something new.
-Understand the command "sit" as something new.
-Understand the command "exit" as something new.
-Understand the command "out" as something new.
-Understand the command "watch" as something new.
-Understand the command "check" as something new.
-Understand the command "examine" as something new.
-Understand the command "read" as something new.
-Understand the command "yes" as something new.
-Understand the command "y" as something new.
-Understand the command "yes" as something new.
-Understand the command "no" as something new.
-Understand the command "sorry" as something new.
-Understand the command "shit" as something new.
-Understand the command "fuck" as something new.
-Understand the command "damn" as something new.
-Understand the command "bother" as something new.
-Understand the command "curses" as something new.
-Understand the command "drat" as something new.
-Understand the command "darn" as something new.
-Understand the command "search" as something new.
-Understand the command "wave" as something new.
-Understand the command "adjust" as something new.
-Understand the command "drag" as something new.
-Understand the command "pull" as something new.
-Understand the command "push" as something new.
-Understand the command "move" as something new.
-Understand the command "shift" as something new.
-Understand the command "clear" as something new.
-Understand the command "press" as something new.
-Understand the command "rotate" as something new.
-Understand the command "twist" as something new.
-Understand the command "unscrew" as something new.
-Understand the command "screw" as something new.
-Understand the command "turn" as something new.
-Understand the command "switch" as something new.
-Understand the command "lock" as something new.
-Understand the command "unlock" as something new.
-Understand the command "attack" as something new.
-Understand the command "break" as something new.
-Understand the command "smash" as something new.
-Understand the command "hit" as something new.
-Understand the command "fight" as something new.
-Understand the command "torture" as something new.
-Understand the command "wreck" as something new.
-Understand the command "crack" as something new.
-Understand the command "destroy" as something new.
-Understand the command "murder" as something new.
-Understand the command "kill" as something new.
-Understand the command "punch" as something new.
-Understand the command "thump" as something new.
-Understand the command "wait" as something new.
-Understand the command "z" as something new.
-Understand the command "answer" as something new.
-Understand the command "say" as something new.
-Understand the command "shout" as something new.
-Understand the command "speak" as something new.
-Understand the command "tell" as something new.
-Understand the command "ask" as something new.
-Understand the command "eat" as something new.
-Understand the command "sleep" as something new.
-Understand the command "nap" as something new.
-Understand the command "sing" as something new.
-Understand the command "climb" as something new.
-Understand the command "scale" as something new.
-Understand the command "purchase" as something new.
-Understand the command "buy" as something new.
-Understand the command "squeeze" as something new.
-Understand the command "swim" as something new.
-Understand the command "dive" as something new.
-Understand the command "swing" as something new.
-Understand the command "blow" as something new.
-Understand the command "pray" as something new.
-Understand the command "wake" as something new.
-Understand the command "awake" as something new.
-Understand the command "awaken" as something new.
-Understand the command "kiss" as something new.
-Understand the command "embrace" as something new.
-Understand the command "hug" as something new.
-Understand the command "think" as something new.
-Understand the command "sniff" as something new.
-Understand the command "smell" as something new.
-Understand the command "listen" as something new.
-Understand the command "hear" as something new.
-Understand the command "feel" as something new.
-Understand the command "touch" as something new.
-Understand the command "rub" as something new.
-Understand the command "shine" as something new.
-Understand the command "polish" as something new.
-Understand the command "sweep" as something new.
-Understand the command "clean" as something new.
-Understand the command "dust" as something new.
-Understand the command "wipe" as something new.
-Understand the command "scrub" as something new.
-Understand the command "attach" as something new.
-Understand the command "fix" as something new.
-Understand the command "tie" as something new.
-Understand the command "light" as something new.
-Understand the command "burn" as something new.
-Understand the command "swallow" as something new.
-Understand the command "sip" as something new.
-Understand the command "drink" as something new.
-Understand the command "fill" as something new.
-Understand the command "slice" as something new.
-Understand the command "prune" as something new.
-Understand the command "chop" as something new.
-Understand the command "cut" as something new.
-Understand the command "jump" as something new.
-Understand the command "skip" as something new.
-Understand the command "hop" as something new.
-Understand the command "dig" as something new.
-Understand the command "score" as something new.
-Understand the command "quit" as something new.
-Understand the command "q" as something new.
-Understand the command "save" as something new.
-Understand the command "restart" as something new.
-Understand the command "restore" as something new.
-Understand the command "verify" as something new.
-Understand the command "version" as something new.
-Understand the command "script" as something new.
-Understand the command "transcript" as something new.
-Understand the command "superbrief" as something new.
-Understand the command "short" as something new.
-Understand the command "verbose" as something new.
-Understand the command "long" as something new.
-Understand the command "brief" as something new.
-Understand the command "normal" as something new.
-Understand the command "nouns" as something new.
-Understand the command "pronouns" as something new.
-Understand the command "notify" as something new.
-Understand the command "insert" as something new.
-Understand the command "purchase" as something new.
-Understand the command "squash" as something new.
-Understand the command "taste" as something new.
-Understand the command "fasten" as something new.
-
+Understand nothing as answering it that.
+Understand nothing as asking it about.
+Understand nothing as asking it for.
+Understand nothing as attacking.
+Understand nothing as burning.
+Understand nothing as buying.
+Understand nothing as climbing.
+Understand nothing as closing.
+Understand nothing as consulting it about.
+Understand nothing as cutting.
+Understand nothing as drinking.
+Understand nothing as dropping.
+Understand nothing as eating.
+Understand nothing as entering.
+Understand nothing as examining.
+Understand nothing as exiting.
+Understand nothing as getting off.
+Understand nothing as giving it to.
+Understand nothing as going.
+Understand nothing as inserting it into.
+Understand nothing as jumping.
+Understand nothing as kissing.
+Understand nothing as listening to.
+Understand nothing as locking it with.
+Understand nothing as looking under.
+Understand nothing as looking.
+Understand nothing as opening.
+Understand nothing as preferring abbreviated room descriptions.
+Understand nothing as preferring sometimes abbreviated room descriptions.
+Understand nothing as preferring unabbreviated room descriptions.
+Understand nothing as pulling.
+Understand nothing as pushing it to.
+Understand nothing as pushing.
+Understand nothing as putting it on.
+Understand nothing as quitting the game.
+Understand nothing as removing it from.
+Understand nothing as requesting the pronoun meanings.
+Understand nothing as requesting the score.
+Understand nothing as requesting the story file version.
+Understand nothing as restarting the game.
+Understand nothing as restoring the game.
+Understand nothing as rubbing.
+Understand nothing as saving the game.
+Understand nothing as saying no.
+Understand nothing as saying sorry.
+Understand nothing as saying yes.
+Understand nothing as searching.
+Understand nothing as setting it to.
+Understand nothing as showing it to.
+Understand nothing as sleeping.
+Understand nothing as smelling.
+Understand nothing as squeezing.
+Understand nothing as swinging.
+Understand nothing as switching off.
+Understand nothing as switching off.
+Understand nothing as switching on.
+Understand nothing as switching score notification off.
+Understand nothing as switching score notification on.
+Understand nothing as switching the story transcript off.
+Understand nothing as switching the story transcript on.
+Understand nothing as taking inventory.
+Understand nothing as taking off.
+Understand nothing as taking.
+Understand nothing as tasting.
+Understand nothing as telling it about.
+Understand nothing as thinking.
+Understand nothing as throwing it at.
+Understand nothing as touching.
+Understand nothing as turning.
+Understand nothing as tying it to.
+Understand nothing as unlocking it with.
+Understand nothing as verifying the story file.
+Understand nothing as waiting.
+Understand nothing as waking up.
+Understand nothing as waving hands.
+Understand nothing as waving.
+Understand nothing as wearing.
 
 Part 4.2.2 - Actions
 
-[Old I6 Grammar.h file is dumped here, using I7 language]
-
 [ Gramatica basada en InformATE! (I6) (by Zak)]
 [ Verbos irregulares: filosofia usada en informATE!]
-[ Para algunas acciones no estan permitidas ciertas variantes de la gramatica de informATE, como el uso de second noun como token.
-  esto hace la respuesta del parser mucho mas tonta: Ej, corta el pan o corta el pan con el cuchillo. ToDo: podrá resolverse esto?]
+[ Para algunas acciones no estan permitidas ciertas variantes de la gramatica de informATE, como el uso de second noun como token.Esto hace la respuesta del parser mucho mas tonta: Ej, corta el pan o corta el pan con el cuchillo. ToDo: podrá resolverse esto?]
 
 Part 4.2.2.1 - Grammar for Actions in the Game World
 
@@ -1683,7 +1574,7 @@ Understand "pasa por [something]" as entering.
 
 Understand "inventario" as taking inventory. Understand the commands "inv" and "i" as "inventario". [todo: falta el 'breve'/'estrecho'] 
 
-Understand "look" as looking. Understand the commands "mira","m","l" and "ver" as "look".
+Understand "mira" as looking. Understand the commands "m", "l", "look" and "ver" as "mira".
 Understand "look a [someone]" as examining.
 Understand "look [something]" as examining.
 Understand "look a/hacia [something]" as examining. [for compass]
