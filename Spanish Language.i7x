@@ -702,8 +702,18 @@ language Spanish
 
 [PRINCIPAL]
 <verb-conjugation-instructions> ::=
-  ser   <es-ser-conjugation> |
-  estar   <es-estar-conjugation> |
+[PRINCIPALES ]
+  ser		<es-ser-conjugation> |
+  estar	<es-estar-conjugation> |
+	tener	<es-tener-conjugation> |
+	abstener	<es-tener-conjugation> |
+	atener	<es-tener-conjugation> |
+	contener	<es-tener-conjugation> |
+	detener	<es-tener-conjugation> |
+	entretener	<es-tener-conjugation> |
+	mantener	<es-tener-conjugation> |
+	obtener	<es-tener-conjugation> |
+	sostener	<es-tener-conjugation> |
 [Regular -AR verbs]	
 	-ar 		<es-ar-conjugation> 	[e.g., "cantar"]
 
@@ -754,10 +764,37 @@ language Spanish
 <es-estar-past> ::=
   estuve | estuviste | estuvo | estuvimos | estuvisteis | estuvieron
   
-
 <es-estar-future> ::=
   estará | estarás | estará | estaremos | estaréis| estarán
   
+
+[VERBO TENER]
+<es-tener-conjugation> ::=
+	5	<es-tener-stem-gral> |
+	2		5+eniendo	|	[present participle]
+	3		5+enido		|	[past participle] [todo:probar inflexión femenina]
+	<es-tener-tabulation>
+
+<es-tener-stem-gral> ::=
+	*	4			[drop the last x letters]
+
+<es-tener-tabulation> ::=
+  a1+  <es-tener-present> |
+  a1-  no <es-tener-present> |
+  a2+  <es-tener-past> |
+  a2-  no <es-tener-past> |
+  a5+  <es-tener-future> |
+  a5-  no <es-tener-future>
+  
+<es-tener-present> ::=
+	5+engo | 5+ienes | 5+iene | 5+enemos | 5+enéis | 5+ienen
+  
+<es-tener-past> ::=
+  5+uve | 5+uviste | 5+uvo | 5+uvimos | 5+uvisteis | 5+uvieron
+  
+<es-tener-future> ::=
+	5+endré | 5+endrás | 5+endrá | 5+endremos | 5+endráis | 5+endrán
+
 [VERBOS -AR  REGULARES SALTAR CANTAR CORTAR ETC]
 
 <es-ar-conjugation> ::=
@@ -863,6 +900,7 @@ only going to translate two, just for example's sake.]
 
 [Verbos sin significados, solo para el texto adaptativo]
 In Spanish llevar is a verb.
+In Spanish tener is a verb.
 
 Section 1 - Standard actions concerning the actor's possessions
 
@@ -1043,11 +1081,13 @@ Section 3 - Standard actions concerning the actor's vision
 Section 4 - Standard actions which change the state of things
 [Locking it with , Unlocking it with , Switching on , Switching off , Opening , Closing , Wearing , Taking off ]
 
+[------------------------------------------------------]
+[Hasta aquí no se tuvo en cuenta texto adaptativo]
 
 [ Locking it with ]
     can't lock without a lock rule response (A) is "[regarding the noun]No parece[n noun] tener ningún tipo de cerrojo.".
     can't lock what's already locked rule response (A) is "[regarding the noun][The noun] ya estaba cerrad[o noun].".
-    can't lock what's open rule response (A) is "Primero tendrás que cerrar [the noun].".
+    can't lock what's open rule response (A) is "Primero [tu] [tienes] que cerrar [the noun].".
     can't lock without the correct key rule response (A) is "[regarding the second noun]No parece[n second noun], encajar en la cerradura.".
     standard report locking rule response (A) is "Cierras [the noun].".
     standard report locking rule response (B) is "[The actor] cierra [the noun].".
