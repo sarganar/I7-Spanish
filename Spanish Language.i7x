@@ -2,7 +2,7 @@ Version 1/140509 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
-"basada en InformATE! de Zak"
+"basada en InformATE! de Zak, con la contribución de toda la comunidad"
 
 Volume 1 - Settings
 
@@ -1395,6 +1395,15 @@ Part 4.2.1 - Replacing English verbs
 [ Propósito: Para no incluir el bloque de gramaticas (y verbos) ingleses en el fuente (optimiza memoria)]
 [               Si deseas mantener alguno, solo comenta la linea correspondiente]
 
+Understand the command "i" as something new.
+Understand the command "inv" as something new.
+Understand the command "x" as something new.
+Understand the command "set" as something new.
+Understand the command "l" as something new.
+Understand the command "describe" as something new.
+
+
+
 Understand the command "take" as something new.
 Understand the command "carry" as something new.
 Understand the command "hold" as something new.
@@ -1423,10 +1432,7 @@ Understand the command "walk" as something new.
 Understand the command "leave" as something new.
 Understand the command "run" as something new.
 Understand the command "inventory" as something new.
-Understand the command "i" as something new.
-Understand the command "inv" as something new.
 Understand the command "look" as something new.
-Understand the command "l" as something new.
 Understand the command "consult" as something new.
 Understand the command "open" as something new.
 Understand the command "unwrap" as something new.
@@ -1439,9 +1445,7 @@ Understand the command "enter" as something new.
 Understand the command "sit" as something new.
 Understand the command "exit" as something new.
 Understand the command "out" as something new.
-Understand the command "x" as something new.
 Understand the command "watch" as something new.
-Understand the command "describe" as something new.
 Understand the command "check" as something new.
 Understand the command "examine" as something new.
 Understand the command "read" as something new.
@@ -1460,7 +1464,6 @@ Understand the command "darn" as something new.
 Understand the command "search" as something new.
 Understand the command "wave" as something new.
 Understand the command "adjust" as something new.
-Understand the command "set" as something new.
 Understand the command "drag" as something new.
 Understand the command "pull" as something new.
 Understand the command "push" as something new.
@@ -1733,25 +1736,6 @@ Understand "nx" as saying no.
 Understand "sorry" as saying sorry. Understand the commands "perdon","perdona","siento","lamento" and "disculpa" as "sorry". [TODO no permite argumento 'topic']
 Understand "lo siento/lamento" as saying sorry.
 Understand "lo siento/lamento mucho" as saying sorry.
-
-[Understand "shit" as swearing obscenely.] 
-Understand "shit [text]" or "shit" as insultando.
-Understand the commands "mierda", "jode","joder","puta","cono","cabron","puto","damn" and "fuck" as "shit".
-Insultando is an action applying to one topic. 
-The specification of the insultando action is "En inglés existe la acción 'swearing obscenely' pero no permite
-al jugador agregar texto después de una palabrota. Por ello, este 'insultando' sí lo permite (como lo hacía InformATE).".
-Check insultando:
-    say "Los verdaderos aventureros no usan ese vocabulario.".
-
-
-[Understand "aburrido" as swearing mildly. ]
-Understand "aburrido [text]" and "aburrido" as insultandosuave.
-Understand the commands "idiota","tonto" and "bobo" as "aburrido".
-InsultandoSuave is an action applying to one topic. 
-The specification of the insultandosuave action is "En inglés existe la acción 'swearing mildly' pero no permite
-al jugador agregar texto después de un insulto suave. Por ello, este 'insultando suave' sí lo permite (como lo hacía InformATE).".
-Check insultandosuave:
-    say "Bastante.".
 
 Understand "busca en [something]" as searching.
 Understand "busca [text] en [something]" as consulting it about (with nouns reversed).
@@ -3625,7 +3609,7 @@ Include (-
 		TEXT_TY_Say(Headline);
 		#ifdef Story_Author;
 		!print " by "; TEXT_TY_Say(Story_Author);
-    print " por "; TEXT_TY_Say(Story_Author);! infsp hack 'by' - INTER - LOCALISATION
+    print " por "; TEXT_TY_Say(Story_Author);! infsp hack 'by'
 		#endif; ! Story_Author
 		new_line;
 		VM_Describe_Release();
@@ -3780,3 +3764,25 @@ Constant NI_NEEDED_VERSION "6L02";
 
 
 Spanish Language ends here.
+
+---- DOCUMENTATION ----
+
+Chapter: Texto Adaptativo: Verbos
+
+La phrase:
+
+	say "[Tu] [saltas] en el sitio.[plm]".
+    
+Produce:
+
+	1PS: Salto en el sitio.
+    
+	2PS: Saltas en el sitio.
+    
+	3PS: Él salta en el sitio.
+    
+    
+Es importante terminar el texto con el token "[plm]" (primera letra en mayúscula), así Spanish puede imprimir "Salta".
+Cuando la sustitución se utiliza en medio de una frase, no es necesario el token "[plm]".
+
+	say "El portón se cierra de un golpe y [tu] [saltas] en el sitio.".
