@@ -714,7 +714,34 @@ language Spanish
 	mantener	<es-tener-conjugation> |
 	obtener	<es-tener-conjugation> |
 	sostener	<es-tener-conjugation> |
-[Regular -AR verbs]	
+	haber	<es-irregular-haber-conjugation> |
+[VERBOS IRREGULARES - ER - ENTENDER]
+	entender	<es-irregular-entender-conjugation> |
+	ascender	<es-irregular-entender-conjugation> |
+	atender	<es-irregular-entender-conjugation> |
+	cerner	<es-irregular-entender-conjugation> |
+	condescender	<es-irregular-entender-conjugation> |
+	contender	<es-irregular-entender-conjugation> |
+	defender	<es-irregular-entender-conjugation> |
+	desatender	<es-irregular-entender-conjugation> |
+	descender	<es-irregular-entender-conjugation> |
+	desentender	<es-irregular-entender-conjugation> |
+	distender	<es-irregular-entender-conjugation> |
+	encender	<es-irregular-entender-conjugation> |
+	extender	<es-irregular-entender-conjugation> |
+	heder	<es-irregular-entender-conjugation> |
+	hender	<es-irregular-entender-conjugation> |
+	malentender	<es-irregular-entender-conjugation> |
+	perder	<es-irregular-entender-conjugation> |
+	reverter	<es-irregular-entender-conjugation> |
+	sobreentender	<es-irregular-entender-conjugation> |
+	sobrentender	<es-irregular-entender-conjugation> |
+	subtender	<es-irregular-entender-conjugation> |
+	tender	<es-irregular-entender-conjugation> |
+	transcender	<es-irregular-entender-conjugation> |
+	trascender	<es-irregular-entender-conjugation> |
+	verter	<es-irregular-entender-conjugation> |
+[Regular -AR verbs]
 	-ar 		<es-ar-conjugation> 	[e.g., "cantar"]
 
 
@@ -795,6 +822,105 @@ language Spanish
 <es-tener-future> ::=
 	5+endré | 5+endrás | 5+endrá | 5+endremos | 5+endráis | 5+endrán
 
+[VERBOS IRREGULARES - ER - HABER]
+<es-irregular-haber-conjugation> ::=
+	5	<es-trie-regular-stem> |
+	6	<es-trie-irregular-haber-stem> |
+	2	<es-trie-regular-er-present-participle> |
+	3	<es-trie-regular-er-past-participle> |
+	<es-irregular-haber-tabulation>
+
+<es-trie-irregular-haber-stem> ::=
+	haber	hub
+
+<es-irregular-haber-tabulation> ::=
+	a1+	<es-irregular-haber-present> |
+	a1-	no <es-irregular-haber-present> |
+	a2+	<es-irregular-caber-past> |
+	a2-	no <es-irregular-caber-past> |
+	a3	( t1 haber ) 3 |
+	a4	<es-irregular-haber-past-imperfect> 3 |
+	a5+	<es-irregular-caber-future> |
+	a5-	no <es-irregular-caber-future> |
+	a6+	<es-irregular-caber-past-imperfect> |
+	a6-	no <es-irregular-caber-past-imperfect> |
+	p*	3 por
+
+<es-irregular-haber-present> ::=
+	he | has | ha | hemos | han | han
+
+
+[VERBOS REGULARES - ER]
+<es-regular-er-conjugation> ::=
+	5	<es-trie-regular-stem> |
+	2	<es-trie-regular-er-present-participle> |
+	3	<es-trie-regular-er-past-participle> |
+	<es-regular-er-tabulation>
+
+<es-trie-regular-er-present-participle> ::=
+	*	2iendo
+
+<es-trie-regular-er-past-participle> ::=
+	*	2ido
+
+<es-regular-er-tabulation> ::=
+	a1+	<es-regular-er-present> |
+	a1-	no <es-regular-er-present> |
+	a2+	<es-regular-er-past> |
+	a2-	no <es-regular-er-past> |
+	a3	( t1 haber ) 3 |
+	a4	( t6 haber ) 3 |
+	a5+	<es-regular-er-future> |
+	a5-	no <es-regular-er-future> |
+	a6+	<es-regular-er-past-imperfect> |
+	a6-	no <es-regular-er-past-imperfect>
+	p*	3 por
+
+<es-regular-er-present> ::=
+	5+o | 5+es | 5+e | 5+emos | 5+en | 5+en
+
+<es-regular-er-past> ::=
+	5+í | 5+iste | 5+ió | 5+imos | 5+ieron | 5+ieron
+
+<es-regular-er-future> ::=
+	5+eré | 5+erás | 5+erá | 5+eremos | 5+erán | 5+erán
+
+<es-regular-er-past-imperfect> ::=
+	5+ía | 5+ías | 5+ía | 5+íamos | 5+ían | 5+ían
+
+[VERBOS IRREGULARES - ER - ENTENDER]
+<es-irregular-entender-conjugation> ::=
+	5	<es-trie-regular-stem> |
+	6	<es-trie-irregular-entender-stem> |
+	2	<es-trie-regular-er-present-participle> |
+	3	<es-trie-regular-er-past-participle> |
+	<es-irregular-entender-tabulation>
+
+<es-trie-irregular-entender-stem> ::=
+	*ender	5iend |
+	*erner	5iern |
+	*eder	4ied |
+	*ender	5iend |
+	*erder	5ierd |
+	*erter	5iert
+
+<es-irregular-entender-tabulation> ::=
+	a1+	<es-irregular-entender-present> |
+	a1-	no <es-irregular-entender-present> |
+	a2+	<es-regular-er-past> |
+	a2-	no <es-regular-er-past> |
+	a3	( t1 haber ) 3 |
+	a4	( t6 haber ) 3 |
+	a5+	<es-regular-er-future> |
+	a5-	no <es-regular-er-future> |
+	a6+	<es-regular-er-past-imperfect> |
+	a6-	no <es-regular-er-past-imperfect> |
+	p*	3 por
+
+<es-irregular-entender-present> ::=
+	6+o | 6+es | 6+e | 5+emos | 6+en | 6+en
+
+
 [VERBOS -AR  REGULARES SALTAR CANTAR CORTAR ETC]
 
 <es-ar-conjugation> ::=
@@ -855,6 +981,8 @@ In Spanish sostener is a verb meaning to hold.
 In Spanish ocultar is a verb meaning to conceal.
 In Spanish destrabar is a verb meaning to unlock.]
 
+
+
 Section 2.4.2.2 - In Rideable Vehicles (for use with Rideable Vehicles by Graham Nelson)
 
 In Spanish montar sobre is a verb meaning to mount.
@@ -901,16 +1029,69 @@ only going to translate two, just for example's sake.]
 [Verbos sin significados, solo para el texto adaptativo]
 In Spanish llevar is a verb.
 In Spanish tener is a verb.
+In Spanish quitar is a verb.
+
+[TEMPORAL]
+[TERMINACIONES SEGUN OBJETO]
+
+
+To say o:
+	if prior named object is plural-named or the player is plural-named:
+		if prior named object is female:
+			say "as";
+		otherwise:
+			say "os";
+	otherwise:
+		if prior named object is female:
+			say "a";
+		otherwise:
+			say "o".
+
+To say n:
+	if prior named object is the player:
+		if the story viewpoint is first person singular or the story viewpoint is third person singular:
+			say nothing;
+		if the story viewpoint is second person singular:
+			say "s";
+		if the story viewpoint is first person plural:
+			say "mos";
+		if the story viewpoint is second person plural or the story viewpoint is third person plural:
+			say "n";
+	otherwise:
+		if prior named object is plural-named:
+			say "n".
+
+To say s:
+	if prior named object is the player:
+		if the story viewpoint is first person singular or the story viewpoint is third person singular:
+			say nothing;
+		if the story viewpoint is second person singular:
+			say "s";
+		if the story viewpoint is first person plural:
+			say "mos";
+		if the story viewpoint is second person plural or the story viewpoint is third person plural:
+			say "n";
+	otherwise:
+		if prior named object is plural-named:
+			say "s".
+
+
+
 
 Section 1 - Standard actions concerning the actor's possessions
 
+[Taking inventory , Taking , Removing it from , Dropping , Putting it on , Inserting it into , Eating ]
+
+
 [ Taking inventory ]
+
     print empty inventory rule response (A) is "No [llevas] nada.".
     print standard inventory rule response (A) is "[Tu] [llevas][plm]:[line break]".
     report other people taking inventory rule response (A) is "[The actor] consulta su inventario.".
 
 
 [ Taking ]
+
     can't take yourself rule response (A) is "Siempre te tienes a ti mism[o noun].".
     can't take other people rule response (A) is "No creo que [al noun] le gustara[n noun].".
     can't take component parts rule response (A) is "[regarding the noun]Parece que es parte [del whole].".
@@ -928,11 +1109,13 @@ Section 1 - Standard actions concerning the actor's possessions
 
 
 [ Removing it from ]
+
     can't remove what's not inside rule response (A) is "[regarding the noun]¡Pero si no está[n noun] ahí ahora!".
     can't remove from people rule response (A) is "[regarding the noun]Parece que pertenece [al owner].".
 
 
 [ Dropping ]
+
     can't drop yourself rule response (A) is "No puedes hacer algo así.".
     can't drop body parts rule response (A) is "No puedes dejar una parte de ti.".
     can't drop what's already dropped rule response (A) is "[The noun] ya está[n noun] allí.".
@@ -945,6 +1128,7 @@ Section 1 - Standard actions concerning the actor's possessions
 
 
 [ Putting it on ]
+
 [    can't put what's not held rule response (A) is "Necesitas tener [the noun] para poder poner [lo noun] donde sea.".][deprecated]
     can't put something on itself rule response (A) is "No puedes poner un objeto sobre sí mismo.".
     can't put onto what's not a supporter rule response (A) is "Poner cosas sobre [the second noun] no servirá de nada.".
@@ -955,6 +1139,7 @@ Section 1 - Standard actions concerning the actor's possessions
 
 
 [ Inserting it into ]
+
     can't insert something into itself rule response (A) is "No puedes poner un objeto dentro de sí mismo.".
     can't insert into closed containers rule response (A) is "[The second noun] está[n noun] cerrad[o noun].".
     can't insert into what's not a container rule response (A) is "No se pueden meter cosas dentro [del second noun].".
@@ -965,6 +1150,7 @@ Section 1 - Standard actions concerning the actor's possessions
 
 
 [ Eating ]
+
     can't eat unless edible rule response (A) is "Eso es simplemente incomestible.".
     can't eat clothing without removing it first rule response (A) is "(primero te quitas [the noun])[command clarification break]".
     can't eat other people's food rule response (A) is "[Al owner] puede que no le guste.".
@@ -972,10 +1158,15 @@ Section 1 - Standard actions concerning the actor's possessions
     standard report eating rule response (B) is "[The actor] se come [the noun].".
 
 
+
+
 Section 2 - Standard actions which move the actor
+
 [Going , Entering , Exiting , Getting off]
 
+
 [ Going ]
+
     stand up before going rule response (A) is "(saliendo primero de [the chaise])[command clarification break]".
     can't travel in what's not a vehicle rule response (A) is "Tienes que bajarte [del nonvehicle] primero.".
     can't travel in what's not a vehicle rule response (B) is "Tienes que salirte [del nonvehicle] primero.".
@@ -1005,6 +1196,7 @@ Section 2 - Standard actions which move the actor
 
 
 [ Entering ]
+
     can't enter what's already entered rule response (A) is "Pero si ya estás sobre [the noun].".
     can't enter what's already entered rule response (B) is "Pero si ya estás en [the noun].".
 [    can't enter what's not enterable rule response (A) is "No es algo donde puedas stand on.".
@@ -1025,6 +1217,7 @@ Section 2 - Standard actions which move the actor
     
 
 [ Exiting ]
+
     can't exit when not inside anything rule response (A) is "No estás en ningún sitio del que debas salir.".
     can't exit closed containers rule response (A) is "No puedes salir [del cage] porque está cerrad[o cage].".
     standard report exiting rule response (A) is "Bajas [del container exited from].".
@@ -1033,14 +1226,20 @@ Section 2 - Standard actions which move the actor
 
 
 [ Getting off ]
+
     can't get off things rule response (A) is "Pero si no estás en [the noun].".
     standard report getting off rule response (A) is "[if the actor is the player]Sales[otherwise][The actor] sale[end if] [del noun].".
 
 
+
+
 Section 3 - Standard actions concerning the actor's vision
+
 [Looking , Examining , Looking under , Searching , Consulting it about ]
 
+
 [ Looking ]
+
     room description heading rule response (A) is "Oscuridad".
     room description heading rule response (B) is " (sobre [the intermediate level])".
     room description heading rule response (C) is " (en [the intermediate level])".
@@ -1049,6 +1248,7 @@ Section 3 - Standard actions concerning the actor's vision
 
 
 [ Examining ]
+
     examine directions rule response (A) is "No ves nada en especial al mirar en esa dirección.".
     examine containers rule response (A) is "En [the noun] ".
     examine containers rule response (B) is "[The noun] está[n noun] vací[o noun].".
@@ -1059,11 +1259,13 @@ Section 3 - Standard actions concerning the actor's vision
 
 
 [ Looking under ]
+
     standard looking under rule response (A) is "No ves nada interesante.".
     report other people looking under rule response (A) is "[The actor] mira debajo [del noun].".
 
 
 [ Searching ]
+
     can't search unless container or supporter rule response (A) is "No encuentras nada interesante.".
     can't search closed opaque containers rule response (A) is "No puedes ver lo que hay dentro [del noun] porque está[n noun] cerrado[s noun].".
     standard search containers rule response (A) is "En [the noun] ".
@@ -1074,31 +1276,312 @@ Section 3 - Standard actions concerning the actor's vision
 
 
 [ Consulting it about ]
+
     block consulting rule response (A) is "No descubres nada interesante en [the noun] sobre este tema.".
     block consulting rule response (B) is "[The actor] consulta [the noun].".
 
 
+
+
+
 Section 4 - Standard actions which change the state of things
+
 [Locking it with , Unlocking it with , Switching on , Switching off , Opening , Closing , Wearing , Taking off ]
 
 [------------------------------------------------------]
-[Hasta aquí no se tuvo en cuenta texto adaptativo]
+[Hasta aquí no se tuvo en cuenta texto adaptativo, (y despues tampoco)]
+
 
 [ Locking it with ]
-    can't lock without a lock rule response (A) is "[regarding the noun]No parece[n noun] tener ningún tipo de cerrojo.".
-    can't lock what's already locked rule response (A) is "[regarding the noun][The noun] ya estaba cerrad[o noun].".
+
+    can't lock without a lock rule response (A) is "[regarding the noun]No parece[n] tener ningún tipo de cerrojo.".
+    can't lock what's already locked rule response (A) is "[regarding the noun][The noun] ya estaba cerrad[o].".
     can't lock what's open rule response (A) is "Primero [tu] [tienes] que cerrar [the noun].".
-    can't lock without the correct key rule response (A) is "[regarding the second noun]No parece[n second noun], encajar en la cerradura.".
+    can't lock without the correct key rule response (A) is "[regarding the second noun]No parece[n], encajar en la cerradura.".
     standard report locking rule response (A) is "Cierras [the noun].".
     standard report locking rule response (B) is "[The actor] cierra [the noun].".
 
 
-Standard report waiting rule response (A) is "El tiempo pasa...".
+[ Unlocking it with ]
+
+can't unlock without a lock rule response (A) is "No [regarding the noun]parece[n] tener ningún tipo de cerrojo.".
+can't unlock what's already unlocked rule response (A) is "[El noun] ya tenía abierto el cerrojo.".
+can't unlock without the correct key rule response (A) is "No [regarding the second noun]parece[n] encajar en la cerradura.".
+standard report unlocking rule response (A) is "[Tu] [quitas] el cerrojo [al noun].[plm]".
+standard report unlocking rule response (B) is "[El actor] quita el cerrojo [al noun].".
+
+
+[ Switching on ]
+
+can't switch on unless switchable rule response (A) is "No es algo que pueda encenderse.".
+can't switch on what's already on rule response (A) is "Ya [regarding the noun]estaba[n] encendid[o].".
+standard report switching on rule response (A) is "[El actor] enciendes [el noun].".
+
+
+[ Switching off ]
+
+can't switch off unless switchable rule response (A) is "No es algo pueda apagarse.".
+can't switch off what's already off rule response (A) is "Ya [regarding the noun] estaba apagad[o].".
+standard report switching off rule response (A) is "[El actor] apaga [el noun].".
+
+
+[ Opening ]
+
+can't open unless openable rule response (A) is "No es algo que pueda abrirse.".
+can't open what's locked rule response (A) is "[regarding the noun]Está[n] cerrad[o] con llave.".
+can't open what's already open rule response (A) is "Ya [regarding the noun]esta[n] abiert[o].".
+reveal any newly visible interior rule response (A) is "Abres [el noun], descubriendo ".
+standard report opening rule response (A) is "Abres [el noun].".
+standard report opening rule response (B) is "[El actor] abre [el noun].".
+standard report opening rule response (C) is "[El noun] se abre.".
+
+
+[ Closing ]
+
+can't close unless openable rule response (A) is "No es algo que pueda cerrarse.".
+can't close what's already closed rule response (A) is "Ya [regarding the noun]esta[n] cerrad[o].".
+standard report closing rule response (A) is "Cierras [el noun].".
+standard report closing rule response (B) is "[El actor] cierra [el noun].".
+standard report closing rule response (C) is "[El noun] se cierra.".
+
+[ Wearing ]
+
+can't wear what's not clothing rule response (A) is "¡No puedes ponerte eso!".
+can't wear what's not held rule response (A) is "¡No [regarding the noun]l[o] tienes!".
+can't wear what's already worn rule response (A) is "¡Ya [regarding the noun]l[o] llevas puest[o]!".
+standard report wearing rule response (A) is "Te pones [el noun].".
+standard report wearing rule response (B) is "[El actor] se pone [el noun].".
+
+[ Taking off ] [i6 Disrobe]
+
+can't take off what's not worn rule response (A) is "No llevas puesto eso.".
+can't exceed carrying capacity when taking off rule response (A) is "Llevas demasiadas cosas.".
+standard report taking off rule response (A) is "Te quitas [el noun].".
+standard report taking off rule response (B) is "[El actor] se quita [el noun].".
+
+
+
+
+Section 5 - Standard actions concerning other people
+
+[Giving it to , Showing it to , Waking , Throwing it at , Attacking , Kissing , Answering it that ,
+Telling it about , Asking it about , Asking it for]
+
+[ Giving it to ]
+
+can't give what you haven't got rule response (A) is "No tienes [el noun].".
+can't give to yourself rule response (A) is "No puedes darte [el noun] a tí mismo.".
+can't give to a non-person rule response (A) is "[El second noun] no puede recibir cosas.".
+can't give clothes being worn rule response (A) is "(primero te quitas [el noun])[command clarification break]".
+block giving rule response (A) is "[El second noun] no parece[n] interesad[o].".
+can't exceed carrying capacity when giving rule response (A) is "[El second noun] está[n] llevando demasiadas cosas.".
+standard report giving rule response (A) is "Le das [el noun] [al second noun].".
+standard report giving rule response (B) is "[El actor] te da [el second noun].".
+standard report giving rule response (C) is "[El actor] da [el noun] [al second noun].".
+
+
+[ Showing it to ]
+
+can't show what you haven't got rule response (A) is "No tienes [el noun].".
+block showing rule response (A) is "[El second noun] no muestra interés.".
+
+
+[ Waking ]
+
+block waking rule response (A) is "Eso parece innecesario.".
+
+
+[ Throwing it at ]
+
+implicitly remove thrown clothing rule response (A) is "(primero te quitas [el noun])[command clarification break]".
+futile to throw things at inanimate objects rule response (A) is "No serviría de nada.".
+block throwing at rule response (A) is "En el último momento te echas atrás.".
+
+
+[ Attacking ]
+
+block attacking rule response (A) is "La violencia no es la solución.".
+
+
+[ Kissing ]
+
+kissing yourself rule response (A) is "Nno conseguirás mucho con eso.".
+block kissing rule response (A) is "[Al noun] podría no gustarle[s] eso.".
+
+
+[ Answering it that ]
+
+block answering rule response (A) is "No hay respuesta.".
+
+
+[ Telling it about ]
+
+telling yourself rule response (A) is "Hablas sol[o] durante un rato.".
+block telling rule response (A) is "No has provocado ninguna reacción."
+
+
+[ Asking it about ]
+block asking rule response (A) is "No hay respuesta.".
+
+
+[ Asking it for ]
+[no tiene]
+
+
+
+
+Section 6 - Standard actions which are checked but then do nothing unless rules intervene
+
+[Waiting , Touching , Waving , Pulling , Pushing , Turning , Pushing it to , Squeezing ]
+
+[ Waiting ]
+
+standard report waiting rule response (A) is "El tiempo pasa...". [Pasa el tiempo...]
+standard report waiting rule response (B) is "[El actor] deja pasar el tiempo.".
+
+
+[ Touching ]
+
+report touching yourself rule response (A) is "No logras nada con eso.". [¡Las manos quietas!]
+report touching yourself rule response (B) is "[El actor] se toca[n] a si mism[o].". [[El actor] se toca impúdicamente.]
+report touching other people rule response (A) is "[Al noun] podría no gustarle[s] eso.".
+report touching other people rule response (B) is "[El actor] te toca[n].". [[El actor] no puede[n] reprimir el deseo de tocarte.]
+report touching other people rule response (C) is "[El actor] toca[n] [el noun].".
+report touching things rule response (A) is "No notas nada extraño al tacto.".
+report touching things rule response (B) is "[El actor] toca[n] [el noun].".
+
+
+[ Waving ]
+
+can't wave what's not held rule response (A) is "Pero no [regarding the noun]l[o] tienes.". [No [regarding the noun]l[o] tienes.]
+report waving things rule response (A) is "Agitas [el noun].". [Te sientes [regarding the noun]ridícul[o] agitando [el noun].]
+report waving things rule response (B) is "[El actor] agita[n] [el noun].".
+
+
+[ Pulling ]
+
+can't pull what's fixed in place rule response (A) is "[regarding the noun]Está[n] firmemente sujet[o].".
+can't pull scenery rule response (A) is "No eres capaz.".
+can't pull people rule response (A) is "[Al noun] podría no gustarle[s] eso.". [Eso sería como poco maleducado.]
+report pulling rule response (A) is "No ocurre nada, aparentemente.".
+report pulling rule response (B) is "[El actor] tira[n] [del noun].".
+
+
+[ Pushing ]
+
+can't push what's fixed in place rule response (A) is "[regarding the noun]Está[n] firmemente sujet[o].".
+can't push scenery rule response (A) is "No eres capaz.".
+can't push people rule response (A) is "[Al noun] podría no gustarle[s] eso.".
+report pushing rule response (A) is "No ocurre nada, aparentemente.".
+report pushing rule response (B) is "[El actor] empuja[n] [el noun].".
+
+
+[ Turning ]
+
+can't turn what's fixed in place rule response (A) is "[regarding the noun]Está[n] firmemente sujet[o].".
+can't turn scenery rule response (A) is "No eres capaz.".
+can't turn people rule response (A) is "[Al noun] podría no gustarle[s] eso.".
+report turning rule response (A) is "No ocurre nada, aparentemente.".
+report turning rule response (B) is "[El actor] gira[n] [el noun].".
+
+
+[ Pushing it to ]
+
+can't push unpushable things rule response (A) is "[El noun] no puede[n] ser empujad[o] de un lugar a otro.". [No creo que empujar [el noun] sirva para nada.]
+can't push to non-directions rule response (A) is "Eso no es una dirección.".
+can't push vertically rule response (A) is "[El noun] no puede[n] ser empujad[o] hacia arriba o hacia abajo.". [¿Sería lo mismo que levantar/bajar?]
+can't push from within rule response (A) is "[El noun] no puede ser empujado desde aquí.".
+block pushing in directions rule response (A) is "[El noun] no puede[n] ser empujad[o] de un lugar a otro.".
+
+
+[ Squeezing ]
+
+innuendo about squeezing people rule response (A) is "[Al noun] podría no gustarle[s] eso.".
+report squeezing rule response (A) is "No logras nada con eso.".
+report squeezing rule response (B) is "[El actor] retuerce[n] [el noun].".
+
+
+
+
+Section 7 - Standard actions which always do nothing unless rules intervene
+
+[Saying yes , Saying no , Burning , Waking up , Thinking , Smelling , Listening to , Tasting ,
+Cutting , Jumping , Tying it to , Drinking , Saying sorry , Swinging , Rubbing , Setting it to ,
+Waving hands , Buying , Climbing , Sleeping]
+
+[ Saying yes ]
+block saying yes rule response (A) is "Sólo era una pregunta retórica.".
+
+[ Saying no ]
+block saying no rule response (A) is "Sólo era una pregunta retórica.".
+
+[ Burning ]
+block burning rule response (A) is "Con esa peligrosa acción no lograrías nada.".
+
+[ Waking up ]
+block waking up rule response (A) is "La cruda realidad es que esto no es un sueño.".
+
+[ Thinking ]
+block thinking rule response (A) is "Vaya. Qué buena idea.".
+
+[ Smelling ]
+report smelling rule response (A) is "No hueles nada extraño.".
+report smelling rule response (B) is "[El actor] huele el ambiente.".
+
+[ Listening to ]
+report listening rule response (A) is "No escuchas nada fuera de lo común.".
+report listening rule response (B) is "[El actor] presta[n] atención a lo que escucha[n].".
+
+[ Tasting ]
+report tasting rule response (A) is "No saboreas nada raro.".
+report tasting rule response (B) is "[El actor] saborea[n] [el noun].".
+
+[ Cutting ]
+block cutting rule response (A) is "[regarding the noun]Cortándol[o] no lograrás gran cosa.".
+
+[ Jumping ]
+report jumping rule response (A) is "Saltas en el sitio.". [Saltas en el sitio, sin ningún resultado.]
+report jumping rule response (B) is "[El actor] salta[n] en el sitio".
+
+[ Tying it to ]
+block tying rule response (A) is "No lograrás nada con eso.".
+
+[ Drinking ]
+block drinking rule response (A) is "Eso no parece potable.". [¿O es "No hay nada potable para beber aquí"?]
+
+[ Saying sorry ]
+block saying sorry rule response (A) is "Oh, no es necesario que te disculpes.".
+
+[ Swinging ]
+block swinging rule response (A) is "No [if noun is plural-named]son[otherwise]es[end if] [regarding the noun]adecuad[o] para culimpiarse.".
+
+[ Rubbing ]
+can't rub another person rule response (A) is "[Al noun] podría[n] no gustarle[s] eso.".
+report rubbing rule response (A) is "Frotas [el noun].".
+report rubbing rule response (B) is "[El actor] frota[n] [el noun].".
+
+[ Setting it to ]
+block setting it to rule response (A) is "Eso no puede setearse a ningún valor.".
+
+[ Waving hands ]
+report waving hands rule response (A) is "Ondeas las manos.".
+report waving hands rule response (B) is "[El actor] ondea[n] las manos.".
+
+[ Buying ]
+block buying rule response (A) is "No hay nada en venta.".
+
+[ Climbing ]
+block climbing rule response (A) is "No creo que vayas a lograr nada así.".
+
+[ Sleeping ]
+block sleeping rule response (A) is "No estás especialmente [regarding the player]somnolient[o].".
 
 
 
 Section 8 - Standard actions which happen out of world
+
 [Quitting the game , Saving the game , Restoring the game , Restarting the game , Verifying the story file , Switching the story transcript on , Switching the story transcript off , Requesting the story file version , Requesting the score , Preferring abbreviated room descriptions , Preferring unabbreviated room descriptions , Preferring sometimes abbreviated room descriptions , Switching score notification on , Switching score notification off , Requesting the pronoun meanings ]
+
 
 [Quitting the game ]
 	quit the game rule response (A) is "¿Seguro que quieres abandonar el juego? ".
@@ -1120,10 +1603,13 @@ Section 8 - Standard actions which happen out of world
 
 
 [ Verifying the story file ]
+
 	verify the story file rule response (A) is "Fichero de juego verificado e intacto.".
 	verify the story file rule response (B) is "El fichero de juego no parece intacto, puede estar corrompido (a menos que estés jugando con un intérprete muy primitivo que no sea capaz de realizar la comprobación).".
 
+
 [ Switching the story transcript off ]
+
 switch the story transcript off rule response (A) is "La transcripción ya estaba desactivada.".
 switch the story transcript off rule response (B) is "[line break]Fin de la transcripción.".
 switch the story transcript off rule response (C) is "Intento fallido de finalización de transcripción.".
@@ -1131,35 +1617,50 @@ switch the story transcript off rule response (C) is "Intento fallido de finaliz
 [ Requesting the story file version ]
 [ ]
 
+
 [ Requesting the score ]
+
 announce the score rule response (A) is "[if the story has ended]En este relato, tu puntuación ha sido[otherwise]Hasta el momento tu puntuación es[end if] [score] de un total de [maximum score], en [turn count] turno[s]". [¿Juego o historia? A veces es juego, otras veces historia (como la (c) abajo). No entiendo. Me decanto por 'relato']
 announce the score rule response (B) is ", logrando el rango de ".
 announce the score rule response (C) is "No hay puntuación en esta historia.". [Este juego no tiene conteo de puntuación.]
 announce the score rule response (D) is "[bracket]Tu puntuación ha aumentado en [number understood in words] punto[s].[close bracket]".
 announce the score rule response (E) is "[bracket]Tu puntuación ha disminuido en [number understood in words] punto[s].[close bracket]".
 
+
 [ Preferring abbreviated room descriptions ]
+
 standard report preferring abbreviated room descriptions rule response (A) is " está ahora en su modo 'superbreve', que siempre da descripciones cortas de los lugares (incluso si nunca habías estado antes).".
 
+
 [ Preferring unabbreviated room descriptions ]
+
 standard report preferring unabbreviated room descriptions rule response (A) is " está ahora en su modo 'largo', que siempre da descripciones largas de los lugares (incluso si ya habías estado antes).".
 
+
 [ Preferring sometimes abbreviated room descriptions ]
+
 standard report preferring sometimes abbreviated room descriptions rule response (A) is " está ahora en su modo normal 'breve', que da sólo descripciones largas de los lugares la primera vez que son visitados, y descripciones cortas en otro caso.".
 
+
 [ Switching score notification on ]
+
 [standard report switching score notification on rule response (A) is "Score notification on.".]
 standard report switching score notification on rule response (A) is "Notificación de puntuación activada.".
 
+
 [ Switching score notification off ]
+
 [standard report switching score notification off rule response (A) is "Score notification off.".]
 standard report switching score notification off rule response (A) is "Notificación de puntuación desactivada.".
 
+
 [ Requesting the pronoun meanings ]
+
 announce the pronoun meanings rule response (A) is "En este momento, ".
 announce the pronoun meanings rule response (B) is "es ".
 announce the pronoun meanings rule response (C) is "no está definido".
 announce the pronoun meanings rule response (D) is "esta historia no conoce ningún pronombre.".
+
 
 
 Part 3.2 - The Final Question
@@ -1359,7 +1860,7 @@ To say es-ves:
     print protagonist internal rule response (C) is "[our] anterior tú".
 
 [Section  18 - Standard implicit taking rule]
-    standard implicit taking rule response (A) is "(primero coge [the noun])[command clarification break]".
+    standard implicit taking rule response (A) is "(primero coges [the noun])[command clarification break]".
     standard implicit taking rule response (B) is "([the second noun] primero coge [the noun])[command clarification break]".
 
 [Section  20 - Immediately undo rule]
