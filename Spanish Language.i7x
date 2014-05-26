@@ -1,4 +1,4 @@
-Version 1/140517 of Spanish Language by Sebastian Arg begins here.
+Version 1/140526 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
@@ -1031,7 +1031,6 @@ In Spanish llevar is a verb.
 In Spanish tener is a verb.
 In Spanish quitar is a verb.
 
-[TEMPORAL]
 [TERMINACIONES SEGUN OBJETO]
 
 
@@ -1046,6 +1045,19 @@ To say o:
 			say "a";
 		otherwise:
 			say "o".
+
+
+To say lo:
+	if prior named object is plural-named or the player is plural-named:
+		if prior named object is female:
+			say "las";
+		otherwise:
+			say "los";
+	otherwise:
+		if prior named object is female:
+			say "la";
+		otherwise:
+			say "lo".
 
 To say n:
 	if prior named object is the player:
@@ -1092,25 +1104,25 @@ Section 1 - Standard actions concerning the actor's possessions
 
 [ Taking ]
 
-    can't take yourself rule response (A) is "Siempre te tienes a ti mism[o noun].".
+    can't take yourself rule response (A) is "Siempre te tienes a ti mism[o].".
     can't take other people rule response (A) is "No creo que [al noun] le gustara[n noun].".
     can't take component parts rule response (A) is "[regarding the noun]Parece que es parte [del whole].".
     can't take people's possessions rule response (A) is "[regarding the noun]Parece que pertenece [al owner].".
-    can't take items out of play rule response (A) is "[regarding the noun]No [esta noun] disponible[s noun].".
+    can't take items out of play rule response (A) is "[regarding the noun]No está[n] disponible[s].".
     can't take what you're inside rule response (A) is "Tienes que [if noun is a supporter]bajarte[otherwise]salirte[end if] primero.".
     can't take what's already taken rule response (A) is "Ya tienes [regarding the noun][the noun].".
     can't take scenery rule response (A) is "Difícilmente podrías llevarte eso.".
     can only take things rule response (A) is "No puedes llevarte eso.".
-    can't take what's fixed in place rule response (A) is "[regarding the noun][The noun] está fij[o noun] en el sitio.".
+    can't take what's fixed in place rule response (A) is "[regarding the noun][The noun] está fij[o] en el sitio.".
 [    use player's holdall to avoid exceeding carrying capacity rule response (A) is "(colocas [the transferred item] en [the current working sack] para hacer sitio)[command clarification break]".]
     can't exceed carrying capacity rule response (A) is "Ya llevas demasiadas cosas.".
-    standard report taking rule response (A) is "Cogid[o noun].".
+    standard report taking rule response (A) is "Cogid[o].".
     standard report taking rule response (B) is "[The actor] toma [the noun].".
 
 
 [ Removing it from ]
 
-    can't remove what's not inside rule response (A) is "[regarding the noun]¡Pero si no está[n noun] ahí ahora!".
+    can't remove what's not inside rule response (A) is "[regarding the noun]¡Pero si no está[n] ahí ahora!".
     can't remove from people rule response (A) is "[regarding the noun]Parece que pertenece [al owner].".
 
 
@@ -1118,21 +1130,21 @@ Section 1 - Standard actions concerning the actor's possessions
 
     can't drop yourself rule response (A) is "No puedes hacer algo así.".
     can't drop body parts rule response (A) is "No puedes dejar una parte de ti.".
-    can't drop what's already dropped rule response (A) is "[The noun] ya está[n noun] allí.".
-    can't drop what's not held rule response (A) is "Para dejar[lo noun] deberías tener[lo noun].".
+    can't drop what's already dropped rule response (A) is "[The noun] ya está[n] allí.".
+    can't drop what's not held rule response (A) is "Para dejarl[o] deberías tenerl[o].".
     can't drop clothes being worn rule response (A) is "(primero te quitas [the noun])[command clarification break]".
     can't drop if this exceeds carrying capacity rule response (A) is "No hay más lugar sobre [the receptacle].".
     can't drop if this exceeds carrying capacity rule response (B) is "No hay más lugar en [the receptacle].".
-    standard report dropping rule response (A) is "Dejad[o noun].".
+    standard report dropping rule response (A) is "Dejad[o].".
     standard report dropping rule response (B) is "[The actor] deja [the noun].".
 
 
 [ Putting it on ]
 
-[    can't put what's not held rule response (A) is "Necesitas tener [the noun] para poder poner [lo noun] donde sea.".][deprecated]
+[    can't put what's not held rule response (A) is "Necesitas tener [the noun] para poder ponerl[o] donde sea.".][deprecated]
     can't put something on itself rule response (A) is "No puedes poner un objeto sobre sí mismo.".
     can't put onto what's not a supporter rule response (A) is "Poner cosas sobre [the second noun] no servirá de nada.".
-    can't put clothes being worn rule response (A) is "(primero te [lo noun] quitas)[command clarification break]".
+    can't put clothes being worn rule response (A) is "(primero te [lo] quitas)[command clarification break]".
     can't put if this exceeds carrying capacity rule response (A) is "No queda sitio en [the second noun].".
     concise report putting rule response (A) is "Hecho.".
     standard report putting rule response (A) is "[if the actor is the player]Pones[otherwise][The actor] pone[end if] [the noun] sobre [the second noun].".
@@ -1141,9 +1153,9 @@ Section 1 - Standard actions concerning the actor's possessions
 [ Inserting it into ]
 
     can't insert something into itself rule response (A) is "No puedes poner un objeto dentro de sí mismo.".
-    can't insert into closed containers rule response (A) is "[The second noun] está[n noun] cerrad[o noun].".
+    can't insert into closed containers rule response (A) is "[The second noun] está[n] cerrad[o].".
     can't insert into what's not a container rule response (A) is "No se pueden meter cosas dentro [del second noun].".
-    can't insert clothes being worn rule response (A) is "(primero te [lo noun] quitas)[command clarification break]".
+    can't insert clothes being worn rule response (A) is "(primero te [lo] quitas)[command clarification break]".
     can't insert if this exceeds carrying capacity rule response (A) is "No queda sitio en [the second noun].".
     concise report inserting rule response (A) is "Hecho.".
     standard report inserting rule response (A) is "[if the actor is the player]Pones[otherwise][The actor] pone[end if] [the noun] dentro [del second noun].".
@@ -1154,7 +1166,7 @@ Section 1 - Standard actions concerning the actor's possessions
     can't eat unless edible rule response (A) is "Eso es simplemente incomestible.".
     can't eat clothing without removing it first rule response (A) is "(primero te quitas [the noun])[command clarification break]".
     can't eat other people's food rule response (A) is "[Al owner] puede que no le guste.".
-    standard report eating rule response (A) is "Te comes [the noun]. No está[n noun] mal.".
+    standard report eating rule response (A) is "Te comes [the noun]. No está[n] mal.".
     standard report eating rule response (B) is "[The actor] se come [the noun].".
 
 
@@ -1203,7 +1215,7 @@ Section 2 - Standard actions which move the actor
     can't enter what's not enterable rule response (B) is "[regarding the noun][They're] not something [we] [can] sit down on.".
     can't enter what's not enterable rule response (C) is "[regarding the noun][They're] not something [we] [can] lie down on.".]
     can't enter what's not enterable rule response (D) is "No es algo donde puedas entrar.".
-    can't enter closed containers rule response (A) is "No puedes entrar en [the noun] porque está[n noun] cerrad[o noun].".
+    can't enter closed containers rule response (A) is "No puedes entrar en [the noun] porque está[n] cerrad[o].".
     can't enter something carried rule response (A) is "No puedes entrar ahí mientras no lo sueltes.".
     implicitly pass through other barriers rule response (A) is "(te bajas [del holder of the actor])[command clarification break]".
     implicitly pass through other barriers rule response (B) is "(sales [del holder of the actor])[command clarification break]".
@@ -1251,9 +1263,9 @@ Section 3 - Standard actions concerning the actor's vision
 
     examine directions rule response (A) is "No ves nada en especial al mirar en esa dirección.".
     examine containers rule response (A) is "En [the noun] ".
-    examine containers rule response (B) is "[The noun] está[n noun] vací[o noun].".
+    examine containers rule response (B) is "[The noun] está[n] vací[o].".
     examine supporters rule response (A) is "Sobre [the noun] ".
-    examine devices rule response (A) is "[The noun] está[n noun] [if the noun is switched on]encendid[o noun][otherwise]apagad[o noun][end if].".
+    examine devices rule response (A) is "[The noun] está[n] [if the noun is switched on]encendid[o][otherwise]apagad[o][end if].".
     examine undescribed things rule response (A) is "No observas nada especial en [the noun].".
     report other people examining rule response (A) is "[The actor] mira de cerca [al noun].".
 
@@ -1267,9 +1279,9 @@ Section 3 - Standard actions concerning the actor's vision
 [ Searching ]
 
     can't search unless container or supporter rule response (A) is "No encuentras nada interesante.".
-    can't search closed opaque containers rule response (A) is "No puedes ver lo que hay dentro [del noun] porque está[n noun] cerrado[s noun].".
+    can't search closed opaque containers rule response (A) is "No puedes ver lo que hay dentro [del noun] porque está[n] cerrado[s noun].".
     standard search containers rule response (A) is "En [the noun] ".
-    standard search containers rule response (B) is "[The noun] está[n noun] vací[o noun].".
+    standard search containers rule response (B) is "[The noun] está[n] vací[o].".
     standard search supporters rule response (A) is "Sobre [the noun] ".
     standard search supporters rule response (B) is "No hay nada sobre [the noun].".
     report other people searching rule response (A) is "[The actor] busca [al noun].".
@@ -1746,18 +1758,18 @@ carry out requested actions rule response (A) is "[The noun] no puede hace eso."
     list writer internal rule response (B) is ")".
     list writer internal rule response (C) is " y ".
     list writer internal rule response (D) is "alumbrando".
-    list writer internal rule response (E) is "cerrado [o noun]".
-    list writer internal rule response (F) is "vací[o noun]".
-    list writer internal rule response (G) is "cerrado [o noun] y vací[o noun]".
-    list writer internal rule response (H) is "cerrado [o noun] y alumbrando".
-    list writer internal rule response (I) is "vacío [o noun] y alumbrando".
-    list writer internal rule response (J) is "cerrado [o noun], vacío [o noun][if serial comma option is active],[end if] y alumbrando".
-    list writer internal rule response (K) is "(alumbrando y que llevas puest [o noun]".
-    list writer internal rule response (L) is "que llevas puest [o noun]".
-    list writer internal rule response (M) is "abiert[o noun]".
-    list writer internal rule response (N) is "abiert[o noun] y vací[o noun]".
-    list writer internal rule response (O) is "cerrado [o noun]".
-    list writer internal rule response (P) is "cerrado [o noun] con llave".
+    list writer internal rule response (E) is "cerrado [o]".
+    list writer internal rule response (F) is "vací[o]".
+    list writer internal rule response (G) is "cerrado [o] y vací[o]".
+    list writer internal rule response (H) is "cerrado [o] y alumbrando".
+    list writer internal rule response (I) is "vacío [o] y alumbrando".
+    list writer internal rule response (J) is "cerrado [o], vacío [o][if serial comma option is active],[end if] y alumbrando".
+    list writer internal rule response (K) is "(alumbrando y que llevas puest [o]".
+    list writer internal rule response (L) is "que llevas puest[o]".
+    list writer internal rule response (M) is "abiert[o]".
+    list writer internal rule response (N) is "abiert[o] y vací[o]".
+    list writer internal rule response (O) is "cerrado [o]".
+    list writer internal rule response (P) is "cerrado [o] con llave".
     list writer internal rule response (Q) is "que contiene".
     list writer internal rule response (R) is " ([if the noun is a person]encima [del_ noun][otherwise]sobre [el_ noun][end if]cual[s noun] ".
     list writer internal rule response (S) is ", [if the noun is a person]encima[otherwise]sobre[end if] del cual".
