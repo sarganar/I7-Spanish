@@ -1105,18 +1105,18 @@ Section 1 - Standard actions concerning the actor's possessions
 [ Taking ]
 
     can't take yourself rule response (A) is "Siempre te tienes a ti mism[o].".
-    can't take other people rule response (A) is "No creo que [al noun] le gustara[n noun].".
+    can't take other people rule response (A) is "No creo que [al noun] le gustara[n].".
     can't take component parts rule response (A) is "[regarding the noun]Parece que es parte [del whole].".
     can't take people's possessions rule response (A) is "[regarding the noun]Parece que pertenece [al owner].".
     can't take items out of play rule response (A) is "[regarding the noun]No está[n] disponible[s].".
     can't take what you're inside rule response (A) is "Tienes que [if noun is a supporter]bajarte[otherwise]salirte[end if] primero.".
-    can't take what's already taken rule response (A) is "Ya tienes [regarding the noun][the noun].".
+    can't take what's already taken rule response (A) is "Ya tienes [the noun].".
     can't take scenery rule response (A) is "Difícilmente podrías llevarte eso.".
     can only take things rule response (A) is "No puedes llevarte eso.".
-    can't take what's fixed in place rule response (A) is "[regarding the noun][The noun] está fij[o] en el sitio.".
+    can't take what's fixed in place rule response (A) is "[The noun] está fij[o] en el sitio.".
 [    use player's holdall to avoid exceeding carrying capacity rule response (A) is "(colocas [the transferred item] en [the current working sack] para hacer sitio)[command clarification break]".]
     can't exceed carrying capacity rule response (A) is "Ya llevas demasiadas cosas.".
-    standard report taking rule response (A) is "Cogid[o].".
+    standard report taking rule response (A) is "[regarding the noun]Cogid[o].".
     standard report taking rule response (B) is "[The actor] toma [the noun].".
 
 
@@ -1856,7 +1856,7 @@ To say es-ves:
     parser clarification internal rule response (A) is "¿Quién concretamente ".
     parser clarification internal rule response (B) is "¿Cuál concretamente, ".
     parser clarification internal rule response (C) is "Lo siento, sólo puedes referirte a un objeto aquí. ¿Cuál exactamente?".
-    parser clarification internal rule response (D) is "¿A quién [if the noun is not the player][the noun] tiene que [otherwise]quieres [end if] [parser command so far]?".
+    parser clarification internal rule response (D) is "¿A quién [if the noun is not the player][the noun] tiene que[otherwise]quieres[end if] [parser command so far]?".
     parser clarification internal rule response (E) is "¿Qué [if the noun is not the player][the noun] tiene que[otherwise]quieres[end if] [parser command so far]?".
     parser clarification internal rule response (F) is "esas cosas".
     parser clarification internal rule response (G) is "eso".
