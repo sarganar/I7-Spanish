@@ -1087,12 +1087,34 @@ To say s:
 		if prior named object is plural-named:
 			say "s".
 
+
 [DIALECTO SUDAMERICANO]
+
 Use Dialecto Castellano translates as (- Global dialecto_sudamericano = 0; Constant DIALECTO_SPANISH; !Set to Castellano -).
 Use Dialecto Sudamericano translates as (- Global dialecto_sudamericano = 1; Constant DIALECTO_SPANISH; !Set to Sudamericano -).
 
 To decide if Dialecto Sudamericano: (- dialecto_sudamericano -).
 To decide if Dialecto Castellano: (- dialecto_sudamericano==0 -).
+
+
+[PreguntaCualExactamente]
+To say set pregunta exacta: (- PreguntaCualExactamente=1; -).
+
+
+[parser command so far, hackeado, usado en Parser clarification internal rule]
+[
+To say parser command so far:
+	(- IdiomaImprimirComando(); -).
+[	(- PrintCommand(); -).]
+]
+
+
+[IniciarPregunta]
+[en casos de comandos incompletos, para ajustar correctamente la preposicion usada]
+
+To decide if no se inicia pregunta con preprosicion: (- IniciarPregunta()==0 -).
+
+
 
 
 Section 1 - Standard actions concerning the actor's possessions
@@ -1858,11 +1880,11 @@ To say es-ves:
     
 
 [Section  15 - Parser clarification internal rule]
-    parser clarification internal rule response (A) is "¿Quién concretamente ".
-    parser clarification internal rule response (B) is "¿Cuál concretamente, ".
+    parser clarification internal rule response (A) is "¿Quién concretamente [set pregunta exacta]".
+    parser clarification internal rule response (B) is "¿Cuál concretamente, [set pregunta exacta]".
     parser clarification internal rule response (C) is "Lo siento, sólo puedes referirte a un objeto aquí. ¿Cuál exactamente?".
-    parser clarification internal rule response (D) is "¿A quién [if the noun is not the player][the noun] tiene que[otherwise]quieres[end if] [parser command so far]?".
-    parser clarification internal rule response (E) is "¿Qué [if the noun is not the player][the noun] tiene que[otherwise]quieres[end if] [parser command so far]?".
+    parser clarification internal rule response (D) is "[if no se inicia pregunta con preprosicion]¿Qué[end if] [if the noun is not the player][the noun] tiene que[otherwise]quieres[end if] [parser command so far]?[set pregunta exacta]".
+    parser clarification internal rule response (E) is "¿Qué [if the noun is not the player][the noun] tiene que[otherwise]quieres[end if] [parser command so far]?[set pregunta exacta]".
     parser clarification internal rule response (F) is "esas cosas".
     parser clarification internal rule response (G) is "eso".
     parser clarification internal rule response (H) is " o ".
@@ -2252,6 +2274,9 @@ Understand "responde a [someone] [text]" as answering it that.
 Understand "responde [text] a [someone]" as answering it that (with nouns reversed). [TODO ¿como es el orden correcto?]
 Understand "responde [someone] [text]" as answering it that.
 Understand the commands "di","grita" and "dile" as "responde".
+
+
+Understand "cuenta con [someone]" as a mistake ("Debes mencionar el tema de que quieres hablar.").
 
 Understand "cuenta [someone] de/sobre [text]" as telling it about.
 Understand "cuenta [someone] [text]" as telling it about.
@@ -3081,6 +3106,7 @@ Include (-
     ! este caso se construiría la orden concatenada: "MIRA HACIA HACIA
     ! EL NORTE".
     if (PreguntaCualExactamente==1){
+        !print "PreguntaCualExactamente:",PreguntaCualExactamente;!debug
         PreguntaCualExactamente=0;
         EliminarDuplicados(buf, pars);
     }
@@ -3334,11 +3360,9 @@ Include (-
         !print "^   LanguageVerb: Verbo no es irregular.^"; ! infsp debug
       
       ! Tatar de matchear con la brújula - 807.7 infsp
-!      objectloop (aux ofclass CompassDirection){
       objectloop (aux in Compass){
         if (WordInProperty(i, aux, name)) {
           print "ir hacia algún lado";
-!          !LanguageDirection (aux.door_dir); ! the direction name as adverb
           rtrue; ! no avanzar más en la rutina
         }    
        }
@@ -3722,6 +3746,11 @@ Constant THAT__TX        = "eso";
 Section 12 - Otras rutinas
 
 Include (-
+Replace PrintCommand;
+-) after "Definitions.i6t". [ver seccion i6 que sigue]
+
+
+Include (-
 ! Cuando el usuario teclea un comando incompleto, es necesario que
 ! el parser genere un mensaje preguntando por lo que falta,
 ! pero la forma de preguntarlo depende del verbo. Por ej.:
@@ -3772,29 +3801,28 @@ Include (-
 [ IdiomaPreguntarPrep prepos action;
 
     if (PreguntarPreposicion(prepos, action)) return;
-!    print "^IPPrep: action: ", (DebugAction)action, "  Prepos: ",(address)prepos,"^"; ! infsp debug 
+    !print "^IPPrep: action: ", (DebugAction)action, "  Prepos: ",(address)prepos,"^"; ! infsp debug 
     switch (prepos)
     {
-     'de': 				print "De dónde";
+     'de':			print "De dónde";
      'en', 'dentro', 'encima': 	print "Dónde";
-     'bajo','debajo':		print "Debajo de qué";
+     'bajo','debajo':			print "Debajo de qué";
      'sobre', 'acerca':		print "Sobre qué";
-     'contra': 			print "Contra qué";
-     'hacia':				print "Hacia dónde";
+     'contra':	print "Contra qué";
+     'hacia':		print "Hacia dónde";
      'con':if (action==##Tell or ##Attack)  print "Con quién";
               else print "Con qué";
      'por':if (action==##Ask) 	print "Por qué";
               else print "Por dónde";
-     'una', 'un' : 			print "A quién";
+     'una', 'un' :				print "A quién";
      'a//':  switch(action){
-           ##Go:          	print "Hacia dónde";
-           ##Climb:      	print "Dónde";
-           ##ThrowAt, ##Give, ##Show, ##Answer, ##Tell, ##Ask:
-				print "A quién";
-           ##Search:		print "A través de qué";
-           ##Tie: 	        print "A qué"; 
-           ##Enter: 		print "A dónde";
-           default:         print "A quién";
+           ##Go:			print "Hacia dónde";
+           ##Climb:		print "Dónde";
+           ##ThrowAt, ##Give, ##Show, ##Answer, ##Tell, ##Ask:	print "A quién";
+           ##Search:	print "A través de qué";
+           ##Tie:			print "A qué"; 
+           ##Enter:		print "A dónde";
+           default:		print "A quién";
        };
     }
 ];
@@ -3810,16 +3838,19 @@ Include (-
 [ AveriguarPreposicion 
     i k p ;
 
+!		pattern: array que contiene las palabras reconocidas
+!		pcount: contador dentro de pattern
 !    print " ",pattern-->(pcount-1)," ^"; ![infsp] debug
+!    print "pcount:",pcount," ^"; ![infsp] debug
 
     p = NULL;
-    for (k=pcount:k>=1:k=k-1){ ! infsp tunnig, para evitar el menos menos que quiebra la sintaxis de Include
-!        print "^AP: k:",k; ! infsp debug
+    ! recorrido hacia atrás; apartir de pcount, posicion reconocida
+    for (k=pcount:k>=1:k=k-1){ !infsp tunnig, para evitar el menos menos que quiebra la sintaxis de Include
        i=pattern-->k;
-!        print "^ i:",(address)VM_NumberToDictionaryAddress(i-REPARSE_CODE); ! infsp debug 
+!        print "^AP: k:",k," i:",i," (i):",(address)VM_NumberToDictionaryAddress(i-REPARSE_CODE),"^"; ! infsp debug 
        if ( i == PATTERN_NULL) continue;
-       if (i>=REPARSE_CODE)
-           p=VM_NumberToDictionaryAddress(i-REPARSE_CODE);
+       if ( i >= REPARSE_CODE)
+           p=VM_NumberToDictionaryAddress(i-REPARSE_CODE);!asignar particula, será la conectada a tipo de pregunta segun contexto
     }
     return p;
 
@@ -3873,7 +3904,25 @@ Include (-
     
 ];
 
-[ IdiomaImprimirComando from i k spacing_flag prep;
+!|PrintCommand| reconstructs the command as it presently reads, from the
+!pattern which has been built up.
+
+!If |from| is 0, it starts with the verb: then it goes through the pattern.
+
+!The other parameter is |emptyf| -- a flag: if 0, it goes up to |pcount|:
+!if 1, it goes up to |pcount|-1.
+
+!Note that verbs and prepositions are printed out of the dictionary:
+!and that since the dictionary may only preserve the first six characters
+!of a word (in a V3 game), we have to hand-code the longer words needed.
+!At present, I7 doesn't do this, but it probably should.
+
+!(Recall that pattern entries are 0 for "multiple object", 1 for "special
+!word", 2 to |REPARSE_CODE-1| are object numbers and |REPARSE_CODE+n| means
+!the preposition |n|.)
+
+!IdiomaImprimirComando: hackeo spanish de PrintCommand(Parser.i6t)
+[ PrintCommand from i k spacing_flag prep;
 
   if (from==0)
   {   i=verb_word;
@@ -3886,11 +3935,11 @@ Include (-
   
   for (k=from:k<pcount:k++){
      i=pattern-->k;
-!     print "^IIC: i: ",  i, "^"; ! infsp debug
+     !print "^IIC: i: ",  i, "^"; ! infsp debug
       if (i == PATTERN_NULL) continue;
-!      if (spacing_flag) print (char) ' ';
-      if (i == 0 ) { print " ",(string) THOSET__TX; jump TokenPrinted; }
-      if (i == 1) { print " ",(string) THAT__TX;   jump TokenPrinted; }
+      if (spacing_flag) print (char) ' ';
+      if (i == 0) { PARSER_CLARIF_INTERNAL_RM('F'); jump TokenPrinted; }!viejo THOSET__TX
+      if (i == 1) { PARSER_CLARIF_INTERNAL_RM('G'); jump TokenPrinted; }!viejo THAT__TX
       if (i >= REPARSE_CODE) continue;
       else {
             if (i in compass && LanguageVerbLikesAdverb(verb_word))
@@ -3934,7 +3983,7 @@ Section 13 - Otras Acciones
 
 
 Include (-
-! Esto era parte de SpanishG.h -(Gramatica.h) GRAMATICA: Gramática española
+! Esto era parte de SpanishG.h (Gramatica.h) GRAMATICA: Gramática española
 
 #Stub PreguntarPreposicion 0;
 
