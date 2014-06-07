@@ -1140,7 +1140,7 @@ Section 1 - Standard actions concerning the actor's possessions
     can't drop clothes being worn rule response (A) is "(primero te quitas [the noun])[command clarification break]".
     can't drop if this exceeds carrying capacity rule response (A) is "No hay más lugar sobre [the receptacle].".
     can't drop if this exceeds carrying capacity rule response (B) is "No hay más lugar en [the receptacle].".
-    standard report dropping rule response (A) is "Dejad[o].".
+    standard report dropping rule response (A) is "[regarding the noun]Dejad[o].".
     standard report dropping rule response (B) is "[The actor] deja [the noun].".
 
 
