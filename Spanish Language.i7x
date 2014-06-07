@@ -465,8 +465,8 @@ Down translates into Spanish as abajo.
 Understand "o" as west.
 Understand "no" as northwest.
 Understand "so" as southwest.
-Understand "sube/techo/lado/cielo" as up.
-Understand "b/baja/suelo" as down.
+Understand "sube/techo/lado/cielo/asciende" as up.
+Understand "b/baja/suelo/desciende" as down.
 Understand "adentro" as inside. ['entra' no funciona aqui pues se superpone con verbo 'entra..']
 Understand "afuera" as outside.
 
@@ -496,7 +496,7 @@ A thing translates into Spanish as un objeto.
 A door translates into Spanish as una puerta.
 A container translates into Spanish as un contenedor.
 A vehicle translates into Spanish as un vehículo.
-A player's holdall translates into Spanish as un bolsa.
+A player's holdall translates into Spanish as una bolsa.
 A supporter translates into Spanish as un soporte.
 A backdrop translates into Spanish as un decorado.
 A person translates into Spanish as una persona.
@@ -506,6 +506,16 @@ A animal translates into Spanish as un animal.
 A device translates into Spanish as un dispositivo.
 A direction translates into Spanish as una dirección.
 A region translates into Spanish as una región.
+
+Section 2.2.5.2 - In Rideable Vehicles (for use with Rideable Vehicles by Graham Nelson)
+
+A rideable animal translates into Spanish as un animal montable.
+A rideable vehicle translates into Spanish as un vehículo montable.
+
+Section 2.2.5.3 - In Locksmith (for use with Locksmith by Emily Short)
+
+A passkey translates into Spanish as una llave maestra.
+A keychain translates into Spanish as un llavero.
 
 Chapter 2.2.6 - Plurals
 
