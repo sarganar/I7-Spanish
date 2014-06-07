@@ -1,4 +1,4 @@
-Version 1/140526 of Spanish Language by Sebastian Arg begins here.
+Version 1/140607 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
@@ -1087,7 +1087,12 @@ To say s:
 		if prior named object is plural-named:
 			say "s".
 
+[DIALECTO SUDAMERICANO]
+Use Dialecto Castellano translates as (- Global dialecto_sudamericano = 0; Constant DIALECTO_SPANISH; !Set to Castellano -).
+Use Dialecto Sudamericano translates as (- Global dialecto_sudamericano = 1; Constant DIALECTO_SPANISH; !Set to Sudamericano -).
 
+To decide if Dialecto Sudamericano: (- dialecto_sudamericano -).
+To decide if Dialecto Castellano: (- dialecto_sudamericano==0 -).
 
 
 Section 1 - Standard actions concerning the actor's possessions
@@ -1105,7 +1110,7 @@ Section 1 - Standard actions concerning the actor's possessions
 [ Taking ]
 
     can't take yourself rule response (A) is "Siempre te tienes a ti mism[o].".
-    can't take other people rule response (A) is "No creo que [al noun] le gustara[n].".
+    can't take other people rule response (A) is "No creo que [al noun] le[s] gustara[n].".
     can't take component parts rule response (A) is "[regarding the noun]Parece que es parte [del whole].".
     can't take people's possessions rule response (A) is "[regarding the noun]Parece que pertenece [al owner].".
     can't take items out of play rule response (A) is "[regarding the noun]No está[n] disponible[s].".
@@ -1114,10 +1119,10 @@ Section 1 - Standard actions concerning the actor's possessions
     can't take scenery rule response (A) is "Difícilmente podrías llevarte eso.".
     can only take things rule response (A) is "No puedes llevarte eso.".
     can't take what's fixed in place rule response (A) is "[The noun] está fij[o] en el sitio.".
-[    use player's holdall to avoid exceeding carrying capacity rule response (A) is "(colocas [the transferred item] en [the current working sack] para hacer sitio)[command clarification break]".]
+    use player's holdall to avoid exceeding carrying capacity rule response (A) is "(colocas [the transferred item] en [the current working sack] para hacer sitio)[command clarification break]".
     can't exceed carrying capacity rule response (A) is "Ya llevas demasiadas cosas.".
-    standard report taking rule response (A) is "[regarding the noun]Cogid[o].".
-    standard report taking rule response (B) is "[The actor] toma [the noun].".
+    standard report taking rule response (A) is "[regarding the noun][if dialecto sudamericano]Tomad[o].[otherwise]Cogid[o].[end if]".
+    standard report taking rule response (B) is "[The actor] [if dialecto sudamericano]toma[otherwise]coge[end if] [the noun].".
 
 
 [ Removing it from ]
