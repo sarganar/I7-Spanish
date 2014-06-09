@@ -715,6 +715,9 @@ language Spanish
 [PRINCIPALES ]
   ser		<es-ser-conjugation> |
   estar	<es-estar-conjugation> |
+	haber	<es-haber-conjugation> |
+	caber	<es-caber-conjugation> |	
+[VERBOS IRREGULARES - ER - TENER]
 	tener	<es-tener-conjugation> |
 	abstener	<es-tener-conjugation> |
 	atener	<es-tener-conjugation> |
@@ -724,7 +727,6 @@ language Spanish
 	mantener	<es-tener-conjugation> |
 	obtener	<es-tener-conjugation> |
 	sostener	<es-tener-conjugation> |
-	haber	<es-irregular-haber-conjugation> |
 [VERBOS IRREGULARES - ER - ENTENDER]
 	entender	<es-irregular-entender-conjugation> |
 	ascender	<es-irregular-entender-conjugation> |
@@ -805,7 +807,7 @@ language Spanish
   estará | estarás | estará | estaremos | estaréis| estarán
   
 
-[VERBO TENER]
+[-ER   VERBO TENER]
 <es-tener-conjugation> ::=
 	5	<es-tener-stem-gral> |
 	2		5+eniendo	|	[present participle]
@@ -832,24 +834,59 @@ language Spanish
 <es-tener-future> ::=
 	5+endré | 5+endrás | 5+endrá | 5+endremos | 5+endráis | 5+endrán
 
-[VERBOS IRREGULARES - ER - HABER]
-<es-irregular-haber-conjugation> ::=
+[-ER  VERBO CABER]
+<es-caber-conjugation> ::=
 	5	<es-trie-regular-stem> |
-	6	<es-trie-irregular-haber-stem> |
-	2	<es-trie-regular-er-present-participle> |
-	3	<es-trie-regular-er-past-participle> |
-	<es-irregular-haber-tabulation>
+	6	<es-trie-irregular-caber-stem> | [CUP- usado en past (cupe, cupiste...)]
+	2	<es-trie-regular-er-present-participle> | 	[cabiendo]
+	3	<es-trie-regular-er-past-participle> | 		[cabido]
+	<es-caber-tabulation>
+
+<es-trie-irregular-caber-stem> ::=
+	caber	cup
+
+<es-caber-tabulation> ::=
+	a1+	<es-irregular-caber-present> |
+	a1-	no <es-irregular-caber-present> |
+	a2+	<es-irregular-caber-past> |
+	a2-	no <es-irregular-caber-past> |
+	a3	( t1 haber ) 3 |
+	a4	( t6 haber ) 3 |
+	a5+	<es-irregular-caber-future> |
+	a5-	no <es-irregular-caber-future> |
+	a6+	<es-regular-er-past-imperfect> |
+	a6-	no <es-regular-er-past-imperfect> |
+	p*	3 por
+
+<es-irregular-caber-present> ::=
+	quepo | 5+es | 5+e | 5+emos | 5+éis | 5+en
+
+<es-irregular-caber-past> ::=
+	6+e | 6+iste | 6+o | 6+imos | 6+istéis | 6+ieron
+
+<es-irregular-caber-future> ::=
+	5+ré | 5+rás | 5+rá | 5+remos | 5+réis | 5+rán
+
+<es-irregular-caber-past-imperfect> ::=
+	5+ía | 5+ías | 5+ía | 5+íamos | 5+íais | 5+ían
+
+[- HABER]
+<es-haber-conjugation> ::=
+	5	<es-trie-regular-stem> | [hab-]
+	2	<es-trie-regular-er-present-participle> | [habiendo]
+	3	<es-trie-regular-er-past-participle> | [habido]
+	<es-haber-tabulation>
 
 <es-trie-irregular-haber-stem> ::=
 	haber	hub
 
-<es-irregular-haber-tabulation> ::=
+<es-haber-tabulation> ::=
 	a1+	<es-irregular-haber-present> |
 	a1-	no <es-irregular-haber-present> |
-	a2+	<es-irregular-caber-past> |
-	a2-	no <es-irregular-caber-past> |
-	a3	( t1 haber ) 3 |
-	a4	<es-irregular-haber-past-imperfect> 3 |
+	a2+	<es-irregular-haber-past> |
+	a2-	no <es-irregular-haber-past> |
+	a3	( t1 haber ) 3 | [he habido / has habido..]
+	a4	( t6 haber ) 3 |
 	a5+	<es-irregular-caber-future> |
 	a5-	no <es-irregular-caber-future> |
 	a6+	<es-irregular-caber-past-imperfect> |
@@ -857,7 +894,43 @@ language Spanish
 	p*	3 por
 
 <es-irregular-haber-present> ::=
-	he | has | ha | hemos | han | han
+	he | has | ha | hemos | habéis | han
+
+<es-irregular-haber-past> ::=
+	hube | hubiste | hubo | hubimos | hubisteis | hubieron
+
+
+[VERBOS IRREGULARES - ER - ENTENDER]
+<es-irregular-entender-conjugation> ::=
+	5	<es-trie-regular-stem> |
+	6	<es-trie-irregular-entender-stem> |
+	2	<es-trie-regular-er-present-participle> |
+	3	<es-trie-regular-er-past-participle> |
+	<es-irregular-entender-tabulation>
+
+<es-trie-irregular-entender-stem> ::=
+	*ender	5iend |
+	*erner	5iern |
+	*eder	4ied |
+	*ender	5iend |
+	*erder	5ierd |
+	*erter	5iert
+
+<es-irregular-entender-tabulation> ::=
+	a1+	<es-irregular-entender-present> |
+	a1-	no <es-irregular-entender-present> |
+	a2+	<es-regular-er-past> |
+	a2-	no <es-regular-er-past> |
+	a3	( t1 haber ) 3 |
+	a4	( t6 haber ) 3 |
+	a5+	<es-regular-er-future> |
+	a5-	no <es-regular-er-future> |
+	a6+	<es-regular-er-past-imperfect> |
+	a6-	no <es-regular-er-past-imperfect> |
+	p*	3 por
+
+<es-irregular-entender-present> ::=
+	6+o | 6+es | 6+e | 5+emos | 6+en | 6+en
 
 
 [VERBOS REGULARES - ER]
@@ -896,51 +969,16 @@ language Spanish
 	5+eré | 5+erás | 5+erá | 5+eremos | 5+erán | 5+erán
 
 <es-regular-er-past-imperfect> ::=
-	5+ía | 5+ías | 5+ía | 5+íamos | 5+ían | 5+ían
-
-[VERBOS IRREGULARES - ER - ENTENDER]
-<es-irregular-entender-conjugation> ::=
-	5	<es-trie-regular-stem> |
-	6	<es-trie-irregular-entender-stem> |
-	2	<es-trie-regular-er-present-participle> |
-	3	<es-trie-regular-er-past-participle> |
-	<es-irregular-entender-tabulation>
-
-<es-trie-irregular-entender-stem> ::=
-	*ender	5iend |
-	*erner	5iern |
-	*eder	4ied |
-	*ender	5iend |
-	*erder	5ierd |
-	*erter	5iert
-
-<es-irregular-entender-tabulation> ::=
-	a1+	<es-irregular-entender-present> |
-	a1-	no <es-irregular-entender-present> |
-	a2+	<es-regular-er-past> |
-	a2-	no <es-regular-er-past> |
-	a3	( t1 haber ) 3 |
-	a4	( t6 haber ) 3 |
-	a5+	<es-regular-er-future> |
-	a5-	no <es-regular-er-future> |
-	a6+	<es-regular-er-past-imperfect> |
-	a6-	no <es-regular-er-past-imperfect> |
-	p*	3 por
-
-<es-irregular-entender-present> ::=
-	6+o | 6+es | 6+e | 5+emos | 6+en | 6+en
+	5+ía | 5+ías | 5+ía | 5+íamos | 5+íais | 5+ían
 
 
 [VERBOS -AR  REGULARES SALTAR CANTAR CORTAR ETC]
 
 <es-ar-conjugation> ::=
-	5 <es-first-stem-general> |	[slot 5 we use for the stem of the verb]
+	5 <es-trie-regular-stem> |	[slot 5 we use for the stem of the verb]
 	2 5+ando |			[present participle: stem + -ando, e.g., saltando]
-	3 5+ado |					[past participle: stem + -i, e.g., cortado]
+	3 5+ado |				[past participle: stem + -i, e.g., cortado]
 	<es-ar-conjugation-tabulation>
-
-<es-first-stem-general> ::=
-	*	2					[drop the last two letters: donner -> donn]
 
 <es-ar-conjugation-tabulation> ::=
   a1+		<es-ar-present> |
@@ -958,6 +996,12 @@ language Spanish
 
 <es-ar-future> ::=
 	5+aré | 5+arás | 5+ará | 5+aremos | 5+aréis | 5+arán
+
+
+[BASIS]
+
+<es-trie-regular-stem> ::=
+	*	2					[drop the last two letters: donner -> donn]
 
 
 -) in the Preform grammar.
