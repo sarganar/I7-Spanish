@@ -1,4 +1,4 @@
-Version 1/140607 of Spanish Language by Sebastian Arg begins here.
+Version 1/140610 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
@@ -531,14 +531,14 @@ regular in French:]
 	... <es-plural-default>
 
 <es-plural-exceptions> ::=
-	pies			pies |
+	pies				pies |
 	monsieur		messieurs
 
 <es-plural-by-ending> ::=
-	*s			0 |	[tas -> tas]
+	*s			0			|		[tas -> tas]
 	*ón     2ones |		[camión->camiones]
-	*or     0es |		[contenedor->contenedores]
-  *<aeiou>y 0es		[ley -> leyes]
+	*or     0es 	|		[contenedor->contenedores]
+  *<aeiou>y 0es			[ley -> leyes]
   
 <es-plural-default> ::=
 	*		0s
@@ -717,21 +717,21 @@ language Spanish
   estar	<es-estar-conjugation> |
 	haber	<es-haber-conjugation> |
 	caber	<es-caber-conjugation> |	
-[VERBOS IRREGULARES - ER - TENER]
 	tener	<es-tener-conjugation> |
+	entender	<es-irregular-entender-conjugation> |
+[VERBOS - TENER]
 	abstener	<es-tener-conjugation> |
-	atener	<es-tener-conjugation> |
+	atener		<es-tener-conjugation> |
 	contener	<es-tener-conjugation> |
-	detener	<es-tener-conjugation> |
+	detener		<es-tener-conjugation> |
 	entretener	<es-tener-conjugation> |
 	mantener	<es-tener-conjugation> |
-	obtener	<es-tener-conjugation> |
+	obtener		<es-tener-conjugation> |
 	sostener	<es-tener-conjugation> |
-[VERBOS IRREGULARES - ER - ENTENDER]
-	entender	<es-irregular-entender-conjugation> |
+[VERBOS - ENTENDER]
 	ascender	<es-irregular-entender-conjugation> |
-	atender	<es-irregular-entender-conjugation> |
-	cerner	<es-irregular-entender-conjugation> |
+	atender		<es-irregular-entender-conjugation> |
+	cerner		<es-irregular-entender-conjugation> |
 	condescender	<es-irregular-entender-conjugation> |
 	contender	<es-irregular-entender-conjugation> |
 	defender	<es-irregular-entender-conjugation> |
@@ -741,22 +741,24 @@ language Spanish
 	distender	<es-irregular-entender-conjugation> |
 	encender	<es-irregular-entender-conjugation> |
 	extender	<es-irregular-entender-conjugation> |
-	heder	<es-irregular-entender-conjugation> |
-	hender	<es-irregular-entender-conjugation> |
+	heder			<es-irregular-entender-conjugation> |
+	hender		<es-irregular-entender-conjugation> |
 	malentender	<es-irregular-entender-conjugation> |
-	perder	<es-irregular-entender-conjugation> |
+	perder		<es-irregular-entender-conjugation> |
 	reverter	<es-irregular-entender-conjugation> |
 	sobreentender	<es-irregular-entender-conjugation> |
 	sobrentender	<es-irregular-entender-conjugation> |
 	subtender	<es-irregular-entender-conjugation> |
-	tender	<es-irregular-entender-conjugation> |
+	tender		<es-irregular-entender-conjugation> |
 	transcender	<es-irregular-entender-conjugation> |
 	trascender	<es-irregular-entender-conjugation> |
-	verter	<es-irregular-entender-conjugation> |
-[Regular -AR verbs]
-	-ar 		<es-ar-conjugation> 	[e.g., "cantar"]
-
-
+	verter		<es-irregular-entender-conjugation> |
+[REGULARES CON EXCEPCIONES]
+	romper		<es-romper-conjugation>	|
+[REGULARES]
+	-ar 		<es-regular-ar-conjugation> 	| ["cantar"]
+	-er			<es-regular-er-conjugation>		|	["temer"]
+	-ir			<es-regular-ir-conjugation>
 
 [VERBO SER]
 <es-ser-conjugation> ::=
@@ -807,7 +809,7 @@ language Spanish
   estará | estarás | estará | estaremos | estaréis| estarán
   
 
-[-ER   VERBO TENER]
+[VERBO TENER]
 <es-tener-conjugation> ::=
 	5	<es-tener-stem-gral> |
 	2		5+eniendo	|	[present participle]
@@ -834,7 +836,8 @@ language Spanish
 <es-tener-future> ::=
 	5+endré | 5+endrás | 5+endrá | 5+endremos | 5+endráis | 5+endrán
 
-[-ER  VERBO CABER]
+
+[VERBO CABER]
 <es-caber-conjugation> ::=
 	5	<es-trie-regular-stem> |
 	6	<es-trie-irregular-caber-stem> | [CUP- usado en past (cupe, cupiste...)]
@@ -870,7 +873,8 @@ language Spanish
 <es-irregular-caber-past-imperfect> ::=
 	5+ía | 5+ías | 5+ía | 5+íamos | 5+íais | 5+ían
 
-[- HABER]
+
+[VERBO - HABER]
 <es-haber-conjugation> ::=
 	5	<es-trie-regular-stem> | [hab-]
 	2	<es-trie-regular-er-present-participle> | [habiendo]
@@ -900,7 +904,7 @@ language Spanish
 	hube | hubiste | hubo | hubimos | hubisteis | hubieron
 
 
-[VERBOS IRREGULARES - ER - ENTENDER]
+[VERBO - ENTENDER]
 <es-irregular-entender-conjugation> ::=
 	5	<es-trie-regular-stem> |
 	6	<es-trie-irregular-entender-stem> |
@@ -933,7 +937,41 @@ language Spanish
 	6+o | 6+es | 6+e | 5+emos | 6+en | 6+en
 
 
-[VERBOS REGULARES - ER]
+[VERBOS REGULARES -AR  SALTAR CANTAR CORTAR ETC]
+<es-regular-ar-conjugation> ::=
+	5 <es-trie-regular-stem> |	[slot 5 we use for the stem of the verb]
+	2 5+ando |			[present participle: stem + -ando, e.g., saltando]
+	3 5+ado |				[past participle: stem + -i, e.g., cortado]
+	<es-regular-ar-conjugation-tabulation>
+
+<es-regular-ar-conjugation-tabulation> ::=
+  a1+		<es-ar-present> |
+	a1-		no <es-ar-present>  |
+	a2+		<es-ar-past> |
+	a2-		no <es-ar-past> |
+	a3	( t1 haber ) 3 |
+	a4	( t6 haber ) 3 |
+	a5+		<es-ar-future> |
+	a5-		no <es-ar-future> |
+	a6+	<es-regular-ar-past-imperfect> |
+	a6-	no <es-regular-ar-past-imperfect> |
+	p*	3 por
+	
+<es-ar-present> ::=
+	5+o | 5+as | 5+a | 5+amos | 5+áis | 5+an
+	
+<es-ar-past> ::=
+	5+é | 5+aste | 5+ó | 5+amos | 5+asteis | 5+aron	
+
+<es-ar-future> ::=
+	5+aré | 5+arás | 5+ará | 5+aremos | 5+aréis | 5+arán
+
+<es-regular-ar-past-imperfect> ::=
+	5+aba | 5+abas | 5+aba | 5+ábamos | 5+abais | 5+aban
+
+
+
+[VERBOS REGULARES - ER		TEMER]
 <es-regular-er-conjugation> ::=
 	5	<es-trie-regular-stem> |
 	2	<es-trie-regular-er-present-participle> |
@@ -956,49 +994,71 @@ language Spanish
 	a5+	<es-regular-er-future> |
 	a5-	no <es-regular-er-future> |
 	a6+	<es-regular-er-past-imperfect> |
-	a6-	no <es-regular-er-past-imperfect>
+	a6-	no <es-regular-er-past-imperfect> |
 	p*	3 por
 
 <es-regular-er-present> ::=
-	5+o | 5+es | 5+e | 5+emos | 5+en | 5+en
+	5+o | 5+es | 5+e | 5+emos | 5+éis | 5+en
 
 <es-regular-er-past> ::=
-	5+í | 5+iste | 5+ió | 5+imos | 5+ieron | 5+ieron
+	5+í | 5+iste | 5+ió | 5+imos | 5+isteis | 5+ieron
 
 <es-regular-er-future> ::=
-	5+eré | 5+erás | 5+erá | 5+eremos | 5+erán | 5+erán
+	5+eré | 5+erás | 5+erá | 5+eremos | 5+eréis | 5+erán
 
 <es-regular-er-past-imperfect> ::=
 	5+ía | 5+ías | 5+ía | 5+íamos | 5+íais | 5+ían
 
-
-[VERBOS -AR  REGULARES SALTAR CANTAR CORTAR ETC]
-
-<es-ar-conjugation> ::=
-	5 <es-trie-regular-stem> |	[slot 5 we use for the stem of the verb]
-	2 5+ando |			[present participle: stem + -ando, e.g., saltando]
-	3 5+ado |				[past participle: stem + -i, e.g., cortado]
-	<es-ar-conjugation-tabulation>
-
-<es-ar-conjugation-tabulation> ::=
-  a1+		<es-ar-present> |
-	a1-		no <es-ar-present>  |
-	a2+		<es-ar-past> |
-	a2-		no <es-ar-past> |
-	a5+		<es-ar-future> |
-	a5-		no <es-ar-future>
-	
-<es-ar-present> ::=
-	5+o | 5+as | 5+a | 5+amos | 5+áis | 5+an
-	
-<es-ar-past> ::=
-	5+é | 5+aste | 5+ó | 5+amos | 5+asteis | 5+aron	
-
-<es-ar-future> ::=
-	5+aré | 5+arás | 5+ará | 5+aremos | 5+aréis | 5+arán
+[VERBOS REGULARES - ER - EXCEPCIONES]
+<es-romper-conjugation> ::=
+	5	<es-trie-regular-stem> |
+	2	<es-trie-regular-er-present-participle> |
+	3	roto |
+	<es-regular-er-tabulation>
 
 
-[BASIS]
+[VERBOS REGULARES - IR    PARTIR]
+<es-regular-ir-conjugation> ::=
+	5	<es-trie-regular-stem> |
+	2	<es-trie-regular-ir-present-participle> |
+	3	<es-trie-regular-ir-past-participle> |
+	<es-regular-ir-tabulation>
+
+<es-trie-regular-ir-present-participle> ::=
+	*	2iendo
+
+<es-trie-regular-ir-past-participle> ::=
+	*	2ido
+
+<es-regular-ir-tabulation> ::=
+	a1+	<es-regular-ir-present> |
+	a1-	no <es-regular-ir-present> |
+	a2+	<es-regular-ir-past> |
+	a2-	no <es-regular-ir-past> |
+	a3	( t1 haber ) 3 |
+	a4	( t6 haber ) 3 |
+	a5+	<es-regular-ir-future> |
+	a5-	no <es-regular-ir-future> |
+	a6+	<es-regular-ir-past-imperfect> |
+	a6-	no <es-regular-ir-past-imperfect> |
+	p*	3 por
+
+<es-regular-ir-present> ::=
+	5+o | 5+es | 5+e | 5+imos | 5+ís | 5+en
+
+<es-regular-ir-past> ::=
+	5+í | 5+iste | 5+ió | 5+ímos | 5+isteis | 5+ieron
+
+<es-regular-ir-future> ::=
+	5+iré | 5+irás | 5+irá | 5+iremos | 5+iréis | 5+irán
+
+<es-regular-ir-past-imperfect> ::=
+	5+ía | 5+ías | 5+ía | 5+íamos | 5+íais | 5+ían
+
+
+
+
+[VERBO BASIS]
 
 <es-trie-regular-stem> ::=
 	*	2					[drop the last two letters: donner -> donn]
