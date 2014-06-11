@@ -1,4 +1,4 @@
-Version 1/140610 of Spanish Language by Sebastian Arg begins here.
+Version 1/140611 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
@@ -718,8 +718,8 @@ language Spanish
 	haber	<es-haber-conjugation> |
 	caber	<es-caber-conjugation> |	
 	tener	<es-tener-conjugation> |
-	entender	<es-irregular-entender-conjugation> |
-[VERBOS - TENER]
+	entender	<es-entender-conjugation> |
+[VERBOS - "TENER"]
 	abstener	<es-tener-conjugation> |
 	atener		<es-tener-conjugation> |
 	contener	<es-tener-conjugation> |
@@ -728,39 +728,43 @@ language Spanish
 	mantener	<es-tener-conjugation> |
 	obtener		<es-tener-conjugation> |
 	sostener	<es-tener-conjugation> |
-[VERBOS - ENTENDER]
-	ascender	<es-irregular-entender-conjugation> |
-	atender		<es-irregular-entender-conjugation> |
-	cerner		<es-irregular-entender-conjugation> |
-	condescender	<es-irregular-entender-conjugation> |
-	contender	<es-irregular-entender-conjugation> |
-	defender	<es-irregular-entender-conjugation> |
-	desatender	<es-irregular-entender-conjugation> |
-	descender	<es-irregular-entender-conjugation> |
-	desentender	<es-irregular-entender-conjugation> |
-	distender	<es-irregular-entender-conjugation> |
-	encender	<es-irregular-entender-conjugation> |
-	extender	<es-irregular-entender-conjugation> |
-	heder			<es-irregular-entender-conjugation> |
-	hender		<es-irregular-entender-conjugation> |
-	malentender	<es-irregular-entender-conjugation> |
-	perder		<es-irregular-entender-conjugation> |
-	reverter	<es-irregular-entender-conjugation> |
-	sobreentender	<es-irregular-entender-conjugation> |
-	sobrentender	<es-irregular-entender-conjugation> |
-	subtender	<es-irregular-entender-conjugation> |
-	tender		<es-irregular-entender-conjugation> |
-	transcender	<es-irregular-entender-conjugation> |
-	trascender	<es-irregular-entender-conjugation> |
-	verter		<es-irregular-entender-conjugation> |
+[VERBOS - "ENTENDER"]
+	ascender	<es-entender-conjugation> |
+	atender		<es-entender-conjugation> |
+	cerner		<es-entender-conjugation> |
+	condescender	<es-entender-conjugation> |
+	contender		<es-entender-conjugation> |
+	defender		<es-entender-conjugation> |
+	desatender	<es-entender-conjugation> |
+	descender		<es-entender-conjugation> |
+	desentender	<es-entender-conjugation> |
+	distender	<es-entender-conjugation> |
+	encender	<es-entender-conjugation> |
+	extender	<es-entender-conjugation> |
+	heder			<es-entender-conjugation> |
+	hender		<es-entender-conjugation> |
+	malentender	<es-entender-conjugation> |
+	perder			<es-entender-conjugation> |
+	reverter		<es-entender-conjugation> |
+	sobreentender	<es-entender-conjugation> |
+	sobrentender	<es-entender-conjugation> |
+	subtender	<es-entender-conjugation> |
+	tender		<es-entender-conjugation> |
+	transcender	<es-entender-conjugation> |
+	trascender	<es-entender-conjugation> |
+	verter			<es-entender-conjugation> |
 [REGULARES CON EXCEPCIONES]
-	romper		<es-romper-conjugation>	|
+	romper		<es-romper-conjugation>	| [excepcion en su participio "roto"]
 [REGULARES]
-	-ar 		<es-regular-ar-conjugation> 	| ["cantar"]
-	-er			<es-regular-er-conjugation>		|	["temer"]
-	-ir			<es-regular-ir-conjugation>
+	-ar 			<es-regular-ar-conjugation> 	| ["cantar"]
+	-er				<es-regular-er-conjugation>		|	["temer"]
+	-ir				<es-regular-ir-conjugation>
 
-[VERBO SER]
+
+
+
+
+[VERBO "SER"]
 <es-ser-conjugation> ::=
   2		siendo |
   3		sido |	
@@ -785,7 +789,7 @@ language Spanish
   seré | serás | será | seremos | seréis| serán
  
 
-[VERBO ESTAR]
+[VERBO "ESTAR"]
 <es-estar-conjugation> ::=
   2		estando |
   3		estado |	
@@ -809,7 +813,7 @@ language Spanish
   estará | estarás | estará | estaremos | estaréis| estarán
   
 
-[VERBO TENER]
+[VERBO "TENER"]
 <es-tener-conjugation> ::=
 	5	<es-tener-stem-gral> |
 	2		5+eniendo	|	[present participle]
@@ -837,7 +841,7 @@ language Spanish
 	5+endré | 5+endrás | 5+endrá | 5+endremos | 5+endráis | 5+endrán
 
 
-[VERBO CABER]
+[VERBO "CABER"]
 <es-caber-conjugation> ::=
 	5	<es-trie-regular-stem> |
 	6	<es-trie-irregular-caber-stem> | [CUP- usado en past (cupe, cupiste...)]
@@ -874,7 +878,7 @@ language Spanish
 	5+ía | 5+ías | 5+ía | 5+íamos | 5+íais | 5+ían
 
 
-[VERBO - HABER]
+[VERBO - "HABER"]
 <es-haber-conjugation> ::=
 	5	<es-trie-regular-stem> | [hab-]
 	2	<es-trie-regular-er-present-participle> | [habiendo]
@@ -904,8 +908,8 @@ language Spanish
 	hube | hubiste | hubo | hubimos | hubisteis | hubieron
 
 
-[VERBO - ENTENDER]
-<es-irregular-entender-conjugation> ::=
+[VERBO - "ENTENDER"]
+<es-entender-conjugation> ::=
 	5	<es-trie-regular-stem> |
 	6	<es-trie-irregular-entender-stem> |
 	2	<es-trie-regular-er-present-participle> |
@@ -913,12 +917,11 @@ language Spanish
 	<es-irregular-entender-tabulation>
 
 <es-trie-irregular-entender-stem> ::=
-	*ender	5iend |
-	*erner	5iern |
-	*eder	4ied |
-	*ender	5iend |
-	*erder	5ierd |
-	*erter	5iert
+	*ender	5iend |	[encender]
+	*erner	5iern |	[cerner]
+	*eder		4ied 	|	[heder]	
+	*erder	5ierd | [perder]
+	*erter	5iert		[verter]
 
 <es-irregular-entender-tabulation> ::=
 	a1+	<es-irregular-entender-present> |
@@ -934,7 +937,7 @@ language Spanish
 	p*	3 por
 
 <es-irregular-entender-present> ::=
-	6+o | 6+es | 6+e | 5+emos | 6+en | 6+en
+	6+o | 6+es | 6+e | 5+emos | 5+éis | 6+en
 
 
 [VERBOS REGULARES -AR  SALTAR CANTAR CORTAR ETC]
