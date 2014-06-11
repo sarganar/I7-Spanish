@@ -1231,7 +1231,7 @@ To decide if no se inicia pregunta con preprosicion: (- IniciarPregunta()==0 -).
 
 
 
-Section 1 - Standard actions concerning the actor's possessions
+Section 3.1.1.1 - Standard actions concerning the actor's possessions
 
 [Taking inventory , Taking , Removing it from , Dropping , Putting it on , Inserting it into , Eating ]
 
@@ -1313,7 +1313,7 @@ Section 1 - Standard actions concerning the actor's possessions
 
 
 
-Section 2 - Standard actions which move the actor
+Section 3.1.1.2 - Standard actions which move the actor
 
 [Going , Entering , Exiting , Getting off]
 
@@ -1386,7 +1386,7 @@ Section 2 - Standard actions which move the actor
 
 
 
-Section 3 - Standard actions concerning the actor's vision
+Section 3.1.1.3 - Standard actions concerning the actor's vision
 
 [Looking , Examining , Looking under , Searching , Consulting it about ]
 
@@ -1437,7 +1437,7 @@ Section 3 - Standard actions concerning the actor's vision
 
 
 
-Section 4 - Standard actions which change the state of things
+Section 3.1.1.4 - Standard actions which change the state of things
 
 [Locking it with , Unlocking it with , Switching on , Switching off , Opening , Closing , Wearing , Taking off ]
 
@@ -1515,7 +1515,7 @@ standard report taking off rule response (B) is "[El actor] se quita [el noun]."
 
 
 
-Section 5 - Standard actions concerning other people
+Section 3.1.1.5 - Standard actions concerning other people
 
 [Giving it to , Showing it to , Waking , Throwing it at , Attacking , Kissing , Answering it that ,
 Telling it about , Asking it about , Asking it for]
@@ -1583,7 +1583,7 @@ block asking rule response (A) is "No hay respuesta.".
 
 
 
-Section 6 - Standard actions which are checked but then do nothing unless rules intervene
+Section 3.1.1.6 - Standard actions which are checked but then do nothing unless rules intervene
 
 [Waiting , Touching , Waving , Pulling , Pushing , Turning , Pushing it to , Squeezing ]
 
@@ -1656,7 +1656,7 @@ report squeezing rule response (B) is "[El actor] retuerce[n] [el noun].".
 
 
 
-Section 7 - Standard actions which always do nothing unless rules intervene
+Section 3.1.1.7 - Standard actions which always do nothing unless rules intervene
 
 [Saying yes , Saying no , Burning , Waking up , Thinking , Smelling , Listening to , Tasting ,
 Cutting , Jumping , Tying it to , Drinking , Saying sorry , Swinging , Rubbing , Setting it to ,
@@ -1731,7 +1731,7 @@ block sleeping rule response (A) is "No estás especialmente [regarding the play
 
 
 
-Section 8 - Standard actions which happen out of world
+Section 3.1.1.8 - Standard actions which happen out of world
 
 [Quitting the game , Saving the game , Restoring the game , Restarting the game , Verifying the story file , Switching the story transcript on , Switching the story transcript off , Requesting the story file version , Requesting the score , Preferring abbreviated room descriptions , Preferring unabbreviated room descriptions , Preferring sometimes abbreviated room descriptions , Switching score notification on , Switching score notification off , Requesting the pronoun meanings ]
 
