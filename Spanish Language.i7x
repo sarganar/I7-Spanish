@@ -766,6 +766,16 @@ language Spanish
 	2		present participle / gerundio
 	3		past participle / participio
 
+
+<es-verbo-tabulation> ::=
+  a1  presente |
+  a2	pasado	|
+	a3	pasado perfecto "he estado" | (ingles 'perfect')
+	a4	pasado pluscuamperfecto "había estado" | (ingles 'past perfect')
+  a5  futuro |
+	a6	pasado imperfecto| (exclusivo infsp)
+	p*	voz pasiva "cambiado por"
+
 ]
 
 
@@ -835,9 +845,10 @@ language Spanish
 
 [VERBO "TENER"]
 <es-tener-conjugation> ::=
-	5	<es-tener-stem-gral> |
-	2		5+eniendo	|	[present participle]
-	3		5+enido		|	[past participle] [todo:probar inflexión femenina]
+	5	<es-trie-regular-stem> |
+	6	<es-tener-stem-gral> |
+	2		6+eniendo	|	[present participle]
+	3		6+enido		|	[past participle] [todo:probar inflexión femenina]
 	<es-tener-tabulation>
 
 <es-tener-stem-gral> ::=
@@ -848,17 +859,22 @@ language Spanish
   a1-  no <es-tener-present> |
   a2+  <es-tener-past> |
   a2-  no <es-tener-past> |
+	a3	( t1 haber ) 3 |
+	a4	( t6 haber ) 3 |
   a5+  <es-tener-future> |
-  a5-  no <es-tener-future>
+  a5-  no <es-tener-future> |
+	a6+	<es-regular-er-past-imperfect> |
+	a6-	no <es-regular-er-past-imperfect> |
+	p*	3 por
   
 <es-tener-present> ::=
-	5+engo | 5+ienes | 5+iene | 5+enemos | 5+enéis | 5+ienen
+	6+engo | 6+ienes | 6+iene | 6+enemos | 6+enéis | 6+ienen
   
 <es-tener-past> ::=
-  5+uve | 5+uviste | 5+uvo | 5+uvimos | 5+uvisteis | 5+uvieron
+  6+uve | 6+uviste | 6+uvo | 6+uvimos | 6+uvisteis | 6+uvieron
   
 <es-tener-future> ::=
-	5+endré | 5+endrás | 5+endrá | 5+endremos | 5+endráis | 5+endrán
+	6+endré | 6+endrás | 6+endrá | 6+endremos | 6+endráis | 6+endrán
 
 
 [VERBO "CABER"]
