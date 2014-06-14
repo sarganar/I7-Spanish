@@ -1,4 +1,4 @@
-Version 1/140611 of Spanish Language by Sebastian Arg begins here.
+Version 1/140614 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
@@ -760,7 +760,13 @@ language Spanish
 	-er				<es-regular-er-conjugation>		|	["temer"]
 	-ir				<es-regular-ir-conjugation>
 
+[ESQUEMA 
+<es-verbo-conjugation> ::=
+	5		particula base
+	2		present participle / gerundio
+	3		past participle / participio
 
+]
 
 
 
@@ -775,22 +781,31 @@ language Spanish
   a1-  no <es-ser-present> |
   a2+  <es-ser-past> |
   a2-  no <es-ser-past> |
+	a3	( t1 haber ) 3 |
+	a4	( t6 haber ) 3 |
   a5+  <es-ser-future> |
-  a5-  no <es-ser-future>
+  a5-  no <es-ser-future> |
+	a6+	<es-ser-past-imperfect> |
+	a6-	no <es-ser-past-imperfect> |
+	p*	3 por
   
 <es-ser-present> ::=
   soy | eres | es | somos | sois | son
   
 <es-ser-past> ::=
   fui | fuiste | fue | fuimos | fuisteis | fueron
-  
 
 <es-ser-future> ::=
-  seré | serás | será | seremos | seréis| serán
+  seré | serás | será | seremos | seréis	|	serán
+
+<es-ser-past-imperfect> ::=
+	era | eras | era | éramos | erais | eran
+  
  
 
 [VERBO "ESTAR"]
 <es-estar-conjugation> ::=
+	5 	<es-trie-regular-stem> |	[slot 5 we use for the stem of the verb]
   2		estando |
   3		estado |	
   <es-estar-tabulation>
@@ -800,18 +815,23 @@ language Spanish
   a1-  no <es-estar-present> |
   a2+  <es-estar-past> |
   a2-  no <es-estar-past> |
+	a3	( t1 haber ) 3 |
+	a4	( t6 haber ) 3 |
   a5+  <es-estar-future> |
-  a5-  no <es-estar-future>
+  a5-  no <es-estar-future> |
+	a6+	<es-regular-ar-past-imperfect> |
+	a6-	no <es-regular-ar-past-imperfect> |
+	p*	3 por
   
 <es-estar-present> ::=
-  estoy | estas | está | estamos | estáis | están
+  estoy | estás | está | estamos | estáis | están
   
 <es-estar-past> ::=
   estuve | estuviste | estuvo | estuvimos | estuvisteis | estuvieron
   
 <es-estar-future> ::=
-  estará | estarás | estará | estaremos | estaréis| estarán
-  
+  estará | estarás | estará | estaremos | estaréis	|	estarán
+
 
 [VERBO "TENER"]
 <es-tener-conjugation> ::=
@@ -940,7 +960,7 @@ language Spanish
 	6+o | 6+es | 6+e | 5+emos | 5+éis | 6+en
 
 
-[VERBOS REGULARES -AR  SALTAR CANTAR CORTAR ETC]
+[VERBOS REGULARES "-AR"  SALTAR CANTAR CORTAR ETC]
 <es-regular-ar-conjugation> ::=
 	5 <es-trie-regular-stem> |	[slot 5 we use for the stem of the verb]
 	2 5+ando |			[present participle: stem + -ando, e.g., saltando]
@@ -974,7 +994,7 @@ language Spanish
 
 
 
-[VERBOS REGULARES - ER		TEMER]
+[VERBOS REGULARES "- ER"		TEMER]
 <es-regular-er-conjugation> ::=
 	5	<es-trie-regular-stem> |
 	2	<es-trie-regular-er-present-participle> |
@@ -1012,7 +1032,7 @@ language Spanish
 <es-regular-er-past-imperfect> ::=
 	5+ía | 5+ías | 5+ía | 5+íamos | 5+íais | 5+ían
 
-[VERBOS REGULARES - ER - EXCEPCIONES]
+[VERBOS REGULARES "- ER" - EXCEPCIONES]
 <es-romper-conjugation> ::=
 	5	<es-trie-regular-stem> |
 	2	<es-trie-regular-er-present-participle> |
@@ -1020,7 +1040,7 @@ language Spanish
 	<es-regular-er-tabulation>
 
 
-[VERBOS REGULARES - IR    PARTIR]
+[VERBOS REGULARES "- IR"    PARTIR]
 <es-regular-ir-conjugation> ::=
 	5	<es-trie-regular-stem> |
 	2	<es-trie-regular-ir-present-participle> |
