@@ -1,4 +1,4 @@
-Version 1/140620 of Spanish Language by Sebastian Arg begins here.
+Version 1/140621 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
@@ -1078,9 +1078,41 @@ language Spanish
 	-ger	<es-agradecer-conjugation> |[VERBOS - "COGER"]
 [VERBOS - "OLER"]
 	oler	<es-oler-conjugation> |
+[														]
+[---------- "-IR"---------]
+[VERBOS - "ADQUIRIR"]
+	adquirir	<es-adquirir-conjugation> |
+	-quirir		<es-adquirir-conjugation> |
+[VERBOS - "ASIR"]
+	asir			<es-asir-conjugation> | [excepcion en 1PS "azgo"]
+[VERBOS - "BENDECIR"]
+	bendecir	<es-bendecir-conjugation> | 
+	maldecir	<es-bendecir-conjugation> | 
+[VERBOS - "DECIR"]
+	decir			<es-decir-conjugation> | 
+[VERBOS - "CEÑIR"]
+	ceñir			<es-ceñir-conjugation> | 
+	-eñir			<es-ceñir-conjugation> | 
+[VERBOS - "CONDUCIR"]
+	conducir	<es-conducir-conjugation> | 
+	-ucir			<es-conducir-conjugation> | 
+[VERBOS - "CONSTRUIR"]
+	construir	<es-construir-conjugation> | 
+	-uir			<es-construir-conjugation> | 
+	argüir		<es-construir-conjugation> | 
+[VERBOS - "DISCERNIR"]
+	discernir	<es-discernir-conjugation> | 
+	-ernir		<es-discernir-conjugation> | 
+	hendir		<es-discernir-conjugation> | 
+[VERBOS - "DORMIR"]
+	dormir		<es-dormir-conjugation> | 
+[VERBOS "MORIR"  - excpecion en participio "muerto"]
+	morir			<es-morir-conjugation> | 
+[														]
 [REGULARES CON EXCEPCIONES]
 	romper		<es-romper-conjugation>	| [excepcion en su participio "roto"]
 	tañer			<es-tañer-conjugation> | [excepcion en su participio "tañendo"]
+[														]
 [REGULARES]
 	-ar 			<es-regular-ar-conjugation> 	| ["cantar"]
 	-er				<es-regular-er-conjugation>		|	["temer"]
@@ -1470,6 +1502,8 @@ language Spanish
 	5+i | 5+iste | 5+io | 5+imos | 5+isteis | 5+ieron
 
 
+[-----------------------------------------------------------------------------]
+[-----------------------------------------------------------------------------]
 [-----------------------------------------------------------------------------]
 
 
@@ -1947,7 +1981,290 @@ language Spanish
 <es-regular-ver-past> ::=
 	5+i | 5+iste | 5+io | 5+imos | 5+isteis | 5+ieron
 
-["-------------------------------------------------------------------------------"]
+
+[-----------------------------------------------------------------------------]
+[-----------------------------------------------------------------------------]
+[-----------------------------------------------------------------------------]
+
+
+[VERBOS - "ADQUIRIR"]
+<es-adquirir-conjugation> ::=
+	5	<es-trie-regular-stem> |
+	6	<es-trie-irregular-adquirir-stem> |
+	2	<es-trie-regular-ir-present-participle> |
+	3	<es-trie-regular-ir-past-participle> |
+	<es-irregular-adquirir-tabulation>
+
+<es-trie-irregular-adquirir-stem> ::=
+	*	3er
+
+<es-irregular-adquirir-tabulation> ::=
+	a1+	<es-adquirir-present> |
+	a1-	no <es-adquirir-present> |
+	a2+	<es-regular-ir-past> |
+	a2-	no <es-regular-ir-past> |
+	a3	( t1 haber ) 3 |
+	a4	( t6 haber ) 3 |
+	a5+	<es-regular-ir-future> |
+	a5-	no <es-regular-ir-future> |
+	a6+	<es-regular-ir-past-imperfect> |
+	a6-	no <es-regular-ir-past-imperfect> |
+	p*	3 por
+
+<es-adquirir-present> ::=
+	6+o | 6+es | 6+e | 5+imos | 5+ís | 6+en
+
+[VERBOS "ASIR"]
+<es-asir-conjugation> ::=
+	5	<es-trie-regular-stem> |
+	6	<es-trie-irregular-asir-stem> |
+	2	<es-trie-regular-ir-present-participle> |
+	3	<es-trie-regular-ir-past-participle> |
+	<es-irregular-asir-tabulation>
+
+<es-trie-irregular-asir-stem> ::=
+	*	2g
+
+<es-irregular-asir-tabulation> ::=
+	a1+	<es-irregular-asir-present> |
+	a1-	no <es-irregular-asir-present> |
+	a2+	<es-regular-ir-past> |
+	a2-	no <es-regular-ir-past> |
+	a3	( t1 haber ) 3 |
+	a4	( t6 haber ) 3 |
+	a5+	<es-regular-ir-future> |
+	a5-	no <es-regular-ir-future> |
+	a6+	<es-regular-ir-past-imperfect> |
+	a6-	no <es-regular-ir-past-imperfect> |
+	p*	3 por
+
+<es-irregular-asir-present> ::=
+	6+o | 5+es | 5+e | 5+imos | 5+ís | 5+en
+
+
+[VERBOS "CONDUCIR"]
+<es-conducir-conjugation> ::=
+	5	<es-trie-regular-stem> |
+	6	<es-trie-irregular-conducir-stem> |
+	8	<es-trie-irregular-conducir-stem2> |
+	2	<es-trie-regular-ir-present-participle> |
+	3	<es-trie-regular-ir-past-participle> |
+	<es-irregular-conducir-tabulation>
+
+<es-trie-irregular-conducir-stem> ::=
+	*	3zc
+
+<es-trie-irregular-conducir-stem2> ::=
+	*	3j
+
+<es-irregular-conducir-tabulation> ::=
+	a1+	<es-irregular-asir-present> |
+	a1-	no <es-irregular-asir-present> |
+	a2+	<es-irregular-bendecir-past> |
+	a2-	no <es-irregular-bendecir-past> |
+	a3	( t1 haber ) 3 |
+	a4	( t6 haber ) 3 |
+	a5+	<es-regular-ir-future> |
+	a5-	no <es-regular-ir-future> |
+	a6+	<es-regular-ir-past-imperfect> |
+	a6-	no <es-regular-ir-past-imperfect> |
+	p*	3 por
+
+
+[VERBOS "BENDECIR"]
+<es-bendecir-conjugation> ::=
+	5	<es-trie-regular-stem> |
+	6	<es-trie-irregular-bendecir-stem> |
+	7	<es-trie-irregular-bendecir-stem2> |
+	8	<es-trie-irregular-bendecir-stem3> |
+	2	<es-trie-irregular-bendecir-present-participle> |
+	3	<es-trie-regular-ir-past-participle> |
+	<es-irregular-bendecir-tabulation>
+
+<es-trie-irregular-bendecir-stem> ::=
+	*	4ig
+
+<es-trie-irregular-bendecir-stem2> ::=
+	*	4ic
+
+<es-trie-irregular-bendecir-stem3> ::=
+	*	4ij
+
+<es-trie-irregular-bendecir-present-participle> ::=
+	*	4iciendo
+
+
+<es-irregular-bendecir-tabulation> ::=
+	a1+	<es-irregular-bendecir-present> |
+	a1-	no <es-irregular-bendecir-present> |
+	a2+	<es-irregular-bendecir-past> |
+	a2-	no <es-irregular-bendecir-past> |
+	a3	( t1 haber ) 3 |
+	a4	( t6 haber ) 3 |
+	a5+	<es-regular-ir-future> |
+	a5-	no <es-regular-ir-future> |
+	a6+	<es-regular-ir-past-imperfect> |
+	a6-	no <es-regular-ir-past-imperfect> |
+	p*	3 por
+
+<es-irregular-bendecir-present> ::=
+	6+o | 7+es | 7+e | 5+imos | 5+ís | 7+en
+
+<es-irregular-bendecir-past> ::=
+	8+e | 8+iste | 8+o | 8+imos | 8+isteis | 8+eron
+
+
+[VERBOS "DECIR"]
+<es-decir-conjugation> ::=
+	5	<es-trie-regular-stem> |
+	6	<es-trie-irregular-bendecir-stem> |
+	7	<es-trie-irregular-bendecir-stem2> |
+	8	<es-trie-irregular-bendecir-stem3> |
+	2	<es-trie-irregular-bendecir-present-participle> |
+	3	dicho |
+	<es-irregular-decir-tabulation>
+
+<es-irregular-decir-tabulation> ::=
+	a1+	<es-irregular-bendecir-present> |
+	a1-	no <es-irregular-bendecir-present> |
+	a2+	<es-irregular-bendecir-past> |
+	a2-	no <es-irregular-bendecir-past> |
+	a3	( t1 haber ) 3 |
+	a4	( t6 haber ) 3 |
+	a5+	<es-irregular-decir-future> |
+	a5-	no <es-irregular-decir-future> |
+	a6+	<es-regular-ir-past-imperfect> |
+	a6-	no <es-regular-ir-past-imperfect> |
+	p*	3 por
+
+<es-irregular-decir-future> ::=
+	diré | dirás	| dirá | diremos | diréis | dirán
+
+[VERBOS "CEÑIR"]
+<es-ceñir-conjugation> ::=
+	5	<es-trie-regular-stem> |
+	6	<es-trie-irregular-ceñir-stem> |
+	2	<es-trie-irregular-ceñir-present-participle> |
+	3	<es-trie-regular-ir-past-participle> |
+	<es-irregular-ceñir-tabulation>
+
+<es-trie-irregular-ceñir-stem> ::=
+	*	4iñ
+
+<es-trie-irregular-ceñir-present-participle> ::=
+	*	4iñendo
+
+
+<es-irregular-ceñir-tabulation> ::=
+	a1+	<es-irregular-ceñir-present> |
+	a1-	no <es-irregular-ceñir-present> |
+	a2+	<es-irregular-ceñir-past> |
+	a2-	no <es-irregular-ceñir-past> |
+	a3	( t1 haber ) 3 |
+	a4	( t6 haber ) 3 |
+	a5+	<es-regular-ir-future> |
+	a5-	no <es-regular-ir-future> |
+	a6+	<es-regular-ir-past-imperfect> |
+	a6-	no <es-regular-ir-past-imperfect> |
+	p*	3 por
+
+<es-irregular-ceñir-present> ::=
+	6+o | 6+es | 6+e | 5+imos | 5+ís | 6+en
+
+<es-irregular-ceñir-past> ::=
+	5+í | 5+iste | 6+ó | 5+imos | 5+isteis | 6+eron
+
+[VERBOS "CONSTRUIR"]
+<es-construir-conjugation> ::=
+	5	<es-trie-regular-stem> |
+	6	<es-trie-irregular-construir-stem> |
+	2	<es-trie-irregular-construir-present-participle> |
+	3	<es-trie-regular-ir-past-participle> |
+	<es-irregular-ceñir-tabulation>
+
+<es-trie-irregular-construir-present-participle> ::=
+	*	2yendo 
+
+<es-trie-irregular-construir-stem> ::=
+	*	2y	
+
+
+[VERBOS "DISCERNIR"]
+<es-discernir-conjugation> ::=
+	5	<es-trie-regular-stem> |
+	6	<es-trie-irregular-discernir-stem> |
+	2	<es-trie-regular-ir-present-participle> |
+	3	<es-trie-regular-ir-past-participle> |
+	<es-irregular-discernir-tabulation>
+
+<es-trie-irregular-discernir-stem> ::=
+	*	5iern
+
+<es-irregular-discernir-tabulation> ::=
+	a1+	<es-irregular-ceñir-present> |
+	a1-	no <es-irregular-ceñir-present> |
+	a2+	<es-regular-ir-past> |
+	a2-	no <es-regular-ir-past> |
+	a3	( t1 haber ) 3 |
+	a4	( t6 haber ) 3 |
+	a5+	<es-regular-ir-future> |
+	a5-	no <es-regular-ir-future> |
+	a6+	<es-regular-ir-past-imperfect> |
+	a6-	no <es-regular-ir-past-imperfect> |
+	p*	3 por
+
+
+[VERBOS "DORMIR"]
+<es-dormir-conjugation> ::=
+	5	<es-trie-regular-stem> |
+	6	<es-trie-irregular-dormir-stem> |
+	7	<es-trie-irregular-dormir-stem2> |
+	2	<es-trie-irregular-dormir-present-participle> |
+	3	<es-trie-regular-ir-past-participle> |
+	<es-irregular-dormir-tabulation>
+
+<es-trie-irregular-dormir-present-participle> ::=
+	*mir	5urmiendo	|
+	*rir	4uriendo
+
+<es-trie-irregular-dormir-stem> ::=
+	*mir	5uerm	|
+	*rir	4uer
+
+<es-trie-irregular-dormir-stem2> ::=
+	*mir	5urm	|
+	*rir	4ur
+
+<es-irregular-dormir-tabulation> ::=
+	a1+	<es-irregular-ceñir-present> |
+	a1-	no <es-irregular-ceñir-present> |
+	a2+	<es-irregular-dormir-past> |
+	a2-	no <es-irregular-dormir-past> |
+	a3	( t1 haber ) 3 |
+	a4	( t6 haber ) 3 |
+	a5+	<es-regular-ir-future> |
+	a5-	no <es-regular-ir-future> |
+	a6+	<es-regular-ir-past-imperfect> |
+	a6-	no <es-regular-ir-past-imperfect> |
+	p*	3 por
+
+<es-irregular-dormir-past> ::=
+	5+í | 5+iste | 7+ió | 5+imos | 5+isteis | 7+ieron
+
+
+[VERBOS "MORIR"  - excpecion en participio "muerto"]
+<es-morir-conjugation> ::=
+	5	<es-trie-regular-stem>	|
+	6	<es-trie-irregular-dormir-stem>	|
+	7	<es-trie-irregular-dormir-stem2>	|
+	2	<es-trie-irregular-dormir-present-participle> |
+	3	muerto |
+	<es-irregular-dormir-tabulation>
+
+
+[-----------------------------------------------------------------------------]
+[-----------------------------------------------------------------------------]
+[-----------------------------------------------------------------------------]
 
 [VERBOS REGULARES "-AR"  SALTAR CANTAR CORTAR ETC]
 <es-regular-ar-conjugation> ::=
@@ -1987,6 +2304,7 @@ language Spanish
 <es-regular-ar-past-imperfect> ::=
 	5+aba | 5+abas | 5+aba | 5+ábamos | 5+abais | 5+aban
 
+["-------------------------------------------------------------------------------"]
 
 
 [VERBOS REGULARES "- ER"		TEMER]
@@ -2040,6 +2358,7 @@ language Spanish
 	3	tañendo	|
 	<es-regular-er-tabulation>
 
+["-------------------------------------------------------------------------------"]
 
 
 [VERBOS REGULARES "- IR"    PARTIR]
