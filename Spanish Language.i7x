@@ -1,4 +1,4 @@
-Version 1/140624 of Spanish Language by Sebastian Arg begins here.
+Version 1/140625 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
@@ -714,11 +714,13 @@ language Spanish
 
 <verb-conjugation-instructions> ::=
 ["PRINCIPALES Y SINGULARES"]
-  ser		<es-ser-conjugation> |
-  estar	<es-estar-conjugation> |
+  ser				<es-ser-conjugation> |
+  estar			<es-estar-conjugation> |
 	ir				<es-ir-conjugation> |
+[														]
+[---------- "-AR"---------]
 [VERBOS "ACERTAR"]
-	acertar		<es-acertar-conjugation> |
+	acertar			<es-acertar-conjugation> |
 	acrecentar	<es-acertar-conjugation> |
 	alentar		<es-acertar-conjugation> |
 	apacentar	<es-acertar-conjugation> |
@@ -805,7 +807,7 @@ language Spanish
 	asolar	<es-acertar-conjugation> |
 	asonar	<es-acertar-conjugation> |
 	atronar	<es-acertar-conjugation> |
-	colar	<es-acertar-conjugation> |
+	colar		<es-acertar-conjugation> |
 	comprobar	<es-acertar-conjugation> |
 	concordar	<es-acertar-conjugation> |
 	consolar	<es-acertar-conjugation> |
@@ -879,8 +881,8 @@ language Spanish
 	ciar			<es-acertar-conjugation> |
 	confiar		<es-acertar-conjugation> |
 	contrariar	<es-acertar-conjugation> |
-	criar			<es-acertar-conjugation> |
-	desafiar	<es-acertar-conjugation> |
+	criar				<es-acertar-conjugation> |
+	desafiar		<es-acertar-conjugation> |
 	descarriar	<es-acertar-conjugation> |
 	desconfiar	<es-acertar-conjugation> |
 	desliar		<es-acertar-conjugation> |
@@ -896,12 +898,12 @@ language Spanish
 	expiar		<es-acertar-conjugation> |
 	extasiar	<es-acertar-conjugation> |
 	extraviar	<es-acertar-conjugation> |
-	fiar	<es-acertar-conjugation> |
+	fiar		<es-acertar-conjugation> |
 	fotografiar	<es-acertar-conjugation> |
 	guiar		<es-acertar-conjugation> |
 	hastiar	<es-acertar-conjugation> |
 	inventariar	<es-acertar-conjugation> |
-	liar	<es-acertar-conjugation> |
+	liar		<es-acertar-conjugation> |
 	malcriar	<es-acertar-conjugation> |
 	mecanografiar	<es-acertar-conjugation> |
 	piar		<es-acertar-conjugation> |
@@ -922,7 +924,7 @@ language Spanish
 	atenuar		<es-acertar-conjugation> |
 	conceptuar	<es-acertar-conjugation> |
 	consensuar	<es-acertar-conjugation> |
-	continuar	<es-acertar-conjugation> |
+	continuar		<es-acertar-conjugation> |
 	desconceptuar	<es-acertar-conjugation> |
 	deshabituar	<es-acertar-conjugation> |
 	desvirtuar	<es-acertar-conjugation> |
@@ -1047,18 +1049,18 @@ language Spanish
 	revolver		<es-entender2-conjugation> |
 	volver			<es-entender2-conjugation> |
 [VERBOS - "MECER"]
-	mecer	<es-mecer-conjugation> |
-	coercer	<es-mecer-conjugation> |
+	mecer			<es-mecer-conjugation> |
+	coercer		<es-mecer-conjugation> |
 	convercer	<es-mecer-conjugation> |
-	ejercer	<es-mecer-conjugation> |
-	vencer	<es-mecer-conjugation> |
+	ejercer		<es-mecer-conjugation> |
+	vencer		<es-mecer-conjugation> |
 [VERBOS - "PREVER"]
 	prever		<es-prever-conjugation> |
 	entrever	<es-prever-conjugation> |
 [VERBOS - "VER"]
 	ver				<es-ver-conjugation> |
 [VERBOS - "PONER"]
-	poner	<es-poner-conjugation> |
+	poner		<es-poner-conjugation> |
 	-poner	<es-poner-conjugation> |
 [VERBOS - "PODER"]
 	poder	<es-poder-conjugation> |
@@ -1067,7 +1069,7 @@ language Spanish
 	-hacer			<es-hacer-conjugation> |
 	satisfacer	<es-hacer-conjugation> |
 [VERBOS - "TRAER"]
-	traer			<es-traer-conjugation> |
+	traer				<es-traer-conjugation> |
 	-traer			<es-traer-conjugation> |
 [VERBOS - "CAER"]
 	caer	<es-caer-conjugation> |
@@ -1078,6 +1080,17 @@ language Spanish
 	-ger	<es-agradecer-conjugation> |[VERBOS - "COGER"]
 [VERBOS - "OLER"]
 	oler	<es-oler-conjugation> |
+[VERBOS - "QUERER"]
+	-querer	<es-querer-conjugation> |
+[VERBOS - "ROER"]
+	-roer	<es-roer-conjugation> |
+[VERBOS - "SABER"]
+	saber	<es-saber-conjugation> |
+[VERBOS - "VALER"]
+	-valer	<es-valer-conjugation> |
+[OTROS REGULARES CON EXCEPCIONES]
+	romper		<es-romper-conjugation>	| [excepcion en su participio "roto"]
+	tañer			<es-tañer-conjugation> | [excepcion en su participio "tañendo"]
 [														]
 [---------- "-IR"---------]
 [VERBOS - "ADQUIRIR"]
@@ -1096,7 +1109,7 @@ language Spanish
 	decir				<es-decir-conjugation> | 
 	-decir			<es-decir-conjugation> | 
 [VERBOS - "VENIR"]
-	venir				<es-venir-conjugation> | 
+	-venir			<es-venir-conjugation> | 
 [VERBOS - "CEÑIR"]
 	ceñir			<es-ceñir-conjugation> | 
 	-eñir			<es-ceñir-conjugation> | 
@@ -1142,14 +1155,11 @@ language Spanish
 	-reír	<es-reir-conjugation> |
 	-reir	<es-reir-conjugation> |
 [														]
-[REGULARES CON EXCEPCIONES]
-	romper		<es-romper-conjugation>	| [excepcion en su participio "roto"]
-	tañer			<es-tañer-conjugation> | [excepcion en su participio "tañendo"]
 [														]
 [REGULARES]
 	-ar 			<es-regular-ar-conjugation> 	| ["cantar"]
 	-er				<es-regular-er-conjugation>		|	["temer"]
-	-ir				<es-regular-ir-conjugation>
+	-ir				<es-regular-ir-conjugation>			["partir"]
 
 
 [-----------------------------------------------------------------------------]
@@ -1159,7 +1169,7 @@ language Spanish
 [-----------------------------------------------------------------------------]
 
 
-[ESQUEMA 
+[ESQUEMA REFERENCIA:
 <es-verbo-conjugation> ::=
 	5		particula base
 	2		present participle / gerundio
@@ -1178,6 +1188,8 @@ language Spanish
 ]
 
 
+[-----------------------------------------------------------------------------]
+[-----------------------------------------------------------------------------]
 [-----------------------------------------------------------------------------]
 
 [VERBO "SER"]
@@ -1288,6 +1300,9 @@ language Spanish
 <es-irregular-ir-past-imperfect> ::=
 	iba | ibas | iba | ibamos | iban | iban
 
+
+[														]
+[---------- "-AR"---------]
 
 [VERBOS - "ACERTAR"]
 <es-acertar-conjugation> ::=
@@ -1538,6 +1553,8 @@ language Spanish
 [-----------------------------------------------------------------------------]
 [-----------------------------------------------------------------------------]
 [-----------------------------------------------------------------------------]
+[														]
+[---------- "-ER"---------]
 
 
 [VERBO "TENER"]
@@ -2015,9 +2032,151 @@ language Spanish
 	5+i | 5+iste | 5+io | 5+imos | 5+isteis | 5+ieron
 
 
+[VERBOS - "QUERER"]
+<es-querer-conjugation> ::=
+	5	<es-trie-regular-stem> |
+	6	<es-trie-irregular-querer-stem> |
+	7	<es-trie-irregular-querer-stem2> |
+	2	<es-trie-regular-er-present-participle> |
+	3	<es-trie-regular-er-past-participle> |
+	<es-irregular-querer-tabulation>
+
+<es-trie-irregular-querer-stem>	::=
+	*	4ier
+
+<es-trie-irregular-querer-stem2>	::=
+	*	4is
+
+<es-irregular-querer-tabulation> ::=
+	a1+	<es-irregular-querer-present> |
+	a1-	no <es-irregular-querer-present> |
+	a2+	<es-irregular-querer-past> |
+	a2-	no <es-irregular-querer-past> |
+	a3	( t1 haber ) 3 |
+	a4	( t6 haber ) 3 |
+	a5+	<es-irregular-querer-future> |
+	a5-	no <es-irregular-querer-future> |
+	a6+	<es-regular-er-past-imperfect> |
+	a6-	no <es-regular-er-past-imperfect> |
+	p*	3 por
+
+<es-irregular-querer-present> ::=
+	6+o | 6+es | 6+e | 5+emos | 5+éis | 6+en
+
+<es-irregular-querer-past> ::=
+	7+e | 7+iste | 7+o | 7+imos | 7+isteis | 7+ieron
+
+<es-irregular-querer-future> ::=
+	5+ré | 5+rás | 5+rá | 5+remos | 5+réis | 5+rán
+
+
+[VERBOS - "ROER"]
+<es-roer-conjugation> ::=
+	5	<es-trie-regular-stem> |
+	2	<es-trie-irregular-roer-present-participle> |
+	3	<es-trie-irregular-roer-past-participle> |
+	<es-irregular-roer-tabulation>
+
+<es-trie-irregular-roer-present-participle>	::=
+	*oer	2yendo
+
+<es-trie-irregular-roer-past-participle>	::=
+	*oer	2ído
+
+
+<es-irregular-roer-tabulation> ::=
+	a1+	<es-regular-er-present> |
+	a1-	no <es-regular-er-present> |
+	a2+	<es-irregular-roer-past> |
+	a2-	no <es-irregular-roer-past> |
+	a3	( t1 haber ) 3 |
+	a4	( t6 haber ) 3 |
+	a5+	<es-regular-er-future> |
+	a5-	no <es-regular-er-future> |
+	a6+	<es-regular-er-past-imperfect> |
+	a6-	no <es-regular-er-past-imperfect> |
+	p*	3 por
+
+<es-irregular-roer-past> ::=
+	5+í | 5+íste | 5+yó	| 5+ímos | 5+ísteis | 5+yeron
+
+
+[VERBOS - "SABER"]
+<es-saber-conjugation> ::=
+	5	<es-trie-regular-stem> |
+	6	<es-trie-irregular-saber-stem> |
+	7	<es-trie-irregular-saber-stem2> |
+	2	<es-trie-regular-er-present-participle> |
+	3	<es-trie-regular-er-past-participle> |
+	<es-irregular-saber-tabulation>
+
+<es-trie-irregular-saber-stem>	::=
+	*	4up
+
+<es-trie-irregular-saber-stem2>	::=
+	*	4is
+
+<es-irregular-saber-tabulation> ::=
+	a1+	<es-irregular-saber-present> |
+	a1-	no <es-irregular-saber-present> |
+	a2+	<es-irregular-saber-past> |
+	a2-	no <es-irregular-saber-past> |
+	a3	( t1 haber ) 3 |
+	a4	( t6 haber ) 3 |
+	a5+	<es-irregular-querer-future> |
+	a5-	no <es-irregular-querer-future> |
+	a6+	<es-regular-er-past-imperfect> |
+	a6-	no <es-regular-er-past-imperfect> |
+	p*	3 por
+
+<es-irregular-saber-present> ::=
+	sé | 5+es | 5+e | 5+emos | 5+éis | 5+en
+
+<es-irregular-saber-past> ::=
+	6+e | 6+iste | 6+o | 6+imos | 6+isteis | 6+ieron
+
+
+[VERBOS - "VALER"]
+<es-valer-conjugation> ::=
+	5	<es-trie-regular-stem> |
+	6	<es-trie-irregular-valer-stem> |
+	7	<es-trie-irregular-valer-stem2> |
+	2	<es-trie-regular-er-present-participle> |
+	3	<es-trie-regular-er-past-participle> |
+	<es-irregular-valer-tabulation>
+
+<es-trie-irregular-valer-stem>	::=
+	*	2g
+
+<es-trie-irregular-valer-stem2>	::=
+	*	2d
+
+<es-irregular-valer-tabulation> ::=
+	a1+	<es-irregular-valer-present> |
+	a1-	no <es-irregular-valer-present> |
+	a2+	<es-regular-ir-past> |
+	a2-	no <es-regular-ir-past> |
+	a3	( t1 haber ) 3 |
+	a4	( t6 haber ) 3 |
+	a5+	<es-irregular-valer-future> |
+	a5-	no <es-irregular-valer-future> |
+	a6+	<es-regular-er-past-imperfect> |
+	a6-	no <es-regular-er-past-imperfect> |
+	p*	3 por
+
+<es-irregular-valer-present> ::=
+	6+o | 5+es | 5+e | 5+emos | 5+éis | 5+en
+
+<es-irregular-valer-future> ::=
+	7+ré | 7+rás | 7+rá | 7+remos | 7+réis | 7+rán
+
+
+
 [-----------------------------------------------------------------------------]
 [-----------------------------------------------------------------------------]
 [-----------------------------------------------------------------------------]
+[														]
+[---------- "-IR"---------]
 
 
 [VERBOS - "ADQUIRIR"]
@@ -2619,7 +2778,7 @@ language Spanish
 [-----------------------------------------------------------------------------]
 [-----------------------------------------------------------------------------]
 
-[VERBOS REGULARES "-AR"  SALTAR CANTAR CORTAR ETC]
+[VERBOS REGULARES "-AR"  AMAR SALTAR CANTAR CORTAR ETC]
 <es-regular-ar-conjugation> ::=
 	5 <es-trie-regular-stem> |	[slot 5 we use for the stem of the verb]
 	2 5+ando |			[present participle: stem + -ando, e.g., saltando]
