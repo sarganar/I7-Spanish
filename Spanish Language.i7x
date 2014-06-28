@@ -1,4 +1,4 @@
-Version 1/140625 of Spanish Language by Sebastian Arg begins here.
+Version 1/140628 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
@@ -1035,6 +1035,7 @@ language Spanish
 	doler				<es-entender-conjugation> |
 	llover			<es-entender-conjugation> |
 	moler				<es-entender-conjugation> |
+	soler				<es-entender-conjugation> |
 	morder			<es-entender-conjugation> |
 	promover		<es-entender-conjugation> |
 	remorder		<es-entender-conjugation> |
@@ -1295,10 +1296,10 @@ language Spanish
 	fui | fuiste | fue	|	fuimos	| fuisteis | fueron
 
 <es-irregular-ir-future> ::=
-	iré | irás | irá | iremos | irán | irán
+	iré | irás | irá | iremos | iréis | irán
 
 <es-irregular-ir-past-imperfect> ::=
-	iba | ibas | iba | ibamos | iban | iban
+	iba | ibas | iba | ibamos | ibais | iban
 
 
 [														]
@@ -1588,7 +1589,7 @@ language Spanish
   6+uve | 6+uviste | 6+uvo | 6+uvimos | 6+uvisteis | 6+uvieron
   
 <es-tener-future> ::=
-	6+endré | 6+endrás | 6+endrá | 6+endremos | 6+endráis | 6+endrán
+	6+endré | 6+endrás | 6+endrá | 6+endremos | 6+endréis | 6+endrán
 
 
 [VERBO "CABER"]
@@ -1624,7 +1625,7 @@ language Spanish
 	7+o	| 5+es | 5+e | 5+emos | 5+éis | 5+en
 
 <es-irregular-caber-past> ::=
-	6+e | 6+iste | 6+o | 6+imos | 6+istéis | 6+ieron
+	6+e | 6+iste | 6+o | 6+imos | 6+isteis | 6+ieron
 
 <es-irregular-caber-future> ::=
 	8+ré | 8+rás | 8+rá | 8+remos | 8+réis | 8+rán
@@ -1651,8 +1652,8 @@ language Spanish
 	a2-	no <es-irregular-haber-past> |
 	a3	( t1 haber ) 3 | [he habido / has habido..]
 	a4	( t6 haber ) 3 |
-	a5+	<es-irregular-caber-future> |
-	a5-	no <es-irregular-caber-future> |
+	a5+	<es-irregular-haber-future> |
+	a5-	no <es-irregular-haber-future> |
 	a6+	<es-irregular-caber-past-imperfect> |
 	a6-	no <es-irregular-caber-past-imperfect> |
 	p*	3 por
@@ -1663,6 +1664,8 @@ language Spanish
 <es-irregular-haber-past> ::=
 	hube | hubiste | hubo | hubimos | hubisteis | hubieron
 
+<es-irregular-haber-future> ::=
+	5+ré | 5+rás | 5+rá | 5+remos | 5+réis | 5+rán
 
 
 
@@ -1682,7 +1685,7 @@ language Spanish
 	*erter	5iert |	[verter]
 	*over		4uev 	| [mover]
 	*olver	5uelv |
-	*oler		4uel |
+	*oler		4uel 	|
 	*order	5ued
 
 <es-irregular-entender-tabulation> ::=
@@ -2171,7 +2174,6 @@ language Spanish
 	7+ré | 7+rás | 7+rá | 7+remos | 7+réis | 7+rán
 
 
-
 [-----------------------------------------------------------------------------]
 [-----------------------------------------------------------------------------]
 [-----------------------------------------------------------------------------]
@@ -2559,7 +2561,7 @@ language Spanish
 	6	<es-trie-irregular-pedir-stem> |
 	2	6+iendo | [gerundio o present-participle]
 	3	<es-trie-regular-ir-past-participle> |
-	<es-irregular-dormir-tabulation>
+	<es-irregular-pedir-tabulation>
 
 <es-trie-irregular-pedir-stem> ::=
 	*dir	4id	|
@@ -2569,7 +2571,7 @@ language Spanish
 	*mir	4im	|	[gemir]
 	*chir	6inch		[gemir]
 
-<es-irregular-dormir-tabulation> ::=
+<es-irregular-pedir-tabulation> ::=
 	a1+	<es-irregular-pedir-present> |
 	a1-	no <es-irregular-pedir-present> |
 	a2+	<es-irregular-pedir-past> |
