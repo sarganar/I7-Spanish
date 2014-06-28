@@ -313,7 +313,7 @@ and their capitalised forms, which start with "T" not "t".]
 
 [en general Poca gente menciona los sujetos explícitamente en segunda persona.Al-K]
 
-Include Text Capture by Eric Eve.
+[Include Text Capture by Eric Eve.] [Ver al final, Section 19 ]
 
 to say plm:[primera letra en mayúscula]
 	stop capturing text;
@@ -6242,6 +6242,106 @@ Constant NI_NEEDED_VERSION "6L02";
 		rtrue;
 ];
 #endif; ! DEBUG
+-) after "Definitions.i6t".
+
+
+Section 19 - Special functions extracted from Text Capture by Eric Eve
+[according CC BY license]
+
+Use maximum capture buffer length of at least 256 translates as (- Constant CAPTURE_BUFFER_LEN = {N}; -). 
+
+To start capturing text:
+	(- StartCapture(); -).
+
+To stop capturing text:
+	(- EndCapture(); -).
+
+To say the/-- captured text:
+	(- PrintCapture(); -).
+
+
+[Part 3 - I6 Code]
+
+Include (-	Global capture_active = 0;	-) after "Definitions.i6t".
+
+Chapter Z - Z-Machine Version (for Z-Machine Only)
+
+Include (-
+
+Array captured_text -> CAPTURE_BUFFER_LEN + 3;
+
+[ StartCapture;
+	if (capture_active ==1)
+		return;
+	capture_active = 1;
+	@output_stream 3 captured_text;
+];
+
+
+[ EndCapture;
+	if (capture_active == 0)
+		return;
+	capture_active = 0;
+	@output_stream -3;
+	if (captured_text-->0 > CAPTURE_BUFFER_LEN)
+	{
+		print "Error: Overflow in EndCapture.^";
+	}
+];
+
+[ PrintCapture len i;
+	len = captured_text-->0;
+	for ( i = 0 : i < len : i++ )
+	{
+		print (char) captured_text->(i + 2);
+	}
+];
+
+-) after "Definitions.i6t".
+
+Chapter G - Glulx (for Glulx Only)
+
+Include (-
+
+Array captured_text --> CAPTURE_BUFFER_LEN + 1;
+
+Global text_capture_old_stream = 0;
+Global text_capture_new_stream = 0;
+
+[ StartCapture i;   
+	if (capture_active ==1)
+		return;
+	capture_active = 1;
+	text_capture_old_stream = glk_stream_get_current();
+	text_capture_new_stream = glk_stream_open_memory_uni(captured_text + WORDSIZE, CAPTURE_BUFFER_LEN, 1, 0);
+	glk_stream_set_current(text_capture_new_stream);
+];
+
+[ EndCapture len;
+	if ( capture_active == 0 )
+		return;
+	capture_active = 0;
+	glk_stream_set_current(text_capture_old_stream);
+	@copy $ffffffff sp;
+	@copy text_capture_new_stream sp;
+	@glk $0044 2 0; ! stream_close
+	@copy sp len;
+	@copy sp 0;
+	captured_text-->0 = len;
+	if (len > CAPTURE_BUFFER_LEN)
+	{
+		captured_text-->0 = CAPTURE_BUFFER_LEN;
+	}
+];
+
+[ PrintCapture len i;
+	len = captured_text-->0;
+	for ( i = 0 : i < len : i++ )
+	{
+		glk_put_char_uni(captured_text-->(i + 1));
+	}
+];
+
 -) after "Definitions.i6t".
 
 
