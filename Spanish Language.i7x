@@ -1,4 +1,4 @@
-Version 1/140707 of Spanish Language by Sebastian Arg begins here.
+Version 1/140708 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
@@ -55,7 +55,7 @@ Carry out looking (this is the spanish room description heading rule):
 			say "Darkness" (A);
 		end the printing the name of a dark room activity;
 	otherwise if the visibility ceiling is the location:
-		say "[visibility ceiling]" in title case;
+		johan mode "[visibility ceiling]";
 	otherwise:
 		say "[The visibility ceiling]";
 	say roman type;
@@ -70,6 +70,13 @@ Carry out looking (this is the spanish room description heading rule):
 	say run paragraph on with special look spacing.
 
 The spanish room description heading rule is listed instead of the room description heading rule in the carry out looking rules. 
+
+To johan mode (T - text):
+	let X be the number of words in T;
+	say word number 1 in T in sentence case;
+	say " ";
+	repeat with counter running from 2 to X:
+		say word number counter in T.
 
 Volume 2 - Language
 
