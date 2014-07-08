@@ -43,6 +43,33 @@ The story genre is usually "Ficción".
 
 The story title variable translates into I6 as "Story".
 
+Section 2 SR Hack - Others Hackings
+
+[Poner siempre el nombre de la habitación con primera letra en mayuscula:]
+
+Carry out looking (this is the spanish room description heading rule):
+	say bold type;
+	if the visibility level count is 0:
+		begin the printing the name of a dark room activity;
+		if handling the printing the name of a dark room activity:
+			say "Darkness" (A);
+		end the printing the name of a dark room activity;
+	otherwise if the visibility ceiling is the location:
+		say "[visibility ceiling]" in title case;
+	otherwise:
+		say "[The visibility ceiling]";
+	say roman type;
+	let intermediate level be the visibility-holder of the actor;
+	repeat with intermediate level count running from 2 to the visibility level count:
+		if the intermediate level is a supporter or the intermediate level is an animal:
+			say " (on [the intermediate level])" (B);
+		otherwise:
+			say " (in [the intermediate level])" (C);
+		let the intermediate level be the visibility-holder of the intermediate level;
+	say line break;
+	say run paragraph on with special look spacing.
+
+The spanish room description heading rule is listed instead of the room description heading rule in the carry out looking rules. 
 
 Volume 2 - Language
 
