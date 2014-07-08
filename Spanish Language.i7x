@@ -1,4 +1,4 @@
-Version 1/140628 of Spanish Language by Sebastian Arg begins here.
+Version 1/140707 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
@@ -25,8 +25,24 @@ By default, if Inform can't see any reason to choose a particular gender,
 it will use neuter. We want to change that for French, since French doesn't
 have neuter nouns:]
 
+[The grammatical gender of a thing is usually feminine gender.]
+
 The grammatical gender of an object is usually masculine gender.
 The grammatical gender of a woman is usually feminine gender.
+
+
+Section 1 SR Hack - Spanish Bibliographical Data (in place of Section SR2/6a - Unindexed Standard Rules variables - Unindexed in Standard Rules by Graham Nelson)
+
+The story title, the story author, the story headline, the story genre
+and the story description are text variables. [*****]
+The release number and the story creation year are number variables. [**]
+
+The release number is usually 1.
+The story headline is usually "Un relato interactivo".
+The story genre is usually "Ficción".
+
+The story title variable translates into I6 as "Story".
+
 
 Volume 2 - Language
 
@@ -80,6 +96,7 @@ language Spanish
   /a/ jugador |       [player]
   /b/ puntuación |    [score]
   /c/ hora            [time of day]
+
 
 -) in the Preform grammar.
 
@@ -531,13 +548,39 @@ regular in French:]
 	... <es-plural-default>
 
 <es-plural-exceptions> ::=
-	pies				pies |
-	monsieur		messieurs
+	a	            aes |
+	faralá	      faralaes |
+	albalá	      albalaes |
+	club	        clubes |
+	sí	          síes |
+	albúm	        albumes |
+	imam	        imames |
+	espécimen	    especímenes |
+	régimen	      regímenes |
+	volumen	      volúmenes |
+	hipérbaton	  hipérbatos |
+	cárdigan	    cárdigan |
+	trávelin	    trávelin |
+	o	            oes |
+	no	          noes |
+	yo	          yos |
+	carácter	    caracteres |
+	mánager	      mánager |
+	dux	          dux |
+	jersey	      jerséis |
+	espray	      espráis |
+	bíceps        bíceps |
+	fórceps       fórceps |
+	afrikáans	    afrikáans |
+	valses	      valses |
+	cualquiera	  cualesquiera |
+	quienquiera	  quienesquiera
 
 <es-plural-by-ending> ::=
 	*s			0			|		[tas -> tas]
 	*ón     2ones |		[camión->camiones]
 	*or     0es 	|		[contenedor->contenedores]
+	*er     0es 	|		[mujer->mujeres]
   *<aeiou>y 0es			[ley -> leyes]
   
 <es-plural-default> ::=
@@ -3655,13 +3698,11 @@ standard report preferring sometimes abbreviated room descriptions rule response
 
 [ Switching score notification on ]
 
-[standard report switching score notification on rule response (A) is "Score notification on.".]
 standard report switching score notification on rule response (A) is "Notificación de puntuación activada.".
 
 
 [ Switching score notification off ]
 
-[standard report switching score notification off rule response (A) is "Score notification off.".]
 standard report switching score notification off rule response (A) is "Notificación de puntuación desactivada.".
 
 
@@ -3757,18 +3798,18 @@ carry out requested actions rule response (A) is "[The noun] no puede hace eso."
     list writer internal rule response (B) is ")".
     list writer internal rule response (C) is " y ".
     list writer internal rule response (D) is "alumbrando".
-    list writer internal rule response (E) is "cerrado [o]".
-    list writer internal rule response (F) is "vací[o]".
-    list writer internal rule response (G) is "cerrado [o] y vací[o]".
-    list writer internal rule response (H) is "cerrado [o] y alumbrando".
-    list writer internal rule response (I) is "vacío [o] y alumbrando".
-    list writer internal rule response (J) is "cerrado [o], vacío [o][if serial comma option is active],[end if] y alumbrando".
-    list writer internal rule response (K) is "(alumbrando y que llevas puest [o]".
+    list writer internal rule response (E) is "cerrad[o]".
+    list writer internal rule response (F) is "[regarding the noun]vací[o]".
+    list writer internal rule response (G) is "cerrad[o] y vací[o]".
+    list writer internal rule response (H) is "cerrad[o] y alumbrando".
+    list writer internal rule response (I) is "vací[o] y alumbrando".
+    list writer internal rule response (J) is "cerrad[o], vací[o][if serial comma option is active],[end if] y alumbrando".
+    list writer internal rule response (K) is "(alumbrando y que llevas puest[o]".
     list writer internal rule response (L) is "que llevas puest[o]".
     list writer internal rule response (M) is "abiert[o]".
     list writer internal rule response (N) is "abiert[o] y vací[o]".
-    list writer internal rule response (O) is "cerrado [o]".
-    list writer internal rule response (P) is "cerrado [o] con llave".
+    list writer internal rule response (O) is "cerrad[o]".
+    list writer internal rule response (P) is "cerrad[o] con llave".
     list writer internal rule response (Q) is "que contiene".
     list writer internal rule response (R) is " ([if the noun is a person]encima [del_ noun][otherwise]sobre [el_ noun][end if]cual[s noun] ".
     list writer internal rule response (S) is ", [if the noun is a person]encima[otherwise]sobre[end if] del cual".
