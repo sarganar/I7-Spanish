@@ -1,4 +1,4 @@
-Version 1/140709 of Spanish Language by Sebastian Arg begins here.
+Version 1/140713 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
@@ -25,7 +25,6 @@ By default, if Inform can't see any reason to choose a particular gender,
 it will use neuter. We want to change that for French, since French doesn't
 have neuter nouns:]
 
-[The grammatical gender of a thing is usually feminine gender.]
 
 The grammatical gender of an object is usually masculine gender.
 The grammatical gender of a woman is usually feminine gender.
@@ -441,6 +440,102 @@ To say Él:
 		otherwise:
 			say "Ellas".
 
+
+To say sí:
+	now the prior named object is the player;
+	if the story viewpoint is first person singular:
+		say "mí";
+	if the story viewpoint is second person singular:
+		say "ti";
+	if the story viewpoint is third person singular:
+		say "sí";
+	if the story viewpoint is first person plural:
+		if the player is male:
+			say "nosotros";
+		otherwise:
+			say "nosotras";
+	if the story viewpoint is second person plural:
+		say "vosotros";
+	if the story viewpoint is third person plural:
+		say "sí".
+
+To say su:
+	if the story viewpoint is third person singular:[ or the prior named object is singular:]
+		say "su";
+	otherwise if the story viewpoint is third person plural:[ plural or prior named object is plural:]
+		say "su";
+	otherwise if the story viewpoint is second person singular:
+		say "tu";
+	otherwise if the story viewpoint is second person plural:
+		say "vuestro";
+	otherwise if the story viewpoint is first person singular:
+		say "mi";
+	otherwise if the story viewpoint is first person plural:
+		if prior named object is male:
+			say "nuestro";
+		otherwise:
+			say "nuestra".
+
+To say tuyo:
+	if the story viewpoint is third person singular:[ or prior named object is singular:]
+		if the prior named object is male:
+			say "suyo";
+		otherwise:
+			say "suya";
+	otherwise if the story viewpoint is third person plural:[ or prior named object is plural:]
+		if the prior named object is male:
+			say "suyos";
+		otherwise:
+			say "suyas";
+	otherwise if the story viewpoint is second person singular:
+		if the prior named object is male:
+			say "tuyo";
+		otherwise:
+			say "tuya";
+	otherwise if the story viewpoint is second person plural:
+		if the prior named object is male:
+			say "vuestro";
+		otherwise:
+			say "tuyas";
+	otherwise if the story viewpoint is first person singular:
+		if the prior named object is male:
+			say "mío";
+		otherwise:
+			say "mía";
+	otherwise if the story viewpoint is first person plural:
+		if the prior named object is male:
+			say "míos";
+		otherwise:
+			say "mías".
+
+To say se:
+	if the story viewpoint is third person singular:[ or prior named object is singular:]
+		say "se";
+	otherwise if the story viewpoint is third person plural:[ or prior named object is plural:]
+		say "se";
+	otherwise if the story viewpoint is second person singular:
+		say "te";
+	otherwise if the story viewpoint is second person plural:
+		say "se";
+	otherwise if the story viewpoint is first person singular:
+		say "me";
+	otherwise if the story viewpoint is first person plural:
+		say "nos".
+
+To say te:
+	if the story viewpoint is third person singular:[ or prior named object is singular:]
+		say "le";
+	otherwise if the story viewpoint is third person plural:[ or prior named object is plural:]
+		say "les";
+	otherwise if the story viewpoint is second person singular:
+		say "te";
+	otherwise if the story viewpoint is second person plural:
+		say "se";
+	otherwise if the story viewpoint is first person singular:
+		say "me";
+	otherwise if the story viewpoint is first person plural:
+		say "nos".
+
 Chapter 2.2.3 - Pronouns and possessives for other objects
 
 [These are similar, but easier. They are named from the third-person viewpoint
@@ -564,9 +659,9 @@ A rideable vehicle translates into Spanish as un vehículo montable.
 
 Section 2.2.5.3 - In Locksmith (for use with Locksmith by Emily Short)
 
-A passkey translates into Spanish as una llave maestra.
+[A passkey translates into Spanish as una llave maestra.
 A keychain translates into Spanish as un llavero.
-
+]
 Chapter 2.2.6 - Plurals
 
 Include (-
@@ -763,6 +858,7 @@ language Spanish
 	*			1a
 
 -) in the Preform grammar.
+
 
 [---------------------------------------------------------------------------------------------]
 [---------------------------------------------------------------------------------------------]
@@ -3038,20 +3134,10 @@ In Spanish desmontar is a verb meaning to dismount.
 
 Section 2.4.2.3 - In Locksmith (for use with Locksmith by Emily Short)
 
-In Spanish destrancar is a verb meaning to unbolt.
+[In Spanish destrancar is a verb meaning to unbolt.]
 
 
 Chapter 2.4.3 - Prepositions
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -3078,6 +3164,7 @@ only going to translate two, just for example's sake.]
 In Spanish llevar is a verb.
 In Spanish tener is a verb.
 In Spanish quitar is a verb.
+In Spanish poder is a verb.
 
 [TERMINACIONES SEGUN OBJETO]
 
@@ -3184,9 +3271,9 @@ Section 3.1.1.1 - Standard actions concerning the actor's possessions
     can't take component parts rule response (A) is "[regarding the noun]Parece que es parte [del whole].".
     can't take people's possessions rule response (A) is "[regarding the noun]Parece que pertenece [al owner].".
     can't take items out of play rule response (A) is "[regarding the noun]No está[n] disponible[s].".
-    can't take what you're inside rule response (A) is "Tienes que [if noun is a supporter]bajarte[otherwise]salirte[end if] primero.".
-    can't take what's already taken rule response (A) is "Ya tienes [the noun].".
-    can't take scenery rule response (A) is "Difícilmente podrías llevarte eso.".
+    can't take what you're inside rule response (A) is "[Tu] [tienes] que [if noun is a supporter]bajarte[otherwise]salirte[end if] primero.[plm]".
+    can't take what's already taken rule response (A) is "Ya [tienes] [the noun].".
+    can't take scenery rule response (A) is "Difícilmente [puedes] llevarte eso.".
     can only take things rule response (A) is "No puedes llevarte eso.".
     can't take what's fixed in place rule response (A) is "[The noun] está fij[o] en el sitio.".
     use player's holdall to avoid exceeding carrying capacity rule response (A) is "(colocas [the transferred item] en [the current working sack] para hacer sitio)[command clarification break]".
@@ -3745,6 +3832,16 @@ announce the pronoun meanings rule response (A) is "En este momento, ".
 announce the pronoun meanings rule response (B) is "es ".
 announce the pronoun meanings rule response (C) is "no está definido".
 announce the pronoun meanings rule response (D) is "esta historia no conoce ningún pronombre.".
+
+
+Chapter 3.1.2 - Responses in Basic Screen Effects (for use with Basic Screen Effects by Emily Short)
+
+	Standard pausing the game rule response (A) is "[paragraph break]Presiona ESPACIO para continuar.".
+
+Chapter 3.1.3 - Responses in Inanimate Listeners (for use with Inanimate Listeners by Emily Short)
+
+	Unsuccessful persuasion of inanimate objects rule response (A) is "[The target] no puedes hacer todo lo que hace una persona.".
+
 
 
 
