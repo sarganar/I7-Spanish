@@ -709,20 +709,11 @@ regular in French:]
 	*ón     2ones |		[camión->camiones]
 	*or     0es 	|		[contenedor->contenedores]
 	*er     0es 	|		[mujer->mujeres]
-	*o			0s 	|		[para evitar regla anti-spanish <en-trie-plural-regular-inflections> de Syntax.preform]
   *<aeiou>y 0es			[ley -> leyes]
   
 <es-plural-default> ::=
 	*		0s
 
-
--) in the Preform grammar.
-
-Include (-
-language English
-
-<en-trie-plural-regular-inflections> ::=
-	*ch				0es
 
 -) in the Preform grammar.
 
