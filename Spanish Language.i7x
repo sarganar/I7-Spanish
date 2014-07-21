@@ -709,13 +709,22 @@ regular in French:]
 	*ón     2ones |		[camión->camiones]
 	*or     0es 	|		[contenedor->contenedores]
 	*er     0es 	|		[mujer->mujeres]
+	*o			0s 	|		[para evitar regla anti-spanish <en-trie-plural-regular-inflections> de Syntax.preform]
   *<aeiou>y 0es			[ley -> leyes]
   
 <es-plural-default> ::=
 	*		0s
 
+
 -) in the Preform grammar.
 
+Include (-
+language English
+
+<en-trie-plural-regular-inflections> ::=
+	*ch				0es
+
+-) in the Preform grammar.
 
 
 Chapter 2.2.7 - Cases
@@ -6416,7 +6425,8 @@ Constant NI_NEEDED_VERSION "6L02";
 -) after "Definitions.i6t".
 
 
-Section 19 - Special functions extracted from Text Capture by Eric Eve
+Part TC - Special functions extracted from Text Capture by Eric Eve (for use without Text Capture by Eric Eve) 
+
 [according CC BY license]
 
 Use maximum capture buffer length of at least 256 translates as (- Constant CAPTURE_BUFFER_LEN = {N}; -). 
@@ -6539,3 +6549,14 @@ Es importante terminar el texto con el token "[plm]" (primera letra en mayúscul
 Cuando la sustitución se utiliza en medio de una frase, no es necesario el token "[plm]".
 
 	say "El portón se cierra de un golpe y [tu] [saltas] en el sitio.".
+
+
+Chapter: Extenciones de fábrica: traducciones
+
+La Spanish Language también traduce las extensiones:
+
+Basic Screen Effects
+
+Inanimate Listeners
+
+
