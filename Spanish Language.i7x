@@ -1,4 +1,4 @@
-Version 1/140713 of Spanish Language by Sebastian Arg begins here.
+Version 1/140725 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
@@ -51,7 +51,7 @@ Carry out looking (this is the spanish room description heading rule):
 	if the visibility level count is 0:
 		begin the printing the name of a dark room activity;
 		if handling the printing the name of a dark room activity:
-			say "Darkness" (A);
+			say "Oscuridad" (A);
 		end the printing the name of a dark room activity;
 	otherwise if the visibility ceiling is the location:
 		johan mode "[visibility ceiling]";
@@ -61,9 +61,9 @@ Carry out looking (this is the spanish room description heading rule):
 	let intermediate level be the visibility-holder of the actor;
 	repeat with intermediate level count running from 2 to the visibility level count:
 		if the intermediate level is a supporter or the intermediate level is an animal:
-			say " (on [the intermediate level])" (B);
+			say " (sobre [the intermediate level])" (B);
 		otherwise:
-			say " (in [the intermediate level])" (C);
+			say " (en [the intermediate level])" (C);
 		let the intermediate level be the visibility-holder of the intermediate level;
 	say line break;
 	say run paragraph on with special look spacing.
