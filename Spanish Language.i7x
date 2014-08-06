@@ -1,4 +1,4 @@
-Version 1/140725 of Spanish Language by Sebastian Arg begins here.
+Version 1/140806 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
@@ -652,6 +652,8 @@ A device translates into Spanish as un dispositivo.
 A direction translates into Spanish as una dirección.
 A region translates into Spanish as una región.
 
+A number translates into Spanish as un número.
+
 Section 2.2.5.2 - In Rideable Vehicles (for use with Rideable Vehicles by Graham Nelson)
 
 A rideable animal translates into Spanish as un animal montable.
@@ -856,6 +858,9 @@ language Spanish
 
 <es-adjective-to-feminine-default> ::=
 	*			1a
+
+<adjective-to-feminine-plural> ::=
+	... <adjective-to-plural>
 
 -) in the Preform grammar.
 
