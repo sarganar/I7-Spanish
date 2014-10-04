@@ -1,4 +1,4 @@
-Version 1/140806 of Spanish Language by Sebastian Arg begins here.
+Version 1/141004 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
@@ -44,7 +44,7 @@ The story title variable translates into I6 as "Story".
 
 Section 2 SR Hack - Others Hackings
 
-[Poner siempre el nombre de la habitación con primera letra en mayuscula:]
+[Para poner siempre el nombre de la habitación con primera letra en mayuscula:]
 
 Carry out looking (this is the spanish room description heading rule):
 	say bold type;
@@ -4722,7 +4722,7 @@ Include (-
 ! Serial Number: 14005.08
 
 Message "^Compilando con Spanish: Mensajes y rutinas de idioma [INFSP 0.97 MAYO 2014]";
-Message "   Asegurate de estar corriendo I7 Build 6L02^";
+Message "   Asegurate de estar corriendo I7 Build 6L38^";
 
 ! ---------------------------------------------------------------------------
 !   Parte I.   Asuntos preliminares
@@ -6396,7 +6396,7 @@ Include (-
 Array  buffer_nversion string 7;    ! infsp debug: Buffers for cheking I7 IDE correct version
 Array  buffer_bversion string 7;    ! See LanguageInitialise, below.
 
-Constant NI_NEEDED_VERSION "6L02";
+Constant NI_NEEDED_VERSION "6L38";
 ! LanguageInitialise: ojo que aqui aun no se seteo el I/O para Glulx (no andarian los prints y demás).
 
 [ chkI7V;				!infsp debug : check correct I7 Build Version
