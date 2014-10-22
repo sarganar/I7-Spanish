@@ -1,4 +1,4 @@
-Version 1/141004 of Spanish Language by Sebastian Arg begins here.
+Version 1/141022 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
@@ -3175,6 +3175,7 @@ In Spanish poder is a verb.
 
 
 To say o:
+	say "[regarding the noun]";
 	if prior named object is plural-named or the player is plural-named:
 		if prior named object is female:
 			say "as";
@@ -3188,6 +3189,7 @@ To say o:
 
 
 To say lo:
+	say "[regarding the noun]";
 	if prior named object is plural-named or the player is plural-named:
 		if prior named object is female:
 			say "las";
@@ -3200,6 +3202,7 @@ To say lo:
 			say "lo".
 
 To say n:
+	say "[regarding the noun]";
 	if prior named object is the player:
 		if the story viewpoint is first person singular or the story viewpoint is third person singular:
 			say nothing;
@@ -3214,6 +3217,7 @@ To say n:
 			say "n".
 
 To say s:
+	say "[regarding the noun]";
 	if prior named object is the player:
 		if the story viewpoint is first person singular or the story viewpoint is third person singular:
 			say nothing;
