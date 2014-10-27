@@ -1,4 +1,4 @@
-Version 1/141022 of Spanish Language by Sebastian Arg begins here.
+Version 1/141027 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
@@ -31,6 +31,7 @@ The grammatical gender of a woman is usually feminine gender.
 
 
 Section 1 SR Hack - Spanish Bibliographical Data (in place of Section SR2/6a - Unindexed Standard Rules variables - Unindexed in Standard Rules by Graham Nelson)
+[el 'is usually' no deja redefinir las constantes, por lo que hay que hackearlo]
 
 The story title, the story author, the story headline, the story genre
 and the story description are text variables. [*****]
@@ -75,6 +76,10 @@ To johan mode (T - text):
 	say word number 1 in T in sentence case;
 	repeat with counter running from 2 to X:
 		say " [word number counter in T]".
+
+Section 3 - Misc
+
+The description of yourself is "Tan buen mozo como siempre."
 
 Volume 2 - Language
 
@@ -3951,8 +3956,8 @@ carry out requested actions rule response (A) is "[The noun] no puede hace eso."
     list writer internal rule response (P) is "cerrad[o] con llave".
     list writer internal rule response (Q) is "que contiene".
     list writer internal rule response (R) is " ([if the noun is a person]encima [del_ noun][otherwise]sobre [el_ noun][end if]cual[s noun] ".
-    list writer internal rule response (S) is ", [if the noun is a person]encima[otherwise]sobre[end if] del cual".
-    list writer internal rule response (T) is " (in [if the noun is a person]whom[otherwise]which[end if] ".
+    list writer internal rule response (S) is ", [if the noun is a person]encima[otherwise]sobre[end if] [lo] cual ".
+    list writer internal rule response (T) is "[if the noun is a person]encima[otherwise]sobre[end if] [lo] cual ".
     list writer internal rule response (U) is ", dentro ".
     list writer internal rule response (V) is "[es-ves]".
     list writer internal rule response (W) is "es nada".[todo:si se refiere a personas deberia decir 'es nadie']
