@@ -1,4 +1,4 @@
-Version 1/141027 of Spanish Language by Sebastian Arg begins here.
+Version 1/141029 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
@@ -77,9 +77,37 @@ To johan mode (T - text):
 	repeat with counter running from 2 to X:
 		say " [word number counter in T]".
 
-Section 3 - Misc
+Section 3 SR Hack - Spanish People (in place of Section SR1/11 - People in Standard Rules by Graham Nelson)
+[el 'is usually' no deja redefinir las constantes, por lo que hay que hackearlo]
 
-The description of yourself is "Tan buen mozo como siempre."
+The specification of person is "A pesar de su nombre, no necesariamente se trata de un ser humano, sino de cualquier ente con las funciones necesarias como para interactuar con él."
+
+A person can be female or male. A person is usually male.
+A person can be neuter. A person is usually not neuter.
+
+A person has a number called carrying capacity.
+The carrying capacity of a person is usually 100.
+
+Include (-
+	has transparent animate
+	with before NULL,
+-) when defining a person.
+
+The yourself is an undescribed person. The yourself is proper-named.
+
+The yourself is privately-named.
+Understand "your former self" or "my former self" or "former self" or
+	"former" as yourself when the player is not yourself.
+
+Understand "tu antiguo yo" or "mi antiguo yo" or "antiguo yo" as yourself when the player is not yourself.
+
+The description of yourself is usually "Tan buen mozo como siempre."
+
+The yourself object translates into I6 as "selfobj".
+Include (-
+	with saved_short_name (+ "yourself" +),
+ -) when defining yourself.
+
 
 Volume 2 - Language
 
