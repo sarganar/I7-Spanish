@@ -1,4 +1,4 @@
-Version 1/141029 of Spanish Language by Sebastian Arg begins here.
+Version 1/141129 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
@@ -3395,11 +3395,11 @@ Section 3.1.1.2 - Standard actions which move the actor
     describe room gone into rule response (C) is "[The actor] se va hacia [noun]".
     describe room gone into rule response (D) is "[The actor] llega desde arriba".
     describe room gone into rule response (E) is "[The actor] llega desde abajo".
-   [ describe room gone into rule response (F) is "[The actor] llega desde [the back way]".] [todo: no compila esto]
+    describe room gone into rule response (F) is "[The actor] llega desde [the opposite of the noun]".
     describe room gone into rule response (G) is "[The actor] llega".
-    [describe room gone into rule response (H) is "[The actor] llega a [the room gone to] desde arriba".[todo: no compila esto]
-    describe room gone into rule response (I) is "[The actor] llega a [the room gone to] desde abajo"..
-    describe room gone into rule response (J) is "[The actor] llega a [the room gone to] desde [the back way]".]
+    describe room gone into rule response (H) is "[The actor] llega a [the room gone to] desde arriba".
+    describe room gone into rule response (I) is "[The actor] llega a [the room gone to] desde abajo".
+    describe room gone into rule response (J) is "[The actor] llega a [the room gone to] desde [the opposite of the noun]".
     describe room gone into rule response (K) is "[The actor]  se va por [the noun]".
     describe room gone into rule response (L) is "[The actor] llega desde [the noun]".
     describe room gone into rule response (M) is "sobre [the vehicle gone by]".
