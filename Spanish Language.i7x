@@ -1,4 +1,4 @@
-Version 1/141129 of Spanish Language by Sebastian Arg begins here.
+Version 1/150218 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
@@ -3392,7 +3392,7 @@ Section 3.1.1.2 - Standard actions which move the actor
     can't go that way rule response (B) is "No puedes ir porque [the door gone through] no lleva a ningún sitio.".
     describe room gone into rule response (A) is "[The actor] se va hacia arriba".
     describe room gone into rule response (B) is "[The actor] se va hacia abajo".
-    describe room gone into rule response (C) is "[The actor] se va hacia [noun]".
+    describe room gone into rule response (C) is "[The actor] se va hacia [the noun]".
     describe room gone into rule response (D) is "[The actor] llega desde arriba".
     describe room gone into rule response (E) is "[The actor] llega desde abajo".
     describe room gone into rule response (F) is "[The actor] llega desde [the opposite of the noun]".
