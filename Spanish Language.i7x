@@ -1,4 +1,4 @@
-Version 1/150218 of Spanish Language by Sebastian Arg begins here.
+Version 1/160213 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
@@ -114,6 +114,7 @@ Volume 2 - Language
 Part 2.1 - Determiners
 
 Chapter 2.1.1 - Articles
+
 
 To say el (O - object):
 	say "[the O]".
@@ -3146,8 +3147,8 @@ could mean either "she carries a dress" or "she wears a dress"; I've
 guessed that "porter" ought to mean "carry" here, and then provided
 "elle est vétue de..." for "she is wearing...".]
 
-In Spanish ser is a verb meaning to be.
-In Spanish estar is a verb meaning to be.
+[In Spanish ser is a verb meaning to be.
+In Spanish estar is a verb meaning to be.] [6m62: comentariado para hacerlo compilable. bug Mantis1817]
 
 [In Spanish tener is a verb meaning to have.
 In Spanish estar relacionado is a verb meaning to relate.
@@ -3167,8 +3168,8 @@ In Spanish destrabar is a verb meaning to unlock.]
 
 Section 2.4.2.2 - In Rideable Vehicles (for use with Rideable Vehicles by Graham Nelson)
 
-In Spanish montar sobre is a verb meaning to mount.
-In Spanish desmontar is a verb meaning to dismount.
+[In Spanish montar sobre is a verb meaning to mount.
+In Spanish desmontar is a verb meaning to dismount.] [6m62: comentariado para hacerlo compilable. bug Mantis1817]
 
 Section 2.4.2.3 - In Locksmith (for use with Locksmith by Emily Short)
 
@@ -3199,10 +3200,11 @@ This produces text which can be pasted in here before being translated. I'm
 only going to translate two, just for example's sake.]
 
 [Verbos sin significados, solo para el texto adaptativo]
-In Spanish llevar is a verb.
-In Spanish tener is a verb.
-In Spanish quitar is a verb.
-In Spanish poder is a verb.
+[In Spanish  llevar is a verb.
+In Spanish  tener is a verb.
+In Spanish  quitar is a verb.
+In Spanish  poder is a verb.] [6m62: comentariado para hacerlo compilable. bug Mantis1817]
+
 
 [TERMINACIONES SEGUN OBJETO]
 
@@ -3301,8 +3303,8 @@ Section 3.1.1.1 - Standard actions concerning the actor's possessions
 
 [ Taking inventory ]
 
-    print empty inventory rule response (A) is "No [llevas] nada.".
-    print standard inventory rule response (A) is "[Tu] [llevas][plm]:[line break]".
+    print empty inventory rule response (A) is "No llevas nada.". [6m62: quitado el [verbo]para hacerlo compilable. bug Mantis1817]
+    print standard inventory rule response (A) is "[Tu] llevas[plm]:[line break]".[6m62: quitado el [verbo]para hacerlo compilable. bug Mantis1817]
     report other people taking inventory rule response (A) is "[The actor] consulta su inventario.".
 
 
@@ -3313,9 +3315,9 @@ Section 3.1.1.1 - Standard actions concerning the actor's possessions
     can't take component parts rule response (A) is "[regarding the noun]Parece que es parte [del whole].".
     can't take people's possessions rule response (A) is "[regarding the noun]Parece que pertenece [al owner].".
     can't take items out of play rule response (A) is "[regarding the noun]No está[n] disponible[s].".
-    can't take what you're inside rule response (A) is "[Tu] [tienes] que [if noun is a supporter]bajarte[otherwise]salirte[end if] primero.[plm]".
-    can't take what's already taken rule response (A) is "Ya [tienes] [the noun].".
-    can't take scenery rule response (A) is "Difícilmente [puedes] llevarte eso.".
+    can't take what you're inside rule response (A) is "[Tu] tienes que [if noun is a supporter]bajarte[otherwise]salirte[end if] primero.[plm]".[6m62: quitado el [verbo]para hacerlo compilable. bug Mantis1817]
+    can't take what's already taken rule response (A) is "Ya tienes [the noun].".[6m62: quitado el [verbo]para hacerlo compilable. bug Mantis1817]
+    can't take scenery rule response (A) is "Difícilmente puedes llevarte eso.".[6m62: quitado el [verbo]para hacerlo compilable. bug Mantis1817]
     can only take things rule response (A) is "No puedes llevarte eso.".
     can't take what's fixed in place rule response (A) is "[The noun] está fij[o] en el sitio.".
     use player's holdall to avoid exceeding carrying capacity rule response (A) is "(colocas [the transferred item] en [the current working sack] para hacer sitio)[command clarification break]".
@@ -3512,7 +3514,7 @@ Section 3.1.1.4 - Standard actions which change the state of things
 
     can't lock without a lock rule response (A) is "[regarding the noun]No parece[n] tener ningún tipo de cerrojo.".
     can't lock what's already locked rule response (A) is "[regarding the noun][The noun] ya estaba cerrad[o].".
-    can't lock what's open rule response (A) is "Primero [tu] [tienes] que cerrar [the noun].".
+    can't lock what's open rule response (A) is "Primero [tu] tienes que cerrar [the noun].".[6m62: quitado el [verbo]para hacerlo compilable. bug Mantis1817]
     can't lock without the correct key rule response (A) is "[regarding the second noun]No parece[n], encajar en la cerradura.".
     standard report locking rule response (A) is "Cierras [the noun].".
     standard report locking rule response (B) is "[The actor] cierra [the noun].".
@@ -3523,7 +3525,7 @@ Section 3.1.1.4 - Standard actions which change the state of things
 can't unlock without a lock rule response (A) is "No [regarding the noun]parece[n] tener ningún tipo de cerrojo.".
 can't unlock what's already unlocked rule response (A) is "[El noun] ya tenía abierto el cerrojo.".
 can't unlock without the correct key rule response (A) is "No [regarding the second noun]parece[n] encajar en la cerradura.".
-standard report unlocking rule response (A) is "[Tu] [quitas] el cerrojo [al noun].[plm]".
+standard report unlocking rule response (A) is "[Tu] quitas el cerrojo [al noun].[plm]".[6m62: quitado el [verbo]para hacerlo compilable. bug Mantis1817]
 standard report unlocking rule response (B) is "[El actor] quita el cerrojo [al noun].".
 
 
@@ -3994,7 +3996,7 @@ carry out requested actions rule response (A) is "[The noun] no puede hace eso."
 
 To say es-ves:
 	if the noun is a person:[la clase 'person' abarca man, women and animal]
-		say "[regarding list writer internals][eres]";
+		say "[regarding list writer internals]eres";[6m62: quitado el [verbo]para hacerlo compilable. bug Mantis1817]
 	otherwise:
 		say "ves".
     
@@ -4015,6 +4017,7 @@ To say es-ves:
     action processing internal rule response (H) is "Debes mencionar el segundo objeto en concreto.".
     action processing internal rule response (I) is "Puedes no mencionar el segundo objeto.".
     action processing internal rule response (J) is "(Ya que ha ocurrido algo dramático, se ha recortado la lista de objetos sobre los que actuabas)".
+    action processing internal rule response (K) is "Instrucción no comprendida.".
     
     
 [Chapter 8 - Parser error internal rule]
@@ -4034,7 +4037,7 @@ To say es-ves:
     parser error internal rule response (N) is "No conozco ese verbo.".
     parser error internal rule response (O) is "Eso no es importante.".
     parser error internal rule response (P) is "No entendí la última parte de la orden.".
-    parser error internal rule response (Q) is "[if number understood is 0]No hay suficientes.[otherwise]Aquí sólo hay [number understood] disponible.[end if]".
+		parser error internal rule response (Q) is "[if number understood is 0]No hay suficientes [otherwise]Aquí sólo hay [number understood in words] [end if]disponibles.".
     parser error internal rule response (R) is "Ese objeto no tiene sentido en este contexto.".
     parser error internal rule response (S) is "Para repetir un comando como 'rana, salta', escribe 'repite', en lugar de 'rana, repite'.".
     parser error internal rule response (T) is "No puedes empezar la frase con una coma.".
@@ -4043,14 +4046,13 @@ To say es-ves:
     parser error internal rule response (W) is "Para hablar con alguien intenta 'alguien, hola' o algo así.".
     parser error internal rule response (X) is "¿Perdón?".
 
-[    
-    parser error internal rule response (Q) is "¡No encuentro nada para hacer eso!".
-    parser error internal rule response (R) is "No hay ninguno disponible.".
-    parser error internal rule response (T) is "Eso parece partenecer a [the noun].".
-    parser error internal rule response (U) is "Eso no puede contener cosas.".
-    parser error internal rule response (V) is "[The noun] está cerrado.".
-    parser error internal rule response (X) is "[The noun] está vacío.".
-] [deprecated?]
+
+    parser nothing error internal rule response (A) is "¡No encuentro nada para hacer eso!".
+    parser nothing error internal rule response (B) is "No hay ninguno disponible.".
+    parser nothing error internal rule response (C) is "Eso parece partenecer a [the noun].".
+    parser nothing error internal rule response (D) is "Eso no puede contener cosas.".
+    parser nothing error internal rule response (E) is "[The noun] está cerrado.".
+    parser nothing error internal rule response (F) is "[The noun] está vacío.".
 
  
 [Section  13 - Darkness name internal rule]
@@ -4088,13 +4090,14 @@ To say es-ves:
     standard implicit taking rule response (B) is "([the second noun] primero coge [the noun])[command clarification break]".
 
 [Section  20 - Immediately undo rule]
-    immediately undo rule response (A) is "El uso de 'deshacer' no está permitido en este juego.".
+    immediately undo rule response (A) is "El uso de 'deshacer' no está permitido en esta historia.".
     immediately undo rule response (B) is "No puedes 'deshacer' lo que no has hecho.".
     immediately undo rule response (C) is "Tu intérprete no puede 'deshacer' acciones, ¡lo siento!".
     immediately undo rule response (D) is "No puedes 'deshacer' más.".
     immediately undo rule response (E) is "[bracket]Retrocediendo al turno anterior.[close bracket]".
+    immediately undo rule response (F) is "'Deshacer' agotado. Lo siento.".
 
-
+[Section  21 - Misc]
 
 Volume 4 - Command parsing
 
@@ -4759,7 +4762,7 @@ Include (-
 ! Serial Number: 14005.08
 
 Message "^Compilando con Spanish: Mensajes y rutinas de idioma [INFSP 0.97 MAYO 2014]";
-Message "   Asegurate de estar corriendo I7 Build 6L38^";
+Message "   Asegurate de estar corriendo I7 Build 6M62^";
 
 ! ---------------------------------------------------------------------------
 !   Parte I.   Asuntos preliminares
@@ -6433,7 +6436,7 @@ Include (-
 Array  buffer_nversion string 7;    ! infsp debug: Buffers for cheking I7 IDE correct version
 Array  buffer_bversion string 7;    ! See LanguageInitialise, below.
 
-Constant NI_NEEDED_VERSION "6L38";
+Constant NI_NEEDED_VERSION "6M62";
 ! LanguageInitialise: ojo que aqui aun no se seteo el I/O para Glulx (no andarian los prints y demás).
 
 [ chkI7V;				!infsp debug : check correct I7 Build Version
@@ -6564,6 +6567,8 @@ Spanish Language ends here.
 ---- DOCUMENTATION ----
 
 Chapter: Texto Adaptativo: Verbos
+
+ATENCIÓN: La actual Build 6M62 de I7 tiene un bug por el que fue necesario desactivar el asunto del texto adaptativo en el caso de los verbos (al cambiar de persona). Por favor, no lo utilices hasta tanto se corrija. O sea, lo siguiente no funciona:
 
 La phrase:
 

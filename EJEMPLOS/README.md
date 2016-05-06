@@ -10,7 +10,7 @@ Algunas historias de ejemplo.
      (puedes usar el notepad de Windows para cortar y pegar, o cualquier otro editor Unicode UTF-8).
 3. Si se trata de un juego grande, debes extender la capacidad de la maquina Z. En la pestaña 'Settings' de I7, marca Z-Code Version 8 o Glulx.     
 4. Pulsa boton 'Go!'
-5. Juega, explora, mete mano. Asi se aprende.
+5. Juega, explora, mete mano. Así se aprende.
 
 Notas de desarrollo y programación en:
 http://wiki.caad.es/Inform7_6L02
