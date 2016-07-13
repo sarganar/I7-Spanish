@@ -1,4 +1,4 @@
-Version 1/160213 of Spanish Language by Sebastian Arg begins here.
+Version 1/160713 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
@@ -4395,6 +4395,7 @@ Understand "sal de [something]" as getting off.
 Understand "sal fuera/afuera" as exiting. Understand the commands "fuera","afuera","salte","bajate","levantate","bajarse","levantarse","salirse","bajarte","levantarte" and "salirte" as "sal".
 
 Understand "examina [something]" as examining.
+Understand "examina a [something]" as examining.
 Understand "examina a [someone]" as examining. Understand the commands  "describe","inspecciona","observa","ex","x" as "examina".
 
 Understand "lee [something]" as examining.
