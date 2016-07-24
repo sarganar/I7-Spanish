@@ -29,6 +29,7 @@ have neuter nouns:]
 The grammatical gender of an object is usually masculine gender.
 The grammatical gender of a woman is usually feminine gender.
 
+A thing can be female.
 
 Section 1 SR Hack - Spanish Bibliographical Data (in place of Section SR2/6a - Unindexed Standard Rules variables - Unindexed in Standard Rules by Graham Nelson)
 [el 'is usually' no deja redefinir las constantes, por lo que hay que hackearlo]
