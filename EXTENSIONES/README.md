@@ -1,4 +1,4 @@
 EXTENSIONES infsp7 
 ======
 
-Extensiones traducidas, compatibles con I7
+Extensiones producidas por la comunidad hispana, compatibles con I7
