@@ -1,4 +1,4 @@
-Version 1/160713 of Spanish Language by Sebastian Arg begins here.
+Version 1/170101 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
@@ -29,7 +29,9 @@ have neuter nouns:]
 The grammatical gender of an object is usually masculine gender.
 The grammatical gender of a woman is usually feminine gender.
 
-A thing can be female.
+A thing can be female. [Habilita genero a inanimados, como containers, supporters, etc. Caracteristica necesaria en espanol]
+A room can be female. [Habilita genero a habitaciones. Caracteristica necesaria (a veces) en espanol, sobre todo al listar las habitaciones.]
+A room can be plural-named or singular-named. [spanish need: al listar rooms como 'las Escaleras']
 
 Section 1 SR Hack - Spanish Bibliographical Data (in place of Section SR2/6a - Unindexed Standard Rules variables - Unindexed in Standard Rules by Graham Nelson)
 [el 'is usually' no deja redefinir las constantes, por lo que hay que hackearlo]
@@ -4466,7 +4468,7 @@ Understand "responde [someone] [text]" as answering it that.
 Understand the commands "di","grita" and "dile" as "responde".
 
 
-Understand "cuenta con [someone]" as a mistake ("Debes mencionar el tema de que quieres hablar.").
+[Understand "cuenta con [someone]" as a mistake ("Debes mencionar el tema de que quieres hablar.").][quitado, por un conflicto con Quip-Based Conversation SP]
 
 Understand "cuenta [someone] de/sobre [text]" as telling it about.
 Understand "cuenta [someone] [text]" as telling it about.
@@ -4622,6 +4624,7 @@ Part 4.2 - Additional language-specific actions
 
 [Section SL3/11 - Declaraciones VerboIrregular]
 [Hay problemas con los Unicode y los acentos. Tener cuidado al editar esto con editores no UTF-8]
+[todo: sigue haciendo falta esto?]
 
 Include (-
 ! Objetos VerboIrregular, necesarios para el parseo de verbos irregulares en espanol (Added by SL)
@@ -4656,14 +4659,14 @@ VerboIrregular "descubrir" with imperativo 'descubre';
 VerboIrregular "despertar" with imperativo 'despierta' 'espabilate' 'espabilarse' 'espabilarte';
 VerboIrregular "destruir" with imperativo 'destruye';
 VerboIrregular "disculparte" with imperativo 'sorry' 'perdon';
-VerboIrregular "dormir" with imperativo 'duerme' 'dormir';
+VerboIrregular "dormir" with imperativo 'duerme';
 VerboIrregular "echar" with imperativo 'echate' 'echarse';
 VerboIrregular "encender" with imperativo 'enciende';
 VerboIrregular "esperar" with imperativo 'z//';
 VerboIrregular "examinar" with imperativo 'x//' 'describe' 'ex';
 VerboIrregular "fregar" with imperativo 'friega';
 VerboIrregular "guardar en disco el estado del juego" with imperativo 'save' 'guardar' 'salvar';
-VerboIrregular "ir" with imperativo 've' 'vete' 'ir';
+VerboIrregular "ir" with imperativo 've' 'vete';
 VerboIrregular "volver" with imperativo 'vuelve';
 VerboIrregular "levantar" with imperativo 'levantate' 'levantarse' 'levantarte';
 VerboIrregular "listar los lugares visitados" with imperativo 'places' 'lugares';
@@ -5544,6 +5547,7 @@ Include (-
 Section 8 - Commands
 
 Include (-
+!LanguageVerb: imprime el verbo, usado en pregunta para esclarecer comando
 [ LanguageVerb i aux;
 
     if (ImprimirIrregular(i)==0){
