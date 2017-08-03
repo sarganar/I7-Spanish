@@ -1,4 +1,4 @@
-Version 1/170101 of Spanish Language by Sebastian Arg begins here.
+Version 1/170726 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
@@ -4287,16 +4287,51 @@ Understand "ponte [something preferably held]" as wearing.
 Understand "ponte con [something preferably held]" as wearing.
 Understand the commands  "viste","vistete","ponerse","vestirse","ponerte","vestirte","ponerme","vestirme","ponme" and "visteme" as "ponte".
 
-Understand "pon [other things] en [container]" as inserting it into. Understand the commands  "mete","echa","inserta" and "coloca"  as "pon".
-Understand "pon [other things] en/sobre [something]" as putting it on. 
+[inserting it into]
+Understand "pon [other things] en [container]" as inserting it into. 
+
+Understand the commands  "echa","inserta" and "coloca"  as "pon".
+
 Understand "pon [other things] dentro de [something]" as inserting it into.
-Understand "pon [something] a [text]" as setting it to.
 Understand "pon a [someone] en [container]" as inserting it into.
-Understand "pon a [someone] en [something]" as putting it on.
 Understand "pon a [someone] dentro de [something]" as inserting it into.[todo no seria [container]?]
+
+Understand "deja [other things] en [container]" as inserting it into.
+Understand "deja [other things] dentro de [something]" as inserting it into.
+
+Understand "tira [other things] en [container]" as inserting it into.
+Understand "tira [other things] dentro de [something]" as inserting it into.
+Understand "tira [things preferably held] por [something]" as inserting it into. 
+
+[....con verbo 'meter']
+Understand "mete [other things] dentro de [something]" as inserting it into.
+Understand "mete a [someone] dentro de [something]" as inserting it into.
+
+Understand "mete [other things] en [something]" as inserting it into.
+Understand "mete a [someone] en [something]" as inserting it into.
+
+[Understand "mete [other things] en [container]" as inserting it into.
+Understand "mete a [someone] en [container]" as inserting it into.]
+
+Understand "mete [things preferably held] por [something]" as inserting it into. 
+
+[putting it to]
+Understand "pon [other things] en/sobre [something]" as putting it on. 
+Understand "pon a [someone] en [something]" as putting it on.
 Understand "pon a [someone] sobre [something]" as putting it on. 
 Understand "pon [other things] encima de [something]" as putting it on.
 Understand "pon a [someone] encima de [something]" as putting it on.
+
+Understand "deja [other things] en/sobre [something]" as putting it on.
+Understand "deja [other things] encima de [something]" as putting it on.
+
+Understand "tira [other things] en/sobre [something]" as putting it on.
+Understand "tira [other things] encima de [something]" as putting it on.
+
+[others]
+
+Understand "pon [something] a [text]" as setting it to.
+
 
 Understand "pon cerrojo/pestillo/cierre a [something]" as locking it with.
 Understand "pon el cerrojo/pestillo/cierre a [something]" as locking it with.
@@ -4305,10 +4340,6 @@ Understand "pon el cerrojo/pestillo/cierre a [something] con [something preferab
 
 Understand "deja [things preferably held]" as dropping. Understand the command "suelta" as "deja".
 Understand "deja a [someone]" as dropping.
-Understand "deja [other things] en [container]" as inserting it into.
-Understand "deja [other things] en/sobre [something]" as putting it on.
-Understand "deja [other things] dentro de [something]" as inserting it into.
-Understand "deja [other things] encima de [something]" as putting it on.
 
 Understand "lanza [something preferably held] a/por/contra [something]" as throwing it at. Understand the command "arroja" as "lanza". 
 Understand "lanza a [someone] por/contra [something]" as throwing it at.
@@ -4316,12 +4347,7 @@ Understand "lanza a [someone] por/contra [something]" as throwing it at.
 Understand "tira de [something]" as pulling.
 Understand "tira [things preferably held]" as dropping.
 Understand "tira a [things preferably held]" as dropping. [added]
-Understand "tira [other things] en [container]" as inserting it into.
-Understand "tira [other things] en/sobre [something]" as putting it on.
-Understand "tira [other things] dentro de [something]" as inserting it into.
-Understand "tira [other things] encima de [something]" as putting it on.
 Understand "tira [something preferably held] a/contra [something]" as throwing it at.
-Understand "tira [things preferably held] por [something]" as inserting it into. 
 
 Understand "da [something preferably held] a [someone]" as giving it to.
 Understand "da a [someone] [something preferably held]" as giving it to (with nouns reversed).
