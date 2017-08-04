@@ -1,4 +1,4 @@
-Version 1/170726 of Spanish Language by Sebastian Arg begins here.
+Version 1/170804 of Spanish Language by Sebastian Arg begins here.
 
 "To make Spanish the language of play."
 
@@ -104,11 +104,15 @@ Understand "your former self" or "my former self" or "former self" or
 
 Understand "tu antiguo yo" or "mi antiguo yo" or "antiguo yo" as yourself when the player is not yourself.
 
-The description of yourself is usually "Tan buen mozo como siempre."
+The description of yourself is usually "Tan buen aspecto como siempre."
 
 The yourself object translates into I6 as "selfobj".
 Include (-
-	with saved_short_name (+ "yourself" +),
+!	with saved_short_name (+ "yourself" +),
+	with saved_short_name [;
+				print "ti mism", (o) player;
+	],
+
  -) when defining yourself.
 
 
@@ -572,6 +576,45 @@ To say te:
 		say "me";
 	otherwise if the story viewpoint is first person plural:
 		say "nos".
+
+[para casos como:
+>frotame
+Frotas yourselfy.
+]
+
+To say ourselves:
+	now the prior named object is the player;
+	if the story viewpoint is first person singular:
+		if the player is male:
+			say "mi mismo";
+		otherwise:
+			say "mi misma";
+	if the story viewpoint is second person singular:
+		if the player is male:
+			say "ti mismo";
+		otherwise:
+			say "ti misma";
+	if the story viewpoint is third person singular:
+		if the player is male:
+			say "si mismo";
+		otherwise:
+			say "si misma";
+	if the story viewpoint is first person plural:
+		if the player is male:
+			say "nosotros mismos";
+		otherwise:
+			say "nosotras mismas";
+	if the story viewpoint is second person plural:
+		if the player is male:
+			say "ustedes mismos";
+		otherwise:
+			say "ustedes mismas";
+	if the story viewpoint is third person plural:
+		if the player is male:
+			say "ellos mismos";
+		otherwise:
+			say "ellas mismas".
+
 
 Chapter 2.2.3 - Pronouns and possessives for other objects
 
@@ -3225,6 +3268,19 @@ To say o:
 		otherwise:
 			say "o".
 
+To say o_jugador:
+	say "[regarding the player]";
+	if prior named object is plural-named or the player is plural-named:
+		if prior named object is female:
+			say "as";
+		otherwise:
+			say "os";
+	otherwise:
+		if prior named object is female:
+			say "a";
+		otherwise:
+			say "o".
+
 
 To say lo:
 	say "[regarding the noun]";
@@ -3774,12 +3830,12 @@ block drinking rule response (A) is "Eso no parece potable.". [¿O es "No hay na
 block saying sorry rule response (A) is "Oh, no es necesario que te disculpes.".
 
 [ Swinging ]
-block swinging rule response (A) is "No [if noun is plural-named]son[otherwise]es[end if] [regarding the noun]adecuad[o] para culimpiarse.".
+block swinging rule response (A) is "No [if noun is plural-named]son[otherwise]es[end if] [regarding the noun]adecuad[o] para columpiarse.".
 
 [ Rubbing ]
 can't rub another person rule response (A) is "[Al noun] podría[n] no gustarle[s] eso.".
-report rubbing rule response (A) is "Frotas [el noun].".
-report rubbing rule response (B) is "[El actor] frota[n] [el noun].".
+report rubbing rule response (A) is "[if the noun is the actor]Te frotas[otherwise]Frotas[end if] [al noun].".
+report rubbing rule response (B) is "[El actor] frota[n] [al noun].".
 
 [ Setting it to ]
 block setting it to rule response (A) is "Eso no puede setearse a ningún valor.".
@@ -3795,7 +3851,8 @@ block buying rule response (A) is "No hay nada en venta.".
 block climbing rule response (A) is "No creo que vayas a lograr nada así.".
 
 [ Sleeping ]
-block sleeping rule response (A) is "No estás especialmente [regarding the player]somnolient[o].".
+block sleeping rule response (A) is "No estás especialmente somnolient[o_jugador].".
+[block sleeping rule response (A) is "No estás especialmente somnolient[o].".]
 
 
 
@@ -6142,45 +6199,47 @@ Include (-
 !the preposition |n|.)
 
 !IdiomaImprimirComando: hackeo spanish de PrintCommand(Parser.i6t)
-[ PrintCommand from i k spacing_flag prep;
+!												adicion inteligente de preposiciones en la deduccion impresa
 
-  if (from==0)
-  {   i=verb_word;
-      LanguageVerb(i);
-      from++; spacing_flag = true;
-  }
-  
-! print "^Valor de from: ",from,"^"; ! infsp debug
-! print "Valor de pcount: ",pcount,"^"; ! infsp debug
-  
-  for (k=from:k<pcount:k++){
-     i=pattern-->k;
-     !print "^IIC: i: ",  i, "^"; ! infsp debug
-      if (i == PATTERN_NULL) continue;
-      if (spacing_flag) print (char) ' ';
-      if (i == 0) { PARSER_CLARIF_INTERNAL_RM('F'); jump TokenPrinted; }!viejo THOSET__TX
-      if (i == 1) { PARSER_CLARIF_INTERNAL_RM('G'); jump TokenPrinted; }!viejo THAT__TX
-      if (i >= REPARSE_CODE) continue;
-      else {
-            if (i in compass && LanguageVerbLikesAdverb(verb_word))
-                LanguageDirection (i.door_dir); ! the direction name as adverb
-            if (i==player) print "te";
+[ PrintCommand from i k spacing_flag prep;
+    if (from == 0) {
+        i = verb_word;
+        if (LanguageVerb(i) == 0)
+            if (PrintVerb(i) == 0) print (address) i;
+        from++; spacing_flag = true;
+    }
+    for (k=from : k<pcount : k++) {
+        i = pattern-->k;
+        if (i == PATTERN_NULL) continue;
+        if (spacing_flag) print (char) ' ';
+        if (i == 0) { PARSER_CLARIF_INTERNAL_RM('F'); jump TokenPrinted; }
+        if (i == 1) { PARSER_CLARIF_INTERNAL_RM('G'); jump TokenPrinted; }
+        if (i >= REPARSE_CODE)
+            print (address) VM_NumberToDictionaryAddress(i-REPARSE_CODE);
+        else
+            if (i ofclass K3_direction)
+                print (LanguageDirection) i; ! the direction name as adverb
+!            else
+!                print (the) i;
+!						infsp hack
+            if (i==player) print (al) i;
             else  {
                prep=AveriguarPrimeraPreposicion();
                switch(prep){
-                 'a//': print " ",(al) i;
-                 'de': print " ",(del) i;
-                 NULL: print " ",(the) i;
+                 'a//': print (al) i;
+                 'de': print (del) i;
+                 NULL: print (the) i;
                  default: !print " ", (address) prep;
-                           print " ",(the) i;
+                           print (the) i;
                }
             }
-      continue;
-      }
+!						/infsp hack
+
       .TokenPrinted;
-      spacing_flag = true;
-  } ! for
+        spacing_flag = true;
+    }
 ];
+
 
 
 ! ---------------------------------------------------------------------------
@@ -6619,6 +6678,16 @@ Es importante terminar el texto con el token "[plm]" (primera letra en mayúscul
 Cuando la sustitución se utiliza en medio de una frase, no es necesario el token "[plm]".
 
 	say "El portón se cierra de un golpe y [tu] [saltas] en el sitio.".
+
+
+Chapter: Terminaciones nuevas
+
+Género del jugador: La partícula [o_player] imprime sufijo segun género del jugador actual.
+
+block sleeping rule response (A) is "No estás especialmente somnolient[o_jugador].".
+
+>duerme
+No estás especialmente somnolienta.
 
 
 Chapter: Extenciones de fábrica: traducciones
