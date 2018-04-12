@@ -4045,9 +4045,9 @@ carry out requested actions rule response (A) is "[The noun] no puede hace eso."
     list writer internal rule response (O) is "cerrad[o]".
     list writer internal rule response (P) is "cerrad[o] con llave".
     list writer internal rule response (Q) is "que contiene".
-    list writer internal rule response (R) is " ([if the noun is a person]encima [del_ noun][otherwise]sobre [el_ noun][end if]cual[s noun] ".
-    list writer internal rule response (S) is ", [if the noun is a person]encima[otherwise]sobre[end if] [lo] cual ".
-    list writer internal rule response (T) is "[if the noun is a person]encima[otherwise]sobre[end if] [lo] cual ".
+    list writer internal rule response (R) is "[if the noun is a person]encima [del_ noun][otherwise]sobre[end if] [el_ noun]cual[s noun] ".
+    list writer internal rule response (S) is ", [if the noun is a person]encima[otherwise]sobre[end if] [el_ noun]cual ".
+    list writer internal rule response (T) is "[if the noun is a person]encima[otherwise]en[end if] [el_ noun]cual ".
     list writer internal rule response (U) is ", dentro ".
     list writer internal rule response (V) is "[es-ves]".
     list writer internal rule response (W) is "es nada".[todo:si se refiere a personas deberia decir 'es nadie']
