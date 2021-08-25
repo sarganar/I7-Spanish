@@ -4,6 +4,64 @@ Version 1/170804 of Spanish Language by Sebastian Arg begins here.
 
 "basada en InformATE! de Zak, con la contribución de toda la comunidad"
 
+Volume 0 - Previous Hackings - Fixing linux problem
+
+[ En algunos sistemas linux, la cadena de compilación de I7 carga primero esta extensión (Spanish) y no la English Language,
+por lo que algunas definiciones de variables (hechas en la extension English) no existen aún. Eso rompe la compilación.
+ Solución temporal: traer esas definiciones a la extensión Spanish.
+]
+
+Section 1 Ph1 Hack
+
+The language of play is a natural language that varies. The language of play
+is usually the English language.
+
+A grammatical tense is a kind of value. The grammatical tenses are present tense,
+past tense, perfect tense, past perfect tense and future tense.
+
+A narrative viewpoint is a kind of value. The narrative viewpoints are first
+person singular, second person singular, third person singular, first person
+plural, second person plural, and third person plural.
+
+A natural language has a narrative viewpoint called the adaptive text viewpoint.
+
+The adaptive text viewpoint of the English language is first person plural.
+
+A grammatical case is a kind of value. The grammatical cases are nominative
+and accusative.
+
+A grammatical gender is a kind of value. The grammatical genders are
+neuter gender, masculine gender, feminine gender.
+
+The story tense is a grammatical tense that varies.
+The story tense variable translates into I6 as "story_tense".
+The story viewpoint is a narrative viewpoint that varies.
+The story viewpoint variable translates into I6 as "story_viewpoint".
+
+
+Section 2 Ph2 Hack (in place of Section 1 - Grammatical definitions in English Language by Graham Nelson)
+
+To say regarding (item - an object): (- RegardingSingleObject({item}); -).
+
+To say regarding (N - a number): (- RegardingNumber({N}); -).
+
+To say regarding list writer internals: (- RegardingLWI(); -).
+
+To say regarding (D - a description of objects): (-
+	 	objectloop({-my:1} ofclass Object)
+			if ({-matches-description:1:D}) 
+				give {-my:1} workflag2;
+			else
+				give {-my:1} ~workflag2;
+		RegardingMarkedObjects();
+	-).
+
+To decide if the prior naming context is plural:
+	(- ((prior_named_list >= 2) || (prior_named_noun && prior_named_noun has pluralname)) -).
+	
+
+
+
 Volume 1 - Settings
 
 [A language extension is required to set the following variable correctly:]
