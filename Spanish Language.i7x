@@ -3476,7 +3476,7 @@ Section 3.1.1.1 - Standard actions concerning the actor's possessions
 [ Inserting it into ]
 
     can't insert something into itself rule response (A) is "No puedes poner un objeto dentro de sí mismo.".
-    can't insert into closed containers rule response (A) is "[The second noun] está[n] cerrad[o].".
+    can't insert into closed containers rule response (A) is "[The second noun] está[n] cerrad[o second noun].".
     can't insert into what's not a container rule response (A) is "No se pueden meter cosas dentro [del second noun].".
     can't insert clothes being worn rule response (A) is "(primero te [lo] quitas)[command clarification break]".
     can't insert if this exceeds carrying capacity rule response (A) is "No queda sitio en [the second noun].".
