@@ -3708,7 +3708,7 @@ can't give what you haven't got rule response (A) is "No tienes [el noun].".
 can't give to yourself rule response (A) is "No puedes darte [el noun] a tí mismo.".
 can't give to a non-person rule response (A) is "[El second noun] no puede recibir cosas.".
 can't give clothes being worn rule response (A) is "(primero te quitas [el noun])[command clarification break]".
-block giving rule response (A) is "[El second noun] no parece[n] interesad[o].".
+block giving rule response (A) is "[El second noun] no parece[n second noun] interesad[o second noun].".
 can't exceed carrying capacity when giving rule response (A) is "[El second noun] está[n] llevando demasiadas cosas.".
 standard report giving rule response (A) is "Le das [el noun] [al second noun].".
 standard report giving rule response (B) is "[El actor] te da [el second noun].".
@@ -5871,6 +5871,8 @@ Constant THAT__TX        = "eso";
      1,7: print "a";
      3,9: print "os";
      4,10: print "as";
+     2,8: print "o";
+     5,11: print "os";
     }
 ];    
 
