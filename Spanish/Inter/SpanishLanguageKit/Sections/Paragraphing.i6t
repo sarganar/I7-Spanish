@@ -11,7 +11,7 @@ Language specific replacements for some BasicInformKit/Paragraphing functions
 #Iftrue (WORDSIZE == 4);
     if (n >= 1000000000) {
         !if (f == 1) print ", ";
-    	!print (LanguageNumber) n/1000000000, " bill贸n"; n = n%1000000000; f = 1;
+    	!print (LanguageNumber) n/1000000000, " bill髇"; n = n%1000000000; f = 1;
 		if (n<2000000000) print "mil";
         else { LanguageNumber(n/1000000000,1); print " mil";} 
         n=n%1000000000; f = 1;
@@ -19,7 +19,7 @@ Language specific replacements for some BasicInformKit/Paragraphing functions
     }
     if (n >= 1000000) {
     	print (LanguageNumber) n/1000000;
-		if ((n<2000000) && (f==0)) print " mill贸n";
+		if ((n<2000000) && (f==0)) print " mill髇";
         else { print " millones";} 
         n = n%1000000;
         if (n~=0) print " ";
@@ -65,7 +65,7 @@ Language specific replacements for some BasicInformKit/Paragraphing functions
     if (n==13) { print "trece"; rfalse; }
     if (n==14) { print "catorce"; rfalse; }
     if (n==15) { print "quince"; rfalse; }
-    if (n==16) { print "diecis茅is"; rfalse; }
+    if (n==16) { print "diecis閕s"; rfalse; }
     if (n==17) { print "diecisiete"; rfalse; }
     if (n==18) { print "dieciocho"; rfalse; }
     print "diecinueve";
@@ -88,19 +88,19 @@ Language specific replacements for some BasicInformKit/Paragraphing functions
     if (n==1) { print "un"; rfalse; }
     if (n==2){
 		if (venti)
-			print "d贸s";
+			print "d髎";
 		else 
 			print "dos";
 	} else rfalse;
     if (n==2) {
          if (venti)
-		 	print "d贸s";
+		 	print "d髎";
 		else
 			print "dos";
 	    } else rfalse;
     if (n==3) { 
         if (venti)
-		 	print "tr茅s";
+		 	print "tr閟";
 		else
 			print "tres";
 		} else rfalse;
@@ -109,7 +109,7 @@ Language specific replacements for some BasicInformKit/Paragraphing functions
     if (n==5) { print "cinco"; rfalse; }
     if (n==6) { 
         if (venti)
-			print "s茅is";
+			print "s閕s";
 		else
 			print "seis";
 		} else rfalse;

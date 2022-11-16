@@ -1830,6 +1830,19 @@ Report Requesting which dialect rule:
 
 Understand "dialecto" as Requesting which dialect.
 
+Switching to sudamerican dialect is an action out of world.
+The switch to sudamerican dialect rule translates into Inter as "DialectoSudSub".
+Report Switching to sudamerican dialect rule:
+	follow the switch to sudamerican dialect rule.
+
+Understand "dialecto sudamericano" as switching to sudamerican dialect.
+
+Switching to castilian dialect is an action out of world.
+The switch to castilian dialect rule translates into Inter as "DialectoCastSub".
+Report Switching to castilian dialect rule:
+	follow the switch to castilian dialect rule.
+
+Understand "dialecto castellano" as switching to castilian dialect.
 
 Part SL4 - Spanish Phrasebook
 
