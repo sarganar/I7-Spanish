@@ -9,4 +9,4 @@ Edición 6M62 (Diciembre 2015)
 
 [Notas de desarrollo y programación](http://wiki.caad.es/Inform7_6L02)
 
-Si estás utilizando una version reciente del IDE, recuerda configurar la version apropiada de Inform. Haz Pestaña **Settings/Language Version = Inform 9.3**
+Si estás utilizando una version reciente del IDE, recuerda configurar la version apropiada de Inform. Haz **Pestaña Settings/Language Version = Inform 9.3**
