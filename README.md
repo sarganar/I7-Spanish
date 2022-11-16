@@ -1,12 +1,9 @@
-INFORM 7 in Spanish (6M62)
+INFORM 7 in Spanish (10.1.2)
 ======
 
-This branch contains the Spanish Libs for Inform 9.3 (6M62 Edition - 2015 dec)
+This branch contains the Spanish Libs for Inform 10.1.2 (2022 August)
 
-Edición 6M62 (Diciembre 2015)
+Edición 10.1.2 (Agosto 2022)
 
-[Tutorial](https://github.com/sarganar/I7-2014-Spanish/wiki)
 
-[Notas de desarrollo y programación](http://wiki.caad.es/Inform7_6L02)
-
-Si estás utilizando una version reciente del IDE, recuerda configurar la version apropiada de Inform. Haz **Pestaña Settings/Language Version = Inform 9.3**
+Si estás utilizando una version reciente del IDE, recuerda configurar la version apropiada de Inform. Haz **Pestaña Settings/Language Version = Current**
