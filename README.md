@@ -1,7 +1,7 @@
-infsp7
+INFORM 7 in Spanish
 ======
 
-Inform 7 Spanish Libs
+This branch contains the Spanish Libs for Inform 9.3 (6M62 Edition - 2015 dec)
 
 Edición 6M62 (Diciembre 2015)
 
