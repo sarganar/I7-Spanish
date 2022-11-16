@@ -1,0 +1,121 @@
+Paragraphing Template.
+
+Language specific replacements for some BasicInformKit/Paragraphing functions
+
+@h Print English Number.
+
+=
+[ LanguageNumberSpanish n venti m f;
+    if (n==0) { print "cero"; rfalse; }
+    if (n<0) { print "menos "; n=-n; }
+#Iftrue (WORDSIZE == 4);
+    if (n >= 1000000000) {
+        !if (f == 1) print ", ";
+    	!print (LanguageNumber) n/1000000000, " billón"; n = n%1000000000; f = 1;
+		if (n<2000000000) print "mil";
+        else { LanguageNumber(n/1000000000,1); print " mil";} 
+        n=n%1000000000; f = 1;
+        if (n~=0) print " ";
+    }
+    if (n >= 1000000) {
+    	print (LanguageNumber) n/1000000;
+		if ((n<2000000) && (f==0)) print " millón";
+        else { print " millones";} 
+        n = n%1000000;
+        if (n~=0) print " ";
+    }
+#Endif;
+    if (n>=1000) { 
+		if (n<2000) print "mil";
+        else { LanguageNumber(n/1000,1); print " mil";} 
+        n=n%1000; 
+        if (n~=0) print " ";
+    }
+    if (n>=100)  { 
+		CientosEspanol(n/100); 
+        if (n%100~=0) print " ";
+		n=n%100; 
+    }
+    if (n==0) rfalse;
+
+    if (n<10) {
+		DigitoEspanol(n); rfalse;
+    }
+    if (n>=20)
+	{	m=n/10;
+        if (n%10~=0) {
+				if (m==2) print "veinti";
+            } else {
+				if (m==2) print "veinte";
+            }
+            if (m==3) print "treinta";
+			if (m==4) print "cuarenta";
+            if (m==5) print "cincuenta";
+            if (m==6) print "sesenta";
+            if (m==7) print "setenta";
+            if (m==8) print "ochenta";
+            if (m==9) print "noventa";
+            if (n%10==0) rfalse;
+            if (m>2) print " y "; 
+            DigitoEspanol(n%10, (m==2)&&(venti==0)); rfalse;
+        }
+    if (n==10) { print "diez"; rfalse; }
+    if (n==11) { print "once"; rfalse; }
+    if (n==12) { print "doce"; rfalse; }
+    if (n==13) { print "trece"; rfalse; }
+    if (n==14) { print "catorce"; rfalse; }
+    if (n==15) { print "quince"; rfalse; }
+    if (n==16) { print "dieciséis"; rfalse; }
+    if (n==17) { print "diecisiete"; rfalse; }
+    if (n==18) { print "dieciocho"; rfalse; }
+    print "diecinueve";
+];
+
+[ CientosEspanol n;
+	if (n==1) { print "ciento"; rfalse; }
+	if (n==2) { print "dos";}
+	if (n==3) { print "tres";}
+	if (n==4) { print "cuatro";}
+	if (n==5) { print "quinientos"; rfalse;}
+	if (n==6) { print "seis";}
+	if (n==7) { print "sete";}
+	if (n==8) { print "ocho";}
+	if (n==9) { print "nove";}
+	print "cientos"; rfalse;
+];
+
+[ DigitoEspanol n venti;
+    if (n==1) { print "un"; rfalse; }
+    if (n==2){
+		if (venti)
+			print "dós";
+		else 
+			print "dos";
+	} else rfalse;
+    if (n==2) {
+         if (venti)
+		 	print "dós";
+		else
+			print "dos";
+	    } else rfalse;
+    if (n==3) { 
+        if (venti)
+		 	print "trés";
+		else
+			print "tres";
+		} else rfalse;
+
+    if (n==4) { print "cuatro"; rfalse; }
+    if (n==5) { print "cinco"; rfalse; }
+    if (n==6) { 
+        if (venti)
+			print "séis";
+		else
+			print "seis";
+		} else rfalse;
+
+    if (n==7) { print "siete"; rfalse; }
+    if (n==8) { print "ocho"; rfalse; }
+    if (n==9) { print "nueve"; rfalse; }    
+];
+

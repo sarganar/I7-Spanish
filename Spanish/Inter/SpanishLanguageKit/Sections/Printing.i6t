@@ -1,0 +1,30 @@
+Printing Template.
+
+Language specific replacements for some WorldModelKit/Printing functions
+
+@h Banner.
+Using spanish particle " por ".
+
+=
+[ SpanishBanner;
+   BeginActivity(PRINTING_BANNER_TEXT_ACT);
+   if (ForActivity(PRINTING_BANNER_TEXT_ACT) == false) {
+	   	VM_Style(HEADER_VMSTY);
+		TEXT_TY_Say(Story);
+		VM_Style(NORMAL_VMSTY);
+		new_line;
+		TEXT_TY_Say(Headline);
+		if (KIT_CONFIGURATION_BITMAP & STORY_AUTHOR_TCBIT) {
+			print " por "; TEXT_TY_Say(Story_Author);
+		}
+		new_line;
+		VM_Describe_Release();
+		print " / Inform 7 v", (PrintI6Text) I7_VERSION_NUMBER;
+		#Ifdef DEBUG;
+		print " / D";
+		#Endif; ! DEBUG
+		new_line;
+    }
+    EndActivity(PRINTING_BANNER_TEXT_ACT);
+];
+

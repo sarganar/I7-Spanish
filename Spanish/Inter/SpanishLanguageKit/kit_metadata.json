@@ -1,0 +1,14 @@
+{
+    "is": {
+        "type": "kit",
+        "title": "SpanishLanguageKit",
+        "version": "10.1.2"
+    },
+    "needs": [ {
+        "need": {
+            "type": "extension",
+            "title": "Spanish Language",
+            "author": "Sebastian Arg"
+        }
+    } ]
+}

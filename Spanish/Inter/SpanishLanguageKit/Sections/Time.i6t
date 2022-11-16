@@ -1,0 +1,48 @@
+Time Template.
+
+Language specific replacements for some WorldModelKit/Time functions
+
+@h Analogue Printing.
+For instance, "six minutes past two".
+
+=
+[ PrintTimeOfDaySpanish t h m dir aop say_minutes quad;
+
+!   t store the minutes from 0am until now
+!  se tiene en cuenta: 8:40 nueve menos veinte
+!                               8:15 ocho y cuarto
+!                               8:53 7 minutos para las nueve
+!	                    8:14 ocho horas y catorce minutos
+!           		        1:20 una y veinte (y todas las variantes con 'una')
+
+    quad = 1; ! =1 es la primera media hora, =2 es la segunda
+    h = (t/60) % 12; m = t%60; if (h==0) h=12;
+	if (m==0) { if(h==1) print "una"; else print (number) h;print " en punto"; return; } !infsp hack
+	dir = "y";! infsp hack
+	if (m > 30) { m = 60-m; h = (h+1)%12; if (h==0) h=12; dir = "menos"; quad=2;} !infsp hack
+	switch(m) {
+        5: say_minutes = "cinco";
+        10:say_minutes = "diez";
+		15: say_minutes = "cuarto";
+        20: say_minutes = "veinte";
+        25: say_minutes = "veinticinco";
+        30: say_minutes = "media";
+		default: 
+            if (quad == 2){
+              print (number) m;
+		      if (m%5 ~= 0) {
+					if (m == 1) print " minuto"; else print " minutos"; ! infsp hack
+		      }
+              if(h==1) print " para la una"; else print " ", "para las ", (number) h;!infsp hack
+
+            }
+            if (quad == 1){
+              if(h==1) print "una y "; else print (number) h," horas "; print (number) m;
+		      if (m%5 ~= 0) {
+					if (m == 1) print " minuto"; else print " minutos"; ! infsp hack
+		      }
+            }
+        	return;
+	}
+	if(h==1) print "una"; else print (number) h; print " ",(string) dir, " ",(string) say_minutes;!infsp hack
+]; 
