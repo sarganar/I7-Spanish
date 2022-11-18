@@ -1346,9 +1346,9 @@ To say es-ves:
     immediately undo rule response (F) is "'Deshacer' agotado. Lo siento.".
 
 
-Part 4.2 - Understand grammar
+Volume 4 - Grammar
 
-Part 4.2.1 - Replacing English verbs
+Part 4.1 - Replacing English verbs
 
 [ Propósito: Para no incluir el bloque de gramaticas (y verbos) ingleses en el fuente (optimiza memoria)]
 
@@ -1431,13 +1431,12 @@ Understand nothing as waving hands.
 Understand nothing as waving.
 Understand nothing as wearing.
 
-Part 4.2.2 - Actions
 
 [ Gramatica basada en InformATE! (I6) (by Zak)]
 [ Verbos irregulares: filosofia usada en informATE!]
 [ Para algunas acciones no estan permitidas ciertas variantes de la gramatica de informATE, como el uso de second noun como token.Esto hace la respuesta del parser mucho mas tonta: Ej, corta el pan o corta el pan con el cuchillo. ToDo: podrá resolverse esto?]
 
-Part 4.2.2.1 - Grammar for Actions in the Game World
+Part 4.2 - Grammar for Actions in the Game World
 
 Understand "toma [things]" as taking. Understand the commands "coge" and "recoge" as "toma".
 Understand "toma a [someone]" as taking.
@@ -1802,7 +1801,7 @@ Understand "cava en [something] con [something preferably held]" as digging.]
 
 
 
-Part 4.2.2.2 - Grammar for Actions which happen out of world
+Part 4.3 - Grammar for Actions which happen out of world
 
 Understand "score" or "puntos" or "puntuacion" as requesting the score.
 Understand "quit" or "q" or "terminar" or "fin" or "acabar" or "abandonar" as quitting the game.
@@ -1821,7 +1820,7 @@ Understand "pronombres" or "p" as requesting the pronoun meanings.
 Understand "notify" or "notify on/si" as switching score notification on. Understand the commands "notificar" and "notificacion" as "notify".
 Understand "notify off/no" as switching score notification off.
 
-Part 4.3 - Other Actions
+Part 4.4 - Other Actions
 
 Requesting which dialect is an action out of world.
 The show actual dialect rule translates into Inter as "DialectoSub".
@@ -1844,7 +1843,7 @@ Report Switching to castilian dialect rule:
 
 Understand "dialecto castellano" as switching to castilian dialect.
 
-Part SL4 - Spanish Phrasebook
+Part SL5 - Spanish Phrasebook
 
 Section SL4/0 - Spanish Saying, basados en la rutinas de impresión de InformATE!
 [ Documentacion de esta seccion: DocumentATE: Descripciones y Parsing: Descripcion de objetos y lugares ]
@@ -1890,8 +1889,7 @@ To say (something - time) in spanish:			[decir la hora en español]
 To say esta (something - object): (- print (esta) {something}; -).[ "está" / "están" ]
 
 
-
-
+Part SL6 - Spanish Hackings
 
 
 Include (-

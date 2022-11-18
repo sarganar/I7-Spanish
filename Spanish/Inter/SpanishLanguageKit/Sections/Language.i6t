@@ -1359,16 +1359,20 @@ Constant LanguageVersion = "  - Librería I6 Española 1010.29, basada en InformAT
   else
     print "castellano";
   ". Puedes elegir dialecto usando el comando DIALECTO SUDAMERICANO o bien DIALECTO CASTELLANO.";
+    new_line;
+
 ];
 
 [ DialectoSudSub;
   dialecto_sudamericano = 2; ! git
   "Elegido dialecto SUDAMERICANO.";
+    new_line;
 ];    
 
 [ DialectoCastSub;
   dialecto_sudamericano = 0;
   "Elegido dialecto CASTELLANO.";
+    new_line;
 ];
 
 #ifdef DEBUG;
@@ -1378,6 +1382,8 @@ Constant LanguageVersion = "  - Librería I6 Española 1010.29, basada en InformAT
 !    print "   Moviendo a ",(the) x,"^";!infsp debug
     PlayerTo(x);
 ];  
+
+
 #endif;  ! DEBUG
 
 @h from Text Capture by Eric Eve.
