@@ -12,9 +12,13 @@ Haz **Pestaña Settings/Language Version = Current**
 
 Cómo instalar
 ======
+Descarga la última versión desde la sección [Releases](https://github.com/sarganar/I7-Spanish/releases). Allí la tienes empaquetada un zip.
+
 -Copia la carpeta _Sebastian Arg_ al folder Extensions.
 
 -Copia la carpeta _SpanishLanguageKit_ al folder Inter. 
+
+-y ya. Puedes instalarlo de manera global o solo para tu proyecto actual.
 
 El folder *Extensions* puede ser el de *MisDocumentos/Inform* (para uso global) o puedes crearlo en *MisDocumentos/Inform/Projects/TuProyecto.Materials/* (para uso solo de tu proyecto)
 
