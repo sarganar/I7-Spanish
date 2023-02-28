@@ -12,7 +12,7 @@ Haz **Pestaña Settings/Language Version = Current**
 
 Cómo instalar
 ======
-Descarga la última versión desde la sección [Releases](https://github.com/sarganar/I7-Spanish/releases). Allí la tienes empaquetada un zip.
+Descarga la última versión desde la sección [Releases](https://github.com/sarganar/I7-Spanish/releases). Allí la tienes empaquetada en un zip.
 
 -Copia la carpeta _Sebastian Arg_ al folder Extensions.
 
