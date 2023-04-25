@@ -1,7 +1,7 @@
 INFORM 7 Spanish Extension (r10.1.2)
 ======
 
-This branch contains the Spanish Libs for Inform 10.1.2 (2022 August)
+This branch contains the Spanish Libs for Inform 10.1.2 Krypton (2022 August)
 
 Edición 10.1.2 (Agosto 2022)
 
@@ -19,7 +19,7 @@ Para ello haz **Pestaña Settings/Language Version = Current**
 
 
 ### Librerías Español:
-Ve a la sección [Releases de este repositorio](https://github.com/sarganar/I7-Spanish/releases). Allí las tienes empaquetadas en un zip.
+Ve a la sección [Releases de este repositorio](https://github.com/sarganar/I7-Spanish/releases). Allí las tienes empaquetadas en un zip. Descargate la última.
 
 Puedes instalarlo de manera global o solo para tu proyecto actual.
 
