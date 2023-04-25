@@ -1,25 +1,41 @@
-INFORM 7 in Spanish (10.1.2)
+INFORM 7 Spanish Extension (r10.1.2)
 ======
 
 This branch contains the Spanish Libs for Inform 10.1.2 (2022 August)
 
-Edición 10.1.2 (Agosto 2022)
+EdiciÃ³n 10.1.2 (Agosto 2022)
 
 
-Si estás utilizando una versión reciente del IDE, recuerda configurar la versión apropiada de Inform.
+Si estÃ¡s utilizando una versiÃ³n reciente del IDE, recuerda configurar la versiï¿½n apropiada de Inform.
 
-Haz **Pestaña Settings/Language Version = Current**
+Haz **PestaÃ±a Settings/Language Version = Current**
 
-Cómo instalar
+CÃ³mo instalar
 ======
-Descarga la última versión desde la sección [Releases](https://github.com/sarganar/I7-Spanish/releases). Allí la tienes empaquetada en un zip.
 
--Copia la carpeta _Sebastian Arg_ al folder Extensions.
+### Inform 7 IDE
 
--Copia la carpeta _SpanishLanguageKit_ al folder Inter. 
+Descarga e instala el IDE de Inform [desde su repositorio](https://github.com/ganelson/inform/releases). Es la release *10.1.2*, elige la que corresponde a tu SO.
 
--y ya. Puedes instalarlo de manera global o solo para tu proyecto actual.
 
-El folder *Extensions* puede ser el de *MisDocumentos/Inform* (para uso global) o puedes crearlo en *MisDocumentos/Inform/Projects/TuProyecto.Materials/* (para uso solo de tu proyecto)
+### Librerias EspaÃ±ol
+Ve a la secciÃ³n [Releases](https://github.com/sarganar/I7-Spanish/releases) de este repositorio. AllÃ­ las tienes empaquetada en un zip.
 
-El folder *Inter* puede ser el de la instalacion del IDE de inform en *Inform/Internal/* (para uso global) o puedes crearlo en *MisDocumentos/Inform/Projects/TuProyecto.Materials/* (para uso solo de tu proyecto)
+Puedes instalarlo de manera global o solo para tu proyecto actual.
+
+#### InstalaciÃ³n Global
+
+- Copia la carpeta **Sebastian Arg** al folder *Extensions* (del IDE).
+
+- Copia la carpeta **SpanishLanguageKit** al folder *Inter* (del IDE).
+
+- y ya. Puedes instalarlo de manera global o solo para tu proyecto actual.
+
+#### InstalaciÃ³n Local
+Solo para tu proyecto actual (a veces la manera global no fuciona)
+
+- Copia la carpeta **Sebastian Arg** al folder *Extensions* en *MisDocumentos/Inform/Projects/TuProyecto.Materials/*. Debes crear el folder *Extensions*
+
+- Copia la carpeta **SpanishLanguageKit** al folder *Inter* en *MisDocumentos/Inform/Projects/TuProyecto.Materials/*.  Debes crear el folder *Inter*
+
+- y ya. 
