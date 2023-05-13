@@ -37,7 +37,7 @@ Constant ME1__WD      = '-me';
 Constant ME2__WD      = '-te';
 Constant ME3__WD      = '-se';
 Constant OF1__WD      = '.de';       ! no usados nunca, pues provocan
-Constant OF2__WD      = '.de';       ! interferencia con la preposición "de"
+Constant OF2__WD      = '.de';       ! interferencia con la preposiciï¿½n "de"
 Constant OF3__WD      = '.de';       ! usada por algunos verbos, como en
 Constant OF4__WD      = '.de';       ! "saca objeto de la caja"
 Constant OTHER1__WD    = 'otro';
@@ -55,7 +55,7 @@ Constant NO2__WD      = 'no';
 Constant NO3__WD      = 'no';
 Constant YES1__WD      = 's//';
 Constant YES2__WD      = 'si';
-Constant YES3__WD      = 'sí';
+Constant YES3__WD      = 'sï¿½';
 
 Constant AMUSING__WD = 'curiosidades';
 Constant FULLSCORE1__WD  = 'puntuacion';
@@ -82,7 +82,7 @@ Array LanguagePronouns table
     '-las'	$$000010000010                    NULL
     '-le'	$$110000110000                    NULL
     '-les'	$$000110000110                    NULL
-    'él'		$$100000100000                    NULL
+    'ï¿½l'		$$100000100000                    NULL
     'ella'	$$010000010000                    NULL
     'ellos'	$$000100000100                    NULL
     'ellas'	$$000010000010                    NULL;
@@ -117,7 +117,7 @@ Array LanguageDescriptors table
     'una'	$$010000010000    INDEFART_PK     NULL
     'unos'	$$000100000100    INDEFART_PK     NULL
     'unas'	$$000010000010    INDEFART_PK     NULL
-    'algún'	$$100000100000    INDEFART_PK     NULL
+    'algï¿½n'	$$100000100000    INDEFART_PK     NULL
    'algunos' $$000100000100    INDEFART_PK     NULL
    'algunas' $$000010000010    INDEFART_PK     NULL
  'encendido' $$100000100000    LIGHTED_PK             NULL
@@ -136,7 +136,7 @@ Array LanguageNumbers table
     'un' 1 'uno' 1 'una' 1 'dos' 2 'tres' 3 'cuatro' 4 'cinco' 5
     'seis' 6 'siete' 7 'ocho' 8 'nueve' 9 'diez' 10
     'once' 11 'doce' 12 'trece' 13 'catorce' 14 'quince' 15
-    'dieciséis' 16 'diecisiete' 17 'dieciocho' 18 'diecinueve' 19
+    'diecisï¿½is' 16 'diecisiete' 17 'dieciocho' 18 'diecinueve' 19
     'veinte' 20;
 
 
@@ -161,9 +161,9 @@ Array LanguageNumbers table
 @h Translation.
 Esta parte es interesante. Debe separar los sufijos pronominales
 como en "cogela" "mirale", claro que no basta con ver si las dos
-últimas letras del verbo son "la" "le", etc, pues el verbo podría
-terminar de forma "natural" en esas letras (como en "habla"). Así
-que hay que separar el sufijo sólo si el verbo no ha sido hallado en
+ï¿½ltimas letras del verbo son "la" "le", etc, pues el verbo podrï¿½a
+terminar de forma "natural" en esas letras (como en "habla"). Asï¿½
+que hay que separar el sufijo sï¿½lo si el verbo no ha sido hallado en
 el diccionario.
 =
 [ LanguageToInformese ;
@@ -171,8 +171,8 @@ el diccionario.
 ];
 
 @h EspanolAInformes.
-La función que verdaderamente hace la traducción es la siguiente. Ha
-sido separada de LanguageToInformese porque es llamada también desde
+La funciï¿½n que verdaderamente hace la traducciï¿½n es la siguiente. Ha
+sido separada de LanguageToInformese porque es llamada tambiï¿½n desde
 LanguageIsVerb, pero recibe un buffer diferente para procesar. 
 
 =
@@ -220,7 +220,7 @@ LanguageIsVerb, pero recibe un buffer diferente para procesar.
 	  if (dialecto_sudamericano == 1)  ! [071030_git]
 	  {
 	    print "[Este juego utiliza por defecto el dialecto sudamericano,
-		    por lo que aquí COGER es entendido como una palabra
+		    por lo que aquï¿½ COGER es entendido como una palabra
 		    malsonante. Por favor, utiliza TOMAR en su lugar, o bien
 		    elige el dialecto castellano con DIALECTO CASTELLANO.]^";
 	    dialecto_sudamericano = 2;
@@ -236,11 +236,11 @@ LanguageIsVerb, pero recibe un buffer diferente para procesar.
     
 
     ! Si el jugador ha escrito "no", y previamente el programador
-    ! había puesto a 1 el flag "PreguntaSiNo" (que indica que
-    ! acaba de hacerse una pregunta que podría admitir NO como
+    ! habï¿½a puesto a 1 el flag "PreguntaSiNo" (que indica que
+    ! acaba de hacerse una pregunta que podrï¿½a admitir NO como
     ! respuesta), en ese caso cambiamos "no" por "xo". La
-    ! gramática define el verbo "xo" para generar la acción NO
-    ! (negar), y así lo distinguimos de la acción "Ir noroeste"
+    ! gramï¿½tica define el verbo "xo" para generar la acciï¿½n NO
+    ! (negar), y asï¿½ lo distinguimos de la acciï¿½n "Ir noroeste"
     if ((word=='no')&&(PreguntaSiNo==1))
     {
         buf->(at+len-1)='x';
@@ -259,7 +259,7 @@ LanguageIsVerb, pero recibe un buffer diferente para procesar.
        {
 	   at2 = tokenPos (pars,x+1); ! position in buffer of token 1,2,3... 
            for (i=0:i<tokenLen(pars,x+1):i++){
-                   buf->(at2+i) = ' '; ! borrar palabra 'entonces' (pisándola con espacios)
+                   buf->(at2+i) = ' '; ! borrar palabra 'entonces' (pisï¿½ndola con espacios)
 	   }
            buf->(at+len)='l'; ! agregar 'luego' inmediatamente despues de 'y', formando 'yluego'
            buf->(at+len+1)='u';
@@ -289,7 +289,7 @@ LanguageIsVerb, pero recibe un buffer diferente para procesar.
             print "|^";
         }
 #endif;        
-        if (len > 2) !sólo si tiene más de tres letras
+        if (len > 2) !sï¿½lo si tiene mï¿½s de tres letras
         {
            romper_en=0;
            if ((buf->(at+len-1)=='s') &&
@@ -301,12 +301,12 @@ LanguageIsVerb, pero recibe un buffer diferente para procesar.
             romper_en=2;
            if ((buf->(at+len-1)=='e') &&
             (buf->(at+len-2)=='m' or 't' or 's'))
-            romper_en=2;  ! [001108] Antes ponía == ¡seré burro!
+            romper_en=2;  ! [001108] Antes ponï¿½a == ï¿½serï¿½ burro!
            if (romper_en) 
            {
             ! [990524]
             ! Antes de modificar el buffer, comprobemos si
-            ! servirá para algo, es decir, si la palabra que
+            ! servirï¿½ para algo, es decir, si la palabra que
             ! queda una vez separado el sufijo existe en el
             ! diccionario y es un verbo
             i=DictionaryLookup(buf+at, len-romper_en);
@@ -338,9 +338,9 @@ LanguageIsVerb, pero recibe un buffer diferente para procesar.
     
     ! Como paso final, quitamos las palabras que aparezcan dos veces
     ! seguidas. Esto puede ocurrir si el jugador teclea un comando
-    ! incompleto, como "MIRA HACIA", y el parser le pregunta "¿Hacia
+    ! incompleto, como "MIRA HACIA", y el parser le pregunta "ï¿½Hacia
     ! donde quieres mirar?" y el jugador responde "HACIA EL NORTE". En
-    ! este caso se construiría la orden concatenada: "MIRA HACIA HACIA
+    ! este caso se construirï¿½a la orden concatenada: "MIRA HACIA HACIA
     ! EL NORTE".
     if (PreguntaCualExactamente==1){
         !print "PreguntaCualExactamente:",PreguntaCualExactamente;!debug
@@ -359,21 +359,21 @@ LanguageIsVerb, pero recibe un buffer diferente para procesar.
 ];
 
 
-@h Globales específicas de InformatE!
+@h Globales especï¿½ficas de InformatE!
 
 =
 global PreguntaCualExactamente = 0;
-	! Esta variable se pone a 1 cuando se le pregunta al jugador ¿Cuál
+	! Esta variable se pone a 1 cuando se le pregunta al jugador ï¿½Cuï¿½l
 	! exactamente...? esto indica que puede ser necesario re-traducir la
-	! respuesta que el jugador dé, ya que puede que simplemente el jugador
+	! respuesta que el jugador dï¿½, ya que puede que simplemente el jugador
 	! cambie de idea y en lugar de responder a nuestra pregunta introduzca
 	! un comando completamente nuevo.
 
 global PreguntaSiNo = 0;
 	! Esta variable debe ponerse a 1 manualmente si queremos que el verbo
 	! 'no' sea accesible como respuesta (y no como punto cardinal). La
-	! variable sólo afecta a la siguiente respuesta del jugador y vuelve a
-	! hacerse cero automáticamente.
+	! variable sï¿½lo afecta a la siguiente respuesta del jugador y vuelve a
+	! hacerse cero automï¿½ticamente.
 
 Global quitacentos = 1;
 
@@ -392,9 +392,9 @@ Property irrelevante alias name;
 Constant LanguageAnimateGender   = male;
 Constant LanguageInanimateGender = male;
 
-Constant LanguageContractionForms = 1;     ! Para el español
-! No se produce contracción del artículo. Sólo de las preposiciones
-! como en "del" y "al", pero eso no está contemplado por el manual
+Constant LanguageContractionForms = 1;     ! Para el espaï¿½ol
+! No se produce contracciï¿½n del artï¿½culo. Sï¿½lo de las preposiciones
+! como en "del" y "al", pero eso no estï¿½ contemplado por el manual
 ! del traductor, por lo que es necesario otro tipo de truco
 
 [ LanguageContraction ;
@@ -403,7 +403,7 @@ Constant LanguageContractionForms = 1;     ! Para el español
 
 
 Array LanguageArticles -->
-    ! Forma de contracción 0:
+    ! Forma de contracciï¿½n 0:
     ! Cdef   Def  Indef  
     "El " "el " "un "    
     "La " "la " "una "   
@@ -441,11 +441,11 @@ Constant THAT__TX        = "eso";
 !    if (ImprimirIrregular(i)==0){
 !        !print "^   LanguageVerb: Verbo no es irregular.^"; ! infsp debug
 !      
-!      ! Tatar de matchear con la brújula - 807.7 infsp
+!      ! Tatar de matchear con la brï¿½jula - 807.7 infsp
 !      objectloop (aux in Compass){
 !        if (WordInProperty(i, aux, name)) {
-!          print "ir hacia algún lado";
-!          rtrue; ! no avanzar más en la rutina
+!          print "ir hacia algï¿½n lado";
+!          rtrue; ! no avanzar mï¿½s en la rutina
 !        }    
 !       }
        
@@ -504,12 +504,12 @@ Constant THAT__TX        = "eso";
 
 
 =
-! Definimos una función para imprimir el verbo coger. Esto hace más fácil
-! la adaptación de los juegos a los dialectos sudamericanos, en los
+! Definimos una funciï¿½n para imprimir el verbo coger. Esto hace mï¿½s fï¿½cil
+! la adaptaciï¿½n de los juegos a los dialectos sudamericanos, en los
 ! que debe usarse "tomar" en lugar de "coger"
 ! 
 ! La variable global que elige el dialecto se fija en tiempo de
-! ejecución con el meta-verbo "dialecto". También puede fijarse en
+! ejecuciï¿½n con el meta-verbo "dialecto". Tambiï¿½n puede fijarse en
 ! Initialize para que su valor por defecto sea 1.
 !
 [ coge sufijo;
@@ -520,7 +520,7 @@ Constant THAT__TX        = "eso";
        print (string) sufijo;
 ];
 
-! La siguiente es la versión con la primera letra mayúscula
+! La siguiente es la versiï¿½n con la primera letra mayï¿½scula
 
 [ MCoge sufijo;
     if (dialecto_sudamericano)
@@ -530,7 +530,7 @@ Constant THAT__TX        = "eso";
        print (string) sufijo;
 ];
 
-! Y finalmente una versión con todo mayúsculas
+! Y finalmente una versiï¿½n con todo mayï¿½sculas
 
 [ MMCoge sufijo;
     if (dialecto_sudamericano)
@@ -540,25 +540,25 @@ Constant THAT__TX        = "eso";
        print (string) sufijo;
 ];
 
-! Funciones para manejar concordancias de género y número en los
-! mensajes de respuesta genéricos.
+! Funciones para manejar concordancias de gï¿½nero y nï¿½mero en los
+! mensajes de respuesta genï¿½ricos.
 !
-! o -> escribe la terminación -o -a -os -as según el género y número
+! o -> escribe la terminaciï¿½n -o -a -os -as segï¿½n el gï¿½nero y nï¿½mero
 ! del objeto recibido, para hacer concordar los adjetivos.
 !
-! n -> escribe la terminación -"" -n según el número del objeto, para
+! n -> escribe la terminaciï¿½n -"" -n segï¿½n el nï¿½mero del objeto, para
 ! hacer concordar el verbo en plural.
 !
-! esta -> escribe "está" o "están" según el número del objeto.
+! esta -> escribe "estï¿½" o "estï¿½n" segï¿½n el nï¿½mero del objeto.
 !
-! del -> escribe "del" "de la" "de los" "de las" según el género y
-! número del objeto. En realidad, determina qué artículo habría de ir
-! y si éste es "el" realiza la contracción "del".
+! del -> escribe "del" "de la" "de los" "de las" segï¿½n el gï¿½nero y
+! nï¿½mero del objeto. En realidad, determina quï¿½ artï¿½culo habrï¿½a de ir
+! y si ï¿½ste es "el" realiza la contracciï¿½n "del".
 !
 ! al -> como del, pero con "al" "a la" "a los" "a las".
 !
-! lo -> Escribe "lo" "la" "le" "los" "las" "les" (proname) según el
-! género y número del objeto y según sea animate o no.
+! lo -> Escribe "lo" "la" "le" "los" "las" "les" (proname) segï¿½n el
+! gï¿½nero y nï¿½mero del objeto y segï¿½n sea animate o no.
 !
 
 [ o obj gna;
@@ -598,7 +598,7 @@ Constant THAT__TX        = "eso";
 ];
 
 [ esta obj;
-    print "está", (n) obj;
+    print "estï¿½", (n) obj;
 ];
 
 [ es obj;
@@ -633,7 +633,7 @@ Constant THAT__TX        = "eso";
 ];
 
 [ un obj;
-    if (obj has proper) print "a "; ![infsp] ya se incluyó esta linea en el hackeo de Indefart.
+    if (obj has proper) print "a "; ![infsp] ya se incluyï¿½ esta linea en el hackeo de Indefart.
     print (a) obj;
 ];
 
@@ -650,18 +650,18 @@ Constant THAT__TX        = "eso";
     print (number) obj;
 ];
 
-! "al" y "del" plantean un bonito problema. La contracción debe
-! producirse si el artículo es "el", pero esto no se sabe consultando
+! "al" y "del" plantean un bonito problema. La contracciï¿½n debe
+! producirse si el artï¿½culo es "el", pero esto no se sabe consultando
 ! el GNA, pues hay palabras como "aguila" que son femeninas y no
-! obstante usan "el" como artículo.
-! El truquillo consiste en llamar a (the) para averiguar qué artículo
-! se imprimiría (pero capturando la salida de ese print y guardándola
-! en una variable). Si el artículo en cuestión empieza por 'e', se
-! produce la contracción.
+! obstante usan "el" como artï¿½culo.
+! El truquillo consiste en llamar a (the) para averiguar quï¿½ artï¿½culo
+! se imprimirï¿½a (pero capturando la salida de ese print y guardï¿½ndola
+! en una variable). Si el artï¿½culo en cuestiï¿½n empieza por 'e', se
+! produce la contracciï¿½n.
 !
 ! Para capturar la salida a una variable, es necesario descender al
-! lenguaje ensamblador de la Z machine. Este truco lo aprendí del
-! Designers manual (respuesta al ejercicio 96, página 249)
+! lenguaje ensamblador de la Z machine. Este truco lo aprendï¿½ del
+! Designers manual (respuesta al ejercicio 96, pï¿½gina 249)
 !
 [ del_ obj;
     if (obj has proper) {        ! 030305
@@ -685,12 +685,12 @@ Constant THAT__TX        = "eso";
     if (obj hasnt proper) PrefaceByArticle(obj, 1, -1);
 ];
 
-! Con "al" el truco es más complejo, ya que si el artículo impreso por
+! Con "al" el truco es mï¿½s complejo, ya que si el artï¿½culo impreso por
 ! el_ empieza por "e", hay que cambiar esta "e" por una "a". Y si no
 ! empieza por "e" hay que poner una "a" delante.
-! Además debemos capturar el caso de que no se imprima artículo alguno
+! Ademï¿½s debemos capturar el caso de que no se imprima artï¿½culo alguno
 ! (si el objeto proporciona una propiedad "articulos" con cadenas
-! vacías).
+! vacï¿½as).
 !------------------------------------------------------------------------------
 ! ELIUK BLAU: He re-implementado la rutina para permitir que la primera letra
 ! se imprima en mayuscula si se activa el argumento 'flag' durante la llamada.
@@ -805,7 +805,7 @@ Constant THAT__TX        = "eso";
 ];
 
 !------------------------------------
-! Funciones de ayuda a la depuración
+! Funciones de ayuda a la depuraciï¿½n
 !------------------------------------
 
 #IFDEF DEBUG;
@@ -841,8 +841,8 @@ Constant THAT__TX        = "eso";
 ! lugar tiene esa palabra en su campo nombre, name_f...
 !
 ! Es usada por la rutina ArreglarLosY, pues se mira si la palabra que
-! viene detrás de la Y es un nombre, y si lo es, si es aplicable a algún
-! objeto cercano. Observar que fallará en los objetos que proporcionen
+! viene detrï¿½s de la Y es un nombre, y si lo es, si es aplicable a algï¿½n
+! objeto cercano. Observar que fallarï¿½ en los objetos que proporcionen
 ! su propio parse_name. 
 !----------------------------------------------------------------
 [ EncajeSimplon w donde i;
@@ -857,27 +857,27 @@ Constant THAT__TX        = "eso";
 !----------------------------------------------------------------
 ! QuitarAcentos
 !
-! La siguiente función prueba a quitar los acentos de las palabras que
+! La siguiente funciï¿½n prueba a quitar los acentos de las palabras que
 ! no hayan podido ser interpretadas. De este modo, el jugador puede usar
 ! o no los acentos. Para ello el juego debe definir las palabras sin acentos
 ! por ejemplo:
-! object sillon "sillón confortable"
+! object sillon "sillï¿½n confortable"
 ! with name 'sillon' 'confortable'
 !
 ! Si el jugador pone: "mira sillon", la palabra encaja directamente y es
-! comprendida. Si pone "mira sillón", no es comprendida, de modo que se
+! comprendida. Si pone "mira sillï¿½n", no es comprendida, de modo que se
 ! le quita el acento y se reintenta el parsing.
 !
 ! Este caso no es especialmente importante, pues el programador
-! siempre puede definir 'sillon' y 'sillón', ambos como nombres para
-! el objeto. Pero el asunto es más importante para el caso de los
-! verbos, ya que si el jugador teclea "cógelo" este es separado en
-! "cóge" y "-lo" y el verbo "cóge" (con acento) no sería
+! siempre puede definir 'sillon' y 'sillï¿½n', ambos como nombres para
+! el objeto. Pero el asunto es mï¿½s importante para el caso de los
+! verbos, ya que si el jugador teclea "cï¿½gelo" este es separado en
+! "cï¿½ge" y "-lo" y el verbo "cï¿½ge" (con acento) no serï¿½a
 ! comprendido.
 !
-! La llamada a esta función puede desactivarse con el comando de
-! debugging "acentos sí" de modo que los acentos que teclee el jugador
-! no serán eliminados (con propósitos de depuración)
+! La llamada a esta funciï¿½n puede desactivarse con el comando de
+! debugging "acentos sï¿½" de modo que los acentos que teclee el jugador
+! no serï¿½n eliminados (con propï¿½sitos de depuraciï¿½n)
 
 [ QuitarAcentos buf pars x i word at len;
 
@@ -910,18 +910,18 @@ Constant THAT__TX        = "eso";
 		for (i=at:i<at+len:i++)
 		   switch(buf->i)
 		  {
-			'á': buf->i='a';
-			'é': buf->i='e';
-			'ë': buf->i='e';
-			'í': buf->i='i';
-			'ó': buf->i='o';
-			'ú': buf->i='u';
-			'ü': buf->i='u';
-			'ñ': buf->i='n'; 
+			'ï¿½': buf->i='a';
+			'ï¿½': buf->i='e';
+			'ï¿½': buf->i='e';
+			'ï¿½': buf->i='i';
+			'ï¿½': buf->i='o';
+			'ï¿½': buf->i='u';
+			'ï¿½': buf->i='u';
+			'ï¿½': buf->i='n'; 
 		!             '?': buf->i=' ';
-		!             '¿': buf->i=' ';
+		!             'ï¿½': buf->i=' ';
 		!             '!': buf->i=' ';
-		!         '¡': buf->i=' ' ;    
+		!         'ï¿½': buf->i=' ' ;    
 		   }
         VM_Tokenise(buf, pars); 
         }
@@ -936,7 +936,7 @@ Constant THAT__TX        = "eso";
 #endif;
 ];
 
-Constant LanguageVersion = "  - Librería I6 Española 1010.29, basada en InformATE!";
+Constant LanguageVersion = "  - Librerï¿½a I6 Espaï¿½ola 1010.29, basada en InformATE!";
 
 ! Definicion de bufferaux y parseraux, usados en DictionaryLookup [001115]
 #ifdef TARGET_ZCODE;
@@ -948,11 +948,11 @@ Constant LanguageVersion = "  - Librería I6 Española 1010.29, basada en InformAT
 #endif; ! TARGET_
 
 ! Tremendo bug corregido. Antes usaba el buffer buf2, el cual usa
-! tambien el parser para leer commandos incompletos del estilo de "¿a
+! tambien el parser para leer commandos incompletos del estilo de "ï¿½a
 ! cual te refieres exactamente?"
 ! Este bug estaba en la libreria original, pero nunca aparecia porque
 ! apenas se usa DictionaryLookup. En cambio InformATE lo usa para
-! comprobar si quitando la R a un verbo se obtiene una palabra válida.
+! comprobar si quitando la R a un verbo se obtiene una palabra vï¿½lida.
 !
 ! [Gracias a Presi por detectarlo] 
 [ DictionaryLookup texto longitud
@@ -976,7 +976,7 @@ Constant LanguageVersion = "  - Librería I6 Española 1010.29, basada en InformAT
         print "|^";
     }
 #endif;
-	VM_Tokenise(bufferaux,parseaux); ! procesar texto de bufferaux, el resultado está en parseaux-->1
+	VM_Tokenise(bufferaux,parseaux); ! procesar texto de bufferaux, el resultado estï¿½ en parseaux-->1
 	return parseaux-->1; ! retornar address del token encontrado (-1 si falla)
 ];
 
@@ -995,12 +995,12 @@ Constant LanguageVersion = "  - Librería I6 Española 1010.29, basada en InformAT
 		at = tokenPos (pars,x+1); ! position in buffer of token siguiente 
 		len = tokenLen (pars,x+1);! length in chars of token siguiente
 
-        ! [010515] Añadido. Si la palabra es noun, se retorna
-        ! (aunque pueda ser también un verbo) de este modo, en
+        ! [010515] Aï¿½adido. Si la palabra es noun, se retorna
+        ! (aunque pueda ser tambiï¿½n un verbo) de este modo, en
         ! COGE VINO Y CAVA, si el juego tiene un objeto llamado
-        ! "cava", la frase será parseada como tratando de coger
+        ! "cava", la frase serï¿½ parseada como tratando de coger
         ! dos objetos, llamados "vino" y "cava". Si el juego no
-        ! define el sustantivo "cava", la frase será parseada como
+        ! define el sustantivo "cava", la frase serï¿½ parseada como
         ! dos acciones en secuencia <<Coger vino>> y <<Excavar>>
 		if (i && (i->#dict_par1)&128) {
 			if (EncajeSimplon(i, location)) continue;
@@ -1041,7 +1041,7 @@ Constant LanguageVersion = "  - Librería I6 Española 1010.29, basada en InformAT
       if (dialecto_sudamericano == 1)  ! [071030] git
       {
         print "[Este juego utiliza por defecto el dialecto sudamericano,
-                por lo que aquí COGER es entendido como una palabra
+                por lo que aquï¿½ COGER es entendido como una palabra
                 malsonante. Por favor, utiliza TOMAR en su lugar, o bien
                 elige el dialecto castellano con DIALECTO CASTELLANO.]^";
         dialecto_sudamericano = 2;
@@ -1051,7 +1051,7 @@ Constant LanguageVersion = "  - Librería I6 Española 1010.29, basada en InformAT
      if ((i->#dict_par1)&1) return i;
     else 
     {
-    if (parser_trace>=9) print "Está en el diccionario, pero no es verbo.^";
+    if (parser_trace>=9) print "Estï¿½ en el diccionario, pero no es verbo.^";
     return 0;
     }
 ];
@@ -1098,25 +1098,25 @@ Constant LanguageVersion = "  - Librería I6 Española 1010.29, basada en InformAT
 #endif;
 ];
 
-! La siguiente función debe devolver si el verbo recibido es
-! reconocido o no. Se recibe el buffer completo y "pos" indica qué
+! La siguiente funciï¿½n debe devolver si el verbo recibido es
+! reconocido o no. Se recibe el buffer completo y "pos" indica quï¿½
 ! palabra dentro del buffer "pars" es el supuesto verbo.
-! Hay que devolver la dirección de diccionario del verbo en cuestión.
+! Hay que devolver la direcciï¿½n de diccionario del verbo en cuestiï¿½n.
 !
-! Lo usamos para admitir infinitivos. El método es:
+! Lo usamos para admitir infinitivos. El mï¿½todo es:
 !   Si la palabra corresponde a una palabra de diccionario, no hacemos
 !   nada (retornamos esa palabra, sin molestarnos en comprobar que sea
-!   un verbo. Ya lo hará el parser).
+!   un verbo. Ya lo harï¿½ el parser).
 !
-!   Si la palabra no está en el diccionario, miramos si termina en
-!   'r', y de ser así se la quitamos y re-tokenizamos. Si de este modo
+!   Si la palabra no estï¿½ en el diccionario, miramos si termina en
+!   'r', y de ser asï¿½ se la quitamos y re-tokenizamos. Si de este modo
 !   se obtiene una palabra en el diccionario, retornamos su valor (sin
-!   comprobar que sea un verbo, ya lo hará el parser).
+!   comprobar que sea un verbo, ya lo harï¿½ el parser).
 !
 !   Si tampoco de este modo se reconoce, comparamos la palabra dada
 !   con todos los verbos irregulares conocidos. Si en uno de ellos
 !   encontramos coincidencia, retornamos el primer elemento de la
-!   propiedad "imperativo" del verbo en cuestión.
+!   propiedad "imperativo" del verbo en cuestiï¿½n.
 !
 !   En el caso de la desambiguacion, puede darse que el jugador responda
 !   con un verbo nuevo, pero con sufijo pronominal la/le/lo/me/te/se (ej. examinala)
@@ -1128,26 +1128,28 @@ Constant LanguageVersion = "  - Librería I6 Española 1010.29, basada en InformAT
 #ifdef DEBUG;
     if (parser_trace>=7) !imprimir el buffer recibido
     {
-	print "^[ LanguageIsVerb:  ";
-	print "Buffer recibido: |";
+	    print "^[ LanguageIsVerb:  ";
+	    print "Buffer recibido: |";
 		ImprimeTodoElBuffer(buf);
-	print "|, pos=", pos, "^  ";
+	    print "|, pos=", pos, "^  ";
     } 
 #endif;
-    if (PreguntaCualExactamente) ! caso de desambiguación
-	EspanolAInformes(buf, pars); ! revisar la existencia de sufijos pronominales la/le/lo/me/te/se
+
+    if (PreguntaCualExactamente) ! caso de desambiguaciï¿½n
+	    EspanolAInformes(buf, pars); ! revisar la existencia de sufijos pronominales la/le/lo/me/te/se
+    
     word = tokenDict (pars,pos); !dictionary value of token 1,2,3...
     at = tokenPos (pars,pos); ! position in buffer of token 1,2,3... 
     len = tokenLen (pars,pos);! length in chars of token 1,2,3...
 
-    ! Si la palabra se reconoce, devolverla sin más
+    ! Si la palabra se reconoce, devolverla sin mï¿½s
      if (word~=0 && word->#dict_par1 & 1 ~= 0)
     {
 #ifdef DEBUG;
-	if (parser_trace>=7) print " la palabra ~", (address)
-		word, "~ está en el diccionario.^";
+	    if (parser_trace>=7) print " la palabra ~", (address)
+		    word, "~ estï¿½ en el diccionario.^";
 #endif;
-	return    (word);
+	    return    (word);
     }
 
    
@@ -1157,9 +1159,10 @@ Constant LanguageVersion = "  - Librería I6 Española 1010.29, basada en InformAT
     ! Si no la ha reconocido, intentamos ver si es un verbo irregular
     if (i~=0)
     {
-	if (parser_trace>=7) print "^ Verbo reconocido
-		al quitarle la 'r' final.^";
+	    if (parser_trace>=7) print "^ Verbo reconocido
+		    al quitarle la 'r' final.^";
     }
+    
 ! TODO: fix asunto de verbo irregular
 
 !    else 
@@ -1185,47 +1188,47 @@ Constant LanguageVersion = "  - Librería I6 Española 1010.29, basada en InformAT
 ! pero la forma de preguntarlo depende del verbo. Por ej.:
 !
 ! > coge
-! ¿Qué quieres coger?
+! ï¿½Quï¿½ quieres coger?
 !
 ! > mete llave
-! ¿Dónde quieres meter la llave?
+! ï¿½Dï¿½nde quieres meter la llave?
 !
 ! > orco, saca la botella
-! ¿De dónde tiene que sacar el orco la botella?
+! ï¿½De dï¿½nde tiene que sacar el orco la botella?
 !
 ! Cuando el parser tiene que imprimir una respuesta de estas,
-! simplemente llama a MLIdioma con el número de mensaje Misc, 48 o
-! 49. En esta versión de la librería (6/7) es responsabilidad de
+! simplemente llama a MLIdioma con el nï¿½mero de mensaje Misc, 48 o
+! 49. En esta versiï¿½n de la librerï¿½a (6/7) es responsabilidad de
 ! LanguageLM generar el mensaje completo.
 !
 ! En nuestro caso hemos implementado estos mensajes de forma que
-! llaman a IniciarPregunta para que escriba una partícula interrogativa
+! llaman a IniciarPregunta para que escriba una partï¿½cula interrogativa
 ! como "Donde" "De donde", etc. Si no escribe nada, MLIdioma pone
-! "Qué" o "A quién" según el tipo de error, a continuación se escribe
-! "quieres" o "tiene que" según quién sea el actor. Se llama a
-! LanguageVerb para que escriba el verbo, y finalmente se añade el
-! name del objeto directo si lo había, para terminar la pregunta
-! cerrando la interrogación.
+! "Quï¿½" o "A quiï¿½n" segï¿½n el tipo de error, a continuaciï¿½n se escribe
+! "quieres" o "tiene que" segï¿½n quiï¿½n sea el actor. Se llama a
+! LanguageVerb para que escriba el verbo, y finalmente se aï¿½ade el
+! name del objeto directo si lo habï¿½a, para terminar la pregunta
+! cerrando la interrogaciï¿½n.
 !
 ! IniciarPregunta, lo que hace es: 
 !
-! 1) busca preposiciones en el patrón que ha encajado, si las
-! encuentra, la pregunta debe comenzar por alguna partícula
-! interrogativa. Por ejemplo, si la línea de gramática hallada era
-! "saca" noun "de" noun, se hallará la preposición "de" que nos indica
-! que la pregunta ha de comenzar con "¿De dónde ...".
+! 1) busca preposiciones en el patrï¿½n que ha encajado, si las
+! encuentra, la pregunta debe comenzar por alguna partï¿½cula
+! interrogativa. Por ejemplo, si la lï¿½nea de gramï¿½tica hallada era
+! "saca" noun "de" noun, se hallarï¿½ la preposiciï¿½n "de" que nos indica
+! que la pregunta ha de comenzar con "ï¿½De dï¿½nde ...".
 !
-! 2) Llama a la función "IdiomaPreguntarPrep" que recibe como
-! parámetros la preposición y la acción en curso, para que imprima la
-! partícula interrogativa adecuada. Esta función tan sólo debe
-! escribir esa partícula.
+! 2) Llama a la funciï¿½n "IdiomaPreguntarPrep" que recibe como
+! parï¿½metros la preposiciï¿½n y la acciï¿½n en curso, para que imprima la
+! partï¿½cula interrogativa adecuada. Esta funciï¿½n tan sï¿½lo debe
+! escribir esa partï¿½cula.
 !
 ! IdiomaPreguntarPrep llama a su vez a PreguntarPreposicion por si el
-! programador añade verbos raros con preposiciones raras que no son
+! programador aï¿½ade verbos raros con preposiciones raras que no son
 ! correctamente manejados por esta rutina. Si PreguntarPreposicion
-! existe y retorna distinto de cero, IdiomaPreguntarPrep asumirá
-! que la partícula interrogativa ya ha sido escrita por
-! PreguntarPreposicion y no hará nada más.
+! existe y retorna distinto de cero, IdiomaPreguntarPrep asumirï¿½
+! que la partï¿½cula interrogativa ya ha sido escrita por
+! PreguntarPreposicion y no harï¿½ nada mï¿½s.
 !
 [ IdiomaPreguntarPrep prepos action;
 
@@ -1233,32 +1236,32 @@ Constant LanguageVersion = "  - Librería I6 Española 1010.29, basada en InformAT
     !print "^IPPrep: action: ", (DebugAction)action, "  Prepos: ",(address)prepos,"^"; ! infsp debug 
     switch (prepos)
     {
-     'de':			print "De dónde";
-     'en', 'dentro', 'encima': 	print "Dónde";
-     'bajo','debajo':			print "Debajo de qué";
-     'sobre', 'acerca':		print "Sobre qué";
-     'contra':	print "Contra qué";
-     'hacia':		print "Hacia dónde";
-     'con':if (action==##Tell or ##Attack)  print "Con quién";
-              else print "Con qué";
-     'por':if (action==##Ask) 	print "Por qué";
-              else print "Por dónde";
-     'una', 'un' :				print "A quién";
+     'de':			print "De dï¿½nde";
+     'en', 'dentro', 'encima': 	print "Dï¿½nde";
+     'bajo','debajo':			print "Debajo de quï¿½";
+     'sobre', 'acerca':		print "Sobre quï¿½";
+     'contra':	print "Contra quï¿½";
+     'hacia':		print "Hacia dï¿½nde";
+     'con':if (action==##Tell or ##Attack)  print "Con quiï¿½n";
+              else print "Con quï¿½";
+     'por':if (action==##Ask) 	print "Por quï¿½";
+              else print "Por dï¿½nde";
+     'una', 'un' :				print "A quiï¿½n";
      'a//':  switch(action){
-           ##Go:			print "Hacia dónde";
-           ##Climb:		print "Dónde";
-           ##ThrowAt, ##Give, ##Show, ##Answer, ##Tell, ##Ask:	print "A quién";
-           ##Search:	print "A través de qué";
-           ##Tie:			print "A qué"; 
-           ##Enter:		print "A dónde";
-           default:		print "A quién";
+           ##Go:			print "Hacia dï¿½nde";
+           ##Climb:		print "Dï¿½nde";
+           ##ThrowAt, ##Give, ##Show, ##Answer, ##Tell, ##Ask:	print "A quiï¿½n";
+           ##Search:	print "A travï¿½s de quï¿½";
+           ##Tie:			print "A quï¿½"; 
+           ##Enter:		print "A dï¿½nde";
+           default:		print "A quiï¿½n";
        };
     }
 ];
 
-! A partir del patrón que ha construido el parser, se determina cuál
-! es la primera preposición usada detrás del verbo.
-! Esto será usado por la función IniciarPregunta y por LanguageIsVerb
+! A partir del patrï¿½n que ha construido el parser, se determina cuï¿½l
+! es la primera preposiciï¿½n usada detrï¿½s del verbo.
+! Esto serï¿½ usado por la funciï¿½n IniciarPregunta y por LanguageIsVerb
 ! [INFSP] Recoding para un mejor comportamiento en caso de lineas de gramaticas complejas
 ! Ej: 'pon' noun 'en/sobre' noun . Antes usando 'sobre' (segundo token) no andaba.
 ! (devolvia NULL)
@@ -1272,13 +1275,13 @@ Constant LanguageVersion = "  - Librería I6 Española 1010.29, basada en InformAT
 !    print "pcount:",pcount," ^"; ![infsp] debug
 
     p = NULL;
-    ! recorrido hacia atrás; apartir de pcount, posicion reconocida
+    ! recorrido hacia atrï¿½s; apartir de pcount, posicion reconocida
     for (k=pcount:k>=1:k=k-1){ !infsp tunnig, para evitar el menos menos que quiebra la sintaxis de Include
        i=pattern-->k;
 !        print "^AP: k:",k," i:",i," (i):",(address)VM_NumberToDictionaryAddress(i-REPARSE_CODE),"^"; ! infsp debug 
        if ( i == PATTERN_NULL) continue;
        if ( i >= REPARSE_CODE)
-           p=VM_NumberToDictionaryAddress(i-REPARSE_CODE);!asignar particula, será la conectada a tipo de pregunta segun contexto
+           p=VM_NumberToDictionaryAddress(i-REPARSE_CODE);!asignar particula, serï¿½ la conectada a tipo de pregunta segun contexto
     }
     return p;
 
@@ -1310,18 +1313,18 @@ Constant LanguageVersion = "  - Librería I6 Española 1010.29, basada en InformAT
     else return p;
 ];
 
-! Averigua si es necesaria una partícula interrogativa. Llama a
+! Averigua si es necesaria una partï¿½cula interrogativa. Llama a
 ! IdiomaPreguntarPrep para que la imprima.
 !
-! Retorna 1 si ha sido impresa la partícula interrogativa, y 0 en caso
-! contrario, (y entonces la función que la llamó "LanguageLM", sabe
-! que es necesario escribir "Qué" o "A quién" ya que en este caso lo
+! Retorna 1 si ha sido impresa la partï¿½cula interrogativa, y 0 en caso
+! contrario, (y entonces la funciï¿½n que la llamï¿½ "LanguageLM", sabe
+! que es necesario escribir "Quï¿½" o "A quiï¿½n" ya que en este caso lo
 ! que faltaba era el objeto directo en lugar del complemento.
 !
 [ IniciarPregunta
     p;
 
-    print "¿";
+    print "ï¿½";
     p=AveriguarPreposicion();
     if (p~=NULL) {
       IdiomaPreguntarPrep(p, action_to_be);
@@ -1339,21 +1342,21 @@ Constant LanguageVersion = "  - Librería I6 Española 1010.29, basada en InformAT
 #ifdef DEBUG;
   [ ActivarAcentosSub;
     quitacentos = 0;
-    "Los acentos no serán eliminados del comando recibido.";
+    "Los acentos no serï¿½n eliminados del comando recibido.";
   ];
 
   [ DesactivarAcentosSub;
     quitacentos = 1;
-    "Los acentos serán eliminados del comando recibido, pero sólo en
-      las palabras que de otro modo no serían comprendidas.";
+    "Los acentos serï¿½n eliminados del comando recibido, pero sï¿½lo en
+      las palabras que de otro modo no serï¿½an comprendidas.";
   ];
 #endif; ! DEBUG
 
-! Elección del dialecto (afecta a la interpretación del
-! verbo COGER únicamente)
+! Elecciï¿½n del dialecto (afecta a la interpretaciï¿½n del
+! verbo COGER ï¿½nicamente)
 
 [ DialectoSub;
-  print "Actualmente estás jugando en el dialecto ";
+  print "Actualmente estï¿½s jugando en el dialecto ";
   if (dialecto_sudamericano)
     print "sudamericano";
   else

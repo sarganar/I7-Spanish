@@ -21,15 +21,7 @@ Para ello haz **Pestaña Settings/Language Version = Current**
 ### Librerías Español:
 Ve a la sección [Releases de este repositorio](https://github.com/sarganar/I7-Spanish/releases). Allí las tienes empaquetadas en un zip. Descargate la última.
 
-Puedes instalarlo de manera global o solo para tu proyecto actual.
-
-#### Instalación Global
-
-- Copia la carpeta **Sebastian Arg** al folder *Extensions* (del IDE).
-
-- Copia la carpeta **SpanishLanguageKit** al folder *Inter* (del IDE).
-
-- y ya.
+Te recomiendo que las instales de manera local, solo para tu proyecto actual.
 
 #### Instalación Local
 Solo para tu proyecto actual (a veces la manera global no fuciona)
