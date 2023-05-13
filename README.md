@@ -24,7 +24,6 @@ Ve a la sección [Releases de este repositorio](https://github.com/sarganar/I7-S
 Te recomiendo que las instales de manera local, solo para tu proyecto actual.
 
 #### Instalación Local
-Solo para tu proyecto actual (a veces la manera global no fuciona)
 
 - Copia la carpeta **Sebastian Arg** al folder *Extensions* en *MisDocumentos/Inform/Projects/TuProyecto.Materials/*  Debes crear el folder *Extensions*
 
