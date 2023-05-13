@@ -13,10 +13,6 @@ Cómo instalar
 
 Descarga e instala el IDE de Inform [desde su repositorio](https://github.com/ganelson/inform/releases). Es la release **10.1.2**, elige la que corresponde a tu SO.
 
-Ya en el IDE, recuerda configurar la versión apropiada de Inform.
-
-Para ello haz **Pestaña Settings/Language Version = Current**
-
 
 ### Librerías Español:
 Ve a la sección [Releases de este repositorio](https://github.com/sarganar/I7-Spanish/releases). Allí las tienes empaquetadas en un zip. Descargate la última.
