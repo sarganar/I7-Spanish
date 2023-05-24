@@ -1911,4 +1911,164 @@ Include (-
 ];
 -) replacing "PrintTimeOfDayEnglish".
 
+Include (-
+[ PrintCommand from;
+    PrintCommandSpanish (from);
+];
+-) replacing "PrintCommand". 
+
+
+Part SL7 - Spanish Irregular Verbs
+
+[Thanx to otistdog user from intfiction phorum]
+[https://intfiction.org/t/calling-a-rule-from-i6-code-with-params/61797]
+
+Include (- 
+
+Array tmpbuf buffer INPUT_BUFFER_LEN;
+Array tmpparse --> PARSE_BUFFER_LEN;
+
+Array tknbuf buffer INPUT_BUFFER_LEN;
+Array tknparse --> PARSE_BUFFER_LEN;
+
+! DictionaryWordFromText: Convert a text into a dictonary word. 
+[ DictionaryWordFromText txt len i ;
+	if (len < 1) rfalse;
+	i = 0;
+	while (i < len) {
+		tknbuf->(WORDSIZE+i) = BlkValueRead(txt, i);
+		i++;
+	}
+	tknbuf-->0 = len;
+	VM_Tokenise(tknbuf, tknparse);
+	return tknparse-->1; ! only first word of interest
+];
+
+[ LanguageIsIrregularVerb buf prs word_in_buf bufsnp rv;	
+	if (word_in_buf == 0) return 0;
+	
+	! special case if buf is buffer2; we need to backup main buffer and
+	!	and parse vars
+	if (buf == buffer2) {
+		VM_CopyBuffer(tmpbuf, buffer);
+		VM_CopyBuffer(buffer, buffer2);
+	}
+	if (prs == parse2) {
+		Arrcpy(tmpparse, WORDSIZE, parse, WORDSIZE, PARSE_BUFFER_LEN);
+		Arrcpy(parse, WORDSIZE, parse2, WORDSIZE, PARSE_BUFFER_LEN);
+	}
+
+	bufsnp = (word_in_buf*100)+1;! set a snnipet, using formula. it is pointing to main 'buffer' var 
+	
+	FollowRulebook( (+ SearchingFor rules +), bufsnp, true);
+	
+	if (buf == buffer2) {
+		VM_CopyBuffer(buffer2, buffer);
+		VM_CopyBuffer(buffer, tmpbuf);
+	}
+	if (prs == parse2) {
+		Arrcpy(parse2, WORDSIZE, parse, WORDSIZE, PARSE_BUFFER_LEN);
+		Arrcpy(parse, WORDSIZE, tmpparse, WORDSIZE, PARSE_BUFFER_LEN);
+	}
+
+	return latest_rule_result-->2;
+];
+
+Array auxbuf buffer INPUT_BUFFER_LEN;
+Array auxparse --> PARSE_BUFFER_LEN;
+
+! ImprimirIrregular: si el verbo está en la Table of Irregular Verbs, imprime
+!	el infinitivo y duelve su dict address, si no, no imprime nada y devuelve false.
+[ ImprimirIrregular word k bufsnp;
+
+!    print "[ImprimirIrregular...", (address) word;
+    k = VM_PrintToBuffer (auxbuf,INPUT_BUFFER_LEN,word);
+!    print " | Buffer creado: ";
+!    ImprimeTodoElBuffer(auxbuf);
+
+    VM_Tokenise(auxbuf, auxparse);
+
+    ! backup global buffer var
+    VM_CopyBuffer(tmpbuf, buffer);
+	VM_CopyBuffer(buffer, auxbuf);
+
+    ! backup global parse var
+	Arrcpy(tmpparse, WORDSIZE, parse, WORDSIZE, PARSE_BUFFER_LEN);
+	Arrcpy(parse, WORDSIZE, auxparse, WORDSIZE, PARSE_BUFFER_LEN);
+	
+	bufsnp = 101; !snippet value for the first token, the only
+
+	FollowRulebook( (+ SearchingForImperative rules +), bufsnp, true);
+
+	!restore global buf and parse vars
+	VM_CopyBuffer(buffer, tmpbuf);
+	Arrcpy(parse, WORDSIZE, tmpparse, WORDSIZE, PARSE_BUFFER_LEN);
+
+	return latest_rule_result-->2;
+
+];
+
+-) before "Parser.i6t".
+
+
+To decide which number is wdnum of (T - text) with length (N - number):
+	(- DictionaryWordFromText({T}, {N}) -).
+
+To decide which snippet is the invalid snippet:
+	(- 0 -).
+
+SearchingFor is a snippet based rulebook producing a number.
+
+SearchingFor a snippet (called W):
+	if W is the invalid snippet, rule fails;
+	let converted text be the substituted form of "[W]";
+	let auxiliary response be "";
+	repeat through the Table of Irregular Verbs:[search in a table for replace the player`s command]
+		if converted text matches the text "[command entry]":
+			now the auxiliary response is "[imperative entry]";
+	if auxiliary response is empty, rule fails;
+	[say "<replacing '[converted text]' with '[auxiliary response]'>";]
+	let rv be wdnum of auxiliary response with length (number of characters in auxiliary response);
+	rule succeeds with result rv.
+
+
+SearchingForImperative is a snippet based rulebook producing a number.
+
+SearchingForImperative a snippet (called W):
+	if W is the invalid snippet, rule fails;
+	let converted text be the substituted form of "[W]";
+	let auxiliary response be "";
+	repeat through the Table of Irregular Verbs:[search in a table for replace the player`s command]
+		if converted text matches the text "[imperative entry]":
+			now the auxiliary response is "[command entry]";
+	if auxiliary response is empty, rule fails;
+	[say "<replacing '[converted text]' with '[auxiliary response]'>";]
+	say "[auxiliary response]";
+	let rv be wdnum of auxiliary response with length (number of characters in auxiliary response);
+	rule succeeds with result rv.
+
+Table of Irregular Verbs
+command (text)	imperative (text)
+"abrir"	"abre"
+"adquirir"	"adquiere"
+"apretar"	"aprieta"
+"atravesar"	"atraviesa"
+"bajar"	"bajate"
+"balancear"	"balanceate"
+"cerrar"	"cierra"
+"columpiar"	"columpiate"
+"comer"	"comete"
+"ingerir"	"ingiere"
+"contar"	"cuenta"
+"cubrir"	"cubre"
+"darle"	"dale"
+"decir"	"di"
+"descubrir"	"descubre"
+"despertar"	"despierta"
+"destruir"	"destruye"
+"disculparte"	"sorry"
+"dormir"	"duerme"
+"echar"	"echate"
+
+
 Spanish Language ends here.
