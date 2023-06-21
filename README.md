@@ -28,19 +28,24 @@ Te recomiendo que las instales de manera local, solo para tu proyecto actual:
 
 - y ya. 
 
-#### Hola Mundo
+Hola Mundo
+======
+
 - En la aplicación Inform 7 tienes el panel *Source*, allí copia el código del siguiente programa mínimo:
 
-``"Hola Mundo" (in spanish)
+```"Hola Mundo" (in spanish)
 
 Test Lab is a room.  "Una pequeña habitación de pruebas."
 
 When play begins: say "Hola Mundo!".
-``
+```
+
 - Compilas con _F5_ y verás el resultado en el panel *Story*
 
 
-#### Cómo colaborar
+Cómo colaborar
+======
+
 Puedes reportar los problemas que te encuentres informándolos en la pestaña [Issues](https://github.com/sarganar/I7-Spanish/issues) de este repositorio. Si puedes, coloca el código mínimo que reproduce el error.
 
 También puedes crear una pull request con las mejoras que añadirías a la librería.
