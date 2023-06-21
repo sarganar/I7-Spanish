@@ -33,7 +33,8 @@ Hola Mundo
 
 - En la aplicación Inform 7 tienes el panel *Source*, allí copia el código del siguiente programa mínimo:
 
-```"Hola Mundo" (in spanish)
+```
+"Hola Mundo" (in spanish)
 
 Test Lab is a room.  "Una pequeña habitación de pruebas."
 
