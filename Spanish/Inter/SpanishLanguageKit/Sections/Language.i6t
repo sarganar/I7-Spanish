@@ -438,38 +438,38 @@ Constant THAT__TX        = "eso";
 !   usado en pregunta para esclarecer comando
 !       si es verbo: lo imprime, retorna true
 !       si no es verbo: retorna false 
-[ LanguageVerb i aux;
+[ LanguageVerb potential_verb aux res;
 
+    !print "^   LanguageVerb: ^"; ! infsp debug
 !   : VerboIrregular
-    if ( ImprimirIrregular(i) ~= 0 )
-        rtrue;
+    res = ImprimirIrregular(potential_verb); 
+    if ( res ~= 0 ) rtrue;
     
     !print "^   LanguageVerb: Verbo no es irregular.^"; ! infsp debug
       
     ! Tatar de matchear con la br�jula - 807.7 infsp
 !    objectloop (aux in Compass){
-!        if (WordInProperty(i, aux, name)) {
+!        if (WordInProperty(potential_verb, aux, name)) {
 !          print "ir hacia alg�n lado";
 !          rtrue; ! no avanzar m�s en la rutina
 !        }    
 !    }
       
-    ! Un ultimo intento, con una rutina stub a proveer por el autor
-    !    if (PrintVerb(i)==0)
-    !        print (address) i; print "r";
-
-    if ( i == 'mete' ) !todo:  a qué viene esto?
+    if ( potential_verb == 'mete' ) {!interferencia con la particula 'te'
+        print "meter";
         rtrue;
+    }
+
     
     ! Comprobacion si es verbo reflexivo (-te):
 #ifdef TARGET_ZCODE;
     texto_impreso-->0 = 50;
     @output_stream 3 texto_impreso;
-    print (address) i;
+    print (address) potential_verb;
     @output_stream -3;
 
     aux=2;
-!    print "^   LanguageVerb: i : ",(address) i,"^"; ! infsp debug
+!    print "^   LanguageVerb: potential_verb : ",(address) potential_verb,"^"; ! infsp debug
     if (texto_impreso->(texto_impreso->1+1)=='e')
      if (texto_impreso->(texto_impreso->1) == 't' or 's' or 'm')
      {
@@ -479,7 +479,7 @@ Constant THAT__TX        = "eso";
      }
 #endif;
 #ifdef TARGET_GLULX;
-    aux=Glulx_PrintAnyToArray(texto_impreso, 50, i);
+    aux=Glulx_PrintAnyToArray(texto_impreso, 50, potential_verb);
     
     if ((texto_impreso->(aux-1)=='e')&&
         (texto_impreso->(aux-2) == 't' or 's' or 'm')) 
@@ -489,7 +489,7 @@ Constant THAT__TX        = "eso";
     }
 #endif;
     
-    rtrue;
+    rfalse;
 
 ];
 
@@ -1352,12 +1352,17 @@ Constant LanguageVersion = "  - Librer�a I6 Espa�ola 1010.29, basada en Info
 ];
 
 [ PrintCommandSpanish from i k spacing_flag prep;
+
+    !print "PrintCommandSpanish: ",(address) verb_word ,"  ^";
     if (from == 0) {
         i = verb_word;
         !check si uso abreviatura de comando ("i, z, l")
         ! y/o imprime verbo completo
         if (LanguageVerb(i) == 0)
-            if (PrintVerb(i) == 0) print (address) i;
+            if (PrintVerb(i) == 0) {       ! Un ultimo intento, con una rutina stub a proveer por el autor
+                 print (address) i; 
+                 print "r";
+            }
         from++; spacing_flag = true;
     }
   
@@ -1366,7 +1371,7 @@ Constant LanguageVersion = "  - Librer�a I6 Espa�ola 1010.29, basada en Info
   
   for (k=from:k<pcount:k++){
      i=pattern-->k;
-     print "^IIC: i: ",  i, "^"; ! infsp debug
+     !print "^IIC: k:", k , " i: ", i, " ",REPARSE_CODE,"^"; ! infsp debug
       if (i == PATTERN_NULL) continue;
       if (spacing_flag) print (char) ' ';
       if (i == 0) { PARSER_CLARIF_INTERNAL_RM('F'); jump TokenPrinted; }!viejo THOSET__TX
@@ -1383,7 +1388,7 @@ Constant LanguageVersion = "  - Librer�a I6 Espa�ola 1010.29, basada en Info
                switch (prep){
                 'a//': print (al) i;
                 'de': print (del) i;
-                NULL: print (the) i;
+                NULL: print     (the) i;
                 default: !print " ", (address) prep;
                            print (the) i;
                }

@@ -1981,7 +1981,7 @@ Array auxparse --> PARSE_BUFFER_LEN;
 !	el infinitivo y duelve su dict address, si no, no imprime nada y devuelve false.
 [ ImprimirIrregular word k bufsnp;
 
-!    print "[ImprimirIrregular...", (address) word;
+    !print "[ImprimirIrregular...", (address) word, "^";
     k = VM_PrintToBuffer (auxbuf,INPUT_BUFFER_LEN,word);
 !    print " | Buffer creado: ";
 !    ImprimeTodoElBuffer(auxbuf);
@@ -2024,7 +2024,7 @@ SearchingFor a snippet (called W):
 	let converted text be the substituted form of "[W]";
 	let auxiliary response be "";
 	repeat through the Table of Irregular Verbs:[search in a table for replace the player`s command]
-		if converted text matches the text "[command entry]":
+		if converted text exactly matches the text "[command entry]":
 			now the auxiliary response is "[imperative entry]";
 	if auxiliary response is empty, rule fails;
 	[say "<replacing '[converted text]' with '[auxiliary response]'>";]
@@ -2042,9 +2042,10 @@ SearchingForImperative a snippet (called W):
 		if converted text matches the text "[imperative entry]":
 			now the auxiliary response is "[command entry]";
 	if auxiliary response is empty, rule fails;
-	[say "<replacing '[converted text]' with '[auxiliary response]'>";]
-	say "[auxiliary response]";
 	let rv be wdnum of auxiliary response with length (number of characters in auxiliary response);
+	if rv is 0, rule fails;
+	say "<replacing '[converted text]' with '[auxiliary response]'>";
+	say "[auxiliary response]";
 	rule succeeds with result rv.
 
 Table of Irregular Verbs
@@ -2066,9 +2067,36 @@ command (text)	imperative (text)
 "descubrir"	"descubre"
 "despertar"	"despierta"
 "destruir"	"destruye"
-"disculparte"	"sorry"
 "dormir"	"duerme"
 "echar"	"echate"
+"encender"	"enciende"
+"esperar"	"z"
+"fregar"	"friega"
+"ir"	"ve"
+"volver"	"vuelve"
+"levantar"	"levantate"
+"mostrar"	"muestra"
+"mover"	"mueve"
+"oir"	"oye"
+"oler"	"huele"
+"pedir"	"pide"
+"pensar"	"pensar"
+"poner"	"pon"
+"probar"	"prueba"
+"pulir"	"pule"
+"quitar"	"sacate"
+"quitarle"	"quitale"
+"sacudir"	"sacude"
+"salir"	"sal"
+"sentar"	"sienta"
+"soltar"	"suelta"
+"subir"	"sube"
+"torcer"	"tuerce"
+"retorcer"	"retuerce"
+"transferir"	"transfiere"
+"unir"	"une"
+
+
 
 
 Spanish Language ends here.
