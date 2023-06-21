@@ -1,4 +1,4 @@
-INFORM 7 in Spanish (10.1.2)
+INFORM 7 Spanish Extension (r10.1.2)
 ======
 
 (This branch contains the Spanish Libs for Inform 10.1.2 - 2022 August)
