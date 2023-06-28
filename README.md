@@ -9,4 +9,6 @@ This branch contains the Spanish Libs for Inform 9.3 (6M62 English Edition - 201
 
 [Notas de desarrollo y programación](http://wiki.caad.es/Inform7_6L02)
 
-Si estás utilizando una versión reciente del IDE (2022 o así...), recuerda configurar la versión apropiada de Inform. Haz **Pesta�a Settings/Language Version = Inform 9.3**
+Si estás utilizando una versión reciente del IDE (2022 o así...), recuerda configurar la versión apropiada de Inform. Haz **Pestaña Settings/Language Version = Inform 9.3**
+
+💻También puedes visitar la [página oficial de Inform](https://ganelson.github.io/inform-website/).
