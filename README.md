@@ -1,9 +1,10 @@
-INFORM 7 Spanish Extension (r10.1.2)
+INFORM 7 Spanish Extension (r10.1.2) - June 21th, 2023
 ======
 
-(This branch contains the Spanish Libs for Inform 10.1.2 - 2022 August)
+This branch contains the Spanish Libs for Inform 10.1.2 - 2022 August
 
-Edición 10.1.2 (Agosto 2022)
+✔️Edición 10.1.2 - Descarga [la última release](https://github.com/sarganar/I7-Spanish/releases/).
+
 
 Cómo instalar
 ======
@@ -52,3 +53,6 @@ Puedes reportar los problemas que te encuentres informándolos en la pestaña [I
 También puedes crear una pull request con las mejoras que añadirías a la librería.
 
 Estamos en Discord, en los canales de CAAD y Textualiza, pídeme invitación por email.
+
+💻También puedes visitar la [página oficial de Inform](https://ganelson.github.io/inform-website/).
+
