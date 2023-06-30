@@ -419,10 +419,16 @@ Outside translates into Spanish as fuera.
 Up translates into Spanish as arriba.
 Down translates into Spanish as abajo.][TODO: esto no compila]
 
+Understand "norte" as north.
+Understand "sur" as south.
+Understand "este" as east.
+Understand "o" , "oeste" as west.
 
-Understand "o" as west.
-Understand "no" as northwest.
-Understand "so" as southwest.
+Understand "no" , "noroeste" as northwest.
+Understand "so" , "suroeste" as southwest.
+Understand "sureste" as southeast.
+Understand  "noreste" as northeast.
+
 Understand "sube/techo/lado/cielo/asciende" as up.
 Understand "b/baja/suelo/desciende" as down.
 Understand "adentro" as inside. ['entra' no funciona aqui pues se superpone con verbo 'entra..']
