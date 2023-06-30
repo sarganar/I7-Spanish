@@ -419,6 +419,19 @@ Outside translates into Spanish as fuera.
 Up translates into Spanish as arriba.
 Down translates into Spanish as abajo.][TODO: esto no compila]
 
+The printed name of the south is "sur".
+The printed name of the north is "norte".
+The printed name of the east is "este".
+The printed name of the west is "oeste".
+The printed name of the northeast is "noreste".
+The printed name of the northwest is "noroeste".
+The printed name of the southeast is "sureste".
+The printed name of the southwest is "suroeste".
+The printed name of the inside is "dentro".
+The printed name of the outside is "fuera".
+The printed name of the up is "arriba".
+The printed name of the down is "abajo".
+
 Understand "norte" as north.
 Understand "sur" as south.
 Understand "este" as east.
@@ -428,7 +441,7 @@ Understand "no" , "noroeste" as northwest.
 Understand "so" , "suroeste" as southwest.
 Understand "sureste" as southeast.
 Understand  "noreste" as northeast.
-
+	
 Understand "sube/techo/lado/cielo/asciende" as up.
 Understand "b/baja/suelo/desciende" as down.
 Understand "adentro" as inside. ['entra' no funciona aqui pues se superpone con verbo 'entra..']
