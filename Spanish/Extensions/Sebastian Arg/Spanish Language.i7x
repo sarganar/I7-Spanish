@@ -1,6 +1,6 @@
 Version 2 of Spanish Language by Sebastian Arg begins here.
 
-"To make Spanish the language of play. Release 221111"
+"To make Spanish the language of play. Release 230724"
 
 "basada en InformATE! de Zak, con la contribución de toda la comunidad"
 
@@ -50,7 +50,7 @@ The story title variable translates into Inter as "Story".
 
 Section 2 SR Hack - Others Hackings
 
-[Para poner siempre el nombre de la habitación con primera letra en mayuscula (johan mode):]
+[Para poner siempre el nombre de la habitaci?n con primera letra en mayuscula (johan mode):]
 
 Carry out looking (this is the spanish room description heading rule):
 	say bold type;
@@ -174,11 +174,11 @@ Spanish: [tu], [ti], [tuyo], [le tien], [ton]
 
 and their capitalised forms, which start with "T" not "t".]
 
-[en general Poca gente menciona los sujetos explícitamente en segunda persona.Al-K]
+[en general Poca gente menciona los sujetos expl?citamente en segunda persona.Al-K]
 
 [Include Text Capture by Eric Eve.]
 
-to say plm:[primera letra en mayúscula]
+to say plm:[primera letra en may?scula]
 	stop capturing text;
 	say "[captured text]" in sentence case.
 
@@ -219,7 +219,7 @@ To say Tu:
 
 
 
-To say él:
+To say �l:
 	now the prior named object is the player;[ object's identity is a value stored in "prior named object"]
 	if the story viewpoint is third person singular:
 		if the player is male:
@@ -597,7 +597,7 @@ Section 3.1.1.1 - Standard actions concerning the actor's possessions
 
 [ Removing it from ]
 
-    can't remove what's not inside rule response (A) is "[regarding the noun]¡Pero si no está[n] ahí ahora!".
+    can't remove what's not inside rule response (A) is "[regarding the noun]¿Pero si no está[n] ahí ahora!".
     can't remove from people rule response (A) is "[regarding the noun]Parece que pertenece [al owner].".
 
 
@@ -926,8 +926,8 @@ standard report waiting rule response (B) is "[El actor] deja pasar el tiempo.".
 
 [ Touching ]
 
-report touching yourself rule response (A) is "No logras nada con eso.". [¡Las manos quietas!]
-report touching yourself rule response (B) is "[El actor] se toca[n] a si mism[o].". [[El actor] se toca impúdicamente.]
+report touching yourself rule response (A) is "No logras nada con eso.". [?Las manos quietas!]
+report touching yourself rule response (B) is "[El actor] se toca[n] a si mism[o].". [[El actor] se toca imp?dicamente.]
 report touching other people rule response (A) is "[Al noun] podría no gustarle[s] eso.".
 report touching other people rule response (B) is "[El actor] te toca[n].". [[El actor] no puede[n] reprimir el deseo de tocarte.]
 report touching other people rule response (C) is "[El actor] toca[n] [el noun].".
@@ -938,7 +938,7 @@ report touching things rule response (B) is "[El actor] toca[n] [el noun].".
 [ Waving ]
 
 can't wave what's not held rule response (A) is "Pero no [regarding the noun]l[o] tienes.". [No [regarding the noun]l[o] tienes.]
-report waving things rule response (A) is "Agitas [el noun].". [Te sientes [regarding the noun]ridícul[o] agitando [el noun].]
+report waving things rule response (A) is "Agitas [el noun].". [Te sientes [regarding the noun]rid?cul[o] agitando [el noun].]
 report waving things rule response (B) is "[El actor] agita[n] [el noun].".
 
 
@@ -946,7 +946,7 @@ report waving things rule response (B) is "[El actor] agita[n] [el noun].".
 
 can't pull what's fixed in place rule response (A) is "[regarding the noun]Está[n] firmemente sujet[o].".
 can't pull scenery rule response (A) is "No eres capaz.".
-can't pull people rule response (A) is "[Al noun] podría no gustarle[s] eso.". [Eso sería como poco maleducado.]
+can't pull people rule response (A) is "[Al noun] podría no gustarle[s] eso.". [Eso ser?a como poco maleducado.]
 report pulling rule response (A) is "No ocurre nada, aparentemente.".
 report pulling rule response (B) is "[El actor] tira[n] [del noun].".
 
@@ -973,7 +973,7 @@ report turning rule response (B) is "[El actor] gira[n] [el noun].".
 
 can't push unpushable things rule response (A) is "[El noun] no puede[n] ser empujad[o] de un lugar a otro.". [No creo que empujar [el noun] sirva para nada.]
 can't push to non-directions rule response (A) is "Eso no es una dirección.".
-can't push vertically rule response (A) is "[El noun] no puede[n] ser empujad[o] hacia arriba o hacia abajo.". [¿Sería lo mismo que levantar/bajar?]
+can't push vertically rule response (A) is "[El noun] no puede[n] ser empujad[o] hacia arriba o hacia abajo.". [?Ser?a lo mismo que levantar/bajar?]
 can't push from within rule response (A) is "[El noun] no puede ser empujado desde aquí.".
 block pushing in directions rule response (A) is "[El noun] no puede[n] ser empujad[o] de un lugar a otro.".
 
@@ -1000,7 +1000,7 @@ block saying yes rule response (A) is "Sólo era una pregunta retórica.".
 block saying no rule response (A) is "Sólo era una pregunta retórica.".
 
 [ Burning ]
-block burning rule response (A) is "Con esa peligrosa acción no lograrías nada.".
+block burning rule response (A) is "Con esa peligrosa acción no lograrás nada.".
 
 [ Waking up ]
 block waking up rule response (A) is "La cruda realidad es que esto no es un sueño.".
@@ -1031,7 +1031,7 @@ report jumping rule response (B) is "[El actor] salta[n] en el sitio".
 block tying rule response (A) is "No lograrás nada con eso.".
 
 [ Drinking ]
-block drinking rule response (A) is "Eso no parece potable.". [¿O es "No hay nada potable para beber aquí"?]
+block drinking rule response (A) is "Eso no parece potable.". [?O es "No hay nada potable para beber aquí"?]
 
 [ Saying sorry ]
 block saying sorry rule response (A) is "Oh, no es necesario que te disculpes.".
@@ -1090,7 +1090,7 @@ Section 3.1.1.8 - Standard actions which happen out of world
 [ Verifying the story file ]
 
 	verify the story file rule response (A) is "Fichero de juego verificado e intacto.".
-	verify the story file rule response (B) is "El fichero de juego no parece intacto, puede estar corrompido (a menos que estés jugando con un intérprete muy primitivo que no sea capaz de realizar la comprobación).".
+	verify the story file rule response (B) is "El fichero de juego no parece intacto, puede estar corrompido (a menos que estás jugando con un intérprete muy primitivo que no sea capaz de realizar la comprobación).".
 
 
 [ Switching the story transcript off ]
@@ -1105,7 +1105,7 @@ switch the story transcript off rule response (C) is "Intento fallido de finaliz
 
 [ Requesting the score ]
 
-announce the score rule response (A) is "[if the story has ended]En este relato, tu puntuación ha sido[otherwise]Hasta el momento tu puntuación es[end if] [score] de un total de [maximum score], en [turn count] turno[s]". [¿Juego o historia? A veces es juego, otras veces historia (como la (c) abajo). No entiendo. Me decanto por 'relato']
+announce the score rule response (A) is "[if the story has ended]En este relato, tu puntuación ha sido[otherwise]Hasta el momento tu puntuación es[end if] [score] de un total de [maximum score], en [turn count] turno[s]". [?Juego o historia? A veces es juego, otras veces historia (como la (c) abajo). No entiendo. Me decanto por 'relato']
 announce the score rule response (B) is ", logrando el rango de ".
 announce the score rule response (C) is "No hay puntuación en esta historia.". [Este juego no tiene conteo de puntuación.]
 announce the score rule response (D) is "[bracket]Tu puntuación ha aumentado en [number understood in words] punto[s].[close bracket]".
@@ -1268,7 +1268,7 @@ To say es-ves:
 		say "ves".
     
 [[regarding list writer internals]: (usado en list writer internal rule response (V) )
-	*llama internamente a RegardingLWI() (ListWriter.i6t), que actualiza prior_named_list / prior_named_list_gender / prior_named_noun, utilizados luego por la sustitución [verbo] .
+	*llama internamente a RegardingLWI() (ListWriter.i6t), que actualiza prior_named_list / prior_named_list_gender / prior_named_noun, utilizados luego por la sustituci?n [verbo] .
 ]
 
     
@@ -1338,7 +1338,7 @@ To say es-ves:
     parser clarification internal rule response (B) is "¿Cuál concretamente, [set pregunta exacta]".
     parser clarification internal rule response (C) is "Lo siento, sólo puedes referirte a un objeto aquí. ¿Cuál exactamente?".
     parser clarification internal rule response (D) is "[if no se inicia pregunta con preprosicion]¿Qué[end if] [if the noun is not the player][the noun] tiene que[otherwise]quieres[end if] [parser command so far]?[set pregunta exacta]".
-    parser clarification internal rule response (E) is "¿Qué [if the noun is not the player][the noun] tiene que[otherwise]quieres[end if] [parser command so far]?[set pregunta exacta]".
+    parser clarification internal rule response (E) is "[if no se inicia pregunta con preprosicion]¿Qué[end if] [if the noun is not the player][the noun] tiene que[otherwise]quieres[end if] [parser command so far]?[set pregunta exacta]".
     parser clarification internal rule response (F) is "esas cosas".
     parser clarification internal rule response (G) is "eso".
     parser clarification internal rule response (H) is " o ".
@@ -1369,7 +1369,7 @@ Volume 4 - Grammar
 
 Part 4.1 - Replacing English verbs
 
-[ Propósito: Para no incluir el bloque de gramaticas (y verbos) ingleses en el fuente (optimiza memoria)]
+[ Prop?sito: Para no incluir el bloque de gramaticas (y verbos) ingleses en el fuente (optimiza memoria)]
 
 
 Understand nothing as answering it that.
@@ -1453,7 +1453,7 @@ Understand nothing as wearing.
 
 [ Gramatica basada en InformATE! (I6) (by Zak)]
 [ Verbos irregulares: filosofia usada en informATE!]
-[ Para algunas acciones no estan permitidas ciertas variantes de la gramatica de informATE, como el uso de second noun como token.Esto hace la respuesta del parser mucho mas tonta: Ej, corta el pan o corta el pan con el cuchillo. ToDo: podrá resolverse esto?]
+[ Para algunas acciones no estan permitidas ciertas variantes de la gramatica de informATE, como el uso de second noun como token.Esto hace la respuesta del parser mucho mas tonta: Ej, corta el pan o corta el pan con el cuchillo. ToDo: podr? resolverse esto?]
 
 Part 4.2 - Grammar for Actions in the Game World
 
@@ -1597,7 +1597,7 @@ Understand "tapa [something]" as closing. Understand the command "cubre" as "tap
 Entering to room is an action applying to nothing.
 The specification of the entering to room action is "Esta acción se ejecuta con el comando
 'entra', asumiendo que en realidad se quiere entrar a alguna localidad que se tenga enfrente, y que en
-el juego esté correctamente mapeada de manera que corresponda al 'inside' de la localidad actual.".
+el juego está correctamente mapeada de manera que corresponda al 'inside' de la localidad actual.".
 Carry out entering to room (this is the intentar entrar rule): try going inside.
 
 Understand "entra" as entering to room.
@@ -1628,7 +1628,7 @@ Understand "lee [text] en [something]" as consulting it about (with nouns revers
 Understand "si" or "sí" as saying yes. [TODO: arreglar unicode]
 Understand "nx" as saying no.
 
-Understand "sorry" as saying sorry. Understand the commands "perdon","perdona","siento","lamento" and "disculpa" as "sorry". [TODO no permite argumento 'topic']
+Understand "sorry" as saying sorry. Understand the commands "perdon","perdona","siento","lamento", "disculparte" and "disculpa" as "sorry". [TODO no permite argumento 'topic']
 Understand "lo siento/lamento" as saying sorry.
 Understand "lo siento/lamento mucho" as saying sorry.
 
@@ -1683,7 +1683,7 @@ Understand "lucha [someone]" as attacking.
 Understand "espera" or "z" as waiting.
 
 Understand "responde a [someone] [text]" as answering it that.
-Understand "responde [text] a [someone]" as answering it that (with nouns reversed). [TODO ¿como es el orden correcto?]
+Understand "responde [text] a [someone]" as answering it that (with nouns reversed). [TODO ?como es el orden correcto?]
 Understand "responde [someone] [text]" as answering it that.
 Understand the commands "di","grita" and "dile" as "responde".
 
@@ -1730,7 +1730,7 @@ Understand "baja" as bajando.
 Bajando is an action applying to nothing.
 The specification of the bajando action is "Esta acción se ejecuta con el comando
 'baja', asumiendo que en realidad se quiere bajar a alguna localidad que se tenga debajo, y que en
-el juego esté correctamente mapeada de manera que corresponda al 'down' de la localidad actual.".
+el juego está correctamente mapeada de manera que corresponda al 'down' de la localidad actual.".
 Carry out bajando: try going down.
 
 Understand "subete a/en [something]" as entering. Understand the command "subirse" and "subirte" as "subete".
@@ -1738,7 +1738,7 @@ Understand "subete a/en [something]" as entering. Understand the command "subirs
 Subiendo is an action applying to nothing.
 The specification of the subiendo action is "Esta acción se ejecuta con el comando
 'sube', asumiendo que en realidad se quiere subir a alguna localidad que se tenga arriba, y que en
-el juego esté correctamente mapeada de manera que corresponda al 'up' de la localidad actual.".
+el juego está correctamente mapeada de manera que corresponda al 'up' de la localidad actual.".
 Carry out subiendo: try going up.
 
 Understand "sube" as subiendo.
@@ -1787,7 +1787,7 @@ Understand "saborea a [something]" as tasting.
 Understand "toca [something]" as touching. Understand the command "palpa" as "toca".
 Understand "toca a [someone]" as touching.
 
-Understand "lava [something]" as rubbing. Understand the commands "limpia","pule","abrillanta","friega" and "frota" as "lava".
+Understand "lava a/-- [something]" as rubbing. Understand the commands "limpia","pule","abrillanta","friega" and "frota" as "lava".
 Understand "lava a [someone]" as rubbing.
 
 Understand "ata [something]" as tying it to. Understand the commands  "enlaza","enchufa" and "une" as "ata".
@@ -1890,7 +1890,7 @@ To say _s (something - object): (- print (_s) {something}; -).
 To say es (something - object): (- print (es) {something}; -).
 To say Es (something - object): (- print (_Es) {something}; -).
 To say n (something - object): (- print (n) {something}; -). [say "Ya no está[n noun] allí.".]
-To say lo (something - object): (- print (lo) {something}; -). [say "Cóge[lo noun]".]
+To say lo (something - object): (- print (lo) {something}; -). [say "C?ge[lo noun]".]
 	
 
 [ Verbo COGER/TOMAR segun dialecto ]
@@ -1899,10 +1899,10 @@ To say Coge: (- Mcoge(0); -).
 To say MMcoge: (- MMcoge(0); -).
 
 [Misc]
-To say (something - time) in spanish:			[decir la hora en español]
+To say (something - time) in spanish:			[decir la hora en espa?ol]
 	(- print (PrintTimeOfDayEnglish) {something}; -).
 
-[To say (something - time) con palabras:	            	[decir la hora en español] [vamos a dejar esto por un tiempo]
+[To say (something - time) con palabras:	            	[decir la hora en espa?ol] [vamos a dejar esto por un tiempo]
 	(- print (PrintTimeOfDaySpanish) {something}; -).]
 
 To say esta (something - object): (- print (esta) {something}; -).[ "está" / "están" ]
@@ -1939,7 +1939,7 @@ Include (-
 
 Part SL7 - Spanish Irregular Verbs
 
-[Thanx to otistdog user from intfiction phorum]
+[Thanx to otistdog user @ intfiction phorum]
 [https://intfiction.org/t/calling-a-rule-from-i6-code-with-params/61797]
 
 Include (- 
@@ -2058,12 +2058,15 @@ SearchingForImperative a snippet (called W):
 	let converted text be the substituted form of "[W]";
 	let auxiliary response be "";
 	repeat through the Table of Irregular Verbs:[search in a table for replace the player`s command]
+		[say W;]
+		[say "[imperative entry]";]
+		[say line break;]
 		if converted text matches the text "[imperative entry]":
 			now the auxiliary response is "[command entry]";
 	if auxiliary response is empty, rule fails;
 	let rv be wdnum of auxiliary response with length (number of characters in auxiliary response);
 	if rv is 0, rule fails;
-	say "<replacing '[converted text]' with '[auxiliary response]'>";
+	[say "<replacing '[converted text]' with '[auxiliary response]'>";]
 	say "[auxiliary response]";
 	rule succeeds with result rv.
 
@@ -2114,6 +2117,8 @@ command (text)	imperative (text)
 "retorcer"	"retuerce"
 "transferir"	"transfiere"
 "unir"	"une"
+"disculpar"	"disculpa"
+"transcripcion"	"transcripcion"
 
 
 
