@@ -219,7 +219,7 @@ To say Tu:
 
 
 
-To say �l:
+To say él:
 	now the prior named object is the player;[ object's identity is a value stored in "prior named object"]
 	if the story viewpoint is third person singular:
 		if the player is male:
@@ -597,7 +597,7 @@ Section 3.1.1.1 - Standard actions concerning the actor's possessions
 
 [ Removing it from ]
 
-    can't remove what's not inside rule response (A) is "[regarding the noun]¿Pero si no está[n] ahí ahora!".
+    can't remove what's not inside rule response (A) is "[regarding the noun]¡Pero si no está[n] ahí ahora!".
     can't remove from people rule response (A) is "[regarding the noun]Parece que pertenece [al owner].".
 
 
@@ -938,7 +938,7 @@ report touching things rule response (B) is "[El actor] toca[n] [el noun].".
 [ Waving ]
 
 can't wave what's not held rule response (A) is "Pero no [regarding the noun]l[o] tienes.". [No [regarding the noun]l[o] tienes.]
-report waving things rule response (A) is "Agitas [el noun].". [Te sientes [regarding the noun]rid?cul[o] agitando [el noun].]
+report waving things rule response (A) is "Agitas [el noun].". [Te sientes [regarding the noun]ridícul[o] agitando [el noun].]
 report waving things rule response (B) is "[El actor] agita[n] [el noun].".
 
 
@@ -1453,7 +1453,7 @@ Understand nothing as wearing.
 
 [ Gramatica basada en InformATE! (I6) (by Zak)]
 [ Verbos irregulares: filosofia usada en informATE!]
-[ Para algunas acciones no estan permitidas ciertas variantes de la gramatica de informATE, como el uso de second noun como token.Esto hace la respuesta del parser mucho mas tonta: Ej, corta el pan o corta el pan con el cuchillo. ToDo: podr? resolverse esto?]
+[ Para algunas acciones no estan permitidas ciertas variantes de la gramatica de informATE, como el uso de second noun como token.Esto hace la respuesta del parser mucho mas tonta: Ej, corta el pan o corta el pan con el cuchillo. ToDo: podrá resolverse esto?]
 
 Part 4.2 - Grammar for Actions in the Game World
 
@@ -1935,6 +1935,13 @@ Include (-
     PrintCommandSpanish (from);
 ];
 -) replacing "PrintCommand". 
+
+Include (-
+[ IndefArt obj;
+    SpanishIndefArt (obj);
+];
+-) replacing "IndefArt". 
+
 
 
 Part SL7 - Spanish Irregular Verbs

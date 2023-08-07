@@ -28,3 +28,17 @@ Using spanish particle " por ".
     EndActivity(PRINTING_BANNER_TEXT_ACT);
 ];
 
+@h Object Names III.
+The routines accessible from outside this segment.
+
+=
+[ SpanishIndefArt obj i s;
+	if (obj == 0) { LIST_WRITER_INTERNAL_RM('Y'); rtrue; }
+    i = indef_mode; indef_mode = true; s = self; self = obj;
+    if (obj has proper) { indef_mode = NULL; print "a ", (PSN__) obj; indef_mode = i; self = s; return; } !infsp
+    if ((obj provides article) && (TEXT_TY_Compare(obj.article, EMPTY_TEXT_VALUE) ~= 0)) {
+        PrintOrRun(obj, article, true); print " ", (PSN__) obj; indef_mode = i; self = s;
+        return;
+    }
+    PrefaceByArticle(obj, 2); indef_mode = i; self = s;
+];

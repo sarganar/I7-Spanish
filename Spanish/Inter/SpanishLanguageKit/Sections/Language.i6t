@@ -890,7 +890,7 @@ Constant RESP_FAIL  = 0;
 ! le quita el acento y se reintenta el parsing.
 !
 ! Este caso no es especialmente importante, pues el programador
-! siempre puede definir 'sillon' y 'sill?n', ambos como nombres para
+! siempre puede definir 'sillon' y 'sillón', ambos como nombres para
 ! el objeto. Pero el asunto es m?s importante para el caso de los
 ! verbos, ya que si el jugador teclea "c?gelo" este es separado en
 ! "c?ge" y "-lo" y el verbo "c?ge" (con acento) no ser?a
@@ -911,40 +911,39 @@ Constant RESP_FAIL  = 0;
           print "|^";
     } 
 #endif;
-    VM_Tokenise(buf, pars); 
-    for (x=1:x<=tokenCount(pars):x++) ! para cada token
-    {
-	word = tokenDict (pars,x); !dictionary value of token 1,2,3...
-	at = tokenPos (pars,x); ! position in buffer of token 1,2,3... 
-	len = WordLength (x);! length in chars of token 1,2,3...
 
-	if (word==0) ! no comprendida
-       {
-#ifdef DEBUG;
-		if (parser_trace>=7)
-		{
-		    print "    QuitarAcentos:NO COMPRENDIDO: |";
-			ImprimeBuffer(buf, at, len);
-		    print "|^";
-		}
-#endif;
-		for (i=at:i<at+len:i++)
-		   switch(buf->i)
-		  {
-			'á': buf->i='a';
-			'é': buf->i='e';
-			'ë': buf->i='e';
-			'í': buf->i='i';
-			'ó': buf->i='o';
-			'ú': buf->i='u';
-			'ü': buf->i='u';
-			'ñ': buf->i='n'; 
+    VM_Tokenise(buf, pars); 
+    for (x=1:x<=tokenCount(pars):x++){ ! para cada token
+        word = tokenDict (pars,x); !dictionary value of token 1,2,3...
+	    at = tokenPos (pars,x); ! position in buffer of token 1,2,3... 
+	    len = WordLength (x);! length in chars of token 1,2,3...
+
+	    if (word==0){ ! no comprendida
+    #ifdef DEBUG;
+		    if (parser_trace>=7)
+		    {
+		        print "    QuitarAcentos:NO COMPRENDIDO: |";
+			    ImprimeBuffer(buf, at, len);
+		        print "|^";
+		    }
+    #endif;
+		    for (i=at:i<at+len:i++)
+		        switch(buf->i)
+		        {
+			        'á': buf->i='a';
+			        'é': buf->i='e';
+			        'ë': buf->i='e';
+			        'í': buf->i='i';
+			        'ó': buf->i='o';
+			        'ú': buf->i='u';
+			        'ü': buf->i='u';
+			        'ñ': buf->i='n'; 
 		!             '?': buf->i=' ';
 		!             '?': buf->i=' ';
 		!             '!': buf->i=' ';
 		!         '?': buf->i=' ' ;    
-		   }
-        VM_Tokenise(buf, pars); 
+		        }
+            VM_Tokenise(buf, pars); 
         }
     }
 
@@ -1045,15 +1044,15 @@ Constant LanguageVersion = "  - Librer?a I6 Espa?ola 1010.29, basada en InformAT
 
 #ifdef DEBUG;
     if (parser_trace>=9) {
-	print "^[ QuitandoRFinal: buffer recibido |";
+	    print "^[ QuitandoRFinal: buffer recibido |";
 		ImprimeBuffer(texto, 0, longitud);
-	print "|^";
+	    print "|^";
     }
 #endif;	
 	if (texto->(longitud-1)~='r')
     {
-	if (parser_trace>=9) print "No termina en 'r'^";
-	return 0;
+	    if (parser_trace>=9) print "No termina en 'r'^";
+	    return 0;
     }
     
     i=DictionaryLookup(texto, longitud-1);     
@@ -1072,8 +1071,8 @@ Constant LanguageVersion = "  - Librer?a I6 Espa?ola 1010.29, basada en InformAT
      if ((i->#dict_par1)&1) return i;
     else 
     {
-    if (parser_trace>=9) print "Est? en el diccionario, pero no es verbo.^";
-    return 0;
+        if (parser_trace>=9) print "Está en el diccionario, pero no es verbo.^";
+        return 0;
     }
 ];
 
