@@ -1942,6 +1942,11 @@ Include (-
 ];
 -) replacing "IndefArt". 
 
+Include (-
+[ PrefaceByArticle obj acode pluralise capitalise;
+    SpanishPrefaceByArticle (obj,acode,pluralise,capitalise);
+];
+-) replacing "PrefaceByArticle". 
 
 
 Part SL7 - Spanish Irregular Verbs
