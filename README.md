@@ -17,19 +17,26 @@ Descarga e instala el IDE de Inform [desde su repositorio](https://github.com/ga
 ### Librerías Español:
 Ve a la sección [Releases de este repositorio](https://github.com/sarganar/I7-Spanish/releases). Allí las tienes empaquetadas en un zip. Descargate la última.
 
-Te recomiendo que las instales de manera local, solo para tu proyecto actual:
+Te recomiendo que instales las librerías de manera local (es decir, solo para tu proyecto actual). Si tu proyecto va a llamarse *TuProyecto*, entonces tus carpetas serán:
+```
+    Projects\
+      |-TuProyecto.inform\
+      |-TuProyecto.Materials
+         |-Extensions\
+         |-Inter\
+```
 
-#### Instalación Local
+#### HowTo: Inciar *TuProyecto* de manera Local:
 
-- Abre la aplicación Inform 7 y crea tu primer proyecto con nombre *TuProyecto*. Inform te creará una carpeta *TuProyecto* en su folder *Projects* (en MisDocumentos/Inform por ejemplo)
+- Abre la aplicación Inform 7 IDE y crea tu primer proyecto con nombre *TuProyecto*. Inform te creará una carpeta *TuProyecto* en su folder *Projects* (en MisDocumentos/Inform por ejemplo o donde tu le digas)
 
-- Copia la carpeta **Sebastian Arg** del zip que descargaste al folder *Extensions* en *MisDocumentos/Inform/Projects/TuProyecto.Materials/*  Debes crear el folder *Extensions*
+- Copia la carpeta **Sebastian Arg** del zip que descargaste al folder *Extensions* en *../TuProyecto.Materials/*  (si no existe, debes crear el folder *Extensions*)
 
-- Copia la carpeta **SpanishLanguageKit** del zip que descargaste al folder *Inter* en *MisDocumentos/Inform/Projects/TuProyecto.Materials/*  Debes crear el folder *Inter*
+- Copia la carpeta **SpanishLanguageKit** del zip que descargaste al folder *Inter* en *../TuProyecto.Materials/*  (si no existe, debes crear el folder *Inter*)
 
-- y ya. 
+- Eso es todo, ahora desde tu IDE puedes compilar el proyecto.
 
-Hola Mundo
+Hola Mundo (proyecto minimo)
 ======
 
 - En la aplicación Inform 7 tienes el panel *Source*, allí copia el código del siguiente programa mínimo:
