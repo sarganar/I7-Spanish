@@ -8,8 +8,6 @@ This branch contains the Spanish Libs for Inform 10.1.2 - 2022 August
 ✔️Documentación [online](https://sarganar.github.io/infsp-docs/infsp7/).
 
 
-
-
 Cómo colaborar
 ======
 
