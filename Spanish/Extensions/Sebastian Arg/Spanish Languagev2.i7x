@@ -35,6 +35,14 @@ A thing can be female. [for spanish: Habilita genero a inanimados, como containe
 A room can be female. [for spanish: Habilita genero a habitaciones. Caracteristica necesaria (a veces) en espanol, sobre todo al listar las habitaciones.]
 A room can be plural-named or singular-named. [for spanish: al listar rooms como 'las Escaleras']
 
+[Limpia todos los objetos male/female con propiedad neuter activada por el build de i7]
+When play begins (this is the clear neuter for gendered things rule):
+	repeat with X running through female things:
+		now X is not neuter;
+	repeat with X running through male things:
+		now X is not neuter.
+
+
 Section 1 SR Hack - Spanish Bibliographical Data (in place of Section 7 - Unindexed Standard Rules variables -  in Standard Rules by Graham Nelson)
 [el 'is usually' no deja redefinir de nuevo por defecto las constantes, por lo que hay que hackearlo]
 
