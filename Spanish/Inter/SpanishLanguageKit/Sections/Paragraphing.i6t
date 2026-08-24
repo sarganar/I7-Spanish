@@ -5,40 +5,42 @@ Language specific replacements for some BasicInformKit/Paragraphing functions
 @h Print English Number.
 
 =
-[ LanguageNumberSpanish n venti m f;
+[ LanguageNumberSpanish n venti m f apocope;
     if (n==0) { print "cero"; rfalse; }
     if (n<0) { print "menos "; n=-n; }
 #Iftrue (WORDSIZE == 4);
-    if (n >= 1000000000) {
-        !if (f == 1) print ", ";
-    	!print (LanguageNumber) n/1000000000, " billón"; n = n%1000000000; f = 1;
-		if (n<2000000000) print "mil";
-        else { LanguageNumber(n/1000000000,1); print " mil";} 
-        n=n%1000000000; f = 1;
-        if (n~=0) print " ";
-    }
     if (n >= 1000000) {
-    	print (LanguageNumber) n/1000000;
-		if ((n<2000000) && (f==0)) print " millón";
-        else { print " millones";} 
+    	m = n/1000000;
+    	if (m==1) print "un";
+    	else if ((m%10==1) && (m%100~=11)) LanguageNumberSpanish(m,0,0,0,1);
+    	else print (LanguageNumber) m;
+		if (m==1) print " millón";
+        else { print " millones";}
         n = n%1000000;
         if (n~=0) print " ";
     }
 #Endif;
     if (n>=1000) { 
+    	m = n/1000;
 		if (n<2000) print "mil";
-        else { LanguageNumber(n/1000,1); print " mil";} 
+        else if ((m%10==1) && (m%100~=11)) { LanguageNumberSpanish(m,0,0,0,1); print " mil"; }
+        else { print (LanguageNumber) m; print " mil";} 
         n=n%1000; 
         if (n~=0) print " ";
     }
-    if (n>=100)  { 
-		CientosEspanol(n/100); 
-        if (n%100~=0) print " ";
-		n=n%100; 
+    if (n>=100)  {
+		if ((n/100==1) && (n%100==0))
+			print "cien";
+		else {
+			CientosEspanol(n/100);
+			if (n%100~=0) print " ";
+		}
+		n=n%100;
     }
     if (n==0) rfalse;
 
     if (n<10) {
+		if (apocope && (n==1)) { print "un"; rfalse; }
 		DigitoEspanol(n); rfalse;
     }
     if (n>=20)
@@ -57,6 +59,10 @@ Language specific replacements for some BasicInformKit/Paragraphing functions
             if (m==9) print "noventa";
             if (n%10==0) rfalse;
             if (m>2) print " y "; 
+            if (apocope && (n%10==1)) {
+                if (m==2) print "ún"; else print "un";
+                rfalse;
+            }
             DigitoEspanol(n%10, (m==2)&&(venti==0)); rfalse;
         }
     if (n==10) { print "diez"; rfalse; }
@@ -85,37 +91,32 @@ Language specific replacements for some BasicInformKit/Paragraphing functions
 ];
 
 [ DigitoEspanol n venti;
-    if (n==1) { print "un"; rfalse; }
-    if (n==2){
+	if (n==1) { print "uno"; rfalse; }
+	if (n==2) {
 		if (venti)
 			print "dós";
-		else 
-			print "dos";
-	} else rfalse;
-    if (n==2) {
-         if (venti)
-		 	print "dós";
 		else
 			print "dos";
-	    } else rfalse;
-    if (n==3) { 
-        if (venti)
-		 	print "trés";
+		rfalse;
+	}
+	if (n==3) {
+		if (venti)
+			print "trés";
 		else
 			print "tres";
-		} else rfalse;
-
-    if (n==4) { print "cuatro"; rfalse; }
-    if (n==5) { print "cinco"; rfalse; }
-    if (n==6) { 
-        if (venti)
+		rfalse;
+	}
+	if (n==4) { print "cuatro"; rfalse; }
+	if (n==5) { print "cinco"; rfalse; }
+	if (n==6) {
+		if (venti)
 			print "séis";
 		else
 			print "seis";
-		} else rfalse;
-
-    if (n==7) { print "siete"; rfalse; }
-    if (n==8) { print "ocho"; rfalse; }
-    if (n==9) { print "nueve"; rfalse; }    
+		rfalse;
+	}
+	if (n==7) { print "siete"; rfalse; }
+	if (n==8) { print "ocho"; rfalse; }
+	if (n==9) { print "nueve"; rfalse; }
 ];
 

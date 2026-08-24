@@ -29,7 +29,7 @@ For instance, "six minutes past two".
         30: say_minutes = "media";
 		default: 
             if (quad == 2){
-              print (number) m;
+              if (m == 21) print "veintiún"; else print (number) m; ! infsp fix: apocope ante "minuto(s)"
 		      if (m%5 ~= 0) {
 					if (m == 1) print " minuto"; else print " minutos"; ! infsp hack
 		      }
@@ -37,7 +37,8 @@ For instance, "six minutes past two".
 
             }
             if (quad == 1){
-              if(h==1) print "una y "; else print (number) h," horas "; print (number) m;
+              if(h==1) print "una y "; else print (number) h," horas ";
+              if (m == 21) print "veintiún"; else print (number) m; ! infsp fix: apocope ante "minuto(s)"
 		      if (m%5 ~= 0) {
 					if (m == 1) print " minuto"; else print " minutos"; ! infsp hack
 		      }
