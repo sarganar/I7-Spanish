@@ -1205,27 +1205,27 @@ Constant LanguageVersion = "  - Librer?a I6 Espa?ola 1010.29, basada en InformAT
 ! pero la forma de preguntarlo depende del verbo. Por ej.:
 !
 ! > coge
-! ï¿½Quï¿½ quieres coger?
+! ¿Qué quieres coger?
 !
 ! > mete llave
-! ï¿½Dï¿½nde quieres meter la llave?
+! ¿Dónde quieres meter la llave?
 !
 ! > orco, saca la botella
-! ï¿½De dï¿½nde tiene que sacar el orco la botella?
+! ¿De dónde tiene que sacar el orco la botella?
 !
 ! Cuando el parser tiene que imprimir una respuesta de estas,
 ! simplemente llama a MLIdioma con el n?mero de mensaje Misc, 48 o
-! 49. En esta versiï¿½n de la librerï¿½a (6/7) es responsabilidad de
+! 49. En esta versión de la librería (6/7) es responsabilidad de
 ! LanguageLM generar el mensaje completo.
 !
 ! En nuestro caso hemos implementado estos mensajes de forma que
-! llaman a IniciarPregunta para que escriba una partï¿½cula interrogativa
+! llaman a IniciarPregunta para que escriba una partícula interrogativa
 ! como "Donde" "De donde", etc. Si no escribe nada, MLIdioma pone
-! "Quï¿½" o "A quiï¿½n" segï¿½n el tipo de error, a continuaciï¿½n se escribe
-! "quieres" o "tiene que" segï¿½n quiï¿½n sea el actor. Se llama a
-! LanguageVerb para que escriba el verbo, y finalmente se aï¿½ade el
-! name del objeto directo si lo habï¿½a, para terminar la pregunta
-! cerrando la interrogaciï¿½n.
+! "Qué" o "A quién" según el tipo de error, a continuación se escribe
+! "quieres" o "tiene que" según quién sea el actor. Se llama a
+! LanguageVerb para que escriba el verbo, y finalmente se añade el
+! name del objeto directo si lo había, para terminar la pregunta
+! cerrando la interrogación.
 !
 ! IniciarPregunta, lo que hace es: 
 !
@@ -1294,13 +1294,13 @@ Constant LanguageVersion = "  - Librer?a I6 Espa?ola 1010.29, basada en InformAT
 
     p = NULL;
 
-    ! recorrido hacia atrï¿½s; apartir de pcount, posicion reconocida
+    ! recorrido hacia atrás; apartir de pcount, posicion reconocida
     for ( k=pcount : k>=1: k=k-1 ){ !infsp tunnig, para evitar el menos menos que quiebra la sintaxis de Include
         i=pattern-->k;
 !        print "^AP: k:",k," i:",i," (i):",(address)VM_NumberToDictionaryAddress(i-REPARSE_CODE),"^"; ! infsp debug 
        if ( i == PATTERN_NULL) continue;
        if ( i >= REPARSE_CODE)
-           p = VM_NumberToDictionaryAddress(i-REPARSE_CODE); !asignar particula, serï¿½ la conectada a tipo de pregunta segun contexto
+           p = VM_NumberToDictionaryAddress(i-REPARSE_CODE); !asignar particula, será la conectada a tipo de pregunta segun contexto
     }
     return p;
 

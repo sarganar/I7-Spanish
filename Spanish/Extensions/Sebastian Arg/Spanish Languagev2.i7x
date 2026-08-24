@@ -58,7 +58,7 @@ The story title variable translates into Inter as "Story".
 
 Section 2 SR Hack - Others Hackings
 
-[Para poner siempre el nombre de la habitaci?n con primera letra en mayuscula (johan mode):]
+[Para poner siempre el nombre de la habitación con primera letra en mayuscula (johan mode):]
 
 Carry out looking (this is the spanish room description heading rule):
 	say bold type;
@@ -182,11 +182,11 @@ Spanish: [tu], [ti], [tuyo], [le tien], [ton]
 
 and their capitalised forms, which start with "T" not "t".]
 
-[en general Poca gente menciona los sujetos expl?citamente en segunda persona.Al-K]
+[en general Poca gente menciona los sujetos explícitamente en segunda persona.Al-K]
 
 [Include Text Capture by Eric Eve.]
 
-to say plm:[primera letra en may?scula]
+to say plm:[primera letra en mayúscula]
 	stop capturing text;
 	say "[captured text]" in sentence case.
 
@@ -934,8 +934,8 @@ standard report waiting rule response (B) is "[El actor] deja pasar el tiempo.".
 
 [ Touching ]
 
-report touching yourself rule response (A) is "No logras nada con eso.". [?Las manos quietas!]
-report touching yourself rule response (B) is "[El actor] se toca[n] a si mism[o].". [[El actor] se toca imp?dicamente.]
+report touching yourself rule response (A) is "No logras nada con eso.". [¡Las manos quietas!]
+report touching yourself rule response (B) is "[El actor] se toca[n] a si mism[o].". [[El actor] se toca impúdicamente.]
 report touching other people rule response (A) is "[Al noun] podría no gustarle[s] eso.".
 report touching other people rule response (B) is "[El actor] te toca[n].". [[El actor] no puede[n] reprimir el deseo de tocarte.]
 report touching other people rule response (C) is "[El actor] toca[n] [el noun].".
@@ -954,7 +954,7 @@ report waving things rule response (B) is "[El actor] agita[n] [el noun].".
 
 can't pull what's fixed in place rule response (A) is "[regarding the noun]Está[n] firmemente sujet[o].".
 can't pull scenery rule response (A) is "No eres capaz.".
-can't pull people rule response (A) is "[Al noun] podría no gustarle[s] eso.". [Eso ser?a como poco maleducado.]
+can't pull people rule response (A) is "[Al noun] podría no gustarle[s] eso.". [Eso sería como poco maleducado.]
 report pulling rule response (A) is "No ocurre nada, aparentemente.".
 report pulling rule response (B) is "[El actor] tira[n] [del noun].".
 
@@ -981,7 +981,7 @@ report turning rule response (B) is "[El actor] gira[n] [el noun].".
 
 can't push unpushable things rule response (A) is "[El noun] no puede[n] ser empujad[o] de un lugar a otro.". [No creo que empujar [el noun] sirva para nada.]
 can't push to non-directions rule response (A) is "Eso no es una dirección.".
-can't push vertically rule response (A) is "[El noun] no puede[n] ser empujad[o] hacia arriba o hacia abajo.". [?Ser?a lo mismo que levantar/bajar?]
+can't push vertically rule response (A) is "[El noun] no puede[n] ser empujad[o] hacia arriba o hacia abajo.". [¿Sería lo mismo que levantar/bajar?]
 can't push from within rule response (A) is "[El noun] no puede ser empujado desde aquí.".
 block pushing in directions rule response (A) is "[El noun] no puede[n] ser empujad[o] de un lugar a otro.".
 
@@ -1039,7 +1039,7 @@ report jumping rule response (B) is "[El actor] salta[n] en el sitio".
 block tying rule response (A) is "No lograrás nada con eso.".
 
 [ Drinking ]
-block drinking rule response (A) is "Eso no parece potable.". [?O es "No hay nada potable para beber aquí"?]
+block drinking rule response (A) is "Eso no parece potable.". [¿O es "No hay nada potable para beber aquí"?]
 
 [ Saying sorry ]
 block saying sorry rule response (A) is "Oh, no es necesario que te disculpes.".
@@ -1113,7 +1113,7 @@ switch the story transcript off rule response (C) is "Intento fallido de finaliz
 
 [ Requesting the score ]
 
-announce the score rule response (A) is "[if the story has ended]En este relato, tu puntuación ha sido[otherwise]Hasta el momento tu puntuación es[end if] [score] de un total de [maximum score], en [turn count] turno[s]". [?Juego o historia? A veces es juego, otras veces historia (como la (c) abajo). No entiendo. Me decanto por 'relato']
+announce the score rule response (A) is "[if the story has ended]En este relato, tu puntuación ha sido[otherwise]Hasta el momento tu puntuación es[end if] [score] de un total de [maximum score], en [turn count] turno[s]". [¿Juego o historia? A veces es juego, otras veces historia (como la (c) abajo). No entiendo. Me decanto por 'relato']
 announce the score rule response (B) is ", logrando el rango de ".
 announce the score rule response (C) is "No hay puntuación en esta historia.". [Este juego no tiene conteo de puntuación.]
 announce the score rule response (D) is "[bracket]Tu puntuación ha aumentado en [number understood in words] punto[s].[close bracket]".
@@ -1276,7 +1276,7 @@ To say es-ves:
 		say "ves".
     
 [[regarding list writer internals]: (usado en list writer internal rule response (V) )
-	*llama internamente a RegardingLWI() (ListWriter.i6t), que actualiza prior_named_list / prior_named_list_gender / prior_named_noun, utilizados luego por la sustituci?n [verbo] .
+	*llama internamente a RegardingLWI() (ListWriter.i6t), que actualiza prior_named_list / prior_named_list_gender / prior_named_noun, utilizados luego por la sustitución [verbo] .
 ]
 
     
@@ -1377,7 +1377,7 @@ Volume 4 - Grammar
 
 Part 4.1 - Replacing English verbs
 
-[ Prop?sito: Para no incluir el bloque de gramaticas (y verbos) ingleses en el fuente (optimiza memoria)]
+[ Propósito: Para no incluir el bloque de gramaticas (y verbos) ingleses en el fuente (optimiza memoria)]
 
 
 Understand nothing as answering it that.
@@ -1691,7 +1691,7 @@ Understand "lucha [someone]" as attacking.
 Understand "espera" or "z" as waiting.
 
 Understand "responde a [someone] [text]" as answering it that.
-Understand "responde [text] a [someone]" as answering it that (with nouns reversed). [TODO ?como es el orden correcto?]
+Understand "responde [text] a [someone]" as answering it that (with nouns reversed). [TODO ¿cómo es el orden correcto?]
 Understand "responde [someone] [text]" as answering it that.
 Understand the commands "di","grita" and "dile" as "responde".
 
@@ -1898,7 +1898,7 @@ To say _s (something - object): (- print (_s) {something}; -).
 To say es (something - object): (- print (es) {something}; -).
 To say Es (something - object): (- print (_Es) {something}; -).
 To say n (something - object): (- print (n) {something}; -). [say "Ya no está[n noun] allí.".]
-To say lo (something - object): (- print (lo) {something}; -). [say "C?ge[lo noun]".]
+To say lo (something - object): (- print (lo) {something}; -). [say "Cóge[lo noun]".]
 	
 
 [ Verbo COGER/TOMAR segun dialecto ]
@@ -1907,10 +1907,10 @@ To say Coge: (- Mcoge(0); -).
 To say MMcoge: (- MMcoge(0); -).
 
 [Misc]
-To say (something - time) in spanish:			[decir la hora en espa?ol]
+To say (something - time) in spanish:			[decir la hora en español]
 	(- print (PrintTimeOfDayEnglish) {something}; -).
 
-[To say (something - time) con palabras:	            	[decir la hora en espa?ol] [vamos a dejar esto por un tiempo]
+[To say (something - time) con palabras:	            	[decir la hora en español] [vamos a dejar esto por un tiempo]
 	(- print (PrintTimeOfDaySpanish) {something}; -).]
 
 To say esta (something - object): (- print (esta) {something}; -).[ "está" / "están" ]
