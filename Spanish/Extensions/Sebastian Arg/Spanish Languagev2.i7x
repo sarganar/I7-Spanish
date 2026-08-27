@@ -2122,7 +2122,7 @@ command (text)	imperative (text)
 "oir"	"oye"
 "oler"	"huele"
 "pedir"	"pide"
-"pensar"	"pensar"
+"pensar"	"piensa"
 "poner"	"pon"
 "probar"	"prueba"
 "pulir"	"pule"
