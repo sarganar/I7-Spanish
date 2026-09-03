@@ -86,7 +86,8 @@ The spanish room description heading rule is listed instead of the room descript
 
 To johan mode (T - text):
 	let X be the number of words in T;
-	say word number 1 in T in sentence case;
+	let first word be word number 1 in T;
+	say first word in sentence case;
 	repeat with counter running from 2 to X:
 		say " [word number counter in T]".
 
