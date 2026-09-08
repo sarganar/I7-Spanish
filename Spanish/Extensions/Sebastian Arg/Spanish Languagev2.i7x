@@ -38,9 +38,11 @@ A room can be plural-named or singular-named. [for spanish: al listar rooms como
 [Limpia todos los objetos male/female con propiedad neuter activada por el build de i7]
 When play begins (this is the clear neuter for gendered things rule):
 	repeat with X running through female things:
-		now X is not neuter;
+		if X provides the property neuter:
+			now X is not neuter;
 	repeat with X running through male things:
-		now X is not neuter.
+		if X provides the property neuter:
+			now X is not neuter.
 
 
 Section 1 SR Hack - Spanish Bibliographical Data (in place of Section 7 - Unindexed Standard Rules variables -  in Standard Rules by Graham Nelson)
