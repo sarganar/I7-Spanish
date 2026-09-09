@@ -1353,57 +1353,58 @@ Constant LanguageVersion = "  - Librer?a I6 Espa?ola 1010.29, basada en InformAT
     
 ];
 
-[ PrintCommandSpanish from i k spacing_flag prep;
+! [INFSP fix] Preposicion que precede INMEDIATAMENTE al token de posicion k
+! en 'pattern', o NULL si el token anterior no es una preposicion.
+[ PrepAntesDeToken k j w;
+    for (j = k-1 : j >= 1 : j = j-1) {
+        w = pattern-->j;
+        if (w == PATTERN_NULL) continue;
+        if (w >= REPARSE_CODE) return VM_NumberToDictionaryAddress(w - REPARSE_CODE);
+        return NULL;
+    }
+    return NULL;
+];
 
-  !  print "^  PrintCommandSpanish: ",(address) verb_word ,"  ^";
-    
-  ! Print verb, if apply:  
+[ PrintCommandSpanish from i k prep;
+
+  ! Print verb, if apply:
     if (from == 0) {
         i = verb_word;
-        !check si uso abreviatura de comando ("i, z, l")
-        ! y/o imprime verbo completo
         if (LanguageVerb(i) == 0)
-            if (PrintVerb(i) == 0) { ! Un ultimo intento, con una rutina stub a proveer por el autor
-                print (address) i; 
+            if (PrintVerb(i) == 0) {
+                print (address) i;
                 print "r";
             }
-        from++; spacing_flag = true;
+        from++;
     }
-  
- !print "^Valor de from: ",from,"^"; ! infsp debug
- !print "Valor de pcount: ",pcount,"^"; ! infsp debug
-  
-  ! Print 'command so far':
-  for (k=from:k<pcount:k++){
-    i=pattern-->k;
-    !print "^PCS: k:", k , " i: ", i, " REPARSE_CODE:", REPARSE_CODE,"^"; ! infsp debug
-    if (i == PATTERN_NULL) continue;
-    !if (spacing_flag) print (char) ' '; !infsp, cancel this line, for avoid extra space
-    if (i == 0) { PARSER_CLARIF_INTERNAL_RM('F'); jump TokenPrinted; }!viejo THOSET__TX
-    if (i == 1) { PARSER_CLARIF_INTERNAL_RM('G'); jump TokenPrinted; }!viejo THAT__TX
-    !if (i >= REPARSE_CODE)
-    !  print (address) VM_NumberToDictionaryAddress(i-REPARSE_CODE);
-    if (i >= REPARSE_CODE) continue;! infsp: in spanish do nothing with this case 
-    else {
-        if (i ofclass K3_direction  && LanguageVerbLikesAdverb(verb_word))
-            print " ", (LanguageDirection) i; ! the direction name as adverb
 
-        if (i==player) print " te";
-        else  {
-            prep = AveriguarPrimeraPreposicion();
-            !print "  prep:", (address) prep, "  ";! infsp debug
-            switch (prep){
-                'a//': print " ", (al) i;
-                'de': print " ", (del) i;
-                NULL: print " ", (the) i;
-                default: !print " ", (address) prep;
-                           print " ", (the) i;
-            }
-        }
+  ! Print 'command so far'. La preposicion NO se imprime como palabra suelta:
+  ! se pliega en el articulo del objeto que la sigue. Para cada objeto se mira
+  ! la preposicion INMEDIATAMENTE anterior (PrepAntesDeToken): 'a' y 'de' se
+  ! contraen (al / del / a la / de las / ...); cualquier otra ('sobre', 'en',
+  ! 'con', 'hacia'...) se imprime delante del objeto como palabra suelta.
+  ! Antes se descartaba toda preposicion, y AveriguarPrimeraPreposicion()
+  ! fusionaba la MISMA (la primera del patron) en TODOS los objetos:
+  ! "aplica runa a herida" -> "aplicar al runa de Akkala al herida".
+  for (k=from : k<pcount : k++) {
+    i = pattern-->k;
+    if (i == PATTERN_NULL) continue;
+    if (i == 0) { PARSER_CLARIF_INTERNAL_RM('F'); continue; } ! viejo THOSET__TX
+    if (i == 1) { PARSER_CLARIF_INTERNAL_RM('G'); continue; } ! viejo THAT__TX
+    if (i >= REPARSE_CODE) continue; ! preposicion: se pliega en el objeto siguiente
+
+    if (i ofclass K3_direction && LanguageVerbLikesAdverb(verb_word)) {
+        print " ", (LanguageDirection) i; ! the direction name as adverb
+        continue;
     }
-    .TokenPrinted;
-    spacing_flag = true;
-  } ! for
+    if (i == player) { print " te"; continue; }
+
+    prep = PrepAntesDeToken(k);
+    if (prep == 'a//')     print " ", (al) i;
+    else if (prep == 'de') print " ", (del) i;
+    else if (prep ~= NULL) print " ", (address) prep, " ", (the) i;
+    else                   print " ", (the) i;
+  }
 ];
 
 @h Spanish extra grammar.
