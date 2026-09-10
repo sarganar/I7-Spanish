@@ -1077,8 +1077,8 @@ block swinging rule response (A) is "No [if noun is plural-named]son[otherwise]e
 
 [ Rubbing ]
 can't rub another person rule response (A) is "[Al noun] podría[n] no gustarle[s] eso.".
-report rubbing rule response (A) is "[if the noun is the actor]Te frotas[otherwise]Frotas[end if] [al noun].".
-report rubbing rule response (B) is "[El actor] frota[n] [al noun].".
+report rubbing rule response (A) is "[if the noun is the actor]Te frotas[otherwise]Frotas [el noun][end if].".
+report rubbing rule response (B) is "[El actor] frota[n] [el noun].".
 
 [ Setting it to ]
 block setting it to rule response (A) is "Eso no puede setearse a ningún valor.".
