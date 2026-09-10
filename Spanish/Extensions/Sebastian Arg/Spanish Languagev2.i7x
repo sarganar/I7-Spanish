@@ -1298,8 +1298,14 @@ carry out requested actions rule response (A) is "[The noun] no puede hace eso."
     list writer internal rule response (Y) is "nada".
 
 To say es-ves:
-	if the noun is a person:[la clase 'person' abarca man, women and animal]
-		say "[regarding list writer internals][eres]";[texto adaptativo restaurado -- ver Part SL8]
+	[ Conecta un contenedor/superficie con su contenido en el list writer:
+	  "En el cajon [es-ves] un loro" / "Sobre el estante [es-ves] a Juan".
+	  Antes la rama "is a person" agarraba tambien a los ANIMALES (la clase
+	  'person' los incluye) y con [eres] salia "En el cajon ES/SON un loro".
+	  infsp usa "ves" para todo (igual que "Puedes ver ... a Juan"); la "a"
+	  personal la pone el propio list writer. ]
+	if the noun is the player:
+		say "estás";
 	otherwise:
 		say "ves".
     
