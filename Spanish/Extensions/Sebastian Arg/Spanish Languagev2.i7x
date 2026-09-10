@@ -2108,13 +2108,18 @@ SearchingForImperative a snippet (called W):
 		[say W;]
 		[say "[imperative entry]";]
 		[say line break;]
-		if converted text matches the text "[imperative entry]":
+		if converted text exactly matches the text "[imperative entry]":
 			now the auxiliary response is "[command entry]";
 	if auxiliary response is empty, rule fails;
-	let rv be wdnum of auxiliary response with length (number of characters in auxiliary response);
-	if rv is 0, rule fails;
-	[say "<replacing '[converted text]' with '[auxiliary response]'>";]
 	say "[auxiliary response]";
+	[ El infinitivo ya quedo impreso. El unico caller (LanguageVerb, via
+	  ImprimirIrregular) solo comprueba que el retorno sea distinto de cero.
+	  wdnum da 0 cuando el infinitivo no es palabra del diccionario del juego
+	  (verbo de gramatica CUSTOM): antes eso tiraba la regla y el comando se
+	  ecoaba como <forma-tecleada>+"r" ("destruye" -> "destruyer"). Ahora se
+	  devuelve un centinela != 0 y el infinitivo ya impreso queda tal cual. ]
+	let rv be wdnum of auxiliary response with length (number of characters in auxiliary response);
+	if rv is 0, rule succeeds with result 1;
 	rule succeeds with result rv.
 
 Table of Irregular Verbs
