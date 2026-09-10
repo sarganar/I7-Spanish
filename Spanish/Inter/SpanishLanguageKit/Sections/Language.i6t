@@ -1427,6 +1427,7 @@ Constant LanguageVersion = "  - Librer?a I6 Espa?ola 1010.29, basada en InformAT
     if (prep == 'a//')     print " ", (al) i;
     else if (prep == 'de') print " ", (del) i;
     else if (prep ~= NULL) print " ", (address) prep, " ", (the) i;
+    else if (i has animate) print " ", (al) i;   ! [INFSP fix] "a" personal ante objeto directo animado: "ungir a Makke", no "ungir Makke"
     else                   print " ", (the) i;
   }
 ];
