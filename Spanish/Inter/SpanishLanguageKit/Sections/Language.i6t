@@ -1394,7 +1394,7 @@ Constant LanguageVersion = "  - Librer?a I6 Espa?ola 1010.29, basada en InformAT
     return NULL;
 ];
 
-[ PrintCommandSpanish from i k prep;
+[ PrintCommandSpanish from i k prep j;
 
   ! Print verb, if apply:
     if (from == 0) {
@@ -1420,7 +1420,18 @@ Constant LanguageVersion = "  - Librer?a I6 Espa?ola 1010.29, basada en InformAT
     if (i == PATTERN_NULL) continue;
     if (i == 0) { PARSER_CLARIF_INTERNAL_RM('F'); continue; } ! viejo THOSET__TX
     if (i == 1) { PARSER_CLARIF_INTERNAL_RM('G'); continue; } ! viejo THAT__TX
-    if (i >= REPARSE_CODE) continue; ! preposicion: se pliega en el objeto siguiente
+    if (i >= REPARSE_CODE) {
+        ! >= REPARSE_CODE = preposicion O palabra literal de la gramatica.
+        ! Se pliega (se salta) si gobierna al objeto siguiente, o si es la
+        ! preposicion final inferida del hueco (la particula ya la maneja).
+        ! Solo se imprime como palabra si el token siguiente es OTRA
+        ! preposicion/literal -> ej. "cerrojo" en "quita cerrojo a X",
+        ! como hace el parser ingles.
+        for (j = k+1 : (j < pcount) && (pattern-->j == PATTERN_NULL) : j++) ;
+        if ((j < pcount) && (pattern-->j >= REPARSE_CODE))
+            print " ", (address) VM_NumberToDictionaryAddress(i - REPARSE_CODE);
+        continue;
+    }
 
     if (i ofclass K3_direction && LanguageVerbLikesAdverb(verb_word)) {
         print " ", (LanguageDirection) i; ! the direction name as adverb
