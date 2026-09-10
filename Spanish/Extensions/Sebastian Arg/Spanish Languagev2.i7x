@@ -510,6 +510,7 @@ In Spanish tener is a verb.
 In Spanish quitar is a verb.
 In Spanish poder is a verb.
 In Spanish ser is a verb.
+In Spanish estar is a verb.
 
 
 [TERMINACIONES SEGUN OBJETO]
@@ -1305,7 +1306,7 @@ To say es-ves:
 	  infsp usa "ves" para todo (igual que "Puedes ver ... a Juan"); la "a"
 	  personal la pone el propio list writer. ]
 	if the noun is the player:
-		say "estás";
+		say "[regarding list writer internals][estás]";
 	otherwise:
 		say "ves".
     
