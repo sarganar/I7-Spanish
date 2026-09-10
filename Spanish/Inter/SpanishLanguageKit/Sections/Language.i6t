@@ -176,7 +176,7 @@ sido separada de LanguageToInformese porque es llamada tambi?n desde
 LanguageIsVerb, pero recibe un buffer diferente para procesar. 
 
 =
-[ EspanolAInformes buf pars x i word at len romper_en siguiente retokenise at2; !    print "   EspanolAInformes called^"; ! infsp debug
+[ EspanolAInformes buf pars x i word at len romper_en siguiente retokenise at2 hecho; !    print "   EspanolAInformes called^"; ! infsp debug
    #ifdef TARGET_GLULX; ! TARGET_GLULX
     buf = PasarAMinuscula (buf); ![INFSP] Necesario para q no cazque al procesar infinitivos
    #endif;
@@ -275,7 +275,12 @@ LanguageIsVerb, pero recibe un buffer diferente para procesar.
         }
     }     
 
-    if (word==0) ! no comprendida
+    ! [INFSP fix] Tambien si el token es MAS LARGO que una palabra de
+    ! diccionario (DICT_WORD_SIZE): ahi 'word' encajo con la forma
+    ! TRUNCADA, y un verbo de >=9 letras + sufijo pronominal ('acuchillate')
+    ! truncaba justo al verbo ('acuchilla') y el sufijo se perdia. El chequeo
+    ! interno (DictionaryLookup + flag de verbo) evita cortes espurios.
+    if ((word==0) || (len > DICT_WORD_SIZE)) ! no comprendida, o truncada
     {
 #ifdef DEBUG;
         if (parser_trace>=7){
@@ -305,17 +310,18 @@ LanguageIsVerb, pero recibe un buffer diferente para procesar.
             ! queda una vez separado el sufijo existe en el
             ! diccionario y es un verbo
             i=DictionaryLookup(buf+at, len-romper_en);
-            
+            hecho = 0;
               if (i) if ((i->#dict_par1)&1)
               {
                 LTI_Insert(at+len-romper_en, '-', buf);
                 LTI_Insert(at+len-romper_en, ' ', buf);
                 VM_Tokenise(buf,pars);
+                hecho = 1;
                }
 ! TODO VerbosIrregulares
 !             if (QuitandoRFinal(buf+at, len-romper_en)||
 !                  BuscarEntreVerbosIrregulares(buf+at, len-romper_en))
-              if (QuitandoRFinal(buf+at, len-romper_en))
+              if ((hecho == 0) && QuitandoRFinal(buf+at, len-romper_en)) ! [INFSP fix] no reintentar sobre offsets ya movidos
               {
                 LTI_Insert(at+len-romper_en, '-', buf);
                 LTI_Insert(at+len-romper_en, ' ', buf);
@@ -1411,7 +1417,11 @@ Constant LanguageVersion = "  - Librer?a I6 Espa?ola 1010.29, basada en InformAT
         print " ", (LanguageDirection) i; ! the direction name as adverb
         continue;
     }
-    if (i == player) { print " te"; continue; }
+    ! [INFSP fix] El clitico del objeto=jugador va PEGADO al infinitivo
+    ! ("acuchillarte", no "acuchillar te"). El jugador solo entra al pattern
+    ! por la separacion del sufijo -te/-me, que siempre lo deja como el objeto
+    ! inmediatamente posterior al verbo, asi que nunca hace falta el espacio.
+    if (i == player) { print "te"; continue; }
 
     prep = PrepAntesDeToken(k);
     if (prep == 'a//')     print " ", (al) i;
