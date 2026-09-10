@@ -1301,18 +1301,27 @@ Constant LanguageVersion = "  - Librer?a I6 Espa?ola 1010.29, basada en InformAT
 
 !		pattern: array que contiene las palabras reconocidas
 !		pcount: contador dentro de pattern
-!    print " ",pattern-->(pcount-1)," ^"; ![infsp] debug
-!    print "pcount:",pcount," ^"; ![infsp] debug
 
     p = NULL;
 
-    ! recorrido hacia atrás; apartir de pcount, posicion reconocida
+    ! [INFSP fix] La preposicion que gobierna el hueco es el token de gramatica
+    ! inmediatamente anterior al [noun] que se esta pidiendo. En un comando
+    ! incompleto (.Incomplete de NounDomain) pcount apunta a ese [noun], asi que
+    ! line_tdata-->(pcount-2) es la preposicion si line_ttype-->(pcount-2) lo es.
+    ! Esto cubre el caso en que el jugador corto ANTES de tipear la preposicion
+    ! ("unge piel", "quita cerrojo a X con ?"): el recorrido de pattern de abajo
+    ! se quedaba con la PRIMERA preposicion/palabra-literal del patron ("cerrojo")
+    ! en vez de la del hueco.
+    if ((pcount >= 2) && (line_ttype-->(pcount-2) == PREPOSITION_TT)) {
+        p = line_tdata-->(pcount-2);
+        if (p ~= NULL) return p;
+    }
+
+    ! Fallback: primera preposicion desde el final de pattern (la mas cercana al hueco).
     for ( k=pcount : k>=1: k=k-1 ){ !infsp tunnig, para evitar el menos menos que quiebra la sintaxis de Include
         i=pattern-->k;
-!        print "^AP: k:",k," i:",i," (i):",(address)VM_NumberToDictionaryAddress(i-REPARSE_CODE),"^"; ! infsp debug 
        if ( i == PATTERN_NULL) continue;
-       if ( i >= REPARSE_CODE)
-           p = VM_NumberToDictionaryAddress(i-REPARSE_CODE); !asignar particula, será la conectada a tipo de pregunta segun contexto
+       if ( i >= REPARSE_CODE) { p = VM_NumberToDictionaryAddress(i-REPARSE_CODE); k = 0; }
     }
     return p;
 
