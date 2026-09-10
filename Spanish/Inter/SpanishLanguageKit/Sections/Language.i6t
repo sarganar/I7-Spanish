@@ -372,6 +372,12 @@ global PreguntaSiNo = 0;
 
 Global quitacentos = 1;
 
+Global infsp_pregunta_criatura = 0;
+	! 1 = el hueco que falta en un comando incompleto es una criatura ([someone]);
+	! 0 = es una cosa ([something]). Lo fijan las respuestas (D)/(E) de "parser
+	! clarification internal rule" via IniciarPreguntaMarcada, para que
+	! IdiomaPreguntarPrep elija "A quien" vs "A que" con la preposicion "a".
+
 Array  texto_impreso --> 52;
 
 #ifndef DIALECTO_SPANISH; ! seteado desde el I7 environment
@@ -1272,7 +1278,7 @@ Constant LanguageVersion = "  - Librer?a I6 Espa?ola 1010.29, basada en InformAT
            ##Search:    print "A través de qué";
            ##Tie:   print "A qué"; 
            ##Enter: print "A dónde";
-           default: print "A quién";
+           default: if (infsp_pregunta_criatura) print "A quién"; else print "A qué";
        };
     }
 ];
@@ -1351,6 +1357,14 @@ Constant LanguageVersion = "  - Librer?a I6 Espa?ola 1010.29, basada en InformAT
     }
     return 0;
     
+];
+
+! [INFSP fix] Variante de IniciarPregunta que registra si el hueco que falta
+! es una criatura o una cosa. La llaman las respuestas (D)=criatura y (E)=cosa
+! de "parser clarification internal rule" (Spanish Languagev2, Section 15).
+[ IniciarPreguntaMarcada es_criatura;
+    infsp_pregunta_criatura = es_criatura;
+    return IniciarPregunta();
 ];
 
 ! [INFSP fix] Preposicion que precede INMEDIATAMENTE al token de posicion k

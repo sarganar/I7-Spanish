@@ -599,7 +599,8 @@ To say set pregunta exacta: (- PreguntaCualExactamente=1; -).
 [IniciarPregunta]
 [en casos de comandos incompletos, para ajustar correctamente la preposicion usada]
 
-To decide if no se inicia pregunta con preprosicion: (- IniciarPregunta()==0 -).
+To decide if no se inicia pregunta con preprosicion: (- IniciarPreguntaMarcada(0)==0 -).
+To decide if no se inicia pregunta con preprosicion para criatura: (- IniciarPreguntaMarcada(1)==0 -).
 
 Section 3.1.1.1 - Standard actions concerning the actor's possessions
 
@@ -1372,7 +1373,7 @@ To say es-ves:
     parser clarification internal rule response (A) is "¿Quién concretamente [set pregunta exacta]".
     parser clarification internal rule response (B) is "¿Cuál concretamente, [set pregunta exacta]".
     parser clarification internal rule response (C) is "Lo siento, sólo puedes referirte a un objeto aquí. ¿Cuál exactamente?".
-    parser clarification internal rule response (D) is "[if no se inicia pregunta con preprosicion]¿Qué[end if] [if the noun is not the player][the noun] tiene que[otherwise]quieres[end if] [parser command so far]?[set pregunta exacta]".
+    parser clarification internal rule response (D) is "[if no se inicia pregunta con preprosicion para criatura]¿Qué[end if] [if the noun is not the player][the noun] tiene que[otherwise]quieres[end if] [parser command so far]?[set pregunta exacta]".
     parser clarification internal rule response (E) is "[if no se inicia pregunta con preprosicion]¿Qué[end if] [if the noun is not the player][the noun] tiene que[otherwise]quieres[end if] [parser command so far]?[set pregunta exacta]".
     parser clarification internal rule response (F) is "esas cosas".
     parser clarification internal rule response (G) is "eso".
