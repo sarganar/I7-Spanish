@@ -1,17 +1,17 @@
-INFORM 7 Spanish Extension (r10.1.2) - June 21th, 2023
+INFORM 7 Spanish Extension (or inform r10.1.2)
 ======
 
-This branch contains the Spanish Libs for Inform 10.1.2 - 2022 August
+This branch contains the Spanish Libs for Inform 10.1.2
 
-✔️Descarga [la última release.](https://github.com/sarganar/I7-Spanish/releases/) Edición 10.1.2
+✔️Descarga [la última release.](https://github.com/sarganar/I7-Spanish/releases/)
 
-✔️Revisa la documentación [online.](https://sarganar.github.io/infsp-docs/infsp7/)
+✔️Consulta la documentación [online.](https://sarganar.github.io/infsp-docs/infsp7/)
 
 
 Cómo colaborar
 ======
 
-Puedes reportar los problemas que te encuentres informándolos en la pestaña [Issues](https://github.com/sarganar/I7-Spanish/issues) de este repositorio. Si te es posible, coloca el código mínimo que reproduce el error.
+Puedes reportar los problemas que te encuentres informándolos en la pestaña [Issues](https://github.com/sarganar/I7-Spanish/issues) de este repo. Si te es posible, coloca el código mínimo que reproduce el error.
 
 También puedes crear una pull request con las mejoras que añadirías a la librería.
 
