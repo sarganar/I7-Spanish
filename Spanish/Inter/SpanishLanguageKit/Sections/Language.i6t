@@ -1512,67 +1512,67 @@ for use without Text Capture extension by Eric Eve
 
 =
 
-Global capture_active = 0;
+Global esp_capture_active = 0;
 
 #ifdef TARGET_ZCODE;
-Array captured_text -> (CAPTURE_BUFFER_LEN + 3);
-[ StartCapture;
-	if (capture_active ==1)
+Array esp_captured_text -> (CAPTURE_BUFFER_LEN + 3);
+[ ESP_StartCapture;
+	if (esp_capture_active ==1)
 		return;
-	capture_active = 1;
-	@output_stream 3 captured_text;
+	esp_capture_active = 1;
+	@output_stream 3 esp_captured_text;
 ];
-[ EndCapture;
-	if (capture_active == 0)
+[ ESP_EndCapture;
+	if (esp_capture_active == 0)
 		return;
-	capture_active = 0;
+	esp_capture_active = 0;
 	@output_stream -3;
-	if (captured_text-->0 > CAPTURE_BUFFER_LEN)
+	if (esp_captured_text-->0 > CAPTURE_BUFFER_LEN)
 	{
-		print "Error: Overflow in EndCapture.^";
+		print "Error: Overflow in ESP_EndCapture.^";
 	}
 ];
-[ PrintCapture len i;
-	len = captured_text-->0;
+[ ESP_PrintCapture len i;
+	len = esp_captured_text-->0;
 	for ( i = 0 : i < len : i++ )
 	{
-		print (char) captured_text->(i + 2);
+		print (char) esp_captured_text->(i + 2);
 	}
 ];
 #endif;
 #ifdef TARGET_GLULX;
-Array captured_text --> (CAPTURE_BUFFER_LEN + 1);
-Global text_capture_old_stream = 0;
-Global text_capture_new_stream = 0;
-[ StartCapture i;   
-	if (capture_active ==1)
+Array esp_captured_text --> (CAPTURE_BUFFER_LEN + 1);
+Global esp_text_capture_old_stream = 0;
+Global esp_text_capture_new_stream = 0;
+[ ESP_StartCapture i;   
+	if (esp_capture_active ==1)
 		return;
-	capture_active = 1;
-	text_capture_old_stream = glk_stream_get_current();
-	text_capture_new_stream = glk_stream_open_memory_uni(captured_text + WORDSIZE, CAPTURE_BUFFER_LEN, 1, 0);
-	glk_stream_set_current(text_capture_new_stream);
+	esp_capture_active = 1;
+	esp_text_capture_old_stream = glk_stream_get_current();
+	esp_text_capture_new_stream = glk_stream_open_memory_uni(esp_captured_text + WORDSIZE, CAPTURE_BUFFER_LEN, 1, 0);
+	glk_stream_set_current(esp_text_capture_new_stream);
 ];
-[ EndCapture len;
-	if ( capture_active == 0 )
+[ ESP_EndCapture len;
+	if ( esp_capture_active == 0 )
 		return;
-	capture_active = 0;
-	glk_stream_set_current(text_capture_old_stream);
+	esp_capture_active = 0;
+	glk_stream_set_current(esp_text_capture_old_stream);
 	@copy $ffffffff sp;
-	@copy text_capture_new_stream sp;
+	@copy esp_text_capture_new_stream sp;
 	@glk $0044 2 0; ! stream_close
 	@copy sp len;
 	@copy sp 0;
-	captured_text-->0 = len;
+	esp_captured_text-->0 = len;
 	if (len > CAPTURE_BUFFER_LEN)
 	{
-		captured_text-->0 = CAPTURE_BUFFER_LEN;
+		esp_captured_text-->0 = CAPTURE_BUFFER_LEN;
 	}
 ];
-[ PrintCapture len i;
-	len = captured_text-->0;
+[ ESP_PrintCapture len i;
+	len = esp_captured_text-->0;
 	for ( i = 0 : i < len : i++ )
 	{
-		glk_put_char_uni(captured_text-->(i + 1));
+		glk_put_char_uni(esp_captured_text-->(i + 1));
 	}
 ];
 #endif;

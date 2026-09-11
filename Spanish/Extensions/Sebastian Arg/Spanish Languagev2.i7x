@@ -407,13 +407,13 @@ Section TC - Special functions extracted from Text Capture by Eric Eve (for use 
 Use maximum capture buffer length of at least 256 translates as (- Constant CAPTURE_BUFFER_LEN = {N}; -). 
 
 To start capturing text:
-	(- StartCapture(); -).
+	(- ESP_StartCapture(); -).
 
 To stop capturing text:
-	(- EndCapture(); -).
+	(- ESP_EndCapture(); -).
 
 To say the/-- captured text:
-	(- PrintCapture(); -).
+	(- ESP_PrintCapture(); -).
 
 Chapter 2.2.4 - Directions
 
