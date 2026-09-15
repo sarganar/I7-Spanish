@@ -213,3 +213,11 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+#############
+## Symlinks locales (no trackeados: core.symlinks=false en este repo, git
+## guardaria un archivo de texto con la ruta destino en vez de la extension
+## real). Fuente de verdad trackeada: otras-extensiones/multiplayer/.
+#############
+Spanish/Extensions/Sebastian Arg/Multi P.i7x
+Spanish/Extensions/Sebastian Arg/Laberinto.i7x
