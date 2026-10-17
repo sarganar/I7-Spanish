@@ -588,8 +588,15 @@ To say s:
 
 [DIALECTO SUDAMERICANO]
 
-Use Dialecto Castellano translates as (- Global dialecto_sudamericano = 0; Constant DIALECTO_SPANISH; !Set to Castellano -).
-Use Dialecto Sudamericano translates as (- Global dialecto_sudamericano = 1; Constant DIALECTO_SPANISH; !Set to Sudamericano -).
+[The global dialecto_sudamericano is already declared (value 0) by SpanishLanguageKit, so the options
+ must not declare it again: they only define the constant, and the global is set at the start of play.]
+Use Dialecto Castellano translates as (- Constant DIALECTO_SPANISH; -).
+Use Dialecto Sudamericano translates as (- Constant DIALECTO_SPANISH; -).
+
+To set dialecto sudamericano: (- dialecto_sudamericano = 1; -).
+
+When play begins (this is the set dialecto rule):
+	if the Dialecto Sudamericano option is active, set dialecto sudamericano.
 
 To decide if Dialecto Sudamericano: (- dialecto_sudamericano -).
 To decide if Dialecto Castellano: (- dialecto_sudamericano==0 -).
