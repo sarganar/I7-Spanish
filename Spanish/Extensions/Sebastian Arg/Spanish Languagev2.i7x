@@ -628,6 +628,7 @@ Section 3.1.1.1 - Standard actions concerning the actor's possessions
     can't take component parts rule response (A) is "[regarding the noun]Parece que es parte [del whole].".
     can't take people's possessions rule response (A) is "[regarding the noun]Parece que pertenece [al owner].".
     can't take items out of play rule response (A) is "[regarding the noun]No está[n] disponible[s].".
+    access through barriers rule response (A) is "[regarding the noun]No está[n] disponible[s].".
     can't take what you're inside rule response (A) is "[Tu][tienes] que [if noun is a supporter]bajarte[otherwise]salirte[end if] primero.[plm]".
     can't take what's already taken rule response (A) is "Ya [tu][tienes] [the noun].".
     can't take scenery rule response (A) is "Difícilmente [tu][puedes] llevarte eso.".
