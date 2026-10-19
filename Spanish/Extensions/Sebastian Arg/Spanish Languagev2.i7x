@@ -672,6 +672,7 @@ Section 3.1.1.1 - Standard actions concerning the actor's possessions
 
 [ Inserting it into ]
 
+    can't insert what's already inserted rule response (A) is "[The noun] ya está[n] ahí.".
     can't insert something into itself rule response (A) is "No puedes poner un objeto dentro de sí mismo.".
     can't insert into closed containers rule response (A) is "[The second noun] está[n] cerrad[o second noun].".
     can't insert into what's not a container rule response (A) is "No se pueden meter cosas dentro [del second noun].".
@@ -696,7 +697,7 @@ Section 3.1.1.2 - Standard actions which move the actor
 
 [ Going ]
 
-    stand up before going rule response (A) is "(saliendo primero de [the chaise])[command clarification break]".
+    stand up before going rule response (A) is "(saliendo primero [del chaise])[command clarification break]".
     can't travel in what's not a vehicle rule response (A) is "Tienes que bajarte [del nonvehicle] primero.".
     can't travel in what's not a vehicle rule response (B) is "Tienes que salirte [del nonvehicle] primero.".
     can't go through undescribed doors rule response (A) is "No puedes ir por ahí.".
@@ -713,7 +714,7 @@ Section 3.1.1.2 - Standard actions which move the actor
     describe room gone into rule response (H) is "[The actor] llega a [the room gone to] desde arriba".
     describe room gone into rule response (I) is "[The actor] llega a [the room gone to] desde abajo".
     describe room gone into rule response (J) is "[The actor] llega a [the room gone to] desde [the opposite of the noun]".
-    describe room gone into rule response (K) is "[The actor]  se va por [the noun]".
+    describe room gone into rule response (K) is "[The actor] se va por [the noun]".
     describe room gone into rule response (L) is "[The actor] llega desde [the noun]".
     describe room gone into rule response (M) is "sobre [the vehicle gone by]".
     describe room gone into rule response (N) is "en [the vehicle gone by]".
@@ -734,6 +735,8 @@ Section 3.1.1.2 - Standard actions which move the actor
     can't enter what's not enterable rule response (D) is "No es algo donde puedas entrar.".
     can't enter closed containers rule response (A) is "No puedes entrar en [the noun] porque está[n] cerrad[o].".
     can't enter something carried rule response (A) is "No puedes entrar ahí mientras no lo sueltes.".
+    can't enter if this exceeds carrying capacity rule response (A) is "No hay más lugar sobre [the noun].".
+    can't enter if this exceeds carrying capacity rule response (B) is "No hay más lugar en [the noun].".
     implicitly pass through other barriers rule response (A) is "(te bajas [del holder of the actor])[command clarification break]".
     implicitly pass through other barriers rule response (B) is "(sales [del holder of the actor])[command clarification break]".
     implicitly pass through other barriers rule response (C) is "(te subes [al target])[command clarification break]".
@@ -826,7 +829,7 @@ Section 3.1.1.4 - Standard actions which change the state of things
     can't lock without a lock rule response (A) is "[regarding the noun]No parece[n] tener ningún tipo de cerrojo.".
     can't lock what's already locked rule response (A) is "[regarding the noun][The noun] ya estaba cerrad[o].".
     can't lock what's open rule response (A) is "Primero [tu][tienes] que cerrar [the noun].".
-    can't lock without the correct key rule response (A) is "[regarding the second noun]No parece[n], encajar en la cerradura.".
+    can't lock without the correct key rule response (A) is "[regarding the second noun]No parece[n] encajar en la cerradura.".
     standard report locking rule response (A) is "Cierras [the noun].".
     standard report locking rule response (B) is "[The actor] cierra [the noun].".
 
@@ -844,21 +847,21 @@ standard report unlocking rule response (B) is "[El actor] quita el cerrojo [al 
 
 can't switch on unless switchable rule response (A) is "No es algo que pueda encenderse.".
 can't switch on what's already on rule response (A) is "Ya [regarding the noun]estaba[n] encendid[o].".
-standard report switching on rule response (A) is "[El actor] enciendes [el noun].".
+standard report switching on rule response (A) is "[if the actor is the player]Enciendes[otherwise][El actor] enciende[end if] [el noun].".
 
 
 [ Switching off ]
 
-can't switch off unless switchable rule response (A) is "No es algo pueda apagarse.".
-can't switch off what's already off rule response (A) is "Ya [regarding the noun] estaba apagad[o].".
-standard report switching off rule response (A) is "[El actor] apaga [el noun].".
+can't switch off unless switchable rule response (A) is "No es algo que pueda apagarse.".
+can't switch off what's already off rule response (A) is "Ya [regarding the noun]estaba[n] apagad[o].".
+standard report switching off rule response (A) is "[if the actor is the player]Apagas[otherwise][El actor] apaga[end if] [el noun].".
 
 
 [ Opening ]
 
 can't open unless openable rule response (A) is "No es algo que pueda abrirse.".
 can't open what's locked rule response (A) is "[regarding the noun]Está[n] cerrad[o] con llave.".
-can't open what's already open rule response (A) is "Ya [regarding the noun]esta[n] abiert[o].".
+can't open what's already open rule response (A) is "Ya [regarding the noun]está[n] abiert[o].".
 reveal any newly visible interior rule response (A) is "Abres [el noun], descubriendo ".
 standard report opening rule response (A) is "Abres [el noun].".
 standard report opening rule response (B) is "[El actor] abre [el noun].".
@@ -868,7 +871,7 @@ standard report opening rule response (C) is "[El noun] se abre.".
 [ Closing ]
 
 can't close unless openable rule response (A) is "No es algo que pueda cerrarse.".
-can't close what's already closed rule response (A) is "Ya [regarding the noun]esta[n] cerrad[o].".
+can't close what's already closed rule response (A) is "Ya [regarding the noun]está[n] cerrad[o].".
 standard report closing rule response (A) is "Cierras [el noun].".
 standard report closing rule response (B) is "[El actor] cierra [el noun].".
 standard report closing rule response (C) is "[El noun] se cierra.".
@@ -899,7 +902,7 @@ Telling it about , Asking it about , Asking it for]
 [ Giving it to ]
 
 can't give what you haven't got rule response (A) is "No tienes [el noun].".
-can't give to yourself rule response (A) is "No puedes darte [el noun] a tí mismo.".
+can't give to yourself rule response (A) is "No puedes darte [el noun] a ti mismo.".
 can't give to a non-person rule response (A) is "[El second noun] no puede recibir cosas.".
 can't give clothes being worn rule response (A) is "(primero te quitas [el noun])[command clarification break]".
 block giving rule response (A) is "[El second noun] no parece[n second noun] interesad[o second noun].".
@@ -1019,7 +1022,7 @@ report turning rule response (B) is "[El actor] gira[n] [el noun].".
 can't push unpushable things rule response (A) is "[El noun] no puede[n] ser empujad[o] de un lugar a otro.". [No creo que empujar [el noun] sirva para nada.]
 can't push to non-directions rule response (A) is "Eso no es una dirección.".
 can't push vertically rule response (A) is "[El noun] no puede[n] ser empujad[o] hacia arriba o hacia abajo.". [¿Sería lo mismo que levantar/bajar?]
-can't push from within rule response (A) is "[El noun] no puede ser empujado desde aquí.".
+can't push from within rule response (A) is "[El noun] no puede[n] ser empujad[o] desde aquí.".
 block pushing in directions rule response (A) is "[El noun] no puede[n] ser empujad[o] de un lugar a otro.".
 
 
@@ -1138,6 +1141,13 @@ Section 3.1.1.8 - Standard actions which happen out of world
 	verify the story file rule response (B) is "El fichero de juego no parece intacto, puede estar corrompido (a menos que estás jugando con un intérprete muy primitivo que no sea capaz de realizar la comprobación).".
 
 
+[ Switching the story transcript on ]
+
+switch the story transcript on rule response (A) is "La transcripción ya estaba activada.".
+switch the story transcript on rule response (B) is "Inicio de la transcripción de:".
+switch the story transcript on rule response (C) is "Intento fallido de inicio de transcripción.".
+
+
 [ Switching the story transcript off ]
 
 switch the story transcript off rule response (A) is "La transcripción ya estaba desactivada.".
@@ -1238,6 +1248,7 @@ you-can-also-see rule response (F) is "".
 [ printing a locale paragraph about]
 use initial appearance in room descriptions rule response (A) is "Sobre [the item] ".
 describe what's on scenery supporters in room descriptions rule response (A) is "Sobre [the item] ".
+describe what's on mentioned supporters in room descriptions rule response (A) is "Sobre [the item] ".
 
 
 
@@ -1357,7 +1368,7 @@ To say es-ves:
     parser error internal rule response (P) is "No entendí la última parte de la orden.".
 	parser error internal rule response (Q) is "[if number understood is 0]No hay suficientes [otherwise]Aquí sólo hay [number understood in words] [end if]disponibles.".
     parser error internal rule response (R) is "Ese objeto no tiene sentido en este contexto.".
-    parser error internal rule response (S) is "Para repetir un comando como 'rana, salta', escribe 'repite', en lugar de 'rana, repite'.".
+    parser error internal rule response (S) is "Para repetir un comando como 'rana, salta', escribe 'repetir', en lugar de 'rana, repetir'.".
     parser error internal rule response (T) is "No puedes empezar la frase con una coma.".
     parser error internal rule response (U) is "Parece que quieres hablar con alguien, pero no veo con quién.".
     parser error internal rule response (V) is "No puedes hablar con [the noun].".
@@ -1367,7 +1378,7 @@ To say es-ves:
 
     parser nothing error internal rule response (A) is "¡No encuentro nada para hacer eso!".
     parser nothing error internal rule response (B) is "No hay ninguno disponible.".
-    parser nothing error internal rule response (C) is "Eso parece partenecer a [the noun].".
+    parser nothing error internal rule response (C) is "Eso parece pertenecer a [the noun].".
     parser nothing error internal rule response (D) is "Eso no puede contener cosas.".
     parser nothing error internal rule response (E) is "[The noun] está cerrado.".
     parser nothing error internal rule response (F) is "[The noun] está vacío.".
@@ -1381,7 +1392,7 @@ To say es-ves:
     parser command internal rule response (A) is "Lo siento, eso no puede corregirse.".
     parser command internal rule response (B) is "No te preocupes.".
     parser command internal rule response (C) is "'eepa' sólo puede corregir una palabra.".
-    parser command internal rule response (D) is "No hay commando que repetir.".
+    parser command internal rule response (D) is "No hay comando que repetir.".
     
 
 [Section  15 - Parser clarification internal rule]
