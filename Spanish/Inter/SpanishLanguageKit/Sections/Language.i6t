@@ -1394,7 +1394,7 @@ Constant LanguageVersion = "  - Librería I6 Española 1010.29, basada en InformAT
     return NULL;
 ];
 
-[ PrintCommandSpanish from i k prep j;
+[ PrintCommandSpanish from i k prep j sp;
 
   ! Print verb, if apply:
     if (from == 0) {
@@ -1404,7 +1404,7 @@ Constant LanguageVersion = "  - Librería I6 Española 1010.29, basada en InformAT
                 print (address) i;
                 print "r";
             }
-        from++;
+        from++; sp = 1;
     }
 
   ! Print 'command so far'. La preposicion NO se imprime como palabra suelta:
@@ -1418,8 +1418,8 @@ Constant LanguageVersion = "  - Librería I6 Española 1010.29, basada en InformAT
   for (k=from : k<pcount : k++) {
     i = pattern-->k;
     if (i == PATTERN_NULL) continue;
-    if (i == 0) { print " "; PARSER_CLARIF_INTERNAL_RM('F'); continue; } ! viejo THOSET__TX
-    if (i == 1) { print " "; PARSER_CLARIF_INTERNAL_RM('G'); continue; } ! viejo THAT__TX
+    if (i == 0) { if (sp) print " "; sp = 1; PARSER_CLARIF_INTERNAL_RM('F'); continue; } ! viejo THOSET__TX
+    if (i == 1) { if (sp) print " "; sp = 1; PARSER_CLARIF_INTERNAL_RM('G'); continue; } ! viejo THAT__TX
     if (i >= REPARSE_CODE) {
         ! >= REPARSE_CODE = preposicion O palabra literal de la gramatica.
         ! Se pliega (se salta) si gobierna al objeto siguiente, o si es la
@@ -1428,27 +1428,34 @@ Constant LanguageVersion = "  - Librería I6 Española 1010.29, basada en InformAT
         ! preposicion/literal -> ej. "cerrojo" en "quita cerrojo a X",
         ! como hace el parser ingles.
         for (j = k+1 : (j < pcount) && (pattern-->j == PATTERN_NULL) : j++) ;
-        if ((j < pcount) && (pattern-->j >= REPARSE_CODE))
-            print " ", (address) VM_NumberToDictionaryAddress(i - REPARSE_CODE);
+        if ((j < pcount) && (pattern-->j >= REPARSE_CODE)) {
+            if (sp) print " "; sp = 1;
+            print (address) VM_NumberToDictionaryAddress(i - REPARSE_CODE);
+        }
         continue;
     }
 
     if (i ofclass K3_direction && LanguageVerbLikesAdverb(verb_word)) {
-        print " ", (LanguageDirection) i; ! the direction name as adverb
+        if (sp) print " "; sp = 1;
+        print (LanguageDirection) i; ! the direction name as adverb
         continue;
     }
     ! [INFSP fix] El clitico del objeto=jugador va PEGADO al infinitivo
     ! ("acuchillarte", no "acuchillar te"). El jugador solo entra al pattern
     ! por la separacion del sufijo -te/-me, que siempre lo deja como el objeto
     ! inmediatamente posterior al verbo, asi que nunca hace falta el espacio.
-    if (i == player) { print "te"; continue; }
+    if (i == player) { print "te"; sp = 1; continue; }
 
     prep = PrepAntesDeToken(k);
-    if (prep == 'a//')     print " ", (al) i;
-    else if (prep == 'de') print " ", (del) i;
-    else if (prep ~= NULL) print " ", (address) prep, " ", (the) i;
-    else if (i has animate) print " ", (al) i;   ! [INFSP fix] "a" personal ante objeto directo animado: "ungir a Makke", no "ungir Makke"
-    else                   print " ", (the) i;
+    ! [INFSP fix] El espacio va ANTES de cada elemento salvo el primero que se imprime:
+    ! con from > 0 (eco del comando inferido) no hay verbo, y '(a Marta)' no lleva espacio
+    ! tras el parentesis.
+    if (sp) print " "; sp = 1;
+    if (prep == 'a//')     print (al) i;
+    else if (prep == 'de') print (del) i;
+    else if (prep ~= NULL) print (address) prep, " ", (the) i;
+    else if (i has animate) print (al) i;   ! [INFSP fix] "a" personal ante objeto directo animado: "ungir a Makke", no "ungir Makke"
+    else                   print (the) i;
   }
 ];
 
