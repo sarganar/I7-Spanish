@@ -1358,7 +1358,7 @@ To say es-ves:
     parser error internal rule response (H) is "No puedes especificar objetos múltiples con ese verbo.".
     parser error internal rule response (I) is "Sólo puedes especificar objetos múltiples una vez en cada línea.".
     parser error internal rule response (J) is "No estoy seguro de a qué se refiere ['][pronoun i6 dictionary word]['].".
-    parser error internal rule response (K) is "Ahora mismo no puedes ver lo que representa el pronombre ['][pronoun i6 dictionary word]['] ([the noun]).".    
+    parser error internal rule response (K) is "Ahora mismo no puedes ver lo que representa el pronombre ['][pronoun i6 dictionary word]['] ([the pronoun reference object]).". [the parser calls this response with an unset noun in 10.1.2 and in 11, so [the noun] printed "nada"; the pronoun reference object is the referent.]
     parser error internal rule response (L) is "Has exceptuado algo que no estaba incluido.".
     parser error internal rule response (M) is "Sólo puedes hacer eso con seres animados.".
     parser error internal rule response (N) is "No conozco ese verbo.".
