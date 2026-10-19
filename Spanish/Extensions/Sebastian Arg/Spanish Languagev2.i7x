@@ -1301,7 +1301,7 @@ carry out requested actions rule response (A) is "[The noun] no puede hace eso."
     list writer internal rule response (H) is "cerrad[o] y alumbrando".
     list writer internal rule response (I) is "vací[o] y alumbrando".
     list writer internal rule response (J) is "cerrad[o], vací[o][if serial comma option is active],[end if] y alumbrando".
-    list writer internal rule response (K) is "(alumbrando y que llevas puest[o]".
+    list writer internal rule response (K) is "alumbrando y que llevas puest[o]".
     list writer internal rule response (L) is "que llevas puest[o]".
     list writer internal rule response (M) is "abiert[o]".
     list writer internal rule response (N) is "abiert[o] y vací[o]".
@@ -1313,7 +1313,7 @@ carry out requested actions rule response (A) is "[The noun] no puede hace eso."
     list writer internal rule response (T) is "[if the noun is a person]encima[otherwise]en[end if] [el_ noun]cual ".
     list writer internal rule response (U) is ", dentro ".
     list writer internal rule response (V) is "[es-ves]".
-    list writer internal rule response (W) is "es nada".[todo:si se refiere a personas deberia decir 'es nadie']
+    list writer internal rule response (W) is "no hay nada".
     list writer internal rule response (X) is "Nada".
     list writer internal rule response (Y) is "nada".
 
@@ -1337,9 +1337,9 @@ To say es-ves:
 
 [Chapter 7 - Action processing internal rule]
     action processing internal rule response (A) is "[bracket]Esa orden se aplica fuera del juego, por lo que solo tiene sentido para el parser, no para [the noun].[close bracket]".
-    action processing internal rule response (B) is "Debes mencionar un objeto en concreto".
+    action processing internal rule response (B) is "Debes mencionar un objeto en concreto.".
     action processing internal rule response (C) is "No es necesario mencionar un objeto.".
-    action processing internal rule response (D) is "Debes mencionar un objeto en concreto".
+    action processing internal rule response (D) is "Debes indicar un objeto.".
     action processing internal rule response (E) is "No es necesario mencionar un objeto.".
     action processing internal rule response (F) is "Debes mencionar el segundo objeto en concreto.".
     action processing internal rule response (G) is "Puedes no mencionar el segundo objeto.".
