@@ -1230,9 +1230,7 @@ Part 3.3 - Activities Rules Spanish Replacement
 [ supplying a missing noun ]
 block vaguely going rule response (A) is "Debes especificar en qué dirección ir.".
 
-[ implicitly taking]
-standard implicit taking rule response (A) is "(primero coges [the noun])[command clarification break]".
-standard implicit taking rule response (B) is "([the second noun] primero coge [the noun])[command clarification break]".
+[ implicitly taking: see Section 18 (standard implicit taking rule), below]
 
 
 [Chapter 2 How things are described]
