@@ -1418,8 +1418,8 @@ Constant LanguageVersion = "  - Librería I6 Española 1010.29, basada en InformAT
   for (k=from : k<pcount : k++) {
     i = pattern-->k;
     if (i == PATTERN_NULL) continue;
-    if (i == 0) { PARSER_CLARIF_INTERNAL_RM('F'); continue; } ! viejo THOSET__TX
-    if (i == 1) { PARSER_CLARIF_INTERNAL_RM('G'); continue; } ! viejo THAT__TX
+    if (i == 0) { print " "; PARSER_CLARIF_INTERNAL_RM('F'); continue; } ! viejo THOSET__TX
+    if (i == 1) { print " "; PARSER_CLARIF_INTERNAL_RM('G'); continue; } ! viejo THAT__TX
     if (i >= REPARSE_CODE) {
         ! >= REPARSE_CODE = preposicion O palabra literal de la gramatica.
         ! Se pliega (se salta) si gobierna al objeto siguiente, o si es la
